@@ -1,0 +1,16 @@
+name: Accessibility Checks (main)
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  workflow_dispatch:
+
+jobs:
+  axe-audit-render-from-main:
+    uses: berkeley-cdss/course-site-actions/.github/workflows/quarto-a11y.yml@main
+    with:
+      site_subdir: ${{ github.event.repository.name }}
+    permissions:
+      contents: write
+      pages: read

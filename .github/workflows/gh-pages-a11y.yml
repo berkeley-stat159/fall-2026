@@ -1,0 +1,16 @@
+name: Accessibility Checks (gh-pages)
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  axe-audit:
+    uses: berkeley-cdss/course-site-actions/.github/workflows/quarto-a11y-gh-pages.yml@main
+    with:
+      site_subdir: ${{ github.event.repository.name }}
+    permissions:
+      contents: write

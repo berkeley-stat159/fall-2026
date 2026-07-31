@@ -1,0 +1,41 @@
+project:
+  type: website
+
+website:
+  site-url: https://berkeley-cdss.github.io/course-site-quarto/
+  sidebar:
+    style: docked
+    title: "{{< var department-abbrev >}} {{< var number >}}"
+    logo: assets/stat_bear.png
+    logo-alt: "UC Berkeley Statistics logo"
+    tools:
+      - icon: github
+        href: https://github.com/berkeley-cdss/course-site-quarto
+        aria-label: GitHub
+    contents:
+      - href: index.qmd
+        text: Home / Schedule
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: staff.qmd
+        text: Staff
+      - href: calendar.qmd
+        text: Calendar
+      - section: "Units"
+        contents:
+          - units/unit1.qmd
+          - units/unit2.ipynb
+          - units/unit3.qmd
+      - href: data.qmd
+        text: Datasets
+      - href: license.qmd
+        text: License
+          
+
+format:
+  html:
+    theme: cosmo
+    css: assets/styles.css
+    toc: true
+    include-in-header:
+      file: siteimprove.html
