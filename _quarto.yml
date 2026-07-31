@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  site-url: https://berkeley-cdss.github.io/course-site-quarto/
+  site-url: https://stat159.berkeley.edu/fall-2026
   sidebar:
     style: docked
     title: "{{< var department-abbrev >}} {{< var number >}}"
@@ -10,7 +10,7 @@ website:
     logo-alt: "UC Berkeley Statistics logo"
     tools:
       - icon: github
-        href: https://github.com/berkeley-cdss/course-site-quarto
+        href: https://github.com/berkeley-stat159/fall-2026
         aria-label: GitHub
     contents:
       - href: index.qmd
