@@ -1,0 +1,27 @@
+button > a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+}
+
+/* Fix scrollable-region-focusable: prevent overflow on cell output containers */
+.cell-output-display {
+    overflow-x: visible !important;
+}
+
+.cell-output-display pre {
+    white-space: normal;
+    word-break: break-all;
+}
+
+.cell-output-display .figure-img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
