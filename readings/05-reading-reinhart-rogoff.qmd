@@ -1,0 +1,40 @@
+---
+title: 5) Irreproducibility Tales 1 
+---
+
+## Assigned Reading
+
+- Title: **The Reinhart-Rogoff Error - or how not to Excel at economics**
+- Author(s): Jonathan Borwein and David H. Bailey
+- Year: 2013
+- Journal: The Conversation
+- <https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646>
+
+
+### Supporting Materials
+
+- Title: **Does high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff**
+- Authors: T. Herndon, M. Ash, R. Pollin
+- Year: 2014
+- Publication: Political Economy Research Institute
+- <https://peri.umass.edu/wp-content/uploads/joomla/images/WP322.pdf>
+
+\
+
+- Title: **Growth in a Time of Debt**
+- Authors: Carmen Reinhart and Kenneth Rogoff
+- Year: 2010
+- Publication: National Bureau of Economic Research (Working Paper)
+- <https://www.nber.org/papers/w15639>
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following reflections---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+More details TBD

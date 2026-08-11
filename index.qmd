@@ -1,32 +1,30 @@
 ---
-title: "{{< var department >}} {{< var number >}}: {{< var name >}}"
-subtitle: "UC Berkeley, {{< var semester >}}"
+title: "STAT 159/259: Collaborative and Reproducible Statistical Data Science"
+subtitle: "UC Berkeley, STAT 159/259, Fall 2026"
 listing:
   - id: schedule
-    template: _extensions/qmd-lab/course-website-ejs/schedule-badge/schedule.ejs
-    contents: scheduled-docs_files/schedule.yml
+    template: schedule.ejs
+    contents: schedule.yml
   - id: buttons
-    template: assets/buttons.ejs
+    template: buttons.ejs
     contents: buttons.yml
 ---
 
 ::: {#buttons}
 :::
 
-[UNDER CONSTRUCTION]
 
 
-::: {.callout-note title="Welcome to Week 1 of Dept 999"}
+::: {.callout-note title="Announcements 📣"}
+First day of class Wed, Aug-26th (10-11AM)
+
+See reminders in bCourses
 :::
 
-::: {.callout-note title="Welcome to Week 2"}
-Things are picking up now.
-:::
 
-## Schedule
+## Schedule 📅
 
-Here we use Quarto's EJS templating.
-
+Tentative calendar subject to change.
 
 ::: {#schedule}
 :::

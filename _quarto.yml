@@ -2,40 +2,54 @@ project:
   type: website
 
 website:
-  site-url: https://stat159.berkeley.edu/fall-2026
+  favicon: assets/stat159-favicon.png
+  google-analytics: G-CES9J82GLL
+  page-footer: 
+    center:
+      - text: About
+        href: about.qmd
+      - text: License
+        href: license.qmd
+      - text: GitHub
+        href: "https://github.com/berkeley-stat159"
+    background: "dark"
   sidebar:
-    style: docked
-    title: "{{< var department-abbrev >}} {{< var number >}}"
+    style: "docked"
+    collapse-level: 1
+    title: "STAT 159/259 <br><small>Fall 2026</small>"
     logo: assets/stat_bear.png
     logo-alt: "UC Berkeley Statistics logo"
     tools:
       - icon: github
         href: https://github.com/berkeley-stat159/fall-2026
-        aria-label: GitHub
     contents:
       - href: index.qmd
         text: Home / Schedule
       - href: syllabus.qmd
         text: Syllabus
-      - href: staff.qmd
-        text: Staff
-      - href: calendar.qmd
-        text: Calendar
-      - section: "Units"
+      - href: about.qmd
+        text: About
+      - section: "Readings"
+        collapse: true
         contents:
-          - units/unit1.qmd
-          - units/unit2.ipynb
-          - units/unit3.qmd
-      - href: data.qmd
-        text: Datasets
-      - href: license.qmd
-        text: License
-          
+          - readings/01-reading-10-rules-rcr.qmd
+          - readings/02-reading-reproducibility-definitions.qmd
+          - readings/03-reading-open-science.qmd
+          - readings/04-reading-ds-singularity.qmd
+          - readings/05-reading-reinhart-rogoff.qmd
+          - readings/06-reading-duke-trials.qmd
+          - readings/07-reading-share-code.qmd
+          - readings/08-reading-legal-framework.qmd
+          - readings/09-reading-better-figures.qmd
+      - section: "Other"
+        contents:
+          - href: license.qmd
+            text: License
 
 format:
   html:
-    theme: cosmo
+    theme: lumen
+    fontsize: 1em
     css: assets/styles.css
     toc: true
-    include-in-header:
-      file: siteimprove.html
+

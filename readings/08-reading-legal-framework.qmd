@@ -1,0 +1,24 @@
+---
+title: 8) RR Legal Framework 
+---
+
+## Assigned Readings
+
+- Title: **The Legal Framework for Reproducible Scientific Research (Licensing and Copyright)**
+- Author(s): Victoria Stodden
+- Year: 2009
+- Journal: Computing in Science & Engineering
+- <doi:10.1038/467753a>
+
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+More details TBD

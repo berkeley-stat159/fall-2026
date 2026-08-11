@@ -1,0 +1,24 @@
+---
+title: 4) Data Science at the Singularity 
+---
+
+## Assigned Reading
+
+- Title: **Data Science at the Singularity**
+- Author(s): David Donoho
+- Year: 2024
+- Journal: Harvard Data Science Review, 6(1)
+- DOI: https://doi.org/10.1162/99608f92.b91339ef
+- <https://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2>
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+More details TBD

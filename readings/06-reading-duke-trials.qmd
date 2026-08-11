@@ -1,0 +1,40 @@
+---
+title: 6) Irreproducibility Tales 2 
+---
+
+## Assigned Reading
+
+- Title: **Forensic Bioinformatics: Investigating Reproducibility of Results**
+- Author(s): Teresa Melcher
+- Year: 2011
+- Journal: Science Editor
+- <https://www.csescienceeditor.org/article/forensic-bioinformatics-investigating-reproducibility-of-results/>
+
+
+### Supporting Materials
+
+- Title: **Duke Clinical Trials - 60 Minutes**
+- Authors: 60 Minutes
+- Year: 2012
+- Type: YouTube video
+- <https://www.youtube.com/watch?v=W5sZTNPMQRM&ab_channel=HensonFuerst>
+
+\
+
+- Title: **The Importance of Reproducible Research in High-Throughput Biology**
+- Authors: Keith Baggerly
+- Year: 2024
+- Type: IGCT Workshops. 5.
+- <https://openworks.mdanderson.org/igct_workshops/5/>
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following reflections---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+More details TBD

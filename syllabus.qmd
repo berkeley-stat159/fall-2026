@@ -2,27 +2,187 @@
 title: "Syllabus"
 ---
 
-[UNDER CONSTRUCTION]
 
-Jump to:
+## Description
 
-- [About {{< var department >}} {{< var number >}}](#about)
-  - [Goals](#goals)
-  - [Prerequisites](#prerequisites)
-
-
-## About {{< var department >}} {{< var number >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus dui, euismod vel tellus sit amet, maximus fringilla risus. Cras nec maximus leo. Fusce sit amet tortor pellentesque, hendrerit odio vitae, dictum lorem. Nunc sed nunc nisl. Cras augue tortor, ultrices ut luctus non, dictum nec magna. Cras vel ex purus. In blandit est non finibus dignissim. Donec vehicula, nisi quis rutrum faucibus, est turpis ultrices nibh, quis rutrum diam nibh tempus nulla. Vestibulum malesuada consectetur ex in vestibulum. 
+This course teaches the why and how of reproducible and collaborative research 
+by combining questions of good computational practice in science, open science 
+and statistical data analysis, in the context of today's research environment. 
 
 
-### Goals
+
+## Goals
+
+By the end of the course, students will:
+
+- understand the issues regarding reproducible research in modern scientific practice, 
+including the definitions of key concepts and the different challenges that exist across disciplines
+
+- understand the computational and statistical issues involved with reproducibility
+
+- be proficient at the Unix commandline
+
+- be proficient at version control with Git
+
+- be able to write documents in Markdown or LaTeX (including using pandoc)
 
 
-- Goal 1
-- Goal 2
-- Goal 3
 
-### Prerequisites
+## Prerequisites
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus dui, euismod vel tellus sit amet, maximus fringilla risus. Cras nec maximus leo. Fusce sit amet tortor pellentesque, hendrerit odio vitae, dictum lorem. Nunc sed nunc nisl. Cras augue tortor, ultrices ut luctus non, dictum nec magna. Cras vel ex purus. In blandit est non finibus dignissim. Donec vehicula, nisi quis rutrum faucibus, est turpis ultrices nibh, quis rutrum diam nibh tempus nulla. Vestibulum malesuada consectetur ex in vestibulum. 
+- Statistics 133, 134, 135
+
+- Graduate standing is required to register for Statistics 259.
+
+- Willingness to learn programming languages and software tools independently 
+(tools used will include Unix command lines; git; GitHub; GitHub actions; LaTeX, Markdown, etc)
+
+- Willingness to learn some statistical methodology by reading on one's own 
+(materials and links will be provided, but not all topics required to do the homework will be covered in lecture).
+
+
+
+## Format and assessment
+
+This is an in-person class with three one-hour lectures each week and one two-hour 
+lab led by a GSI. 
+
+Lectures will focus on theory, philosophy of science, foundations of statistics, 
+scientific applications, software engineering, code reviews and group discussion.
+
+Lab will focus on computing, software tools, workflow, and collaboration; 
+a short and easy checkpoint on that lab’s material will occur each session. 
+You must attend the lab section you are officially enrolled in. 
+If this presents significant burden, please reach out to your lab TA.
+
+For each assigned reading, you will submit a couple of reflections due on Wednesdays at 10:00PM. 
+During discussion lecture (on Fridays), we will draw upon your reflections for some group discussion.
+
+
+
+## Course Culture
+
+Consistent class participation is crucial: we will be discussing subtle substantive, 
+technical, and philosophical issues and reviewing code during class. If you cannot 
+attend the lectures synchronously, please do not take the course.
+
+You will be interacting with course staff and fellow students in several different 
+environments: in class, in lab, over the discussion forum, and in office hours. 
+Some of these will be in person, some of them will be online, but the same expectations 
+hold: be kind, be respectful, be professional.
+
+If you are concerned about classroom environment issues created by other students 
+or course staff, please come talk to us about it.
+
+
+
+## Textbook
+
+There is no textbook for this course. Instead, the learning materials rely on notes
+from previous semesters, as well as papers and other resources listed in the slides.
+
+
+
+## Waitlisted Students and Late Joining
+
+If you are on the waiting list or have a pending application or added the course late, 
+you must still do all coursework and complete labs and homework by the deadlines. 
+__We will not be offering extensions/exceptions if you are admitted/enrolled into the course later.__ 
+So it is your responsibility to stay up to date on the assignments.
+
+Unfortunately, doing all the work is not a guarantee of enrollment. You will only be 
+enrolled if there is space in your lab. Enrollment will proceed by CalCentral.
+
+
+
+## Office hours
+
+Me (the instructor) and the GSIs will offer office hours each week across a range of times. 
+Because we are moving from Evans Hall to the Gateway Building, please give us some time to
+figure out the logistics of OH.
+
+
+
+## Grading Structure
+
+Grades will be assigned using the following weighted components:
+
+1)  **8% Reading Checkpoints** (drop lowest score)
+2)  **7% Reading Reflections** (drop lowest score)
+3)  **5% Discussion Polls** (drop lowest score)
+4) **20% Homework** (no drops)
+5) **10% Project 1** (no drop)
+6) **20% Project 2** (no drop)
+7) **30% Project 3** (no drop)
+
+- If you are taking the class pass-fail, the cut-oﬀ for passing is 70% (C-).
+- As a matter of course policy, I do not round up when calculating letter grades. Ex: if your overall score is 79.9999%, then the highest letter grade that you can expect is a C+, not a B-.
+- There is no curve; your grade will depend only on how well you do, and not on how well everyone else does.
+- We encourage you to focus on mastering the material, not on your grade. So please do not engage in <a href="https://marktomforde.com/academic/undergraduates/GradeGrubbing.html" target="_blank">grade grubbing</a>.
+- Also, please remember that we grade your course performance, not your personal worth.
+
+
+## Reading Assignments
+
+These will be posted on the course website under **Readings**. 
+For each paper/reading in the weekly list, you will submit a couple of reflections and thoughts. 
+You will submit your reading reflections in bCourses, due on Wednesdays at 10:00 PM.
+
+In addition to the reflections, there will also be reading checkpoints. These 
+will be a short set of questions about the assigned reading, and will take place during lab.
+
+We will drop your lowest scores---for both the reflections and the checkpoints---in 
+the calculation of your final grade.
+
+
+## Projects
+
+There will be a few projects throughout the semester. You will combine all of the 
+tools and techniques learned as we move along the term.
+
+Because projects are the "meath and potatos" of this course, we will not drop any project scores.
+
+
+
+## Late Policy and HW Assignment Extensions
+
+If you cannot turn in a HW assignment on time, our default policy is:
+
+- Submissions within 24 hours after the deadline will receive a 15% deduction.
+- Submissions within 48 hours after the deadline will receive a 30% deduction.
+- Submissions that are 48 hours or more after the deadline will receive no credit.
+
+Please plan ahead and pace yourself. Don't wait until the last day to do an assignment. 
+Don't wait until the last minute to submit your assignments.
+
+
+
+## Code of Conduct; attribution of work
+
+The high academic standard at the University of California, Berkeley, is reflected 
+in each degree awarded. Every student is expected to maintain this high standard 
+by ensuring that all academic work reflects unique ideas or properly attributes 
+the ideas to the original sources.
+
+These are some basic expectations of students with regards to academic integrity: 
+Any work submitted should be your own individual thoughts, and should not have been 
+submitted for credit in another course unless you have prior written permission to 
+re-use it in this course from this instructor.
+
+All assignments must use "proper attribution," meaning that you have identified 
+the original source and extent or words or ideas that you reproduce or use in y
+our assignment. This includes drafts and homework assignments! If you are unclear 
+about expectations, ask your instructor.
+
+Do not collaborate or work with other students on assignments or projects unless 
+the instructor gives you permission or instruction to do so.
+
+
+## Disability Accommodations
+
+If you need an accommodation for a disability, or if you have information you wish 
+to share with the instructor about a medical emergency, please inform the instructor 
+as soon as possible.
+
+If you are not currently listed with DSP (the Disabled Students' Program) and 
+believe you might benefit from their support, please apply online at https://dsp.berkeley.edu.

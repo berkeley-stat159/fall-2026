@@ -1,0 +1,23 @@
+---
+title: 1) 10 Rules for RCR 
+---
+
+## Assigned Reading
+
+- Title: **Ten Simple Rules for Reproducible Computational Research**
+- Author(s): Sandve G.K., Nekrutenki A., Taylor J., Hovig E.
+- Year: 2013
+- Journal: PLOS Computational Biology 9(10): e1003285
+- <https://doi.org/10.1371/journal.pcbi.1003285>
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+More details TBD

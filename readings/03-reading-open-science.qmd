@@ -1,0 +1,24 @@
+---
+title: 3) 7 Steps to Open Science 
+---
+
+## Assigned Reading
+
+- Title: **Seven Easy Steps to Open Science (An annotated reading list)**
+- Author(s): Sophia Cruell et al.
+- Year: 2019
+- Journal: Zeitschrift fur Psychologie, 227(4), 237-248
+- <https://doi.org/10.1027/2151-2604/a000387>
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+
+More details TBD

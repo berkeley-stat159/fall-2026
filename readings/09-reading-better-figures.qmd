@@ -1,0 +1,25 @@
+---
+title: 9) Better Figures 
+---
+
+## Assigned Readings
+
+- Title: **Ten Simple Rules for Better Figures**
+- Author(s): Rougier N., Droettboom M., Bourne P.
+- Year: 2014
+- Journal: PLOS Computational Biology
+- <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833>
+- <doi:10.1371/journal.pcbi.1003833>
+
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+More details TBD

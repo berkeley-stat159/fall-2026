@@ -1,0 +1,33 @@
+---
+title: 7) Share Your Code 
+---
+
+## Assigned Readings
+
+- Title: **Publish your computer code, it is good enough**
+- Author(s): Nick Barnes
+- Year: 2011
+- Journal: Nature 467, 753
+- <doi:10.1038/467753a>
+
+\
+
+- Title: **Top ten reasons to not share your code (and why you should anyway)**
+- Author(s): Randall LeVeque
+- Year: 2011
+- Journal: Software Sustainability Institute
+- <https://faculty.washington.edu/rjl/pubs/topten/topten.pdf>
+
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+
+Mode details TBD

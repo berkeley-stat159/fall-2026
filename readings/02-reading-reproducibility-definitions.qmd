@@ -1,0 +1,23 @@
+---
+title: 2) Reproducibility Definitions 
+---
+
+## Assigned Reading
+
+- Title: **Guide for Reproducible Research**
+- Author(s): The Turing Way
+- Year: 2024
+- Journal: PLOS Computational Biology 9(10): e1003285
+- <https://book.the-turing-way.org/reproducible-research>
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+More Details TBD

@@ -1,0 +1,34 @@
+---
+title: "About"
+---
+
+
+This course teaches the why and how of reproducible and collaborative research 
+by combining questions of good computational practice in science, open science 
+and statistical data analysis, in the context of today's research environment. 
+
+
+::: {.callout-note title="Info"}
+__Instructor__: <a href='https://www.gastonsanchez.com' target='_blank'>Gaston Sanchez</a>
+
+__GSIs__: 
+
+- Sequoia Andrade
+- Larissa Arreola Moreno
+
+__Lecture__: MWF 10am-11am in [North Gate 105](https://www.berkeley.edu/map/north-gate-hall/)
+
+__Lab__:
+
+- Lab 101, Tu 12pm-3am, Gateway Building B1012 (GSI Larissa)
+- Lab 102, Tu 4pm-6pm, Gateway Building B1012 (GSI Larissa)
+- Lab 103, Tu 11am-1pm, Hildebrand B56 (GSI Sequoia)
+
+
+__Code #__: 21202
+
+__Units__: 4
+
+__Dates__: Aug-25/Dec-18 
+:::
+
