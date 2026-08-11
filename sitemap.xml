@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/calendar.html</loc>
-    <lastmod>2026-07-31T22:37:04.657Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/license.html</loc>
+    <lastmod>2025-04-22T02:53:09.089Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/syllabus.html</loc>
-    <lastmod>2026-07-31T22:37:04.658Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/04-reading-ds-singularity.html</loc>
+    <lastmod>2026-08-11T17:07:02.765Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/units/unit2.html</loc>
-    <lastmod>2026-07-31T22:37:04.658Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/08-reading-legal-framework.html</loc>
+    <lastmod>2026-08-11T17:09:36.404Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/units/unit1.html</loc>
-    <lastmod>2026-07-31T22:37:04.658Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/09-reading-better-figures.html</loc>
+    <lastmod>2026-08-11T17:09:48.052Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/license.html</loc>
-    <lastmod>2026-07-31T22:37:04.657Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/01-reading-10-rules-rcr.html</loc>
+    <lastmod>2026-08-11T17:07:07.099Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/staff.html</loc>
-    <lastmod>2026-07-31T22:37:04.658Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/06-reading-duke-trials.html</loc>
+    <lastmod>2026-08-11T17:07:40.528Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/units/unit3.html</loc>
-    <lastmod>2026-07-31T22:37:04.658Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/index.html</loc>
+    <lastmod>2026-08-11T17:29:48.896Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/units/macros.html</loc>
-    <lastmod>2026-07-31T22:37:04.658Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/about.html</loc>
+    <lastmod>2026-08-11T16:27:23.573Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/index.html</loc>
-    <lastmod>2026-07-31T22:37:04.657Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/07-reading-share-code.html</loc>
+    <lastmod>2026-08-11T17:07:57.645Z</lastmod>
   </url>
   <url>
-    <loc>https://stat159.berkeley.edu/fall-2026/data.html</loc>
-    <lastmod>2026-07-31T22:37:04.657Z</lastmod>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/03-reading-open-science.html</loc>
+    <lastmod>2026-08-11T17:07:01.402Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/05-reading-reinhart-rogoff.html</loc>
+    <lastmod>2026-08-11T17:07:24.012Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat159.github.io/fall-2026/readings/02-reading-reproducibility-definitions.html</loc>
+    <lastmod>2026-08-11T17:06:29.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat159.github.io/fall-2026/syllabus.html</loc>
+    <lastmod>2026-08-11T03:29:05.673Z</lastmod>
   </url>
 </urlset>
