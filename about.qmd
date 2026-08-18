@@ -20,7 +20,7 @@ __Lecture__: MWF 10am-11am in [North Gate 105](https://www.berkeley.edu/map/nort
 
 __Lab__:
 
-- Lab 101, Tu 12pm-3am, Gateway Building B1012 (GSI Larissa)
+- Lab 101, Tu 12pm-2pm, Gateway Building B1012 (GSI Larissa)
 - Lab 102, Tu 4pm-6pm, Gateway Building B1012 (GSI Larissa)
 - Lab 103, Tu 11am-1pm, Hildebrand B56 (GSI Sequoia)
 
