@@ -3,11 +3,11 @@ title: "License"
 ---
 
 
-## CC BY-NC-SA 4.0
+## CC BY 4.0
 
-<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="blank_"><strong>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</strong></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="blank_"><strong>Creative Commons Attribution 4.0 International</strong></a>
 
-This work is licensed under __CC BY-NC-SA 4.0__
+This work is licensed under __CC BY 4.0__
 
 
 ### You are free to:
@@ -21,14 +21,13 @@ This work is licensed under __CC BY-NC-SA 4.0__
 
 ### Under the following terms:
 
-- __Attribution:__ You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- __Attribution:__ You must give appropriate credit , provide a link to the license, 
+and indicate if changes were made . You may do so in any reasonable manner, 
+but not in any way that suggests the licensor endorses you or your use.
 
-- __NonCommercial:__ You may not use the material for commercial purposes.
-
-- __ShareAlike:__ If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-
-- __No additional restrictions:__ You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+- __No additional restrictions:__ You may not apply legal terms or technological measures 
+that legally restrict others from doing anything the license permits.
 
 
-For more information, see <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="blank_">CC BY-NC-SA 4.0</a>
+For more information, see <a href="https://creativecommons.org/licenses/by/4.0/" target="blank_">CC BY 4.0</a>
 
