@@ -4,6 +4,6 @@
 - button: Ed
   link: https://edstem.org/us/courses/101274/discussion/
   color: "#7570b3"
-- button: R-DataHub
-  link: https://r.datahub.berkeley.edu
+- button: DataHub
+  link: http://stat159.datahub.berkeley.edu/
   color: "#666666"
