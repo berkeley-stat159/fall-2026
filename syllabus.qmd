@@ -26,6 +26,7 @@ including the definitions of key concepts and the different challenges that exis
 
 - be able to write documents in Markdown or LaTeX (including using pandoc)
 
+- be able to publish a research compendium with tools like MyST or Quarto
 
 
 ## Prerequisites
@@ -140,7 +141,7 @@ the calculation of your final grade.
 There will be a few projects throughout the semester. You will combine all of the 
 tools and techniques learned as we move along the term.
 
-Because projects are the "meath and potatos" of this course, we will not drop any project scores.
+Because projects are the "meat and potatos" of this course, we will not drop any project scores.
 
 
 
