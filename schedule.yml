@@ -91,7 +91,7 @@
       items:
         - type: "Lab"
           id: ""
-          name: "Gettings started with Git branches"
+          name: "Getting started with Git branches"
           href: ""
     - date: "Sep 16"
       items:
@@ -297,7 +297,7 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Environment Mgmt???"
+          name: "Environment Mgmt"
           href: ""
         - type: "Reading"
           id: ""
