@@ -44,7 +44,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "HW1 TBA (due 9/11)"
+          name: "HW1 TBA (due 9/18)"
           href: ""
 - week: 3
   days:
@@ -74,10 +74,6 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 1"
-          href: ""
-        - type: "Homework"
-          id: ""
-          name: "HW2 TBA (due 9/18)"
           href: ""
 - week: 4
   days:
@@ -111,7 +107,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "HW3 TBA (due 9/25)"
+          name: "Project 1 TBA (due 10/2)"
           href: ""
 - week: 5
   days:
@@ -142,10 +138,6 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 3"
-          href: ""
-        - type: "Homework"
-          id: ""
-          name: "HW4 TBA (due 10/02)"
           href: ""
 - week: 6
   days:
@@ -179,7 +171,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "HW5 TBA (due 10/09)"
+          name: "HW2 TBA (due 10/16)"
           href: ""
 - week: 7
   days:
@@ -211,10 +203,6 @@
           id: ""
           name: "Discussion Reading 5"
           href: ""
-        - type: "Homework"
-          id: ""
-          name: "HW6: TBA (due 10/16)"
-          href: ""
 - week: 8
   days:
     - date: "Oct 12"
@@ -243,7 +231,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "HW-7 TBA (due 10/28)"
+          name: "Project 2 TBA (due 10/30)"
           href: ""
 - week: 9
   days:
@@ -274,10 +262,6 @@
         - type: "Lecture"
           id: ""
           name: "Packaging Code (II)"
-          href: ""
-        - type: "Homework"
-          id: ""
-          name: "HW-8 TBA (due 10/30)"
           href: ""
 - week: 10
   days:
@@ -311,7 +295,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "HW-9 TBA (due 11/06)"
+          name: "HW-3 TBA (due 11/13)"
           href: ""
 - week: 11
   days:
@@ -342,10 +326,6 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 8"
-          href: ""
-        - type: "Homework"
-          id: ""
-          name: "HW-10 TBA (due 11/13)"
           href: ""
 - week: 12
   days:
@@ -379,7 +359,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "HW-11 TBA (due 11/20)"
+          name: "Project 3 TBA (due 12/07)"
           href: ""
 - week: 13
   days:
