@@ -5,7 +5,7 @@
         - type: "Lecture"
           id: ""
           name: "Welcome to Stat 159"
-          href: ""
+          href: "lectures/01-welcome/01-welcome-slides.html"
     - date: "Aug 28"
       items:
         - type: "Lecture"
