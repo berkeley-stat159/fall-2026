@@ -1,0 +1,579 @@
+---
+title: "Welcome to STAT 159-259"
+subtitle: "Collaborative and Reproducible Data Science"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+## Welcome to STAT 159/259! {.nostretch}
+
+::: {.poll}
+Please fill out the [Intro Survey form:]{.bold-hilit} 
+&nbsp;&nbsp;&nbsp; [tinyurl.com/dc4f3swk](https://tinyurl.com/dc4f3swk)
+
+![](images/stat159-intro-survey-fall26-QR.svg){width="18%"}
+:::
+
+\
+
+We will begin at ten past. By that time, please
+
+::: {.nonincremental}
+- 📳 silence phones and put into your bag
+
+- 💻 close and stow your laptops
+:::
+
+
+# Introductions
+
+## A bit about myself
+
+. . .
+
+Education
+
+- Actuarial Science (undergrad)
+- Statistics (grad school)
+
+. . . 
+
+Experience
+
+- Junior Analyst (2002-2004)
+- Statistical Programmer (2005-2009)
+- Statistical Consultant (2009-2011)
+- Research Analyst (2007, 2011-2014)
+- Instructor (2015-present)
+
+
+## During my first professional decade
+
+- Reading and studying papers introducing some data analysis method.
+- What do all those formulas and equations mean?
+- Is there code to apply those tools?
+- Can I write code to implement those methods?
+- Are authors willing to share some of their data/results with me?
+- Can I obtain the same results?
+- Can/Should I package my code?
+- Can/Should I share my packages?
+- Can/Should I write tutorials for my packages?
+
+
+## During my first professional decade
+
+- Statistical consulting for some client.
+- What problem(s) or goal(s) do they have?
+- What questions are they trying to answer?
+    + Is it something I know how to approach/address?
+- What data do they have (if any)?
+- How should I carry out the analysis?
+- What products should I deliver?
+
+
+## During my first professional decade
+
+_Post Mortem_ reflections (at the end of every project):
+
+- What worked well?
+- What were the pain points?
+- What things could I do better?
+- What things could I do different?
+- What things should I avoid doing?
+- What things should I never do again?
+- What "mistakes" did I repeat?
+
+
+## During my first professional decade
+
+\
+
+. . .
+
+::: {.bigadage}
+I wish I had taken something like STAT 159
+:::
+
+\
+
+. . .
+
+::: {.bigadage}
+Unfortunately, no one was teaching anything like STAT 159
+:::
+
+
+## STAT 159/259
+
+- Fall 2013 (STAT 157, Aaron Culich and Philip Stark)
+- Spring & Fall 2015 (Jarrod Millman)
+- Fall 2016 (Me)
+- Fall 2017 (Fernando Perez)
+- Fall 2018 (Philip Stark)
+- Spring 2021 (Fernando Perez)
+- Spring 2022 (Fernando Perez)
+- Spring 2023 (Fernando Perez)
+- Fall 2025 (Fernando Perez)
+- Fall 2026 (Me again)
+
+
+## With the people around you ...
+
+Take a few minutes to share:
+
+- Your Name
+
+- Num. of years at Cal
+
+- Major / Degree
+
+- Hometown
+
+- Which of the following would you prefer to have when graduating from college?
+    a) GPA of 3.7 or higher
+    b) Have no student loan(s)
+    c) Meet soulmate
+
+```{r}
+countdown::countdown(3.5, top = 0)
+```
+
+
+# A Few Horror Stories 😱
+
+
+## 1. Saving Multiple Versions of a File
+
+. . .
+
+A student builds an amazing regression model at 2:00 AM. Exhausted, they save 
+the code as `model_final.py`. 
+
+. . .
+
+The next morning, they realize they missed an outlier, 
+tweak the file, and save it as `model_final_v2.py`. 
+
+. . .
+
+Two weeks later, their professor 
+asks for a minor adjustment. They end up with `model_final_revised_PROFCORRECTED.py`. 
+
+. . .
+
+:::poll
+When looking back at the folder a month later, they have no idea which 
+file generated the actual metrics in their final presentation slide deck.
+:::
+
+
+## 2. Hardcoding Absolute Paths
+
+. . .
+
+Alex writes a brilliant data cleaning script on his Windows laptop.
+
+. . .
+
+He uploads it to a shared folder so his lab partner, Chloe, can run it on her MacBook. 
+
+. . .
+
+The second Chloe hits execute, the terminal crashes with a fatal 
+[_File Not Found Error_]{.hilit}. 
+
+. . .
+
+:::poll
+The script failed instantly because Chloe's computer doesn't have a user named 
+"Alex," and Mac operating systems don't even use a `C:/` drive design. 
+:::
+
+
+## 3. Polluting the Global Environment
+
+. . .
+
+Maria installs **Pandas version 1.5** globally on her laptop to run a machine learning 
+project for a class. 
+
+. . .
+
+Next semester, she takes an advanced statistics class that requires a new 
+feature only found in **Pandas version 2.2**. She runs a global upgrade command. 
+
+. . .
+
+:::poll
+When she tries to re-run her old machine learning code for her portfolio, 
+it completely crashes with syntax errors.
+:::
+
+
+## 4. Silent Corruptions
+
+. . .
+
+David notices that a few rows in his sensor log dataset contain a typo: 
+`"N/A"` instead of blank spaces. 
+
+. . .
+
+He opens the raw file in Microsoft Excel, uses **"Find and Replace"** 
+to clean them up, hits save, and closes the window. 
+
+. . .
+
+What he doesn't realize is that Excel silently reformatted his entire 
+[Date]{.mdlit} column from standard `YYYY-MM-DD` strings into a localized 
+format like `MM/DD/YY`, and dropped the leading zeros on all his zip codes. 
+
+. . .
+
+:::poll
+His Python analysis script now breaks completely because 
+the data was fundamentally altered by a silent software default.
+:::
+
+
+## 5. Out-of-Order Executions
+
+. . .
+
+Sam is actively prototyping a data chart:
+
+- He runs cell 1 to load data, 
+- skips down to cell 10 to drop missing values,
+- runs cell 4 to alter a variable, 
+- and then jumps back to cell 2 to plot the results. 
+
+. . .
+
+The graph looks perfect. He saves the notebook and emails it 
+to his professor. 
+
+. . .
+
+The professor opens the file, hits **"Run All Cells"** from top to bottom, 
+and gets an entirely different chart with a broken trendline. 
+
+. . .
+
+:::poll
+The perfect result only existed because of the chaotic, 
+invisible memory sequence trapped inside Sam's live session.
+:::
+
+
+## 6. Dangers of Copy-Pasting
+
+. . .
+
+Elena computes a critical p-value for her research paper: `0.00412`. 
+She opens her jupyter notebook, and types it in. 
+
+. . .
+
+Later that week, she realizes her input data had duplicated rows, 
+so she runs the script again. The new correct p-value changes to `0.0412`. 
+
+. . .
+
+Because the report is a completely detached text file, she forgets to update 
+the document manually. 
+
+. . .
+
+:::poll
+She accidentally publishes a report with a massive typo that completely flips 
+the statistical significance of her research.
+:::
+
+
+## 7. Unrepeatable Breakthroughs
+
+. . .
+
+A student builds a fraud-detection model that achieves an impressive 
+95% accuracy score.
+
+. . . 
+
+Excitedly, she calls her supervisor over to show them the breakthrough. 
+She hits execution again to demonstrate the live pipeline. 
+
+. . .
+
+The accuracy drops to 89%. She runs it a third time, and it jumps to 92%. 
+
+. . .
+
+:::poll
+Because she forgot to hardcode a random seed marker (`numpy.random.seed(42)`), 
+the dataset splits randomly on every execution, rendering her breakthrough 
+metrics entirely un-reproducible.
+:::
+
+
+## 8. The Interactive GUI Trap
+
+. . .
+
+Kevin uses a graphical enterprise software program to clean a dataset, 
+clicking visual buttons to remove columns, drop null rows, and filter outliers. 
+
+. . .
+
+He exports a beautiful chart for a corporate presentation. 
+
+. . .
+
+Six months later, a regulatory compliance officer demands an audit trail 
+detailing exactly why certain outlier rows were dropped from the dataset. 
+
+. . .
+
+:::poll
+Because Kevin handled the entire process through manual mouse clicks inside
+a black-box GUI rather than writing a programmatic script, he has no way to 
+prove or replicate his step-by-step logic, putting the validity of the 
+entire project at risk.
+:::
+
+
+## 9. The Single-Commit Mega-Upload
+
+. . .
+
+Ryan works diligently on an assignment for three weeks without committing 
+a single line of code. 
+
+. . .
+
+On Sunday night, he runs `git add .` and `git commit -m "fixed project stuff"`, 
+pushing the entire thing to GitHub. 
+
+. . .
+
+On Monday morning, his professor points out that a code adjustment made on day 
+4 accidentally ruined the data integrity pipeline. 
+
+. . .
+
+:::poll
+Because Ryan mashed 21 days of complex, erratic file changes into a 
+single history node, he cannot roll back the graph to isolate the error, 
+forcing him to manually untangle his entire codebase.
+:::
+
+
+## 10. The "Free Real Estate" Licensing Illusion
+
+. . .
+
+An open-source research team discovers a student's public repository 
+containing a clever, highly optimized data parsing code. 
+
+. . .
+
+They want to integrate it into a medical framework that could save lives, 
+but their legal compliance department blocks it completely. 
+
+. . .
+
+Because the student forgot to include an explicit `LICENSE` file 
+(like MIT or Apache 2.0), the code legally defaults to strict, 
+restrictive copyright ownership. 
+
+. . .
+
+:::poll
+The useful pipeline remains legally locked away from helping the community.
+:::
+
+
+# What is this class about {.nostretch}
+
+## 
+
+\
+
+. . .
+
+::: {.bigadage}
+Simply put, this class is about learning tools and acquiring good practices to avoid those horror stories.
+:::
+
+
+## Reproducibility {auto-animate="true"}
+
+. . .
+
+::: {.poll}
+A minimal standard for data analysis and other scientific computations 
+is that they be [reproducible]{.bold-hilit}. 
+:::
+
+
+## Reproducibility {auto-animate="true"}
+
+::: {.poll}
+A minimal standard for data analysis and other scientific computations 
+is that they be [reproducible]{.bold-hilit}. 
+
+\
+
+This means that the code and data are assembled in 
+a way so that [another group]{.mdlit} can re-create all of the results 
+(e.g., the figures in a paper).
+:::
+
+\
+
+. . .
+
+["another group"]{.mdlit} includes your future-self!
+
+
+## Reproducibility
+
+- Are the tables and figures reproducible from the code
+and data?
+
+- Does the code actually do what you think it does?
+
+- In addition to what was done, is it clear why it was done?
+    + (e.g., how were parameter settings chosen?)
+
+- Can the code be used for other data?
+
+- Can you extend the code to do other things?
+
+
+## Basic Principles
+
+- Everything via code
+
+- Everything automated
+    + Workflow and dependencies clearly documented
+
+- Get the data in the most-raw form possible
+
+- Get any/all data and meta-data possible
+
+- Keep track of the provenance of all data files
+
+- Be self-sufficient
+
+- Determine what others can do with your code and media
+
+
+## Why bother?
+
+- Avoid embarrassment
+
+- More likely correct
+
+- Save time, in the long run
+
+- Greater potential for extensions
+
+- Higher impact
+
+- Peace of mind
+
+
+## Basic Tools
+
+- Unix command line
+
+- Version control with git
+
+- Automation with Make
+
+- Environment Management (e.g. Conda)
+
+- Packages
+
+- Dynamic Documents (notebooks, markdown)
+
+- Website Compendiums (e.g. Quarto, MyST)
+
+
+## Other Related Topics
+
+- Organizing Projects
+
+- Writing clear code
+
+- Don't Repeat Yourself (DRY)
+
+- Testing and debugging
+
+- Handling data
+
+- Producing figures
+
+- Choosing Licenses
+
+- Human subjects data (privacy)
+
+
+## This Course
+
+- Brief intro to various tools and Concepts
+
+- Try everything out as we go along
+
+- Getting you started
+
+- I don't know everything
+
+
+# Parting words
+
+## Parting words {auto-animate="true"}
+
+. . .
+
+::: {.poll}
+Organizing analyses so that they are reproducible is not easy. 
+:::
+
+
+## Parting words {auto-animate="true"}
+
+::: {.poll}
+Organizing analyses so that they are reproducible is not easy. 
+
+\
+
+It requires diligence and a considerable investment of time: 
+to learn new computational tools, and to organize and document analyses as you go.
+:::
+
+
+## Parting words {auto-animate="true"}
+
+::: {.poll}
+Organizing analyses so that they are reproducible is not easy. 
+
+\
+
+It requires diligence and a considerable investment of time: 
+to learn new computational tools, and to organize and document analyses as you go.
+
+\
+
+However, adopting a workflow that will make your results reproducible will 
+ultimately make your life easier.
+:::
+
+
+## tinyurl.com/dc4f3swk
+
+Intro Survey reminder 
+
+\
+
+![](images/stat159-intro-survey-fall26-QR.svg){fig-align="center"}
