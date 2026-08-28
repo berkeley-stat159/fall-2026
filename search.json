@@ -1,5 +1,759 @@
 [
   {
+    "objectID": "lectures/02-files/02-files-slides.html#reminder",
+    "href": "lectures/02-files/02-files-slides.html#reminder",
+    "title": "Naming Files",
+    "section": "Reminder",
+    "text": "Reminder\n\n\nIf you don’t have a GitHub account, please sign up for one."
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#so-far",
+    "href": "lectures/02-files/02-files-slides.html#so-far",
+    "title": "Naming Files",
+    "section": "So Far",
+    "text": "So Far\nMany of you are used to work on projects with a very simple file structure, e.g.\n\n\n\nPython\nproject/\n  document.ipynb\n  document.html\n\nR\nproject/\n  document.qmd\n  document.html\n\n\n\n\n\nWhat if there is some data file …\n\n\n\n\nproject/\n  data.json\n  document.ipynb\n  document.html\n\nproject/\n  data.json\n  document.qmd\n  document.html"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#section",
+    "href": "lectures/02-files/02-files-slides.html#section",
+    "title": "Naming Files",
+    "section": "",
+    "text": "How does a data analysis project look like from the files standpoint?"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#basic-project-example",
+    "href": "lectures/02-files/02-files-slides.html#basic-project-example",
+    "title": "Naming Files",
+    "section": "Basic Project Example",
+    "text": "Basic Project Example"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#basic-project-example-1",
+    "href": "lectures/02-files/02-files-slides.html#basic-project-example-1",
+    "title": "Naming Files",
+    "section": "Basic Project Example",
+    "text": "Basic Project Example"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#section-3",
+    "href": "lectures/02-files/02-files-slides.html#section-3",
+    "title": "Naming Files",
+    "section": "",
+    "text": "This is the typical view we have of a project’s file structure.\n\n\n\n\nBut there’s another way to look at a project’s files."
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#network-of-inputs-and-outputs",
+    "href": "lectures/02-files/02-files-slides.html#network-of-inputs-and-outputs",
+    "title": "Naming Files",
+    "section": "Network of inputs and outputs",
+    "text": "Network of inputs and outputs"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#remember",
+    "href": "lectures/02-files/02-files-slides.html#remember",
+    "title": "Naming Files",
+    "section": "Remember",
+    "text": "Remember\n\nYou’ll be working with files.\nSome files will be inputs.\nSome files will be outputs.\nSome will play both roles.\n\n\n\n\n\nLet’s now talk about Naming Files"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#motivation",
+    "href": "lectures/02-files/02-files-slides.html#motivation",
+    "title": "Naming Files",
+    "section": "Motivation",
+    "text": "Motivation\n\nYou had an important meeting\nYou saved a file related to it\nYou know it was an agenda\nWhich is the file you are looking for?\n\nmeeting.doc\nagenda.doc\nimportant.doc"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#youve-probably-named-files-like-these",
+    "href": "lectures/02-files/02-files-slides.html#youve-probably-named-files-like-these",
+    "title": "Naming Files",
+    "section": "You’ve probably named files like these:",
+    "text": "You’ve probably named files like these:\n\nmyreport.qmd\nJohn's filename uses spaces and punctuation.txt\nfigure I.png\nfig 2.png\nplot 3.png\namazingmachinelearningscript.ipynb\n\n\nDon’t! 👎"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#do",
+    "href": "lectures/02-files/02-files-slides.html#do",
+    "title": "Naming Files",
+    "section": "Do! 👍",
+    "text": "Do! 👍\n\nmyreport.qmd\n\n2026-08-28_sales-report.qmd\n\nJohn's filename uses spaces and punctuation.txt\n\njohn-filename-looks-better.txt\n\nfigure I.png, fig 2.png\n\nfig01_histogram-height.png, fig02_histogram-weight.png\n\nplot 3.png\n\nfig03_scatterplot-height-weight.png\n\namazingmachinelearningscript.ipynb\n\nregularization-models-script.ipynb"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#three-principles-for-file-names1",
+    "href": "lectures/02-files/02-files-slides.html#three-principles-for-file-names1",
+    "title": "Naming Files",
+    "section": "Three Principles for file names1",
+    "text": "Three Principles for file names1\n\n\n\nMachine Readable\n\n\n\n\nHuman Readable\n\n\n\n\nPlays well with default ordering\n\nProposed by Jenny Bryan"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#example-nice-file-names",
+    "href": "lectures/02-files/02-files-slides.html#example-nice-file-names",
+    "title": "Naming Files",
+    "section": "Example: Nice file names 😀",
+    "text": "Example: Nice file names 😀\n2026-05-06_collisions_Berkeley.csv\n2026-05-06_collisions_Oakland.csv\n2026-05-06_collisions_San-Francisco.csv\n2026-05-06_collisions_San-Jose.csv\n2026-05-06_stop-data_Berkeley.csv\n2026-05-06_stop-data_Oakland.csv\n2026-05-06_stop-data_San-Francisco.csv\n2026-05-06_stop-data_San-Jose.csv\n\n\n\nMachine readable\nHuman readable\nPlays well with default ordering"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#machine-readable-1",
+    "href": "lectures/02-files/02-files-slides.html#machine-readable-1",
+    "title": "Naming Files",
+    "section": "Machine readable",
+    "text": "Machine readable\n\nRegular expression and globbing friendly\nAvoid:\n\nspaces\npunctuation\naccented characters\ncase sensitivity\n\nEasy to compute on\n\ndeliberate use of delimiters: - and _"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#example-of-globbing",
+    "href": "lectures/02-files/02-files-slides.html#example-of-globbing",
+    "title": "Naming Files",
+    "section": "Example of globbing",
+    "text": "Example of globbing\n2026-05-06_collisions_Berkeley.csv\n2026-05-06_collisions_Oakland.csv\n2026-05-06_collisions_San-Francisco.csv\n2026-05-06_collisions_San-Jose.csv\n2026-05-06_stop-data_Berkeley.csv\n2026-05-06_stop-data_Oakland.csv\n2026-05-06_stop-data_San-Francisco.csv\n2026-05-06_stop-data_San-Jose.csv\n\n\n\nls *collisions*\n\n\n\n\nls *Berkeley.csv"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#deliberate-use-of-delimeters",
+    "href": "lectures/02-files/02-files-slides.html#deliberate-use-of-delimeters",
+    "title": "Naming Files",
+    "section": "Deliberate use of delimeters",
+    "text": "Deliberate use of delimeters\nDeliberate use of _ and - allows us to recover metadata from the filenames.\n2026-05-06_collisions_Berkeley.csv\n2026-05-06_collisions_Oakland.csv\n2026-05-06_collisions_San-Francisco.csv\n2026-05-06_collisions_San-Jose.csv\n2026-05-06_stop-data_Berkeley.csv\n2026-05-06_stop-data_Oakland.csv\n2026-05-06_stop-data_San-Francisco.csv\n2026-05-06_stop-data_San-Jose.csv\n\n\n\nlist.files(pattern = \"2026-05\")\n\n\nlist.files(pattern = \"stop-data\")\n\n\nlist.files(pattern = \"\\\\w+(-\\\\w+)\\\\.csv$\")"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#machine-readable-2",
+    "href": "lectures/02-files/02-files-slides.html#machine-readable-2",
+    "title": "Naming Files",
+    "section": "Machine readable",
+    "text": "Machine readable\n\neasy to search for files later\neasy to narrow file lists based on names\neasy to extract info from file names, e.g. by splitting\navoid:\n\nspaces in file names\npunctuation\naccented characters\ncase sensitivity (e.g., different files named foo and Foo)"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#human-readable-1",
+    "href": "lectures/02-files/02-files-slides.html#human-readable-1",
+    "title": "Naming Files",
+    "section": "Human readable",
+    "text": "Human readable\n\nName contains info on content\n\n\n\n\nConnects to concept of a slug from semantic URLs\n\n01_download-data.qmd\n02_clean-data.qmd\n03_univariate-eda.qmd\n04_run-simulation.qmd\nhelper01_data-parsers.R\nhelper02_summary-functions.R"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#human-readable-2",
+    "href": "lectures/02-files/02-files-slides.html#human-readable-2",
+    "title": "Naming Files",
+    "section": "Human readable",
+    "text": "Human readable\n\n\n\n\nEasy to figure out what the heck something is, based on its name"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#which-one-would-you-choose",
+    "href": "lectures/02-files/02-files-slides.html#which-one-would-you-choose",
+    "title": "Naming Files",
+    "section": "Which one would you choose?",
+    "text": "Which one would you choose?\n05012026_collisions_Berkeley.csv\n\n\n01-05-2026_collisions_Berkeley.csv\n\n\n05-01-2026_collisions_Berkeley.csv\n\n\nMay-01-26_collisions_Berkeley.csv\n\n\n2026-05-01_collisions_Berkeley.csv\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#can-you-guess-the-order",
+    "href": "lectures/02-files/02-files-slides.html#can-you-guess-the-order",
+    "title": "Naming Files",
+    "section": "Can you guess the order?",
+    "text": "Can you guess the order?\nassociation-coefficients.R\nclean-data.qmd\ndata-parsers.R\ndownload-data.qmd\nrun-simulation.qmd\nsummary-functions.R\nunivariate-eda.qmd\n\n\n\n−+\n01:30"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#order-matters",
+    "href": "lectures/02-files/02-files-slides.html#order-matters",
+    "title": "Naming Files",
+    "section": "Order matters",
+    "text": "Order matters\n\nPut something numeric first\nUse the ISO 8601 standard for dates: YYYY-MM-DD\nLeft pad other numbers with zeros\n\n1, 2, …, 9 (good if less than 10)\n01, 02, …, 09, 10, 11 (ok if &lt; 100)\n001, 002, …, 99, 100, 101 (ok if &lt; 1000)\netc"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#chronological-order",
+    "href": "lectures/02-files/02-files-slides.html#chronological-order",
+    "title": "Naming Files",
+    "section": "Chronological order",
+    "text": "Chronological order\n\n2026-05-01_collisions_Berkeley.csv\n2026-05-02_collisions_Berkeley.csv\n2026-05-03_collisions_Berkeley.csv\n2026-05-04_collisions_Berkeley.csv\n2026-05-05_collisions_Berkeley.csv\n...\n2026-05-30_collisions_Berkeley.csv\n2026-05-31_collisions_Berkeley.csv\n\n\nAre you more likely to remember a filename of a timeframe?"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#use-the-iso-8601-standard-for-dates",
+    "href": "lectures/02-files/02-files-slides.html#use-the-iso-8601-standard-for-dates",
+    "title": "Naming Files",
+    "section": "Use the ISO 8601 standard for dates",
+    "text": "Use the ISO 8601 standard for dates\n\n\nYYYY-MM-DD\n\n\n\n\n\n2026-05-01_collisions_Berkeley.csv\n2026-05-02_collisions_Berkeley.csv\n2026-05-03_collisions_Berkeley.csv\n2026-05-04_collisions_Berkeley.csv\n...\n2026-05-30_collisions_Berkeley.csv\n2026-05-31_collisions_Berkeley.csv"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#logical-order",
+    "href": "lectures/02-files/02-files-slides.html#logical-order",
+    "title": "Naming Files",
+    "section": "Logical order",
+    "text": "Logical order\n\n01_download-data.qmd\n02_clean-data.qmd\n03_univariate-eda.qmd\n04_run-simulation.qmd\nhelper01_data-parsers.R\nhelper02_summary-functions.R\nhelper03_association-coefficients.R"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#three-principles-for-file-names",
+    "href": "lectures/02-files/02-files-slides.html#three-principles-for-file-names",
+    "title": "Naming Files",
+    "section": "Three Principles for file names",
+    "text": "Three Principles for file names\n\n\n\nMachine readable\nHuman readable\nPlays well with default ordering\n\n\nMake it:\n\nDescriptive\nUnique\nFindable\nSortable\n\n\n\n\n\nEasy to implement NOW\n\n\n\n\nDividends multiply as your skills evolve and projects get more complex."
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#unix-file-naming",
+    "href": "lectures/02-files/02-files-slides.html#unix-file-naming",
+    "title": "Naming Files",
+    "section": "Unix file naming",
+    "text": "Unix file naming\n\nMaximum of 255 characters\nAvoid most symbols: \\ / * & % ? $ | ^ ~ &lt; &gt;\nUse A-Z, a-z, 0-9, period, underscore, hyphen\nDon’t use a hyphen - as the first character\nPrefer lower case letters: MyFile vs myfile\n\nbecause of case sensitivity\n\nMore important: be consistent and stick to a naming style.\nGood idea to use file extensions\n\ne.g. .txt, .csv, .html, .md, .pdf, .jpg"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#checklist",
+    "href": "lectures/02-files/02-files-slides.html#checklist",
+    "title": "Naming Files",
+    "section": "Checklist",
+    "text": "Checklist\n\nSpend time planning out both folder hierarchy and file naming conventions in the beginning of a project.\nConsider how you or others will look for and access files at a later date.\nDo you think about them by type, location, study or something else?\nEstablish a folder hierarchy that aligns with the project.\nConsider all aspects of the project and develop a file naming scheme that includes important metadata."
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#checklist-contd",
+    "href": "lectures/02-files/02-files-slides.html#checklist-contd",
+    "title": "Naming Files",
+    "section": "Checklist (cont’d)",
+    "text": "Checklist (cont’d)\n\nConsider sorting when deciding what element of the file name will go first.\nFile names starting with YYYYMM will sort differently than files starting with the MMDDYYYY format.\nProvide a method for easy adoption.\nConsider a readme file in onboarding documentation for new contributors.\nCheck for established file naming conventions. Many disciplines have recommendations"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#what-information-metadata-is-important",
+    "href": "lectures/02-files/02-files-slides.html#what-information-metadata-is-important",
+    "title": "Naming Files",
+    "section": "1) What information (metadata) is important?",
+    "text": "1) What information (metadata) is important?\n\nIdeally, pick three pieces of metadata; use no more than five.\nThis metadata should be enough for you to visually scan the file names and easily understand what’s in each one.\nExample: For my images, I want to know date, sample ID, and image number for that sample on that date."
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#do-you-need-to-abbreviate-any-of-the-metadata-or-encode-it",
+    "href": "lectures/02-files/02-files-slides.html#do-you-need-to-abbreviate-any-of-the-metadata-or-encode-it",
+    "title": "Naming Files",
+    "section": "2) Do you need to abbreviate any of the metadata or encode it?",
+    "text": "2) Do you need to abbreviate any of the metadata or encode it?\n\nIf any of the metadata from step 1 is described by lots of text, decide what shortened information to keep.\nIf any of the metadata from step 1 has regular categories, standardize the categories and/or replace them with 2- or 3-letter codes; be sure to document these codes.\nExample: Sample ID will use a code made up of: a 2-letter project abbreviation (project 1 = P1, project 2 = P2); a 3-letter species abbreviation (mouse = “MUS”, fruit fly = “DRS”); and 3-digit sample ID (assigned in my notebook)."
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#what-is-the-order-for-the-metadata-in-the-file-name",
+    "href": "lectures/02-files/02-files-slides.html#what-is-the-order-for-the-metadata-in-the-file-name",
+    "title": "Naming Files",
+    "section": "3) What is the order for the metadata in the file name?",
+    "text": "3) What is the order for the metadata in the file name?\n\nThink about how you want to sort and search for your files to decide what metadata should appear at the beginning of the file name.\nIf date is important, use ISO 8601-formatted dates (YYYYMMDD or YYYY-MM-DD) at the beginning of the file names so dates sort chronologically.\nExample 1: My sample ID is most important so I will list it first, followed by date, then image number"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#what-characters-will-you-use-to-separate-each-piece-of-metadata-in-the-file-name",
+    "href": "lectures/02-files/02-files-slides.html#what-characters-will-you-use-to-separate-each-piece-of-metadata-in-the-file-name",
+    "title": "Naming Files",
+    "section": "4) What characters will you use to separate each piece of metadata in the file name?",
+    "text": "4) What characters will you use to separate each piece of metadata in the file name?\n\nMany computer systems cannot handle spaces in file names.\nTo make file names both computer- and human-readable, use dashes (-), underscores (_), and/or capitalize the first letter of each word in the file names.\nExample: I will use underscores to separate metadata and dashes between parts of my sample ID."
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#will-you-need-to-track-different-versions-of-each-file",
+    "href": "lectures/02-files/02-files-slides.html#will-you-need-to-track-different-versions-of-each-file",
+    "title": "Naming Files",
+    "section": "5) Will you need to track different versions of each file?",
+    "text": "5) Will you need to track different versions of each file?\n\nYou can track versions of a file by appending version information to end of the file name.\nConsider using a version number (e.g. v01) or the version date (use ISO 8601 format: YYYYMMDD or YYYY-MM-DD).\nExample: As each image goes through my analysis workflow, I will append the version type to the end of the file name (e.g. _raw, _processed, and _composite)"
+  },
+  {
+    "objectID": "lectures/02-files/02-files-slides.html#write-down-your-naming-convention-pattern.",
+    "href": "lectures/02-files/02-files-slides.html#write-down-your-naming-convention-pattern.",
+    "title": "Naming Files",
+    "section": "6) Write down your naming convention pattern.",
+    "text": "6) Write down your naming convention pattern.\n\nMake sure the convention only uses alphanumeric characters, dashes, and underscores. Ideally, file names will be 32 characters or less.\nExample: my file naming convention is\n\nSA-MPL-EID_YYYYMMDD_###_status.tif\n\nExamples are P1-MUS023_20200229_051_raw.tif and P2-DRS-285_20191031_062_composite.tif"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
+    "section": "",
+    "text": "Creative Commons Attribution 4.0 International\nThis work is licensed under CC BY 4.0\n\n\n\nShare: copy and redistribute the material in any medium or format.\nAdapt: remix, transform, and build upon the material.\nThe licensor cannot revoke these freedoms as long as you follow the license terms.\n\n\n\n\n\nAttribution: You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n\nFor more information, see CC BY 4.0",
+    "crumbs": [
+      "Other",
+      "License"
+    ]
+  },
+  {
+    "objectID": "license.html#cc-by-4.0",
+    "href": "license.html#cc-by-4.0",
+    "title": "License",
+    "section": "",
+    "text": "Creative Commons Attribution 4.0 International\nThis work is licensed under CC BY 4.0\n\n\n\nShare: copy and redistribute the material in any medium or format.\nAdapt: remix, transform, and build upon the material.\nThe licensor cannot revoke these freedoms as long as you follow the license terms.\n\n\n\n\n\nAttribution: You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n\nFor more information, see CC BY 4.0",
+    "crumbs": [
+      "Other",
+      "License"
+    ]
+  },
+  {
+    "objectID": "readings/04-reading-ds-singularity.html",
+    "href": "readings/04-reading-ds-singularity.html",
+    "title": "4) Data Science at the Singularity",
+    "section": "",
+    "text": "Title: Data Science at the Singularity\nAuthor(s): David Donoho\nYear: 2024\nJournal: Harvard Data Science Review, 6(1)\nDOI: https://doi.org/10.1162/99608f92.b91339ef\nhttps://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2",
+    "crumbs": [
+      "Readings",
+      "4) Data Science at the Singularity"
+    ]
+  },
+  {
+    "objectID": "readings/04-reading-ds-singularity.html#assigned-reading",
+    "href": "readings/04-reading-ds-singularity.html#assigned-reading",
+    "title": "4) Data Science at the Singularity",
+    "section": "",
+    "text": "Title: Data Science at the Singularity\nAuthor(s): David Donoho\nYear: 2024\nJournal: Harvard Data Science Review, 6(1)\nDOI: https://doi.org/10.1162/99608f92.b91339ef\nhttps://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2",
+    "crumbs": [
+      "Readings",
+      "4) Data Science at the Singularity"
+    ]
+  },
+  {
+    "objectID": "readings/04-reading-ds-singularity.html#reflections",
+    "href": "readings/04-reading-ds-singularity.html#reflections",
+    "title": "4) Data Science at the Singularity",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "crumbs": [
+      "Readings",
+      "4) Data Science at the Singularity"
+    ]
+  },
+  {
+    "objectID": "readings/08-reading-legal-framework.html",
+    "href": "readings/08-reading-legal-framework.html",
+    "title": "8) RR Legal Framework",
+    "section": "",
+    "text": "Title: The Legal Framework for Reproducible Scientific Research (Licensing and Copyright)\nAuthor(s): Victoria Stodden\nYear: 2009\nJournal: Computing in Science & Engineering\ndoi:10.1038/467753a",
+    "crumbs": [
+      "Readings",
+      "8) RR Legal Framework"
+    ]
+  },
+  {
+    "objectID": "readings/08-reading-legal-framework.html#assigned-readings",
+    "href": "readings/08-reading-legal-framework.html#assigned-readings",
+    "title": "8) RR Legal Framework",
+    "section": "",
+    "text": "Title: The Legal Framework for Reproducible Scientific Research (Licensing and Copyright)\nAuthor(s): Victoria Stodden\nYear: 2009\nJournal: Computing in Science & Engineering\ndoi:10.1038/467753a",
+    "crumbs": [
+      "Readings",
+      "8) RR Legal Framework"
+    ]
+  },
+  {
+    "objectID": "readings/08-reading-legal-framework.html#reflections",
+    "href": "readings/08-reading-legal-framework.html#reflections",
+    "title": "8) RR Legal Framework",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "crumbs": [
+      "Readings",
+      "8) RR Legal Framework"
+    ]
+  },
+  {
+    "objectID": "readings/09-reading-better-figures.html",
+    "href": "readings/09-reading-better-figures.html",
+    "title": "9) Better Figures",
+    "section": "",
+    "text": "Title: Ten Simple Rules for Better Figures\nAuthor(s): Rougier N., Droettboom M., Bourne P.\nYear: 2014\nJournal: PLOS Computational Biology\nhttps://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833\ndoi:10.1371/journal.pcbi.1003833",
+    "crumbs": [
+      "Readings",
+      "9) Better Figures"
+    ]
+  },
+  {
+    "objectID": "readings/09-reading-better-figures.html#assigned-readings",
+    "href": "readings/09-reading-better-figures.html#assigned-readings",
+    "title": "9) Better Figures",
+    "section": "",
+    "text": "Title: Ten Simple Rules for Better Figures\nAuthor(s): Rougier N., Droettboom M., Bourne P.\nYear: 2014\nJournal: PLOS Computational Biology\nhttps://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833\ndoi:10.1371/journal.pcbi.1003833",
+    "crumbs": [
+      "Readings",
+      "9) Better Figures"
+    ]
+  },
+  {
+    "objectID": "readings/09-reading-better-figures.html#reflections",
+    "href": "readings/09-reading-better-figures.html#reflections",
+    "title": "9) Better Figures",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "crumbs": [
+      "Readings",
+      "9) Better Figures"
+    ]
+  },
+  {
+    "objectID": "readings/01-reading-10-rules-rcr.html",
+    "href": "readings/01-reading-10-rules-rcr.html",
+    "title": "1) 10 Rules for RCR",
+    "section": "",
+    "text": "Title: Ten Simple Rules for Reproducible Computational Research\nAuthor(s): Sandve G.K., Nekrutenki A., Taylor J., Hovig E.\nYear: 2013\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://doi.org/10.1371/journal.pcbi.1003285",
+    "crumbs": [
+      "Readings",
+      "1) 10 Rules for RCR"
+    ]
+  },
+  {
+    "objectID": "readings/01-reading-10-rules-rcr.html#assigned-reading",
+    "href": "readings/01-reading-10-rules-rcr.html#assigned-reading",
+    "title": "1) 10 Rules for RCR",
+    "section": "",
+    "text": "Title: Ten Simple Rules for Reproducible Computational Research\nAuthor(s): Sandve G.K., Nekrutenki A., Taylor J., Hovig E.\nYear: 2013\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://doi.org/10.1371/journal.pcbi.1003285",
+    "crumbs": [
+      "Readings",
+      "1) 10 Rules for RCR"
+    ]
+  },
+  {
+    "objectID": "readings/01-reading-10-rules-rcr.html#reflections",
+    "href": "readings/01-reading-10-rules-rcr.html#reflections",
+    "title": "1) 10 Rules for RCR",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "crumbs": [
+      "Readings",
+      "1) 10 Rules for RCR"
+    ]
+  },
+  {
+    "objectID": "readings/06-reading-duke-trials.html",
+    "href": "readings/06-reading-duke-trials.html",
+    "title": "6) Irreproducibility Tales 2",
+    "section": "",
+    "text": "Title: Forensic Bioinformatics: Investigating Reproducibility of Results\nAuthor(s): Teresa Melcher\nYear: 2011\nJournal: Science Editor\nhttps://www.csescienceeditor.org/article/forensic-bioinformatics-investigating-reproducibility-of-results/\n\n\n\n\nTitle: Duke Clinical Trials - 60 Minutes\nAuthors: 60 Minutes\nYear: 2012\nType: YouTube video\nhttps://www.youtube.com/watch?v=W5sZTNPMQRM&ab_channel=HensonFuerst\n\n\n\n\nTitle: The Importance of Reproducible Research in High-Throughput Biology\nAuthors: Keith Baggerly\nYear: 2024\nType: IGCT Workshops. 5.\nhttps://openworks.mdanderson.org/igct_workshops/5/",
+    "crumbs": [
+      "Readings",
+      "6) Irreproducibility Tales 2"
+    ]
+  },
+  {
+    "objectID": "readings/06-reading-duke-trials.html#assigned-reading",
+    "href": "readings/06-reading-duke-trials.html#assigned-reading",
+    "title": "6) Irreproducibility Tales 2",
+    "section": "",
+    "text": "Title: Forensic Bioinformatics: Investigating Reproducibility of Results\nAuthor(s): Teresa Melcher\nYear: 2011\nJournal: Science Editor\nhttps://www.csescienceeditor.org/article/forensic-bioinformatics-investigating-reproducibility-of-results/\n\n\n\n\nTitle: Duke Clinical Trials - 60 Minutes\nAuthors: 60 Minutes\nYear: 2012\nType: YouTube video\nhttps://www.youtube.com/watch?v=W5sZTNPMQRM&ab_channel=HensonFuerst\n\n\n\n\nTitle: The Importance of Reproducible Research in High-Throughput Biology\nAuthors: Keith Baggerly\nYear: 2024\nType: IGCT Workshops. 5.\nhttps://openworks.mdanderson.org/igct_workshops/5/",
+    "crumbs": [
+      "Readings",
+      "6) Irreproducibility Tales 2"
+    ]
+  },
+  {
+    "objectID": "readings/06-reading-duke-trials.html#reflections",
+    "href": "readings/06-reading-duke-trials.html#reflections",
+    "title": "6) Irreproducibility Tales 2",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following reflections—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "crumbs": [
+      "Readings",
+      "6) Irreproducibility Tales 2"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT 159/259: Collaborative and Reproducible Statistical Data Science",
+    "section": "",
+    "text": "bCourses\n\n  Ed\n\n  DataHub\n\nNo matching items",
+    "crumbs": [
+      "Home / Schedule"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "STAT 159/259: Collaborative and Reproducible Statistical Data Science",
+    "section": "Schedule 📅",
+    "text": "Schedule 📅\nTentative calendar subject to change.\n\nWeek 1\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Aug 26\n             \n             \n               Lecture  Welcome to Stat 159\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Aug 28\n             \n             \n               Lecture  Naming Files\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 2\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Aug 31\n             \n             \n               Lecture  File Paths & Unix Terminal\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 01\n             \n             \n               Lab  Shell Commands\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 02\n             \n             \n               Lecture  Project Organization\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Ten Simple Rules for RCR (due 9/09)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 04\n             \n             \n               Lecture  Intro to Git (part I)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  HW1 TBA (due 9/18)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 3\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 07\n             \n             \n               No-Class  Academic Holiday (no class)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 08\n             \n             \n               Lab  Getting Started with Git\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 09\n             \n             \n               Lecture  Intro to Git (part II)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Guide for Reproducible Research (due 9/16)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 11\n             \n             \n               Lecture  Discussion Reading 1\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 4\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 14\n             \n             \n               Lecture  Git Branching\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 15\n             \n             \n               Lab  Getting started with Git branches\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 16\n             \n             \n               Lecture  Case Study: Global Temperature\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  7 Easy Steps to Open Science (due 9/23)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 18\n             \n             \n               Lecture  Discussion Reading 2\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  Project 1 TBA (due 10/2)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 5\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 21\n             \n             \n               Lecture  Git Remotes\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 22\n             \n             \n               Lab  Github and remote repos\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 23\n             \n             \n               Lecture  Undoing changes in Git\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Data Science at the Singularity (due 9/30)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 25\n             \n             \n               Lecture  Discussion Reading 3\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 6\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 28\n             \n             \n               Lecture  Intro to Make (part 1)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 29\n             \n             \n               Lab  Getting started with Make\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 30\n             \n             \n               Lecture  Intro to Make (part 2)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  The Reinhart-Rogoff Fiasco (due 10/07)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 02\n             \n             \n               Lecture  Discussion Reading 4\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  HW2 TBA (due 10/16)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 7\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 05\n             \n             \n               Lecture  Variables in Make\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 06\n             \n             \n               Lab  More automation with Make\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 07\n             \n             \n               Lecture  More Make (part 2)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  The Duke Trials Retraction (due 10/14)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 09\n             \n             \n               Lecture  Discussion Reading 5\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 8\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 12\n             \n             \n               Lecture  Git Collaborative workflows\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 13\n             \n             \n               Lab  Working in groups in Github\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 14\n             \n             \n               Lecture  Handling and Sharing Data\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 16\n             \n             \n               Lecture  Discussion Reading 6\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  Project 2 TBA (due 10/30)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 9\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 19\n             \n             \n               Lecture  Writing Clear Code\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 20\n             \n             \n               Lab  Hands on sharing and managing data\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 21\n             \n             \n               Lecture  Packaging Code (I)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Share Your Code (due 10/28)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 23\n             \n             \n               Lecture  Packaging Code (II)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 10\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 26\n             \n             \n               Lecture  Packaging Code (III)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 27\n             \n             \n               Lab  Documenting your code\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 28\n             \n             \n               Lecture  Environment Mgmt\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  RR Legal Framework (due 11/04)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 30\n             \n             \n               Lecture  Discussion Reading 7\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  HW-3 TBA (due 11/13)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 11\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 02\n             \n             \n               Lecture  Environment Management (part 1)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 03\n             \n             \n               Lab  Managing environments\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 04\n             \n             \n               Lecture  Licenses\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Rules for Better Figures (due 11/11)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 06\n             \n             \n               Lecture  Discussion Reading 8\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 12\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 09\n             \n             \n               Lecture  Images, Figures and Graphics\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 10\n             \n             \n               Lab  Handling images and figures\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 11\n             \n             \n               No-Class  Academic holiday (no class)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Research Compendium (due 11/18)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 13\n             \n             \n               Lecture  Discussion Reading 9\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  Project 3 TBA (due 12/07)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 13\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 16\n             \n             \n               Lecture  Research Compendium\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 17\n             \n             \n               Lab  TBA\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 18\n             \n             \n               Lecture  Discussion Reading 10\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 20\n             \n             \n               Lecture  Publishing & Communication I\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 14\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 23\n             \n             \n               Lecture  Publishing & Communication II\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 24\n             \n             \n               Lab  Final project status\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 25\n             \n             \n               No-Class  Thanksgiving break\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 27\n             \n             \n               No-Class  Thanksgiving break\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 15\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 30\n             \n             \n               Lecture  TBA\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 01\n             \n             \n               Lab  Wrap-Up Final Project\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 02\n             \n             \n               Lecture  TBA\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 04\n             \n             \n               Lecture  Closing Talk\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 16\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 07\n             \n             \n               Overview  RRR Week\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 17\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 14\n             \n             \n               Final  Final Project\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \nNo matching items",
+    "crumbs": [
+      "Home / Schedule"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This course teaches the why and how of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment.\n\n\n\n\n\n\nInfo\n\n\n\nInstructor: Gaston Sanchez\nGSIs:\n\nSequoia Andrade\nLarissa Arreola Moreno\n\nLecture: MWF 10am-11am in North Gate 105\nLab:\n\nLab 101, Tu 12pm-2pm, Gateway Building B1012 (GSI Larissa)\nLab 102, Tu 4pm-6pm, Gateway Building B1012 (GSI Larissa)\nLab 103, Tu 11am-1pm, Hildebrand B56 (GSI Sequoia)\n\nCode #: 21202\nUnits: 4\nDates: Aug-25/Dec-18",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "readings/07-reading-share-code.html",
+    "href": "readings/07-reading-share-code.html",
+    "title": "7) Share Your Code",
+    "section": "",
+    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2011\nJournal: Nature 467, 753\ndoi:10.1038/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2011\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
+    "crumbs": [
+      "Readings",
+      "7) Share Your Code"
+    ]
+  },
+  {
+    "objectID": "readings/07-reading-share-code.html#assigned-readings",
+    "href": "readings/07-reading-share-code.html#assigned-readings",
+    "title": "7) Share Your Code",
+    "section": "",
+    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2011\nJournal: Nature 467, 753\ndoi:10.1038/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2011\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
+    "crumbs": [
+      "Readings",
+      "7) Share Your Code"
+    ]
+  },
+  {
+    "objectID": "readings/07-reading-share-code.html#reflections",
+    "href": "readings/07-reading-share-code.html#reflections",
+    "title": "7) Share Your Code",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMode details TBD",
+    "crumbs": [
+      "Readings",
+      "7) Share Your Code"
+    ]
+  },
+  {
+    "objectID": "readings/03-reading-open-science.html",
+    "href": "readings/03-reading-open-science.html",
+    "title": "3) 7 Steps to Open Science",
+    "section": "",
+    "text": "Title: Seven Easy Steps to Open Science (An annotated reading list)\nAuthor(s): Sophia Cruwell et al.\nYear: 2019\nJournal: Zeitschrift fur Psychologie, 227(4), 237-248\nhttps://doi.org/10.1027/2151-2604/a000387",
+    "crumbs": [
+      "Readings",
+      "3) 7 Steps to Open Science"
+    ]
+  },
+  {
+    "objectID": "readings/03-reading-open-science.html#assigned-reading",
+    "href": "readings/03-reading-open-science.html#assigned-reading",
+    "title": "3) 7 Steps to Open Science",
+    "section": "",
+    "text": "Title: Seven Easy Steps to Open Science (An annotated reading list)\nAuthor(s): Sophia Cruwell et al.\nYear: 2019\nJournal: Zeitschrift fur Psychologie, 227(4), 237-248\nhttps://doi.org/10.1027/2151-2604/a000387",
+    "crumbs": [
+      "Readings",
+      "3) 7 Steps to Open Science"
+    ]
+  },
+  {
+    "objectID": "readings/03-reading-open-science.html#reflections",
+    "href": "readings/03-reading-open-science.html#reflections",
+    "title": "3) 7 Steps to Open Science",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "crumbs": [
+      "Readings",
+      "3) 7 Steps to Open Science"
+    ]
+  },
+  {
+    "objectID": "readings/05-reading-reinhart-rogoff.html",
+    "href": "readings/05-reading-reinhart-rogoff.html",
+    "title": "5) Irreproducibility Tales 1",
+    "section": "",
+    "text": "Title: The Reinhart-Rogoff Error - or how not to Excel at economics\nAuthor(s): Jonathan Borwein and David H. Bailey\nYear: 2013\nJournal: The Conversation\nhttps://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646\n\n\n\n\nTitle: Does high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff\nAuthors: T. Herndon, M. Ash, R. Pollin\nYear: 2014\nPublication: Political Economy Research Institute\nhttps://peri.umass.edu/wp-content/uploads/joomla/images/WP322.pdf\n\n\n\n\nTitle: Growth in a Time of Debt\nAuthors: Carmen Reinhart and Kenneth Rogoff\nYear: 2010\nPublication: National Bureau of Economic Research (Working Paper)\nhttps://www.nber.org/papers/w15639",
+    "crumbs": [
+      "Readings",
+      "5) Irreproducibility Tales 1"
+    ]
+  },
+  {
+    "objectID": "readings/05-reading-reinhart-rogoff.html#assigned-reading",
+    "href": "readings/05-reading-reinhart-rogoff.html#assigned-reading",
+    "title": "5) Irreproducibility Tales 1",
+    "section": "",
+    "text": "Title: The Reinhart-Rogoff Error - or how not to Excel at economics\nAuthor(s): Jonathan Borwein and David H. Bailey\nYear: 2013\nJournal: The Conversation\nhttps://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646\n\n\n\n\nTitle: Does high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff\nAuthors: T. Herndon, M. Ash, R. Pollin\nYear: 2014\nPublication: Political Economy Research Institute\nhttps://peri.umass.edu/wp-content/uploads/joomla/images/WP322.pdf\n\n\n\n\nTitle: Growth in a Time of Debt\nAuthors: Carmen Reinhart and Kenneth Rogoff\nYear: 2010\nPublication: National Bureau of Economic Research (Working Paper)\nhttps://www.nber.org/papers/w15639",
+    "crumbs": [
+      "Readings",
+      "5) Irreproducibility Tales 1"
+    ]
+  },
+  {
+    "objectID": "readings/05-reading-reinhart-rogoff.html#reflections",
+    "href": "readings/05-reading-reinhart-rogoff.html#reflections",
+    "title": "5) Irreproducibility Tales 1",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following reflections—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "crumbs": [
+      "Readings",
+      "5) Irreproducibility Tales 1"
+    ]
+  },
+  {
+    "objectID": "readings/02-reading-reproducibility-definitions.html",
+    "href": "readings/02-reading-reproducibility-definitions.html",
+    "title": "2) Reproducibility Definitions",
+    "section": "",
+    "text": "Title: Guide for Reproducible Research\nAuthor(s): The Turing Way\nYear: 2024\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://book.the-turing-way.org/reproducible-research",
+    "crumbs": [
+      "Readings",
+      "2) Reproducibility Definitions"
+    ]
+  },
+  {
+    "objectID": "readings/02-reading-reproducibility-definitions.html#assigned-reading",
+    "href": "readings/02-reading-reproducibility-definitions.html#assigned-reading",
+    "title": "2) Reproducibility Definitions",
+    "section": "",
+    "text": "Title: Guide for Reproducible Research\nAuthor(s): The Turing Way\nYear: 2024\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://book.the-turing-way.org/reproducible-research",
+    "crumbs": [
+      "Readings",
+      "2) Reproducibility Definitions"
+    ]
+  },
+  {
+    "objectID": "readings/02-reading-reproducibility-definitions.html#reflections",
+    "href": "readings/02-reading-reproducibility-definitions.html#reflections",
+    "title": "2) Reproducibility Definitions",
+    "section": "Reflections",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore Details TBD",
+    "crumbs": [
+      "Readings",
+      "2) Reproducibility Definitions"
+    ]
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course teaches the why and how of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#description",
+    "href": "syllabus.html#description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course teaches the why and how of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#goals",
+    "href": "syllabus.html#goals",
+    "title": "Syllabus",
+    "section": "Goals",
+    "text": "Goals\nBy the end of the course, students will:\n\nunderstand the issues regarding reproducible research in modern scientific practice, including the definitions of key concepts and the different challenges that exist across disciplines\nunderstand the computational and statistical issues involved with reproducibility\nbe proficient at the Unix commandline\nbe proficient at version control with Git\nbe able to write documents in Markdown or LaTeX (including using pandoc)\nbe able to publish a research compendium with tools like MyST or Quarto",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#prerequisites",
+    "href": "syllabus.html#prerequisites",
+    "title": "Syllabus",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nStatistics 133, 134, 135\nGraduate standing is required to register for Statistics 259.\nWillingness to learn programming languages and software tools independently (tools used will include Unix command lines; git; GitHub; GitHub actions; LaTeX, Markdown, etc)\nWillingness to learn some statistical methodology by reading on one’s own (materials and links will be provided, but not all topics required to do the homework will be covered in lecture).",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#format-and-assessment",
+    "href": "syllabus.html#format-and-assessment",
+    "title": "Syllabus",
+    "section": "Format and assessment",
+    "text": "Format and assessment\nThis is an in-person class with three one-hour lectures each week and one two-hour lab led by a GSI.\nLectures will focus on theory, philosophy of science, foundations of statistics, scientific applications, software engineering, code reviews and group discussion.\nLab will focus on computing, software tools, workflow, and collaboration; a short and easy checkpoint on that lab’s material will occur each session. You must attend the lab section you are officially enrolled in. If this presents significant burden, please reach out to your lab TA.\nFor each assigned reading, you will submit a couple of reflections due on Wednesdays at 10:00PM. During discussion lecture (on Fridays), we will draw upon your reflections for some group discussion.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-culture",
+    "href": "syllabus.html#course-culture",
+    "title": "Syllabus",
+    "section": "Course Culture",
+    "text": "Course Culture\nConsistent class participation is crucial: we will be discussing subtle substantive, technical, and philosophical issues and reviewing code during class. If you cannot attend the lectures synchronously, please do not take the course.\nYou will be interacting with course staff and fellow students in several different environments: in class, in lab, over the discussion forum, and in office hours. Some of these will be in person, some of them will be online, but the same expectations hold: be kind, be respectful, be professional.\nIf you are concerned about classroom environment issues created by other students or course staff, please come talk to us about it.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#textbook",
+    "href": "syllabus.html#textbook",
+    "title": "Syllabus",
+    "section": "Textbook",
+    "text": "Textbook\nThere is no textbook for this course. Instead, the learning materials rely on notes from previous semesters, as well as papers and other resources listed in the slides.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#waitlisted-students-and-late-joining",
+    "href": "syllabus.html#waitlisted-students-and-late-joining",
+    "title": "Syllabus",
+    "section": "Waitlisted Students and Late Joining",
+    "text": "Waitlisted Students and Late Joining\nIf you are on the waiting list or have a pending application or added the course late, you must still do all coursework and complete labs and homework by the deadlines. We will not be offering extensions/exceptions if you are admitted/enrolled into the course later. So it is your responsibility to stay up to date on the assignments.\nUnfortunately, doing all the work is not a guarantee of enrollment. You will only be enrolled if there is space in your lab. Enrollment will proceed by CalCentral.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#office-hours",
+    "href": "syllabus.html#office-hours",
+    "title": "Syllabus",
+    "section": "Office hours",
+    "text": "Office hours\nMe (the instructor) and the GSIs will offer office hours each week across a range of times. Because we are moving from Evans Hall to the Gateway Building, please give us some time to figure out the logistics of OH.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#grading-structure",
+    "href": "syllabus.html#grading-structure",
+    "title": "Syllabus",
+    "section": "Grading Structure",
+    "text": "Grading Structure\nGrades will be assigned using the following weighted components:\n\n8% Reading Checkpoints (drop lowest score)\n7% Reading Reflections (drop lowest score)\n5% Discussion Polls (drop lowest score)\n20% Homework (no drops)\n10% Project 1 (no drop)\n20% Project 2 (no drop)\n30% Project 3 (no drop)\n\n\nIf you are taking the class pass-fail, the cut-oﬀ for passing is 70% (C-).\nAs a matter of course policy, I do not round up when calculating letter grades. Ex: if your overall score is 79.9999%, then the highest letter grade that you can expect is a C+, not a B-.\nThere is no curve; your grade will depend only on how well you do, and not on how well everyone else does.\nWe encourage you to focus on mastering the material, not on your grade. So please do not engage in grade grubbing.\nAlso, please remember that we grade your course performance, not your personal worth.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#reading-assignments",
+    "href": "syllabus.html#reading-assignments",
+    "title": "Syllabus",
+    "section": "Reading Assignments",
+    "text": "Reading Assignments\nThese will be posted on the course website under Readings. For each paper/reading in the weekly list, you will submit a couple of reflections and thoughts. You will submit your reading reflections in bCourses, due on Wednesdays at 10:00 PM.\nIn addition to the reflections, there will also be reading checkpoints. These will be a short set of questions about the assigned reading, and will take place during lab.\nWe will drop your lowest scores—for both the reflections and the checkpoints—in the calculation of your final grade.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#projects",
+    "href": "syllabus.html#projects",
+    "title": "Syllabus",
+    "section": "Projects",
+    "text": "Projects\nThere will be a few projects throughout the semester. You will combine all of the tools and techniques learned as we move along the term.\nBecause projects are the “meat and potatos” of this course, we will not drop any project scores.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#late-policy-and-hw-assignment-extensions",
+    "href": "syllabus.html#late-policy-and-hw-assignment-extensions",
+    "title": "Syllabus",
+    "section": "Late Policy and HW Assignment Extensions",
+    "text": "Late Policy and HW Assignment Extensions\nIf you cannot turn in a HW assignment on time, our default policy is:\n\nSubmissions within 24 hours after the deadline will receive a 15% deduction.\nSubmissions within 48 hours after the deadline will receive a 30% deduction.\nSubmissions that are 48 hours or more after the deadline will receive no credit.\n\nPlease plan ahead and pace yourself. Don’t wait until the last day to do an assignment. Don’t wait until the last minute to submit your assignments.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#ai-tools-policy",
+    "href": "syllabus.html#ai-tools-policy",
+    "title": "Syllabus",
+    "section": "AI Tools policy",
+    "text": "AI Tools policy\nWe strongly encourage you to focus on independent learning and original problem-solving. At the same time, we recognize that generative AI tools are an increasingly standard part of modern workflows. We are not banning AI tools in this course, as doing so is neither realistic nor desirable.\nThis course is designed to help you build fundamental skills, judgment, and deep understanding—outcomes AI cannot achieve for you. Our main goal is to foster transparency and genuine engagement with the material, aligning with the core philosophy of STAT 159/259.\nCore Expectations \n\nDo the thinking yourself. Use AI to support your learning, not replace it. If a tool handles the core reasoning, drafting, or problem-solving while you merely copy and submit the output, you are missing out on learning the material.\nDisclose your usage. If you use AI tools on an assignment—whether for brainstorming, debugging code, editing text, checking work, or drafting—you must state so explicitly. A short note on your assignment is sufficient: include the tool and version used (e.g., Claude 3.5 Sonnet, ChatGPT-4o), what you used it for, the primary prompts used, and where it was applied.\n\n\nWhy this matters: Transparency aligns directly with the collaborative and reproducible data science practices central to this course. Openly documenting how work was produced ensures your workflow can be evaluated and built upon by others.\n\n\nUnderstand everything you submit. You are fully accountable for all submitted work. If you include AI-generated code, text, or figures, you must be able to explain, defend, and walk through them as if you created them entirely yourself. If you cannot explain a line of code or a specific claim, do not submit it.\nViolations of the course AI policy:\n\nUndisclosed AI Use: Submitting AI-assisted or AI-generated work without clear disclosure.\nLack of Comprehension: Submitting AI-generated work that you cannot explain, defend, or demonstrate understanding of when asked.\n\n\nThe ultimate objective of this course isn’t just to produce correct answers; it is to build critical thinking, master modern tools, and communicate complex ideas clearly. Using AI responsibly and transparently is part of developing those professional skills.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#code-of-conduct-attribution-of-work",
+    "href": "syllabus.html#code-of-conduct-attribution-of-work",
+    "title": "Syllabus",
+    "section": "Code of Conduct; attribution of work",
+    "text": "Code of Conduct; attribution of work\nThe high academic standard at the University of California, Berkeley, is reflected in each degree awarded. Every student is expected to maintain this high standard by ensuring that all academic work reflects unique ideas or properly attributes the ideas to the original sources.\nThese are some basic expectations of students with regards to academic integrity: Any work submitted should be your own individual thoughts, and should not have been submitted for credit in another course unless you have prior written permission to re-use it in this course from this instructor.\nAll assignments must use “proper attribution,” meaning that you have identified the original source and extent or words or ideas that you reproduce or use in your assignment. This includes drafts and homework assignments! If you are unclear about expectations, ask your instructor.\nDo not collaborate or work with other students on assignments or projects unless the instructor gives you permission or instruction to do so.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#disability-accommodations",
+    "href": "syllabus.html#disability-accommodations",
+    "title": "Syllabus",
+    "section": "Disability Accommodations",
+    "text": "Disability Accommodations\nIf you need an accommodation for a disability, or if you have information you wish to share with the instructor about a medical emergency, please inform the instructor as soon as possible.\nIf you are not currently listed with DSP (the Disabled Students’ Program) and believe you might benefit from their support, please apply online at https://dsp.berkeley.edu.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
     "objectID": "lectures/01-welcome/01-welcome-slides.html#welcome-to-stat-159259",
     "href": "lectures/01-welcome/01-welcome-slides.html#welcome-to-stat-159259",
     "title": "Welcome to STAT 159-259",
@@ -215,514 +969,5 @@
     "title": "Welcome to STAT 159-259",
     "section": "tinyurl.com/dc4f3swk",
     "text": "tinyurl.com/dc4f3swk\nIntro Survey reminder"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course teaches the why and how of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#description",
-    "href": "syllabus.html#description",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course teaches the why and how of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#goals",
-    "href": "syllabus.html#goals",
-    "title": "Syllabus",
-    "section": "Goals",
-    "text": "Goals\nBy the end of the course, students will:\n\nunderstand the issues regarding reproducible research in modern scientific practice, including the definitions of key concepts and the different challenges that exist across disciplines\nunderstand the computational and statistical issues involved with reproducibility\nbe proficient at the Unix commandline\nbe proficient at version control with Git\nbe able to write documents in Markdown or LaTeX (including using pandoc)\nbe able to publish a research compendium with tools like MyST or Quarto",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#prerequisites",
-    "href": "syllabus.html#prerequisites",
-    "title": "Syllabus",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nStatistics 133, 134, 135\nGraduate standing is required to register for Statistics 259.\nWillingness to learn programming languages and software tools independently (tools used will include Unix command lines; git; GitHub; GitHub actions; LaTeX, Markdown, etc)\nWillingness to learn some statistical methodology by reading on one’s own (materials and links will be provided, but not all topics required to do the homework will be covered in lecture).",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#format-and-assessment",
-    "href": "syllabus.html#format-and-assessment",
-    "title": "Syllabus",
-    "section": "Format and assessment",
-    "text": "Format and assessment\nThis is an in-person class with three one-hour lectures each week and one two-hour lab led by a GSI.\nLectures will focus on theory, philosophy of science, foundations of statistics, scientific applications, software engineering, code reviews and group discussion.\nLab will focus on computing, software tools, workflow, and collaboration; a short and easy checkpoint on that lab’s material will occur each session. You must attend the lab section you are officially enrolled in. If this presents significant burden, please reach out to your lab TA.\nFor each assigned reading, you will submit a couple of reflections due on Wednesdays at 10:00PM. During discussion lecture (on Fridays), we will draw upon your reflections for some group discussion.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#course-culture",
-    "href": "syllabus.html#course-culture",
-    "title": "Syllabus",
-    "section": "Course Culture",
-    "text": "Course Culture\nConsistent class participation is crucial: we will be discussing subtle substantive, technical, and philosophical issues and reviewing code during class. If you cannot attend the lectures synchronously, please do not take the course.\nYou will be interacting with course staff and fellow students in several different environments: in class, in lab, over the discussion forum, and in office hours. Some of these will be in person, some of them will be online, but the same expectations hold: be kind, be respectful, be professional.\nIf you are concerned about classroom environment issues created by other students or course staff, please come talk to us about it.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#textbook",
-    "href": "syllabus.html#textbook",
-    "title": "Syllabus",
-    "section": "Textbook",
-    "text": "Textbook\nThere is no textbook for this course. Instead, the learning materials rely on notes from previous semesters, as well as papers and other resources listed in the slides.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#waitlisted-students-and-late-joining",
-    "href": "syllabus.html#waitlisted-students-and-late-joining",
-    "title": "Syllabus",
-    "section": "Waitlisted Students and Late Joining",
-    "text": "Waitlisted Students and Late Joining\nIf you are on the waiting list or have a pending application or added the course late, you must still do all coursework and complete labs and homework by the deadlines. We will not be offering extensions/exceptions if you are admitted/enrolled into the course later. So it is your responsibility to stay up to date on the assignments.\nUnfortunately, doing all the work is not a guarantee of enrollment. You will only be enrolled if there is space in your lab. Enrollment will proceed by CalCentral.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#office-hours",
-    "href": "syllabus.html#office-hours",
-    "title": "Syllabus",
-    "section": "Office hours",
-    "text": "Office hours\nMe (the instructor) and the GSIs will offer office hours each week across a range of times. Because we are moving from Evans Hall to the Gateway Building, please give us some time to figure out the logistics of OH.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#grading-structure",
-    "href": "syllabus.html#grading-structure",
-    "title": "Syllabus",
-    "section": "Grading Structure",
-    "text": "Grading Structure\nGrades will be assigned using the following weighted components:\n\n8% Reading Checkpoints (drop lowest score)\n7% Reading Reflections (drop lowest score)\n5% Discussion Polls (drop lowest score)\n20% Homework (no drops)\n10% Project 1 (no drop)\n20% Project 2 (no drop)\n30% Project 3 (no drop)\n\n\nIf you are taking the class pass-fail, the cut-oﬀ for passing is 70% (C-).\nAs a matter of course policy, I do not round up when calculating letter grades. Ex: if your overall score is 79.9999%, then the highest letter grade that you can expect is a C+, not a B-.\nThere is no curve; your grade will depend only on how well you do, and not on how well everyone else does.\nWe encourage you to focus on mastering the material, not on your grade. So please do not engage in grade grubbing.\nAlso, please remember that we grade your course performance, not your personal worth.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#reading-assignments",
-    "href": "syllabus.html#reading-assignments",
-    "title": "Syllabus",
-    "section": "Reading Assignments",
-    "text": "Reading Assignments\nThese will be posted on the course website under Readings. For each paper/reading in the weekly list, you will submit a couple of reflections and thoughts. You will submit your reading reflections in bCourses, due on Wednesdays at 10:00 PM.\nIn addition to the reflections, there will also be reading checkpoints. These will be a short set of questions about the assigned reading, and will take place during lab.\nWe will drop your lowest scores—for both the reflections and the checkpoints—in the calculation of your final grade.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#projects",
-    "href": "syllabus.html#projects",
-    "title": "Syllabus",
-    "section": "Projects",
-    "text": "Projects\nThere will be a few projects throughout the semester. You will combine all of the tools and techniques learned as we move along the term.\nBecause projects are the “meat and potatos” of this course, we will not drop any project scores.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#late-policy-and-hw-assignment-extensions",
-    "href": "syllabus.html#late-policy-and-hw-assignment-extensions",
-    "title": "Syllabus",
-    "section": "Late Policy and HW Assignment Extensions",
-    "text": "Late Policy and HW Assignment Extensions\nIf you cannot turn in a HW assignment on time, our default policy is:\n\nSubmissions within 24 hours after the deadline will receive a 15% deduction.\nSubmissions within 48 hours after the deadline will receive a 30% deduction.\nSubmissions that are 48 hours or more after the deadline will receive no credit.\n\nPlease plan ahead and pace yourself. Don’t wait until the last day to do an assignment. Don’t wait until the last minute to submit your assignments.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#ai-tools-policy",
-    "href": "syllabus.html#ai-tools-policy",
-    "title": "Syllabus",
-    "section": "AI Tools policy",
-    "text": "AI Tools policy\nWe strongly encourage you to focus on independent learning and original problem-solving. At the same time, we recognize that generative AI tools are an increasingly standard part of modern workflows. We are not banning AI tools in this course, as doing so is neither realistic nor desirable.\nThis course is designed to help you build fundamental skills, judgment, and deep understanding—outcomes AI cannot achieve for you. Our main goal is to foster transparency and genuine engagement with the material, aligning with the core philosophy of STAT 159/259.\nCore Expectations \n\nDo the thinking yourself. Use AI to support your learning, not replace it. If a tool handles the core reasoning, drafting, or problem-solving while you merely copy and submit the output, you are missing out on learning the material.\nDisclose your usage. If you use AI tools on an assignment—whether for brainstorming, debugging code, editing text, checking work, or drafting—you must state so explicitly. A short note on your assignment is sufficient: include the tool and version used (e.g., Claude 3.5 Sonnet, ChatGPT-4o), what you used it for, the primary prompts used, and where it was applied.\n\n\nWhy this matters: Transparency aligns directly with the collaborative and reproducible data science practices central to this course. Openly documenting how work was produced ensures your workflow can be evaluated and built upon by others.\n\n\nUnderstand everything you submit. You are fully accountable for all submitted work. If you include AI-generated code, text, or figures, you must be able to explain, defend, and walk through them as if you created them entirely yourself. If you cannot explain a line of code or a specific claim, do not submit it.\nViolations of the course AI policy:\n\nUndisclosed AI Use: Submitting AI-assisted or AI-generated work without clear disclosure.\nLack of Comprehension: Submitting AI-generated work that you cannot explain, defend, or demonstrate understanding of when asked.\n\n\nThe ultimate objective of this course isn’t just to produce correct answers; it is to build critical thinking, master modern tools, and communicate complex ideas clearly. Using AI responsibly and transparently is part of developing those professional skills.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#code-of-conduct-attribution-of-work",
-    "href": "syllabus.html#code-of-conduct-attribution-of-work",
-    "title": "Syllabus",
-    "section": "Code of Conduct; attribution of work",
-    "text": "Code of Conduct; attribution of work\nThe high academic standard at the University of California, Berkeley, is reflected in each degree awarded. Every student is expected to maintain this high standard by ensuring that all academic work reflects unique ideas or properly attributes the ideas to the original sources.\nThese are some basic expectations of students with regards to academic integrity: Any work submitted should be your own individual thoughts, and should not have been submitted for credit in another course unless you have prior written permission to re-use it in this course from this instructor.\nAll assignments must use “proper attribution,” meaning that you have identified the original source and extent or words or ideas that you reproduce or use in your assignment. This includes drafts and homework assignments! If you are unclear about expectations, ask your instructor.\nDo not collaborate or work with other students on assignments or projects unless the instructor gives you permission or instruction to do so.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#disability-accommodations",
-    "href": "syllabus.html#disability-accommodations",
-    "title": "Syllabus",
-    "section": "Disability Accommodations",
-    "text": "Disability Accommodations\nIf you need an accommodation for a disability, or if you have information you wish to share with the instructor about a medical emergency, please inform the instructor as soon as possible.\nIf you are not currently listed with DSP (the Disabled Students’ Program) and believe you might benefit from their support, please apply online at https://dsp.berkeley.edu.",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "readings/02-reading-reproducibility-definitions.html",
-    "href": "readings/02-reading-reproducibility-definitions.html",
-    "title": "2) Reproducibility Definitions",
-    "section": "",
-    "text": "Title: Guide for Reproducible Research\nAuthor(s): The Turing Way\nYear: 2024\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://book.the-turing-way.org/reproducible-research",
-    "crumbs": [
-      "Readings",
-      "2) Reproducibility Definitions"
-    ]
-  },
-  {
-    "objectID": "readings/02-reading-reproducibility-definitions.html#assigned-reading",
-    "href": "readings/02-reading-reproducibility-definitions.html#assigned-reading",
-    "title": "2) Reproducibility Definitions",
-    "section": "",
-    "text": "Title: Guide for Reproducible Research\nAuthor(s): The Turing Way\nYear: 2024\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://book.the-turing-way.org/reproducible-research",
-    "crumbs": [
-      "Readings",
-      "2) Reproducibility Definitions"
-    ]
-  },
-  {
-    "objectID": "readings/02-reading-reproducibility-definitions.html#reflections",
-    "href": "readings/02-reading-reproducibility-definitions.html#reflections",
-    "title": "2) Reproducibility Definitions",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore Details TBD",
-    "crumbs": [
-      "Readings",
-      "2) Reproducibility Definitions"
-    ]
-  },
-  {
-    "objectID": "readings/05-reading-reinhart-rogoff.html",
-    "href": "readings/05-reading-reinhart-rogoff.html",
-    "title": "5) Irreproducibility Tales 1",
-    "section": "",
-    "text": "Title: The Reinhart-Rogoff Error - or how not to Excel at economics\nAuthor(s): Jonathan Borwein and David H. Bailey\nYear: 2013\nJournal: The Conversation\nhttps://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646\n\n\n\n\nTitle: Does high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff\nAuthors: T. Herndon, M. Ash, R. Pollin\nYear: 2014\nPublication: Political Economy Research Institute\nhttps://peri.umass.edu/wp-content/uploads/joomla/images/WP322.pdf\n\n\n\n\nTitle: Growth in a Time of Debt\nAuthors: Carmen Reinhart and Kenneth Rogoff\nYear: 2010\nPublication: National Bureau of Economic Research (Working Paper)\nhttps://www.nber.org/papers/w15639",
-    "crumbs": [
-      "Readings",
-      "5) Irreproducibility Tales 1"
-    ]
-  },
-  {
-    "objectID": "readings/05-reading-reinhart-rogoff.html#assigned-reading",
-    "href": "readings/05-reading-reinhart-rogoff.html#assigned-reading",
-    "title": "5) Irreproducibility Tales 1",
-    "section": "",
-    "text": "Title: The Reinhart-Rogoff Error - or how not to Excel at economics\nAuthor(s): Jonathan Borwein and David H. Bailey\nYear: 2013\nJournal: The Conversation\nhttps://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646\n\n\n\n\nTitle: Does high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff\nAuthors: T. Herndon, M. Ash, R. Pollin\nYear: 2014\nPublication: Political Economy Research Institute\nhttps://peri.umass.edu/wp-content/uploads/joomla/images/WP322.pdf\n\n\n\n\nTitle: Growth in a Time of Debt\nAuthors: Carmen Reinhart and Kenneth Rogoff\nYear: 2010\nPublication: National Bureau of Economic Research (Working Paper)\nhttps://www.nber.org/papers/w15639",
-    "crumbs": [
-      "Readings",
-      "5) Irreproducibility Tales 1"
-    ]
-  },
-  {
-    "objectID": "readings/05-reading-reinhart-rogoff.html#reflections",
-    "href": "readings/05-reading-reinhart-rogoff.html#reflections",
-    "title": "5) Irreproducibility Tales 1",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following reflections—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
-    "crumbs": [
-      "Readings",
-      "5) Irreproducibility Tales 1"
-    ]
-  },
-  {
-    "objectID": "readings/03-reading-open-science.html",
-    "href": "readings/03-reading-open-science.html",
-    "title": "3) 7 Steps to Open Science",
-    "section": "",
-    "text": "Title: Seven Easy Steps to Open Science (An annotated reading list)\nAuthor(s): Sophia Cruwell et al.\nYear: 2019\nJournal: Zeitschrift fur Psychologie, 227(4), 237-248\nhttps://doi.org/10.1027/2151-2604/a000387",
-    "crumbs": [
-      "Readings",
-      "3) 7 Steps to Open Science"
-    ]
-  },
-  {
-    "objectID": "readings/03-reading-open-science.html#assigned-reading",
-    "href": "readings/03-reading-open-science.html#assigned-reading",
-    "title": "3) 7 Steps to Open Science",
-    "section": "",
-    "text": "Title: Seven Easy Steps to Open Science (An annotated reading list)\nAuthor(s): Sophia Cruwell et al.\nYear: 2019\nJournal: Zeitschrift fur Psychologie, 227(4), 237-248\nhttps://doi.org/10.1027/2151-2604/a000387",
-    "crumbs": [
-      "Readings",
-      "3) 7 Steps to Open Science"
-    ]
-  },
-  {
-    "objectID": "readings/03-reading-open-science.html#reflections",
-    "href": "readings/03-reading-open-science.html#reflections",
-    "title": "3) 7 Steps to Open Science",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
-    "crumbs": [
-      "Readings",
-      "3) 7 Steps to Open Science"
-    ]
-  },
-  {
-    "objectID": "readings/07-reading-share-code.html",
-    "href": "readings/07-reading-share-code.html",
-    "title": "7) Share Your Code",
-    "section": "",
-    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2011\nJournal: Nature 467, 753\ndoi:10.1038/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2011\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
-    "crumbs": [
-      "Readings",
-      "7) Share Your Code"
-    ]
-  },
-  {
-    "objectID": "readings/07-reading-share-code.html#assigned-readings",
-    "href": "readings/07-reading-share-code.html#assigned-readings",
-    "title": "7) Share Your Code",
-    "section": "",
-    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2011\nJournal: Nature 467, 753\ndoi:10.1038/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2011\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
-    "crumbs": [
-      "Readings",
-      "7) Share Your Code"
-    ]
-  },
-  {
-    "objectID": "readings/07-reading-share-code.html#reflections",
-    "href": "readings/07-reading-share-code.html#reflections",
-    "title": "7) Share Your Code",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMode details TBD",
-    "crumbs": [
-      "Readings",
-      "7) Share Your Code"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This course teaches the why and how of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment.\n\n\n\n\n\n\nInfo\n\n\n\nInstructor: Gaston Sanchez\nGSIs:\n\nSequoia Andrade\nLarissa Arreola Moreno\n\nLecture: MWF 10am-11am in North Gate 105\nLab:\n\nLab 101, Tu 12pm-2pm, Gateway Building B1012 (GSI Larissa)\nLab 102, Tu 4pm-6pm, Gateway Building B1012 (GSI Larissa)\nLab 103, Tu 11am-1pm, Hildebrand B56 (GSI Sequoia)\n\nCode #: 21202\nUnits: 4\nDates: Aug-25/Dec-18",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STAT 159/259: Collaborative and Reproducible Statistical Data Science",
-    "section": "",
-    "text": "bCourses\n\n  Ed\n\n  DataHub\n\nNo matching items",
-    "crumbs": [
-      "Home / Schedule"
-    ]
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "STAT 159/259: Collaborative and Reproducible Statistical Data Science",
-    "section": "Schedule 📅",
-    "text": "Schedule 📅\nTentative calendar subject to change.\n\nWeek 1\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Aug 26\n             \n             \n               Lecture  Welcome to Stat 159\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Aug 28\n             \n             \n               Lecture  Naming Files\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 2\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Aug 31\n             \n             \n               Lecture  File Paths & Unix Terminal\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 01\n             \n             \n               Lab  Shell Commands\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 02\n             \n             \n               Lecture  Project Organization\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Ten Simple Rules for RCR (due 9/09)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 04\n             \n             \n               Lecture  Intro to Git (part I)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  HW1 TBA (due 9/18)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 3\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 07\n             \n             \n               No-Class  Academic Holiday (no class)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 08\n             \n             \n               Lab  Getting Started with Git\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 09\n             \n             \n               Lecture  Intro to Git (part II)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Guide for Reproducible Research (due 9/16)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 11\n             \n             \n               Lecture  Discussion Reading 1\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 4\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 14\n             \n             \n               Lecture  Git Branching\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 15\n             \n             \n               Lab  Getting started with Git branches\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 16\n             \n             \n               Lecture  Case Study: Global Temperature\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  7 Easy Steps to Open Science (due 9/23)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 18\n             \n             \n               Lecture  Discussion Reading 2\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  Project 1 TBA (due 10/2)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 5\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 21\n             \n             \n               Lecture  Git Remotes\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 22\n             \n             \n               Lab  Github and remote repos\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 23\n             \n             \n               Lecture  Undoing changes in Git\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Data Science at the Singularity (due 9/30)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 25\n             \n             \n               Lecture  Discussion Reading 3\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 6\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 28\n             \n             \n               Lecture  Intro to Make (part 1)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 29\n             \n             \n               Lab  Getting started with Make\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Sep 30\n             \n             \n               Lecture  Intro to Make (part 2)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  The Reinhart-Rogoff Fiasco (due 10/07)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 02\n             \n             \n               Lecture  Discussion Reading 4\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  HW2 TBA (due 10/16)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 7\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 05\n             \n             \n               Lecture  Variables in Make\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 06\n             \n             \n               Lab  More automation with Make\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 07\n             \n             \n               Lecture  More Make (part 2)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  The Duke Trials Retraction (due 10/14)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 09\n             \n             \n               Lecture  Discussion Reading 5\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 8\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 12\n             \n             \n               Lecture  Git Collaborative workflows\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 13\n             \n             \n               Lab  Working in groups in Github\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 14\n             \n             \n               Lecture  Handling and Sharing Data\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 16\n             \n             \n               Lecture  Discussion Reading 6\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  Project 2 TBA (due 10/30)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 9\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 19\n             \n             \n               Lecture  Writing Clear Code\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 20\n             \n             \n               Lab  Hands on sharing and managing data\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 21\n             \n             \n               Lecture  Packaging Code (I)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Share Your Code (due 10/28)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 23\n             \n             \n               Lecture  Packaging Code (II)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 10\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 26\n             \n             \n               Lecture  Packaging Code (III)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 27\n             \n             \n               Lab  Documenting your code\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 28\n             \n             \n               Lecture  Environment Mgmt\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  RR Legal Framework (due 11/04)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Oct 30\n             \n             \n               Lecture  Discussion Reading 7\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  HW-3 TBA (due 11/13)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 11\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 02\n             \n             \n               Lecture  Environment Management (part 1)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 03\n             \n             \n               Lab  Managing environments\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 04\n             \n             \n               Lecture  Licenses\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Rules for Better Figures (due 11/11)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 06\n             \n             \n               Lecture  Discussion Reading 8\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 12\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 09\n             \n             \n               Lecture  Images, Figures and Graphics\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 10\n             \n             \n               Lab  Handling images and figures\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 11\n             \n             \n               No-Class  Academic holiday (no class)\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Reading  Research Compendium (due 11/18)\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 13\n             \n             \n               Lecture  Discussion Reading 9\n             \n             \n                \n             \n                \n             \n          \n  \n  \n  \n             \n             \n             \n               Homework  Project 3 TBA (due 12/07)\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 13\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 16\n             \n             \n               Lecture  Research Compendium\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 17\n             \n             \n               Lab  TBA\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 18\n             \n             \n               Lecture  Discussion Reading 10\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 20\n             \n             \n               Lecture  Publishing & Communication I\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 14\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 23\n             \n             \n               Lecture  Publishing & Communication II\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 24\n             \n             \n               Lab  Final project status\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 25\n             \n             \n               No-Class  Thanksgiving break\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 27\n             \n             \n               No-Class  Thanksgiving break\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 15\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Nov 30\n             \n             \n               Lecture  TBA\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 01\n             \n             \n               Lab  Wrap-Up Final Project\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 02\n             \n             \n               Lecture  TBA\n             \n             \n                \n             \n                \n             \n          \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 04\n             \n             \n               Lecture  Closing Talk\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 16\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 07\n             \n             \n               Overview  RRR Week\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \n  \n\n   Week 17\n\n   \n   \n   \n   \n   \n     \n  \n          \n  \n  \n  \n             \n             \n             Dec 14\n             \n             \n               Final  Final Project\n             \n             \n                \n             \n                \n             \n          \n     \n     \n  \n   \nNo matching items",
-    "crumbs": [
-      "Home / Schedule"
-    ]
-  },
-  {
-    "objectID": "readings/06-reading-duke-trials.html",
-    "href": "readings/06-reading-duke-trials.html",
-    "title": "6) Irreproducibility Tales 2",
-    "section": "",
-    "text": "Title: Forensic Bioinformatics: Investigating Reproducibility of Results\nAuthor(s): Teresa Melcher\nYear: 2011\nJournal: Science Editor\nhttps://www.csescienceeditor.org/article/forensic-bioinformatics-investigating-reproducibility-of-results/\n\n\n\n\nTitle: Duke Clinical Trials - 60 Minutes\nAuthors: 60 Minutes\nYear: 2012\nType: YouTube video\nhttps://www.youtube.com/watch?v=W5sZTNPMQRM&ab_channel=HensonFuerst\n\n\n\n\nTitle: The Importance of Reproducible Research in High-Throughput Biology\nAuthors: Keith Baggerly\nYear: 2024\nType: IGCT Workshops. 5.\nhttps://openworks.mdanderson.org/igct_workshops/5/",
-    "crumbs": [
-      "Readings",
-      "6) Irreproducibility Tales 2"
-    ]
-  },
-  {
-    "objectID": "readings/06-reading-duke-trials.html#assigned-reading",
-    "href": "readings/06-reading-duke-trials.html#assigned-reading",
-    "title": "6) Irreproducibility Tales 2",
-    "section": "",
-    "text": "Title: Forensic Bioinformatics: Investigating Reproducibility of Results\nAuthor(s): Teresa Melcher\nYear: 2011\nJournal: Science Editor\nhttps://www.csescienceeditor.org/article/forensic-bioinformatics-investigating-reproducibility-of-results/\n\n\n\n\nTitle: Duke Clinical Trials - 60 Minutes\nAuthors: 60 Minutes\nYear: 2012\nType: YouTube video\nhttps://www.youtube.com/watch?v=W5sZTNPMQRM&ab_channel=HensonFuerst\n\n\n\n\nTitle: The Importance of Reproducible Research in High-Throughput Biology\nAuthors: Keith Baggerly\nYear: 2024\nType: IGCT Workshops. 5.\nhttps://openworks.mdanderson.org/igct_workshops/5/",
-    "crumbs": [
-      "Readings",
-      "6) Irreproducibility Tales 2"
-    ]
-  },
-  {
-    "objectID": "readings/06-reading-duke-trials.html#reflections",
-    "href": "readings/06-reading-duke-trials.html#reflections",
-    "title": "6) Irreproducibility Tales 2",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following reflections—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
-    "crumbs": [
-      "Readings",
-      "6) Irreproducibility Tales 2"
-    ]
-  },
-  {
-    "objectID": "readings/01-reading-10-rules-rcr.html",
-    "href": "readings/01-reading-10-rules-rcr.html",
-    "title": "1) 10 Rules for RCR",
-    "section": "",
-    "text": "Title: Ten Simple Rules for Reproducible Computational Research\nAuthor(s): Sandve G.K., Nekrutenki A., Taylor J., Hovig E.\nYear: 2013\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://doi.org/10.1371/journal.pcbi.1003285",
-    "crumbs": [
-      "Readings",
-      "1) 10 Rules for RCR"
-    ]
-  },
-  {
-    "objectID": "readings/01-reading-10-rules-rcr.html#assigned-reading",
-    "href": "readings/01-reading-10-rules-rcr.html#assigned-reading",
-    "title": "1) 10 Rules for RCR",
-    "section": "",
-    "text": "Title: Ten Simple Rules for Reproducible Computational Research\nAuthor(s): Sandve G.K., Nekrutenki A., Taylor J., Hovig E.\nYear: 2013\nJournal: PLOS Computational Biology 9(10): e1003285\nhttps://doi.org/10.1371/journal.pcbi.1003285",
-    "crumbs": [
-      "Readings",
-      "1) 10 Rules for RCR"
-    ]
-  },
-  {
-    "objectID": "readings/01-reading-10-rules-rcr.html#reflections",
-    "href": "readings/01-reading-10-rules-rcr.html#reflections",
-    "title": "1) 10 Rules for RCR",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
-    "crumbs": [
-      "Readings",
-      "1) 10 Rules for RCR"
-    ]
-  },
-  {
-    "objectID": "readings/09-reading-better-figures.html",
-    "href": "readings/09-reading-better-figures.html",
-    "title": "9) Better Figures",
-    "section": "",
-    "text": "Title: Ten Simple Rules for Better Figures\nAuthor(s): Rougier N., Droettboom M., Bourne P.\nYear: 2014\nJournal: PLOS Computational Biology\nhttps://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833\ndoi:10.1371/journal.pcbi.1003833",
-    "crumbs": [
-      "Readings",
-      "9) Better Figures"
-    ]
-  },
-  {
-    "objectID": "readings/09-reading-better-figures.html#assigned-readings",
-    "href": "readings/09-reading-better-figures.html#assigned-readings",
-    "title": "9) Better Figures",
-    "section": "",
-    "text": "Title: Ten Simple Rules for Better Figures\nAuthor(s): Rougier N., Droettboom M., Bourne P.\nYear: 2014\nJournal: PLOS Computational Biology\nhttps://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833\ndoi:10.1371/journal.pcbi.1003833",
-    "crumbs": [
-      "Readings",
-      "9) Better Figures"
-    ]
-  },
-  {
-    "objectID": "readings/09-reading-better-figures.html#reflections",
-    "href": "readings/09-reading-better-figures.html#reflections",
-    "title": "9) Better Figures",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
-    "crumbs": [
-      "Readings",
-      "9) Better Figures"
-    ]
-  },
-  {
-    "objectID": "readings/08-reading-legal-framework.html",
-    "href": "readings/08-reading-legal-framework.html",
-    "title": "8) RR Legal Framework",
-    "section": "",
-    "text": "Title: The Legal Framework for Reproducible Scientific Research (Licensing and Copyright)\nAuthor(s): Victoria Stodden\nYear: 2009\nJournal: Computing in Science & Engineering\ndoi:10.1038/467753a",
-    "crumbs": [
-      "Readings",
-      "8) RR Legal Framework"
-    ]
-  },
-  {
-    "objectID": "readings/08-reading-legal-framework.html#assigned-readings",
-    "href": "readings/08-reading-legal-framework.html#assigned-readings",
-    "title": "8) RR Legal Framework",
-    "section": "",
-    "text": "Title: The Legal Framework for Reproducible Scientific Research (Licensing and Copyright)\nAuthor(s): Victoria Stodden\nYear: 2009\nJournal: Computing in Science & Engineering\ndoi:10.1038/467753a",
-    "crumbs": [
-      "Readings",
-      "8) RR Legal Framework"
-    ]
-  },
-  {
-    "objectID": "readings/08-reading-legal-framework.html#reflections",
-    "href": "readings/08-reading-legal-framework.html#reflections",
-    "title": "8) RR Legal Framework",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
-    "crumbs": [
-      "Readings",
-      "8) RR Legal Framework"
-    ]
-  },
-  {
-    "objectID": "readings/04-reading-ds-singularity.html",
-    "href": "readings/04-reading-ds-singularity.html",
-    "title": "4) Data Science at the Singularity",
-    "section": "",
-    "text": "Title: Data Science at the Singularity\nAuthor(s): David Donoho\nYear: 2024\nJournal: Harvard Data Science Review, 6(1)\nDOI: https://doi.org/10.1162/99608f92.b91339ef\nhttps://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2",
-    "crumbs": [
-      "Readings",
-      "4) Data Science at the Singularity"
-    ]
-  },
-  {
-    "objectID": "readings/04-reading-ds-singularity.html#assigned-reading",
-    "href": "readings/04-reading-ds-singularity.html#assigned-reading",
-    "title": "4) Data Science at the Singularity",
-    "section": "",
-    "text": "Title: Data Science at the Singularity\nAuthor(s): David Donoho\nYear: 2024\nJournal: Harvard Data Science Review, 6(1)\nDOI: https://doi.org/10.1162/99608f92.b91339ef\nhttps://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2",
-    "crumbs": [
-      "Readings",
-      "4) Data Science at the Singularity"
-    ]
-  },
-  {
-    "objectID": "readings/04-reading-ds-singularity.html#reflections",
-    "href": "readings/04-reading-ds-singularity.html#reflections",
-    "title": "4) Data Science at the Singularity",
-    "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
-    "crumbs": [
-      "Readings",
-      "4) Data Science at the Singularity"
-    ]
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "License",
-    "section": "",
-    "text": "Creative Commons Attribution 4.0 International\nThis work is licensed under CC BY 4.0\n\n\n\nShare: copy and redistribute the material in any medium or format.\nAdapt: remix, transform, and build upon the material.\nThe licensor cannot revoke these freedoms as long as you follow the license terms.\n\n\n\n\n\nAttribution: You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n\nFor more information, see CC BY 4.0",
-    "crumbs": [
-      "Other",
-      "License"
-    ]
-  },
-  {
-    "objectID": "license.html#cc-by-4.0",
-    "href": "license.html#cc-by-4.0",
-    "title": "License",
-    "section": "",
-    "text": "Creative Commons Attribution 4.0 International\nThis work is licensed under CC BY 4.0\n\n\n\nShare: copy and redistribute the material in any medium or format.\nAdapt: remix, transform, and build upon the material.\nThe licensor cannot revoke these freedoms as long as you follow the license terms.\n\n\n\n\n\nAttribution: You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n\nFor more information, see CC BY 4.0",
-    "crumbs": [
-      "Other",
-      "License"
-    ]
   }
 ]
