@@ -11,7 +11,7 @@
         - type: "Lecture"
           id: ""
           name: "Naming Files"
-          href: ""
+          href: "lectures/02-files/02-files-slides.html"
 - week: 2
   days:
     - date: "Aug 31"
