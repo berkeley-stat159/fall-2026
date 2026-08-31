@@ -843,7 +843,18 @@
     "href": "readings/01-reading-10-rules-rcr.html#reflections",
     "title": "1) 10 Rules for RCR",
     "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\n\n1. Manual Tweaks\nThink of a time you were rushing to meet a project deadline and chose a quick manual fix over writing a script.\n\nDescribe a scenario where you used “copy-paste” to format data, or manually tweaked a file to make it compatible with a tool.\nHow did bypassing an automated workflow make it harder to catch bugs later?\nIf you had to scale that project to 1,000 files, explain exactly where your manual method would completely break down.\n\n\n\n2. Same script, different outputs\nIdentify a past project where running the exact same script twice yielded slightly different outputs, or where a small change broke everything.\n\nDetail a case where you failed to set a random seed, leaving you unable to duplicate your exact figures.\nDid you lose a functional version of your script because you were not using a version control system like Git?\nConfess how much time you wasted trying to manually backtrack your code to a working state.\n\n\n\n3. Disconnected Elements\nReview a final report or paper you wrote for a previous class. Look at a specific chart or data claim you made.\n\nWhere exactly is the raw underlying data for that specific chart stored right now?\nCite a case where your written conclusions lived in a text document, completely disconnected from the server paths or scripts that generated the data.\nHow long would it take a peer to trace your text back to its exact baseline numbers?",
+    "crumbs": [
+      "Readings",
+      "1) 10 Rules for RCR"
+    ]
+  },
+  {
+    "objectID": "readings/01-reading-10-rules-rcr.html#rubric",
+    "href": "readings/01-reading-10-rules-rcr.html#rubric",
+    "title": "1) 10 Rules for RCR",
+    "section": "Rubric",
+    "text": "Rubric\n\n\n\n\n\n\nImportant\n\n\n\nGeneric responses that do not mention a specific past assignment name or unique piece of code from your own experience will receive a score of zero.\n\n\n\nFull Credit (3 Points): Response is highly specific, names unique personal or localized constraints, and explicitly connects the personal experience back to the prompt in each question. Clearly written by a human.\nPartial Credit (1-2 Points): Response is correct but uses vague or generic examples (e.g., “I lost a file once” instead of naming the script). Sounds like a generic summary an AI could have written.\nNo Credit (0 Points): Response relies entirely on abstract definitions, fails to provide personal context, or uses copy-pasted text from a webpage or AI tool.",
     "crumbs": [
       "Readings",
       "1) 10 Rules for RCR"
