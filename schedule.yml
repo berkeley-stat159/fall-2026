@@ -19,7 +19,7 @@
         - type: "Lecture"
           id: ""
           name: "File Paths & Unix Terminal"
-          href: ""
+          href: "lectures/03-unix1/03-unix1-slides.html"
     - date: "Sep 01"
       items:
         - type: "Lab"
