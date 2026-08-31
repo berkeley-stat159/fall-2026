@@ -16,9 +16,9 @@ listing:
 
 
 ::: {.callout-note title="Announcements 📣"}
-First day of class Wed, Aug-26th (10-11AM)
+First lab tomorrow, Sep-1st
 
-See reminders in bCourses
+Bring your laptop and GitHub username
 :::
 
 
