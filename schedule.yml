@@ -31,7 +31,7 @@
         - type: "Lecture"
           id: ""
           name: "Project Organization"
-          href: ""
+          href: "lectures/04-unix2/04-unix2-slides.html"
         - type: "Reading"
           id: ""
           name: "Ten Simple Rules for RCR (due 9/09)"
