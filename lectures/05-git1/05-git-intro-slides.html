@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b7eb3ced35dd28f0c673f192a36525f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.28">
 
-  <title>Project Organization</title>
+  <title>Intro to Git (part 1)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -198,301 +198,379 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-bg.svg" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Project Organization</h1>
-  <p class="subtitle">STAT 159: Collaborative and Reproducible Data Science</p>
+  <h1 class="title">Intro to Git (part 1)</h1>
+  <p class="subtitle">Tracking changes in a project</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="section" class="slide level2">
+<section>
+<section id="tracking-changes-to-files" class="title-slide slide level1 center">
+<h1>Tracking changes to files</h1>
+
+</section>
+<section id="section" class="slide level2" data-background-image="images/phd-comics-final-doc.png" data-background-size="contain">
 <h2></h2>
-<h3 id="yesterdays-lab">Yesterday’s Lab</h3>
-<ul>
-<li class="fragment">Met your GSI: Sequoia &amp; Larissa</li>
-<li class="fragment">DataHub: Terminal</li>
-<li class="fragment">Commands to navigate file system: <code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>rmdir</code></li>
-<li class="fragment">Commands to inspect files: <code>head</code>, <code>tail</code>, <code>less</code>, <code>cat</code>, <code>wc</code></li>
-<li class="fragment">Commands to manipulate files: <code>touch</code>, <code>open</code>, <code>cp</code>, <code>mv</code>, <code>rm</code></li>
-</ul>
-<div class="fragment">
-<h3 id="st-reading">1st Reading</h3>
-<ul>
-<li class="fragment">Ten Simple Rules for Reproducible Computational Research</li>
-</ul>
-</div>
-<!--
-## Folder for STAT 159
-
-- You should have in your computer a dedicated directory (i.e. folder) `stat159/`
-
-- You should use this directory for all the work done in this class.
-
-- BTW: Your `Downloads/` folder is not a replacement for a `stat159/` folder.
--->
 </section>
-<section>
-<section id="project-organization" class="title-slide slide level1 center">
-<h1>Project Organization</h1>
-
-</section>
-<section id="section-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-
-<img data-src="images/project-file-structure-0.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/project-file-structure-0.svg"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/project-file-structure-1.svg"></p>
-</div></div>
-</section>
-<section id="section-3" class="slide level2">
+<section id="section-1" class="slide level2" data-background-image="images/diy-vs-git-1.svg" data-background-size="contain">
 <h2></h2>
-<p>Data science projects involve dealing with multiple files:</p>
-<ul>
-<li class="fragment">some files will be inputs</li>
-<li class="fragment">some files will be outputs</li>
-<li class="fragment">some files will be data files</li>
-<li class="fragment">some files will be image files</li>
-<li class="fragment">some files will be script files (code)</li>
-<li class="fragment">some files will be reports</li>
-<li class="fragment">some files will play auxiliary roles</li>
-</ul>
-<div class="fragment">
-<div class="smalladage">
-<p>It’s important to have a good organization of files</p>
-</div>
-</div>
 </section>
-<section id="an-analogy" class="slide level2 nostretch">
-<h2>An Analogy</h2>
+<section id="section-2" class="slide level2" data-background-image="images/diy-vs-git-2.svg" data-background-size="contain">
+<h2></h2>
+</section></section>
+<section>
+<section id="sample-project" class="title-slide slide level1 center">
+<h1>Sample Project</h1>
+
+</section>
+<section id="section-3" class="slide level2" data-background-image="images/project-changes-1.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-4" class="slide level2" data-background-image="images/project-changes-2.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-5" class="slide level2" data-background-image="images/project-changes-3.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-6" class="slide level2" data-background-image="images/project-changes-4.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-7" class="slide level2" data-background-image="images/project-changes-5.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-8" class="slide level2" data-background-image="images/project-changes-6.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-9" class="slide level2" data-background-image="images/project-changes-7.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-10" class="slide level2" data-background-image="images/project-changes-8.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-11" class="slide level2" data-background-image="images/project-changes-9.svg" data-background-size="contain">
+<h2></h2>
+</section></section>
+<section>
+<section id="idea-1-project-snapshots" class="title-slide slide level1 center">
+<h1>Idea 1) Project Snapshots</h1>
+
+</section>
+<section id="section-12" class="slide level2" data-background-image="images/project-snapshots-1.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="saving-versions-as-snapshots" class="slide level2">
+<h2>Saving versions as Snapshots</h2>
+<ul>
+<li class="fragment"><p>A “version” is a set of changes.</p></li>
+<li class="fragment"><p>Saving full snapshots of the project rather than just tracking the individual changes.</p></li>
+<li class="fragment"><p>Snapshots have to be “efficient” (we’ll clarify this later)</p></li>
+<li class="fragment"><p>Storage model is based on a <strong>Directed Acyclic Graph</strong> of Snapshots</p></li>
+</ul>
+</section></section>
+<section>
+<section id="idea-2-a-graph-model" class="title-slide slide level1 center">
+<h1>Idea 2) A Graph Model</h1>
+
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p><span class="bold-hilit">Graph</span>: mathematical structure consisting of <strong>Nodes</strong> (or vertices) connected by <strong>Edges</strong> (or lines).</p>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<p><span class="bold-hilit">Graph</span>: mathematical structure consisting of <strong>Nodes</strong> (or vertices) connected by <strong>Edges</strong> (or lines).</p>
+
+<img data-src="images/types-of-graphs-1.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<p><span class="bold-hilit">Graph</span>: mathematical structure consisting of <strong>Nodes</strong> (or vertices) connected by <strong>Edges</strong> (or lines).</p>
+
+<img data-src="images/types-of-graphs-2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="directed-acyclic-graphs-dag" class="slide level2">
+<h2>Directed Acyclic Graphs (DAG)</h2>
+<ul>
+<li class="fragment"><p><span class="bold-hilit">Directed</span>: The edges have a specific direction, represented by arrows.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Acyclic</span>: Contains no cycles. You cannot start at any node and follow a path back to the same node.</p></li>
+<li class="fragment"><p><strong>Common use cases</strong>: They are used for showing one-way workflows, data processing pipelines, chronological or causal flows, dependencies, and scheduling.</p></li>
+</ul>
+</section>
+<section id="dag-mental-model" class="slide level2">
+<h2>DAG mental model</h2>
+
+<img data-src="images/project-dag-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="dag-mental-model-1" class="slide level2">
+<h2>DAG mental model</h2>
+
+<img data-src="images/project-dag-2.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="git" class="title-slide slide level1 center">
+<h1>git</h1>
+
+</section>
+<section id="section-16" class="slide level2">
+<h2></h2>
 <div class="columns">
-<div class="column fragment" style="width:50%;">
-<p><img data-src="images/tools.png" style="width:87.0%"></p>
-</div><div class="column fragment" style="width:50%;">
-<p><img data-src="images/tool-cabinet.webp" style="width:93.0%"></p>
-</div></div>
-</section>
-<section id="an-analogy-1" class="slide level2 nostretch">
-<h2>An Analogy</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Messy file system 😢</p>
-<p><img data-src="images/workshop-messy.jpg" style="width:87.0%"></p>
-</div><div class="column fragment" style="width:50%;">
-<p>Neat file system 😍</p>
-<p><img data-src="images/workshop-tidy.jpeg" style="width:93.0%"></p>
-</div></div>
-</section></section>
-<section>
-<section id="file-and-directory-organization" class="title-slide slide level1 center">
-<h1>File and Directory Organization</h1>
-
-</section>
-<section id="project-organization-1" class="slide level2">
-<h2>Project Organization</h2>
-<p>When starting a new project, it is worthwhile to spend some time thinking about how to best organize its content.</p>
-<div class="fragment">
-<p>This means asking questions such as:</p>
+<div class="column" style="width:40%;">
+<p><img data-src="images/git-logo.png"></p>
+</div><div class="column" style="width:60%;">
 <ul>
-<li class="fragment">What are my project inputs?</li>
-<li class="fragment">What types of outputs do I expect to come out of this project?</li>
-<li class="fragment">How does this project relate to other projects I am working on?</li>
+<li class="fragment">Free and open-source command line tool</li>
 </ul>
-</div>
-</section>
-<section id="when-you-begin-a-new-project" class="slide level2">
-<h2>When you begin a new project …</h2>
-<ul>
-<li class="fragment"><p>It is generally a good idea to store all of the files relevant to one project under a common root directory.</p></li>
-<li class="fragment"><p>The exception to this rule is source code or scripts that are used in multiple projects. Each such program might have a project directory of its own.</p></li>
-</ul>
-</section>
-<section id="golden-rules" class="slide level2">
-<h2>Golden rules</h2>
-<ol type="1">
-<li class="fragment"><p>Raw data should never be changed. Save it into a <code>data/</code> folder and treat it as immutable.</p></li>
-<li class="fragment"><p>The processed, clean version of your data will go into a dedicated file or directory, e.g., <code>clean_data.json</code> or <code>processed_data/</code>.</p></li>
-<li class="fragment"><p>Anything that can be generated from code goes into its own folder.</p>
-<ul>
-<li class="fragment"><code>output/</code>, <code>results/</code>, <code>images/</code></li>
-</ul></li>
-<li class="fragment"><p>If there are text documents, put them in their own folder:</p>
-<ul>
-<li class="fragment"><code>docs/</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="golden-rules-contd" class="slide level2">
-<h2>Golden rules (cont’d)</h2>
-<ol start="5" type="1">
-<li class="fragment"><p>Code also has its own folder: <code>code/</code>.</p>
-<ul>
-<li class="fragment">If you write a lot of functions, then create a <code>functions/</code> folder</li>
-<li class="fragment">Or also a <code>src/</code> (for <code>source</code>) folder to save processing/analysis code.</li>
-</ul></li>
-<li class="fragment"><p>If processing/analysis scripts are meant to be used in a certain order, you can number them:</p>
-<ul>
-<li class="fragment">e.g., <code>script1-data-prepration.R</code>, <code>script2-exploratory-analysis.R</code>, <code>script3-regression-model.R</code>, etc.</li>
-</ul></li>
-<li class="fragment"><p>Sometimes the pipeline is not linear but branched, so numbering may not always make sense.</p></li>
-<li class="fragment"><p>Modularize your code: split a giant script into short, single-purpose scripts with well-defined inputs and outputs.</p></li>
-</ol>
-</section>
-<section id="golden-rules-contd-1" class="slide level2">
-<h2>Golden rules (cont’d)</h2>
-<ul>
-<li class="fragment"><p>A project directory should be a portable island.</p></li>
-<li class="fragment"><p>It can be zipped up, moved to a different folder, sent to a colleague, or cloned onto a remote server …</p></li>
-<li class="fragment"><p>… and every script still runs without modifying a single line of code.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="documentation" class="title-slide slide level1 center">
-<h1>Documentation</h1>
-
-</section>
-<section id="documentation-readme-files" class="slide level2">
-<h2>Documentation (README files)</h2>
-<ul>
-<li class="fragment"><p>Each of your projects should always be accompanied by a <span class="bold-hilit">README</span> file.</p></li>
-<li class="fragment"><p>The <span class="bold-hilit">README</span> should contain all the information an outsider would need to understand what the project is all about:</p>
-<ul>
-<li class="fragment">what are the inputs</li>
-<li class="fragment">what are the outputs,</li>
-<li class="fragment">where to find files within the project directory, etc.</li>
-</ul></li>
-<li class="fragment"><p>The <span class="bold-hilit">README</span> is simply a text file, there’s nothing special to it.</p>
-<ul>
-<li class="fragment">I like to write it in markdown syntax: <code>README.md</code></li>
-</ul></li>
-<li class="fragment"><p>Writing down everything about a project in a <code>README.md</code> can be tedious, but it pays off.</p></li>
-</ul>
-</section>
-<section id="readme-files" class="slide level2">
-<h2>README file(s)</h2>
-<ul>
-<li class="fragment">Record who the author/s is/are,</li>
-<li class="fragment">the date the project was started,</li>
-<li class="fragment">a description of what the project is for,</li>
-<li class="fragment">describe important details</li>
-<li class="fragment">(a <code>README</code> file is sort of a growing/living document)</li>
-</ul>
-<div class="fragment">
-<p>Get in the habit of starting a project by creating a <code>README</code> file.</p>
-<p>Also, you can include README files inside the project’s directories: e.g.&nbsp;a README for the <code>data/</code> folder, or for the <code>docs/</code> filder.</p>
-</div>
-</section></section>
-<section>
-<section id="demo" class="title-slide slide level1 center">
-<h1>Demo</h1>
-
-</section>
-<section id="some-comments" class="slide level2">
-<h2>Some Comments</h2>
-<ul>
-<li class="fragment"><p>How you define a project is largely up to you.</p></li>
-<li class="fragment"><p>It could be all the work you do on a given dataset,</p></li>
-<li class="fragment"><p>Or all the work you do for a thesis or dissertation,</p></li>
-<li class="fragment"><p>Or each manuscript could be its own project even if it uses the same dataset as a different project.</p></li>
-</ul>
-</section>
-<section id="a-standard-project-template" class="slide level2 smaller">
-<h2>A Standard Project Template</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
-</div>
-<div class="sourceCode" id="cb1" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>├── README.md             &lt;- High-level summary &amp; instructions</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>├── LICENSE               &lt;- Data/code usage rights</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>├── data/</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>│   ├── raw/              &lt;- IMMUTABLE raw data (read-only)</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>│   └── processed/        &lt;- Cleaned, transformed datasets</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>├── code/</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>│   ├── 01_data-prep.R    &lt;- Step 1: Clean raw data</span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>│   ├── 02_analysis.R     &lt;- Step 2: Fit statistical models</span>
-<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>│   └── 03_figures.R      &lt;- Step 3: Render visual output</span>
-<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a>├── output/</span>
-<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a>│   ├── tables/           &lt;- Exported CSV/LaTeX summary tables</span>
-<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a>│   └── figures/          &lt;- High-res PNG/PDF plots</span>
-<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-18"><a aria-hidden="true" tabindex="-1"></a>└── docs/                 &lt;- Paper drafts, reports, slide decks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="example-how-not-to-organize" class="slide level2 smaller">
-<h2>Example: How not to organize</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
-</div>
-<div class="sourceCode" id="cb2" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>traffic_project/</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>├── .RData</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>├── 01_clean_data_OLD.R</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>├── Data_traffic_2026_edited_v2.xlsx</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>├── Fig1.png</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>├── Script.R</span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>├── Script2.R</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>├── Traffic Data Clean.csv</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>├── density_plot.png</span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>├── my_script_final.R</span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>├── temp_model.R</span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>├── draft_august.docx</span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>├── draft_final_comments.docx</span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>└── traffic_2026.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p><br>
 </p>
-<p>Spot as many sins as you can fig01_density_by_hour</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_8086f696" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
+<ul>
+<li class="fragment">Developed to help coordinate collaborative coding</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment">99% of software projects use it</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment">Many scientific projects use it</li>
+</ul>
+</div></div>
+</section>
+<section id="what-does-it-do" class="slide level2">
+<h2>What does it do?</h2>
+<p><span class="hilit">git</span> allows you to:</p>
+<ul>
+<li class="fragment">save your work,</li>
+<li class="fragment">document your process,</li>
+<li class="fragment">try new ideas/experiments,</li>
+<li class="fragment">share it and,</li>
+<li class="fragment">collaborate with others.</li>
+</ul>
+</section>
+<section id="git-commands-to-get-started" class="slide level2">
+<h2>Git commands to get started</h2>
+<div class="fragment">
+<p>Each command is called from the command line following <code>git</code> (e.g.&nbsp;<code>git init</code>).</p>
+<ul>
+<li class="fragment"><code>init</code>: initialize a <em>repository</em> (repo)</li>
+<li class="fragment"><code>add</code>: move a file into the <em>staging area</em></li>
+<li class="fragment"><code>commit</code>: take a snapshot of files in the staging area with a message (<code>-m</code>)</li>
+<li class="fragment"><code>push</code>: send commits to another repo</li>
+</ul>
+<aside class="notes">
+<p>Before showing these commands, open a terminal and type <code>git --help</code> to show the menu of commands.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="example" class="slide level2 smaller">
-<h2>Example</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
-</div>
-<div class="sourceCode" id="cb3" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>traffic_project/</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>├── README.md                 &lt;- Step-by-step instructions</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>├── data/</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>│   ├── raw/                  &lt;- Read-only original data</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>│   │   └── traffic_2026.csv</span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>│   └── processed/            &lt;- Script-generated clean data</span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>│       └── 01_clean_traffic.rds</span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>├── code/</span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>│   ├── 01_clean_data.R</span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>│   ├── 02_fit_models.R</span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>│   └── 03_generate_figures.R</span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>├── output/</span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>│   └── figures/</span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a>│       └── fig01_density_by_hour.png</span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>└── docs/</span>
-<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a>    └── report.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-
-
+<section id="section-17" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column smaller" style="width:40%;">
+<ul>
+<li class="fragment"><code>init</code>: invite the photographer (git) to the wedding (repo)</li>
+<li class="fragment"><code>add</code>: move the bride and groom into the camera frame</li>
+<li class="fragment"><code>commit</code>: take a picture of the bride and groom and caption it</li>
+<li class="fragment"><code>push</code>: share the photos online</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/wedding-photographer.png"></p>
+</div></div>
+</section>
+<section id="section-18" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><code>init</code>: invite the photographer (git) to the wedding (repo)</li>
+<li><code>add</code>: move the bride and groom into the camera frame</li>
+<li><code>commit</code>: take a picture of the bride and groom and caption it</li>
+<li><code>push</code>: share the photos online</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb1-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> wedding</span>
+<span id="cb1-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> wedding</span>
+<span id="cb1-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb1-4" class="hljs-ln-code"><a></a><span class="fu">git</span> add bride groom</span>
+<span id="cb1-5" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"cutting the cake"</span></span>
+<span id="cb1-6" class="hljs-ln-code"><a></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </section></section>
+<section>
+<section id="git-init" class="title-slide slide level1 center">
+<h1><code>git init</code></h1>
+
+</section>
+<section id="initializing-a-repository" class="slide level2">
+<h2>Initializing a repository</h2>
+
+<img data-src="images/git-project-flow-1bis.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="initializing-a-repository-1" class="slide level2">
+<h2>Initializing a repository</h2>
+<ul>
+<li class="fragment"><code>git init</code> initializes a git (local) repository</li>
+<li class="fragment">Creates a directory <code>.git/</code></li>
+<li class="fragment"><code>.git/</code> is a hidden folder containing git’s database</li>
+<li class="fragment">This is where git does its <em>magic</em></li>
+<li class="fragment">Don’t touch this folder! (let git do its job)</li>
+<li class="fragment">Once a repo is initialized, git will track changes to its content</li>
+</ul>
+</section></section>
+<section>
+<section id="primary-commands" class="title-slide slide level1 center">
+<h1>Primary Commands</h1>
+
+</section>
+<section id="primary-git-commands" class="slide level2">
+<h2>Primary git commands</h2>
+<ul>
+<li class="fragment"><p><code>git status</code>: what’s going on with repo</p></li>
+<li class="fragment"><p><code>git add</code>: <strong><em>stage</em></strong> changes (framing photo)</p></li>
+<li class="fragment"><p><code>git commit -m "..."</code>: record changes in git’s database (take a snapshot)</p></li>
+</ul>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+
+<img data-src="images/git-commit-hash.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="elements-of-a-commit" class="slide level2">
+<h2>Elements of a Commit</h2>
+<p>A commit consists of:</p>
+<ul>
+<li class="fragment">author’s name and email (who)</li>
+<li class="fragment">timestamp (when)</li>
+<li class="fragment">message (what / why)</li>
+<li class="fragment">Hash ID (fingerprint)</li>
+<li class="fragment">Parent pointer (who’s the parent commit)</li>
+<li class="fragment">File Snapshot</li>
+</ul>
+</section>
+<section id="commit-messages" class="slide level2">
+<h2>Commit Messages</h2>
+<ul>
+<li class="fragment"><p>Short message: &lt; 50 characters</p></li>
+<li class="fragment"><p>Longer descriptions</p></li>
+<li class="fragment"><p>Examples:</p>
+<ul>
+<li class="fragment">Bug fix</li>
+<li class="fragment">Feature</li>
+<li class="fragment">Experiment</li>
+<li class="fragment">Merge</li>
+</ul></li>
+<li class="fragment"><p>What happened, and possibly why something happened</p></li>
+</ul>
+</section></section>
+<section>
+<section id="the-full-picture" class="title-slide slide level1 center">
+<h1>The Full Picture</h1>
+
+</section>
+<section id="section-20" class="slide level2" data-background-image="images/git-project-flow-1.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-21" class="slide level2" data-background-image="images/git-project-flow-2.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-22" class="slide level2" data-background-image="images/git-project-flow-2b.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-23" class="slide level2" data-background-image="images/git-project-flow-3.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-24" class="slide level2" data-background-image="images/git-project-flow-3b.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-25" class="slide level2" data-background-image="images/git-project-flow-4.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-26" class="slide level2" data-background-image="images/git-project-flow-5.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-27" class="slide level2" data-background-image="images/git-project-flow-6.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-28" class="slide level2" data-background-image="images/git-project-flow-7.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-29" class="slide level2" data-background-image="images/git-project-flow-8.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="what-about-gits-dag-model" class="slide level2">
+<h2>What about git’s DAG model?</h2>
+<ul>
+<li class="fragment"><p>There’s one root commit (initial commit)</p></li>
+<li class="fragment"><p>Arrows always point backward in time (from the child commit to its parent)</p></li>
+<li class="fragment"><p>Why? Because a parent commit cannot know its future children, but a child commit always knows exactly who its parent was.</p></li>
+<li class="fragment"><p>There are no loops or cycles (a child node cannot be the parent of its parent, or the ancestor of its ancestors)</p></li>
+<li class="fragment"><p>Each commit has a HASH id (and other metadata)</p></li>
+<li class="fragment"><p>There are moving pointers (or labels) such as:</p>
+<ul>
+<li class="fragment"><code>HEAD</code>: “You are here” bookmark</li>
+<li class="fragment"><code>main</code>: name of default branch</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="keeping-track-of-changes" class="title-slide slide level1 center">
+<h1>Keeping track of changes</h1>
+
+</section>
+<section id="key-ideas" class="slide level2">
+<h2>Key Ideas</h2>
+
+<img data-src="images/project-changes-key-ideas-1.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="key-ideas-1" class="slide level2">
+<h2>Key Ideas</h2>
+
+<img data-src="images/project-changes-key-ideas-2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="section-30" class="slide level2">
+<h2></h2>
+<p>How does git keep track of changes?</p>
+<div class="fragment">
+<p><br>
+</p>
+<p><span class="hilit">Git</span> records the changes made on a project’s files (not their versions)</p>
+</div>
+</section>
+<section id="section-31" class="slide level2">
+<h2></h2>
+
+<img data-src="images/project-snapshots-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-32" class="slide level2">
+<h2></h2>
+
+<img data-src="images/project-snapshots-2.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-33" class="slide level2">
+<h2></h2>
+
+<img data-src="images/git-project-diagram-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+
+<img data-src="images/git-project-diagram-2.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-35" class="slide level2">
+<h2></h2>
+
+<img data-src="images/git-project-diagram-3.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-36" class="slide level2">
+<h2></h2>
+
+
+
+<img data-src="images/git-project-diagram-4.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-num-logo.png" class="slide-logo"></p>
@@ -711,44 +789,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
