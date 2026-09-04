@@ -1,0 +1,101 @@
+---
+title: HW1) Reproducibility Checkup
+---
+
+
+## About
+
+For this assignment, we ask you to review the article 
+**Serena Williams Dominated Her Generation, Then the Next One, Too** 
+by Sara Ziegler and Leo Dominguez, published in The New York Times (NYT) 
+on August 28, 2022:
+
+<https://www.nytimes.com/interactive/2022/08/28/sports/tennis/serena-age-opponents.html>
+
+::: {.callout-note}
+As a UC Berkeley student, you have access to a free subscription to the 
+New York Times. If you have not activated your subscription yet, please follow 
+the registration instructions provided by the library at 
+<https://guides.lib.berkeley.edu/business_news>.
+:::
+
+The article presents an engaging graphic tracking Serena Williams’s professional 
+matches from age 14 to 40. As a proof of concept, you will evaluate how reproducible 
+this data visualization is from a computational perspective.
+
+To be clear, **you do not need to reproduce the article's visualization**. Instead, 
+this assignment evaluates your ability to conceptualize the process: do you have 
+the necessary metadata and source file(s), and can you map out the key steps to 
+replicate the graphic?
+
+
+## Instructions
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+
+1) Read the NYT article
+    + If you don't know who Serena Williams is, do some research about ther.
+
+2) Look at the graphic in the NYT article:
+    a) What kind of graphic is it?
+    b) Which variable is mapped to the x-axis?
+    c) Which variable is mapped to the y-axis?
+    d) What variable is mapped to color?
+  
+3) Pretend you have a table `serena` (e.g. R `data.frame` or `tibble`, 
+a `pandas.DataFrame`) with the data that is used to produce the graphic. 
+Sketch a few hypothetical rows-and-columns of such a table.
+
+4) Assuming the existance of a `serena` object, write code (using your 
+favorite language and packages) that would produce a graphic similar 
+to the target data visualization. To keep things simple, consider the following:
+    + Variables mapped to x and y axis
+    + Variable mapped to color
+    + Title
+    + Caption
+    + Background
+
+5) **Data:** As you can tell, the source of the data is _Tennis Abstract_. 
+This is a website---created by stats expert Jeff Sackmann---that serves as an 
+online analytics database dedicated to professional men's (ATP) and women's (WTA) tennis.
+
+    + 5.1) Go to tennis abstract: <https://www.tennisabstract.com/> 
+    + 5.2) In the _Player Search_ box, search for "Serena Williams"
+    + 5.3) In the main page of Serena Williams, look for the link 
+    **All results** (it should be right below the photo profile of Serena Williams) and click on it
+    + 5.4) Again, you will see Serena's photo profile; below the photo locate the link **Show Career** 
+    and click on it (this will take to the page showing the career matches of Serena Williams)
+
+
+6) Regarding Serena William's career matches:
+    a) What is the format of the data? 
+    b) Does the data set contain all the variables (features, attributes) from which
+    your table `serena` could be dervied?
+    c) Are there other pieces of information---not present in the data set---that would need to gather?
+
+7) Is there a _data dictionary_ (aka code book, or metadata) that lists and describes 
+the columns in the table?
+    + For example, is there a document or some kind of resource that explains what the 
+    columns `Rd`, `vRk`, `DR`, `A%`, and `DF%` mean?
+
+8) How would you retrieve the data?
+    + Do you know of any commands that would allow you to download the "raw data"? 
+    If yes, write them down or provide a description.
+
+9) Assuming you successfully downloaded the "raw data", how would you import it in R or python 
+(or your language of preference)?
+
+10) Is it necessary to do any pre-processing to the raw data? If so, 
+list the steps that you would perform in order to derive or assemble a `serena` 
+table with the data used in the graphic, according to your sample command of part (4)?
+
+11) Finally, depict the file structure that you would use for this replication attempt.
+    + Apply the topics discussed in class so far: naming files, project organization, etc.
+    + Also, write down the content that you would include in the README file.
+
