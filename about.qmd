@@ -9,12 +9,12 @@ and statistical data analysis, in the context of today's research environment.
 
 
 ::: {.callout-note title="Info"}
-__Instructor__: <a href='https://www.gastonsanchez.com' target='_blank'>Gaston Sanchez</a>
+__Instructor__: <a href='https://www.gastonsanchez.com' target='_blank'>Gaston Sanchez</a> | OH: Mon 4-5pm in Gateway-LL-1040C 
 
 __GSIs__: 
 
-- Sequoia Andrade
-- Larissa Arreola Moreno
+- Sequoia Andrade | OH: Mon 2-4pm in Gateway-LL-1040F
+- Larissa Arreola Moreno | OH: Mon & Thu 12-2pm in Gateway-LL-B1008
 
 __Lecture__: MWF 10am-11am in [North Gate 105](https://www.berkeley.edu/map/north-gate-hall/)
 
