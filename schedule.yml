@@ -41,11 +41,11 @@
         - type: "Lecture"
           id: ""
           name: "Intro to Git (part I)"
-          href: ""
+          href: "lectures/05-git1/05-git-intro-slides.html"
         - type: "Homework"
           id: ""
           name: "HW1 TBA (due 9/18)"
-          href: ""
+          href: "hws/hw01/hw01.html"
 - week: 3
   days:
     - date: "Sep 07"
