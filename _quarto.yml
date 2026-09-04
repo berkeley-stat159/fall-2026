@@ -41,6 +41,10 @@ website:
           - readings/07-reading-share-code.qmd
           - readings/08-reading-legal-framework.qmd
           - readings/09-reading-better-figures.qmd
+      - section: "HW"
+        collapse: true
+        contents:
+          - hws/hw01/hw01.qmd
       - section: "Other"
         contents:
           - href: license.qmd
