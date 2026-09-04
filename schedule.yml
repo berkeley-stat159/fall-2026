@@ -44,7 +44,7 @@
           href: "lectures/05-git1/05-git-intro-slides.html"
         - type: "Homework"
           id: ""
-          name: "HW1 TBA (due 9/18)"
+          name: "HW1 Reproducibility Checkup (due 9/18)"
           href: "hws/hw01/hw01.html"
 - week: 3
   days:
