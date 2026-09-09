@@ -250,7 +250,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#assigned-reading" id="toc-assigned-reading" class="nav-link active" data-scroll-target="#assigned-reading">Assigned Reading</a></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a>
+  <ul class="collapse">
+  <li><a href="#reflecting-on-reproducible" id="toc-reflecting-on-reproducible" class="nav-link" data-scroll-target="#reflecting-on-reproducible">1. Reflecting on Reproducible</a></li>
+  <li><a href="#reflecting-on-robust" id="toc-reflecting-on-robust" class="nav-link" data-scroll-target="#reflecting-on-robust">2. Reflecting on Robust</a></li>
+  <li><a href="#reproducible-failure" id="toc-reproducible-failure" class="nav-link" data-scroll-target="#reproducible-failure">3. Reproducible Failure</a></li>
+  </ul></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a></li>
   </ul>
 </nav>
     </div>
@@ -302,7 +308,29 @@ bCourses Submission
 <p>Accepted formats: PDF, HTML, MS Word (<code>.docx</code>), or Google Doc</p>
 </div>
 </div>
-<p>More Details TBD</p>
+<section id="reflecting-on-reproducible" class="level3">
+<h3 class="anchored" data-anchor-id="reflecting-on-reproducible">1. Reflecting on Reproducible</h3>
+<p>The Turing Way defines a “reproducible” result as using the same data and the same analysis steps. Think back to a programming or data assignment you submitted in a previous semester.</p>
+<p>If your laptop was lost today and you had to reconstruct that project on a classmate’s machine using only your memory and the files currently backed up in your email/cloud, what are the exact “ghosts” (a hidden file path, an unrecorded package version, an un-downloaded dataset) that would cause the reproduction to completely fail?</p>
+</section>
+<section id="reflecting-on-robust" class="level3">
+<h3 class="anchored" data-anchor-id="reflecting-on-robust">2. Reflecting on Robust</h3>
+<p>A result is “robust” if using different analysis steps on the same data yields a qualitatively identical answer (e.g., swapping from an R package to a Python script).</p>
+<p>If you were forced to completely rewrite your favorite data script into a programming language you barely know, which specific part of your code’s logic do you suspect would fall apart or yield a different mathematical rounding result, and why?</p>
+</section>
+<section id="reproducible-failure" class="level3">
+<h3 class="anchored" data-anchor-id="reproducible-failure">3. Reproducible Failure</h3>
+<p>Imagine a peer creates a messy, un-versioned script that accidentally discovers a brilliant, groundbreaking pattern in a public dataset, but their workflow is completely un-reproducible.</p>
+<p>You build a flawless, fully automated, version-controlled pipeline that proves a hypothesis is completely wrong, but anyone can rerun it perfectly. In your own words, defend why your “reproducible failure” might actually be more valuable to the progress of science than their “sloppy success.”</p>
+</section>
+</section>
+<section id="rubric" class="level2">
+<h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
+<ul>
+<li><p><strong>Full Credit (3 Points)</strong>: Response is highly specific, names unique personal or localized constraints, and explicitly connects the personal experience back to the technical definition in The Turing Way. Clearly written by a human.</p></li>
+<li><p><strong>Partial Credit (1-2 Points)</strong>: Response is correct but uses vague or generic examples (e.g., “I lost a file once” instead of naming the script). Sounds like a generic summary an AI could have written.</p></li>
+<li><p><strong>No Credit (0 Points)</strong>: Response relies entirely on abstract definitions, fails to provide personal context, or uses copy-pasted text from the webpage.</p></li>
+</ul>
 
 
 </section>
