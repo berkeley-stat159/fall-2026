@@ -25,7 +25,7 @@
         - type: "Lab"
           id: ""
           name: "Shell Commands"
-          href: ""
+          href: "labs/lab01.pdf"
     - date: "Sep 02"
       items:
         - type: "Lecture"
@@ -58,7 +58,7 @@
         - type: "Lab"
           id: ""
           name: "Getting Started with Git"
-          href: ""
+          href: "labs/lab02.pdf"
     - date: "Sep 09"
       items:
         - type: "Lecture"
