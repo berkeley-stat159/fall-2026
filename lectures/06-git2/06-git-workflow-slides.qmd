@@ -1,0 +1,662 @@
+---
+title: "Intro to Git (part 2)"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+## Yesterday's Lab
+
+Basic Git commands:
+
+- `git status`
+- `git add`
+- `git commit -m "..."`
+- `git log`
+- `git diff`
+
+
+## Today's outline
+
+- Git Configuration
+- Git's 3 states
+- Git commit messages
+- `.gitignore` file
+
+
+# Configuration
+
+## 3 Types of Configuration
+
+\
+
+:::: {.columns}
+::: {.column .fragment width="33%"}
+[System Level]{.bold-hilit}
+
+Apply to every user of the computer
+:::
+
+::: {.column .fragment width="33%"}
+[User Level]{.hilit}
+
+Apply to a single user
+:::
+
+::: {.column .fragment width="33%"}
+[Project Level]{.mdlit}
+
+Project to project configurations
+:::
+::::
+
+\
+
+. . .
+
+| Command               | Level         |
+|-----------------------|---------------|
+| `git config --system` | [system]{.bold-hilit} level  |
+| `git config --global` | [user]{.hilit} level    |
+| `git config`          | [project]{.mdlit} level |
+
+
+## User level configuration
+
+This is the most common type of configuration (e.g. the one you used in lab)
+
+. . .
+
+\
+
+```{.markdown code-line-numbers="false"}
+git config --global user.name "Jon Doe"
+```
+
+. . .
+
+\
+
+```{.markdown code-line-numbers="false"}
+git config --global user.email "jondoe@email.com"
+```
+
+. . .
+
+\
+
+```{.markdown code-line-numbers="false"}
+git config --global color.ui "auto"
+```
+
+# Git's Database
+
+## {background-image="images/git-commits-in-database.svg" background-size="contain"}
+
+# Git's 3 States
+
+## {background-image="images/git-three-states-1.svg" background-size="contain"}
+
+## {background-image="images/git-three-states-2.svg" background-size="contain"}
+
+## {background-image="images/git-three-states-3.svg" background-size="contain"}
+
+
+# Commit Messages
+
+## Short commit messages
+
+. . .
+
+Short summary of changes (50 characters or less)
+
+- `git commit -m "first commit"`
+
+- `git commit -m "add index file"`
+
+
+## Long commit messages
+
+. . .
+
+```
+Short summary of changes (50 characters or less)
+
+More detailed explanatory text, if necessary. Wrap it to 
+about 72 characters. Focus on the "why" rather than the "how."
+```
+
+
+## Suggestions
+
+- Use the imperative mood: e.g., `"Add feature"` instead of `"Added feature"` or 
+`"Adds feature"`
+
+- Follow a specific structural logic
+
+- Good messages are searchable
+
+- They explain **_why_** a change was made without needing to decipher the code 
+from scratch.
+
+
+## Examples
+
+. . .
+
+Bad example:
+
+```{.markdown code-line-numbers="false"}
+"fix typo"
+```
+
++ What typo?
++ How was it fixed?
+
+. . .
+
+Better:
+
+```{.markdown code-line-numbers="false"}
+"add missing > in index html"
+```
+
+. . .
+
+\
+
+If a change fixes a specific bug or relates to a task ticket, developers 
+include the ID at the end of the subject or body 
+(e.g., `fix: close database connection leaks (closes #402)`
+
+
+## Examples
+
+. . .
+
+Bad example:
+
+```{.markdown code-line-numbers="false"}
+"Updated cleaning data function"
+```
+
++ How was it updated?
++ What was the update?
+
+. . .
+
+Better:
+
+```{.markdown code-line-numbers="false"}
+"Remove missing values in cleaning data function"
+```
+
+
+## Examples
+
+. . .
+
+Bad example:
+
+```{.markdown code-line-numbers="false"}
+"Changed correlation function. We should discuss this in next meeting"
+```
+
++ Avoid to-do comments
+
+. . .
+
+Better:
+
+```{.markdown code-line-numbers="false"}
+"Changed correlation function to exclude logical values"
+```
+
+
+## Conventional Commits
+
+. . .
+
+Many teams follow a strict prefix naming system to categorize changes. 
+This makes the Git log easily machine-readable for automated changelogs.
+
+- `feat: add user authentication login endpoint`
+- `fix: resolve memory leak in database connector`
+- `docs: update setup instructions in README`
+- `style: correct indentation layout in dashboard file`
+- `refactor: optimize data processing loop performance`
+- `[py,R]: ...` (modifying python, R files)
+- `bugfix: ...` (all bug fixes commits)
+- `#35890: ...` (tracking numbers)
+
+
+## Avoid Vague or Cryptic Phrases
+
+. . .
+
+Never write single-word or lazy messages like:
+
+- `"fixed"`
+- `"update"`
+- `"stuff"`
+- `"bug fix"`
+- `"working"`
+- `"manifesto"`
+
+. . .
+
+👎 They offer zero historical value.
+
+
+## Avoid Explaining the "How" Instead of the "Why"
+
+. . .
+
+Avoid messages like:
+
+```{.markdown code-line-numbers="false"}
+"Changed line 45 from x to y"
+```
+
+\
+
+- Git already tracks the exact lines changed. 
+- Use the message to explain why changing that line was necessary for the 
+software logic.
+
+
+## Avoid Aggressive or Emotional Language
+
+. . .
+
+Avoid venting frustration in the public history log: 
+
+```{.markdown code-line-numbers="false"}
+"fixing stupid bug from teammate"
+```
+
+\
+
+. . .
+
+```{.markdown code-line-numbers="false"}
+"finally working after 5 hours of torture"
+```
+
+\
+
+- Maintain professional communication.
+- What if a hiring manager reviews your public GitHub repository?
+
+
+## Avoid Combining Multiple Unrelated Changes
+
+. . .
+
+Avoid bundling a feature addition, a bug fix, and a documentation update into 
+a single massive commit 
+
+```{.markdown code-line-numbers="false"}
+"fix login and update readme and fix style layout"
+```
+
+- Can be incredible difficult to untangle.
+- Split them into small, atomic commits instead.
+
+
+## What to Avoid {auto-animate="true"}
+
+```{.markdown filename="Example: Bad commit messages" code-line-numbers="false"}
+
+commit i9k8j7h (HEAD -> main) "clean up code"
+```
+
+## What to Avoid {auto-animate="true"}
+
+```{.markdown filename="Example: Bad commit messages" code-line-numbers="false"}
+
+commit i9k8j7h (HEAD -> main) "clean up code"
+
+commit e1d2c3b "update index.js"
+```
+
+## What to Avoid {auto-animate="true"}
+
+```{.markdown filename="Example: Bad commit messages" code-line-numbers="false"}
+
+commit i9k8j7h (HEAD -> main) "clean up code"
+
+commit e1d2c3b "update index.js"
+
+commit d4c3b2a "working???"
+```
+
+
+## What to Avoid {auto-animate="true"}
+
+```{.markdown filename="Example: Bad commit messages" code-line-numbers="false"}
+
+commit i9k8j7h (HEAD -> main) "clean up code"
+
+commit e1d2c3b "update index.js"
+
+commit d4c3b2a "working???"
+
+commit g5f4e3d "fixed the stupid bug i hate this project"
+```
+
+## What to Avoid {auto-animate="true"}
+
+```{.markdown filename="Example: Bad commit messages" code-line-numbers="false"}
+
+commit i9k8j7h (HEAD -> main) "clean up code"
+
+commit e1d2c3b "update index.js"
+
+commit d4c3b2a "working???"
+
+commit g5f4e3d "fixed the stupid bug i hate this project"
+
+commit c3b2a1a "add login feature, fix database leak, change CSS styles"
+```
+
+
+## What to Avoid {auto-animate="true"}
+
+```{.markdown filename="Example: Bad commit messages" code-line-numbers="false"}
+
+commit i9k8j7h (HEAD -> main) "clean up code"
+
+commit e1d2c3b "update index.js"
+
+commit d4c3b2a "working???"
+
+commit g5f4e3d "fixed the stupid bug i hate this project"
+
+commit c3b2a1a "add login feature, fix database leak, change CSS styles"
+
+commit a1b2c3d "stuff"
+```
+
+::: {.notes}
+commit i9k8j7h (HEAD -> main) "clean up code"
+(Reality: This broke production. Nobody knows what was cleaned or what broke.)
+
+commit e1d2c3b "update index.js"
+↳ (Reality: Redundant. Git already knows index.js was updated; it doesn't say WHY.)
+
+commit d4c3b2a "working???"
+↳ (Reality: The developer didn't actually test if it was working before committing.)
+
+commit g5f4e3d "fixed the stupid bug i hate this project"
+↳ (Reality: Venting emotional frustration instead of explaining the technical fix.)
+
+commit c3b2a1a "add login feature, fix database leak, change CSS styles"
+↳ (Reality: A giant "Mega-Commit." Three completely unrelated changes crammed into one.)
+
+commit a1b2c3d "stuff"
+↳ (The first commit after initialization. Tells the team absolutely nothing.)
+:::
+
+
+## Much better {auto-animate="true"}
+
+. . .
+
+```{.markdown filename="Example: nice commit messages" code-line-numbers="false"}
+commit 9e2f41c (HEAD -> main, origin/main) 
+"docs: update API authentication steps in README"
+```
+
+
+## Much better {auto-animate="true"}
+
+```{.markdown filename="Example: nice commit messages" code-line-numbers="false"}
+commit 9e2f41c (HEAD -> main, origin/main) 
+"docs: update API authentication steps in README"
+
+commit 8d1e30b "fix(auth): resolve token expiration memory leak (#402)"
+```
+
+
+## Much better {auto-animate="true"}
+
+```{.markdown filename="Example: nice commit messages" code-line-numbers="false"}
+commit 9e2f41c (HEAD -> main, origin/main) 
+"docs: update API authentication steps in README"
+
+commit 8d1e30b "fix(auth): resolve token expiration memory leak (#402)"
+
+commit 7c0d29a "style: fix navigation bar alignment on mobile screens"
+```
+
+
+## Much better {auto-animate="true"}
+
+```{.markdown filename="Example: nice commit messages" code-line-numbers="false"}
+commit 9e2f41c (HEAD -> main, origin/main) 
+"docs: update API authentication steps in README"
+
+commit 8d1e30b "fix(auth): resolve token expiration memory leak (#402)"
+
+commit 7c0d29a "style: fix navigation bar alignment on mobile screens"
+
+commit 6b9c18f "refactor(data): optimize database query processing loops"
+```
+
+
+## Much better {auto-animate="true"}
+
+```{.markdown filename="Example: nice commit messages" code-line-numbers="false"}
+commit 9e2f41c (HEAD -> main, origin/main) 
+"docs: update API authentication steps in README"
+
+commit 8d1e30b "fix(auth): resolve token expiration memory leak (#402)"
+
+commit 7c0d29a "style: fix navigation bar alignment on mobile screens"
+
+commit 6b9c18f "refactor(data): optimize database query processing loops"
+
+commit 5a8b07e "test: add integration tests for user login validation"
+```
+
+
+## Much better {auto-animate="true"}
+
+```{.markdown filename="Example: nice commit messages" code-line-numbers="false"}
+commit 9e2f41c (HEAD -> main, origin/main) 
+"docs: update API authentication steps in README"
+
+commit 8d1e30b "fix(auth): resolve token expiration memory leak (#402)"
+
+commit 7c0d29a "style: fix navigation bar alignment on mobile screens"
+
+commit 6b9c18f "refactor(data): optimize database query processing loops"
+
+commit 5a8b07e "test: add integration tests for user login validation"
+
+commit 3e6d85c "feat(auth): implement user registration API endpoint"
+```
+
+
+## Much better {auto-animate="true"}
+
+```{.markdown filename="Example: nice commit messages" code-line-numbers="false"}
+commit 9e2f41c (HEAD -> main, origin/main) 
+"docs: update API authentication steps in README"
+
+commit 8d1e30b "fix(auth): resolve token expiration memory leak (#402)"
+
+commit 7c0d29a "style: fix navigation bar alignment on mobile screens"
+
+commit 6b9c18f "refactor(data): optimize database query processing loops"
+
+commit 5a8b07e "test: add integration tests for user login validation"
+
+commit 3e6d85c "feat(auth): implement user registration API endpoint"
+
+commit 2d5c74b "chore: initialize project dependencies and folder structure"
+```
+
+
+::: {.notes}
+commit 9e2f41c (HEAD -> main, origin/main) "docs: update API authentication steps in README"
+↳ (Context: Clean documentation update. A developer can immediately see what text changed.)
+
+commit 8d1e30b "fix(auth): resolve token expiration memory leak (#402)"
+↳ (Context: Clearly states the scope (auth) and the specific problem fixed. Links to an issue ticket.)
+
+commit 7c0d29a "style: fix navigation bar alignment on mobile screens"
+↳ (Context: Purely cosmetic change. Teams know this commit contains zero business logic changes.)
+
+commit 6b9c18f "refactor(data): optimize database query processing loops"
+↳ (Context: Code was rewritten to run faster, but no new features were added and no bugs were introduced.)
+
+commit 5a8b07e "test: add integration tests for user login validation"
+↳ (Context: Explicitly isolates test files. If a testing framework breaks, you know where to look.)
+
+commit 3e6d85c "feat(auth): implement user registration API endpoint"
+↳ (Context: The foundation for the auth system. Clean, atomic, and easy to review.)
+
+commit 2d5c74b "chore: initialize project dependencies and folder structure"
+↳ (Context: Background maintenance task like updating packages or setting up a configuration.)
+:::
+
+
+# `.gitignore` file
+
+## Adding a `.gitignore` file
+
+A `.gitignore` file[^1] is a plain text file placed in the root directory 
+of a Git repository that explicitly tells Git which files and folders to ignore.
+
+[^1]: The Dot Matters: The file name must be exactly `.gitignore`
+
+\
+
+. . .
+
+```{.markdown code-line-numbers="false"}
+project/
+  .git/
+  .gitignore
+  README.md
+  data/
+    ...
+  code/
+    ...
+  docs/
+    ...
+```
+
+## Why You Need One?
+
+- [Keeps Repositories Clean]{.bold-hilit}: It prevents junk files like system logs (`.log`), 
+temporary folders, and OS-generated files (like Mac's `.DS_Store`) from cluttering 
+your repository.
+
+- [Secures Private Data]{.bold-hilit}: It blocks you from accidentally uploading sensitive 
+credentials, API keys, passwords, or configuration files (like `.env`) to 
+public platforms like GitHub.
+
+- [Saves Storage Space]{.bold-hilit}: It keeps massive data directories, external libraries 
+(like Node's `node_modules` or Python's `venv`), and heavy compiled binaries 
+out of your Git history.
+
+
+## How it works {auto-animate=true}
+
+\
+
+```{.markdown filename=".gitignore" code-line-numbers="false"}
+# Ignore a specific file
+config.json
+```
+
+## How it works {auto-animate=true}
+
+\
+
+```{.markdown filename=".gitignore" code-line-numbers="false"}
+# Ignore a specific file
+config.json
+
+# Ignore an entire folder and all its contents
+/node_modules/
+```
+
+
+## How it works {auto-animate=true}
+
+\
+
+```{.markdown filename=".gitignore" code-line-numbers="false"}
+# Ignore a specific file
+config.json
+
+# Ignore an entire folder and all its contents
+/node_modules/
+
+# Ignore all files ending in a specific extension (wildcard)
+*.log
+```
+
+
+## How it works {auto-animate=true}
+
+\
+
+```{.markdown filename=".gitignore" code-line-numbers="false"}
+# Ignore a specific file
+config.json
+
+# Ignore an entire folder and all its contents
+/node_modules/
+
+# Ignore all files ending in a specific extension (wildcard)
+*.log
+
+# Ignore all files inside a specific folder, EXCEPT one file
+/data/*
+!/data/sample.csv
+```
+
+
+## Example {.smaller}
+
+\
+
+```{.markdown filename=".gitignore" code-line-numbers="false"}
+# Ignore a specific file
+config.json
+
+# Ignore an entire folder and all its contents
+/node_modules/
+/env/
+
+# Ignore all files ending in a specific extension (wildcard)
+*.log
+*.tmp
+
+# Ignore all files inside a specific folder, EXCEPT one file
+/data/*
+!/data/sample.csv
+```
+
+
+## The "Golden Rule" of `.gitignore`
+
+\
+
+Warning: [Git can only ignore untracked files!]{.hilit}
+
+\
+
+If you commit a file first, and then add it to your `.gitignore` later, 
+Git will continue to track it. 
+
+\
+
+To fix this and force Git to honor the new rule, you have to manually 
+remove the file from your active staging cache using the command: <br>
+`git rm --cached <filename>`
+
