@@ -64,7 +64,7 @@
         - type: "Lecture"
           id: ""
           name: "Intro to Git (part II)"
-          href: ""
+          href: "lectures/06-git2/06-git-workflow-slides.html"
         - type: "Reading"
           id: ""
           name: "Guide for Reproducible Research (due 9/16)"
