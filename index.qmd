@@ -16,9 +16,9 @@ listing:
 
 
 ::: {.callout-note title="Announcements 📣"}
-First lab tomorrow, Sep-1st
+Reading 2 is now available
 
-Bring your laptop and GitHub username
+HW1 due Sep-18
 :::
 
 
