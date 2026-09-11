@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b7eb3ced35dd28f0c673f192a36525f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.28">
 
-  <title>Project Organization</title>
+  <title>10 Simple Rules for RR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,72 +28,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-      }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-    div.sourceCode
-      { color: #24292e;  }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #24292e; } /* Normal */
-    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
-    code span.an { color: #6a737d; } /* Annotation */
-    code span.at { color: #d73a49; } /* Attribute */
-    code span.bn { color: #005cc5; } /* BaseN */
-    code span.bu { color: #d73a49; } /* BuiltIn */
-    code span.cf { color: #d73a49; } /* ControlFlow */
-    code span.ch { color: #032f62; } /* Char */
-    code span.cn { color: #005cc5; } /* Constant */
-    code span.co { color: #6a737d; } /* Comment */
-    code span.cv { color: #6a737d; } /* CommentVar */
-    code span.do { color: #6a737d; } /* Documentation */
-    code span.dt { color: #d73a49; } /* DataType */
-    code span.dv { color: #005cc5; } /* DecVal */
-    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
-    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
-    code span.fl { color: #005cc5; } /* Float */
-    code span.fu { color: #6f42c1; } /* Function */
-    code span.im { color: #032f62; } /* Import */
-    code span.in { color: #6a737d; } /* Information */
-    code span.kw { color: #d73a49; } /* Keyword */
-    code span.op { color: #24292e; } /* Operator */
-    code span.ot { color: #6f42c1; } /* Other */
-    code span.pp { color: #d73a49; } /* Preprocessor */
-    code span.re { color: #6a737d; } /* RegionMarker */
-    code span.sc { color: #005cc5; } /* SpecialChar */
-    code span.ss { color: #032f62; } /* SpecialString */
-    code span.st { color: #032f62; } /* String */
-    code span.va { color: #e36209; } /* Variable */
-    code span.vs { color: #032f62; } /* VerbatimString */
-    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-27b1524c90fa041f3653125f15fb25c4.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
@@ -206,290 +140,379 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-bg.svg" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Project Organization</h1>
-  <p class="subtitle">STAT 159: Collaborative and Reproducible Data Science</p>
+  <h1 class="title">10 Simple Rules for RR</h1>
+  <p class="subtitle">An Overview of Ten Simple Rules for Reproducible Research</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<h3 id="yesterdays-lab">Yesterday’s Lab</h3>
+<section>
+<section id="ten-simple-rules-for-reproducible-computational-research" class="title-slide slide level1 center">
+<h1>Ten Simple Rules for Reproducible Computational Research</h1>
+
+</section>
+<section id="reading" class="slide level2">
+<h2>Reading</h2>
 <ul>
-<li class="fragment">Met your GSI: Sequoia &amp; Larissa</li>
-<li class="fragment">DataHub: Terminal</li>
-<li class="fragment">Commands to navigate file system: <code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>rmdir</code></li>
-<li class="fragment">Commands to inspect files: <code>head</code>, <code>tail</code>, <code>less</code>, <code>cat</code>, <code>wc</code></li>
-<li class="fragment">Commands to manipulate files: <code>touch</code>, <code>open</code>, <code>cp</code>, <code>mv</code>, <code>rm</code></li>
+<li>Title: <strong>Ten Simple Rules for Reproducible Computational Research</strong></li>
+<li>Author(s): Sandve G.K., Nekrutenki A., Taylor J., Hovig E.</li>
+<li>Year: 2013</li>
+<li>Journal: PLOS Computational Biology 9(10): e1003285</li>
+<li><a href="https://doi.org/10.1371/journal.pcbi.1003285" class="uri">https://doi.org/10.1371/journal.pcbi.1003285</a></li>
 </ul>
-<div class="fragment">
-<h3 id="st-reading">1st Reading</h3>
+</section>
+<section id="why-are-we-here" class="slide level2">
+<h2>Why are we here?</h2>
 <ul>
-<li class="fragment">Ten Simple Rules for Reproducible Computational Research</li>
+<li class="fragment"><p><span class="bold-hilit">Beyond Morality:</span> Reproducibility isn’t just a moral obligation to your field; a lack of tracking is a direct technical burden on <em>you</em>.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Time-Saver:</span> Meticulous tracking allows your future self to effortlessly apply past methods to new data or reuse code templates across separate projects.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Bare-Minimum Threshold:</span> At an absolute baseline, you must at least be able to reproduce your <em>own</em> results to defend your science against future questioning.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Reality Check:</span> Because any given analysis contains an exponential combination of parameters and software variables, memory <em>will</em> fail you. You must record details while underway.</p></li>
 </ul>
-</div>
 <!--
-## Folder for STAT 159
+## The Core Definition
 
-- You should have in your computer a dedicated directory (i.e. folder) `stat159/`
+An *analysis workflow* is the full sequence of:
 
-- You should use this directory for all the work done in this class.
-
-- BTW: Your `Downloads/` folder is not a replacement for a `stat159/` folder.
+- pre-processing, 
+- script executions, 
+- and post-processing required 
+- to get from raw data to a final plot.
 -->
 </section>
-<section>
-<section id="project-organization" class="title-slide slide level1 center">
-<h1>Project Organization</h1>
-
-</section>
-<section id="section-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-
-<img data-src="images/project-file-structure-0.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/project-file-structure-0.svg"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/project-file-structure-1.svg"></p>
-</div></div>
-</section>
-<section id="section-3" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
-<p>Data science projects involve dealing with multiple files:</p>
+<h3 id="rules-1-2-eliminating-human-drift">Rules 1 &amp; 2: Eliminating Human Drift</h3>
 <ul>
-<li class="fragment">some files will be inputs</li>
-<li class="fragment">some files will be outputs</li>
-<li class="fragment">some files will be data files</li>
-<li class="fragment">some files will be image files</li>
-<li class="fragment">some files will be script files (code)</li>
-<li class="fragment">some files will be reports</li>
-<li class="fragment">some files will play auxiliary roles</li>
+<li class="fragment"><p><span class="bold-hilit">The Documentation Trap:</span> Manual logs easily drift out of sync.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Executable Solution:</span> Write your entire workflow as a directly executable file—such as a shell script or a Makefile.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Ban Manual Clicks:</span> Avoid manual copy-pasting, mouse clicks or graphical format tweaks between documents.</p></li>
 </ul>
 <div class="fragment">
-<div class="smalladage">
-<p>It’s important to have a good organization of files</p>
-</div>
-</div>
-</section>
-<section id="an-analogy" class="slide level2 nostretch">
-<h2>An Analogy</h2>
-<div class="columns">
-<div class="column fragment" style="width:50%;">
-<p><img data-src="images/tools.png" style="width:87.0%"></p>
-</div><div class="column fragment" style="width:50%;">
-<p><img data-src="images/tool-cabinet.webp" style="width:93.0%"></p>
-</div></div>
-</section>
-<section id="an-analogy-1" class="slide level2 nostretch">
-<h2>An Analogy</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Messy file system 😢</p>
-<p><img data-src="images/workshop-messy.jpg" style="width:87.0%"></p>
-</div><div class="column fragment" style="width:50%;">
-<p>Neat file system 😍</p>
-<p><img data-src="images/workshop-tidy.jpeg" style="width:93.0%"></p>
-</div></div>
-</section></section>
-<section>
-<section id="file-and-directory-organization" class="title-slide slide level1 center">
-<h1>File and Directory Organization</h1>
-
-</section>
-<section id="project-organization-1" class="slide level2">
-<h2>Project Organization</h2>
-<p>When starting a new project, it is worthwhile to spend some time thinking about how to best organize its content.</p>
-<div class="fragment">
-<p>This means asking questions such as:</p>
+<h3 id="rules-3-4-freezing-your-software-state">Rules 3 &amp; 4: Freezing Your Software State</h3>
 <ul>
-<li class="fragment">What are my project inputs?</li>
-<li class="fragment">What types of outputs do I expect to come out of this project?</li>
-<li class="fragment">How does this project relate to other projects I am working on?</li>
+<li class="fragment"><span class="bold-hilit">The Version Lock:</span> Minor changes between software updates can alter data outputs or prevent code from running entirely.</li>
 </ul>
 </div>
 </section>
-<section id="when-you-begin-a-new-project" class="slide level2">
-<h2>When you begin a new project …</h2>
-<ul>
-<li class="fragment"><p>It is generally a good idea to store all of the files relevant to one project under a common root directory.</p></li>
-<li class="fragment"><p>The exception to this rule is source code or scripts that are used in multiple projects. Each such program might have a project directory of its own.</p></li>
-</ul>
-</section>
-<section id="golden-rules" class="slide level2">
-<h2>Golden rules</h2>
-<ol type="1">
-<li class="fragment"><p>Raw data should never be changed. Save it into a <code>data/</code> folder and treat it as immutable.</p></li>
-<li class="fragment"><p>The processed, clean version of your data will go into a dedicated file or directory, e.g., <code>clean_data.json</code> or <code>processed_data/</code>.</p></li>
-<li class="fragment"><p>Anything that can be generated from code goes into its own folder.</p>
-<ul>
-<li class="fragment"><code>output/</code>, <code>results/</code>, <code>images/</code></li>
-</ul></li>
-<li class="fragment"><p>If there are text documents, put them in their own folder:</p>
-<ul>
-<li class="fragment"><code>docs/</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="golden-rules-contd" class="slide level2">
-<h2>Golden rules (cont’d)</h2>
-<ol start="5" type="1">
-<li class="fragment"><p>Code also has its own folder: <code>code/</code>.</p>
-<ul>
-<li class="fragment">If you write a lot of functions, then create a <code>functions/</code> folder</li>
-<li class="fragment">Or also a <code>src/</code> (for <code>source</code>) folder to save processing/analysis code.</li>
-</ul></li>
-<li class="fragment"><p>If processing/analysis scripts are meant to be used in a certain order, you can number them:</p>
-<ul>
-<li class="fragment">e.g., <code>script1-data-prepration.R</code>, <code>script2-exploratory-analysis.R</code>, <code>script3-regression-model.R</code>, etc.</li>
-</ul></li>
-<li class="fragment"><p>Sometimes the pipeline is not linear but branched, so numbering may not always make sense.</p></li>
-<li class="fragment"><p>Modularize your code: split a giant script into short, single-purpose scripts with well-defined inputs and outputs.</p></li>
-</ol>
-</section>
-<section id="golden-rules-contd-1" class="slide level2">
-<h2>Golden rules (cont’d)</h2>
-<ul>
-<li class="fragment"><p>A project directory should be a portable island.</p></li>
-<li class="fragment"><p>It can be zipped up, moved to a different folder, sent to a colleague, or cloned onto a remote server …</p></li>
-<li class="fragment"><p>… and every script still runs without modifying a single line of code.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="documentation" class="title-slide slide level1 center">
-<h1>Documentation</h1>
-
-</section>
-<section id="documentation-readme-files" class="slide level2">
-<h2>Documentation (README files)</h2>
-<ul>
-<li class="fragment"><p>Each of your projects should always be accompanied by a <span class="bold-hilit">README</span> file.</p></li>
-<li class="fragment"><p>The <span class="bold-hilit">README</span> should contain all the information an outsider would need to understand what the project is all about:</p>
-<ul>
-<li class="fragment">what are the inputs</li>
-<li class="fragment">what are the outputs,</li>
-<li class="fragment">where to find files within the project directory, etc.</li>
-</ul></li>
-<li class="fragment"><p>The <span class="bold-hilit">README</span> is simply a text file, there’s nothing special to it.</p>
-<ul>
-<li class="fragment">I like to write it in markdown syntax: <code>README.md</code></li>
-</ul></li>
-<li class="fragment"><p>Writing down everything about a project in a <code>README.md</code> can be tedious, but it pays off.</p></li>
-</ul>
-</section>
-<section id="readme-files" class="slide level2">
-<h2>README file(s)</h2>
-<ul>
-<li class="fragment">Record who the author/s is/are,</li>
-<li class="fragment">the date the project was started,</li>
-<li class="fragment">a description of what the project is for,</li>
-<li class="fragment">describe important details</li>
-<li class="fragment">(a <code>README</code> file is sort of a growing/living document)</li>
-</ul>
-<div class="fragment">
-<p>Get in the habit of starting a project by creating a <code>README</code> file.</p>
-<p>Also, you can include README files inside the project’s directories: e.g.&nbsp;a README for the <code>data/</code> folder, or for the <code>docs/</code> filder.</p>
-</div>
-</section></section>
-<section>
-<section id="demo" class="title-slide slide level1 center">
-<h1>Demo</h1>
-
-</section>
-<section id="some-comments" class="slide level2">
-<h2>Some Comments</h2>
-<ul>
-<li class="fragment"><p>How you define a project is largely up to you.</p></li>
-<li class="fragment"><p>It could be all the work you do on a given dataset,</p></li>
-<li class="fragment"><p>Or all the work you do for a thesis or dissertation,</p></li>
-<li class="fragment"><p>Or each manuscript could be its own project even if it uses the same dataset as a different project.</p></li>
-</ul>
-</section>
-<section id="a-standard-project-template" class="slide level2 smaller">
-<h2>A Standard Project Template</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
-</div>
-<div class="sourceCode" id="cb1" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>├── README.md             &lt;- High-level summary &amp; instructions</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>├── LICENSE               &lt;- Data/code usage rights</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>├── data/</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>│   ├── raw/              &lt;- IMMUTABLE raw data (read-only)</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>│   └── processed/        &lt;- Cleaned, transformed datasets</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>├── code/</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>│   ├── 01_data-prep.R    &lt;- Step 1: Clean raw data</span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>│   ├── 02_analysis.R     &lt;- Step 2: Fit statistical models</span>
-<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>│   └── 03_figures.R      &lt;- Step 3: Render visual output</span>
-<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a>├── output/</span>
-<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a>│   ├── tables/           &lt;- Exported CSV/LaTeX summary tables</span>
-<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a>│   └── figures/          &lt;- High-res PNG/PDF plots</span>
-<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-18"><a aria-hidden="true" tabindex="-1"></a>└── docs/                 &lt;- Paper drafts, reports, slide decks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="example-how-not-to-organize" class="slide level2 smaller">
-<h2>Example: How not to organize</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
-</div>
-<div class="sourceCode" id="cb2" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>traffic_project/</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>├── .RData</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>├── 01_clean_data_OLD.R</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>├── Data_traffic_2026_edited_v2.xlsx</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>├── Fig1.png</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>├── Script.R</span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>├── Script2.R</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>├── Traffic Data Clean.csv</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>├── density_plot.png</span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>├── my_script_final.R</span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>├── temp_model.R</span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>├── draft_august.docx</span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>├── draft_final_comments.docx</span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>└── traffic_2026.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="rule-5-exposing-the-pipelines-inner-mechanics" class="slide level2">
+<h2>Rule 5: Exposing the Pipeline’s Inner Mechanics</h2>
 <p><br>
 </p>
-<p>Spot as many sins as you can fig01_density_by_hour</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="the-analytical-value">The Analytical Value</h3>
+<p>Quickly browsing through step-by-step intermediate output files can reveal silent logical discrepancies, catching bugs that are completely masked in final summary charts.</p>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="the-pipeline-value">The Pipeline Value</h3>
+<p>If your full project execution is long or resource-heavy, archiving standardized intermediate states allows you to re-run localized parts of the process without starting over from scratch.</p>
+</div></div>
+<ul>
+<li class="fragment"><span class="bold-hilit">The Audit Baseline:</span> Storing intermediate files allows external peers to critically examine your complete pipeline logic without needing all your local executables operational.</li>
+</ul>
+</section>
+<section id="rules-6-7-perfect-replications-data-foundations" class="slide level2">
+<h2>Rules 6 &amp; 7: Perfect Replications &amp; Data Foundations</h2>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Rule 6: The Random Seed Mandate</strong></p>
+</div>
+<div class="callout-content">
+<p>Many analyses involve stochastic element randomness. To achieve an <em>exact</em> procedural reproduction rather than just an approximation, you must explicitly record and pass your initial random seed.</p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p><span class="bold-hilit">Isolate Visual Tweaks:</span> Store the data behind your charts.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Scripted Plot:</span> Preserve the exact code used to render a graphic.</p></li>
+</ul>
+<!--
+## Rule 8: Generating Hierarchical Output
+
+- **The Summary Illusion:** Final publication charts and tables represent heavily 
+compressed, summarized distributions (like a single mean value along a curve).
+
+- **The Inspection Obligation:** Fully validating your findings requires you to 
+inspect and verify the granular, detailed sub-values underlying those summaries 
+at least once.
+
+- **The Hypertext Blueprint:** The authors advocate for structuring output as 
+HTML hypertext. 
+
+- **The Click Connection:** This creates an intuitive data ecosystem where 
+readers can simply click a summarized data point to follow a link directly 
+to its raw, underlying source matrix.
+
+
+## Rule 9: Connecting Textual Claims to Result IDs
+
+- **The Separation Flaw:** Throughout a project, interpretations live in separate 
+text files, emails, or markdown notes, while data results live on a local 
+workstation or cluster server.
+
+- **The Matching Failure:** Tracing which exact version of an analysis supports 
+a specific paragraph or conclusion becomes highly error-prone as the project's 
+data pool scales.
+
+- **The Early Bind:** Force yourself to embed explicit file paths, hash tags, 
+or analysis result IDs directly into your notes the exact moment you draft 
+an interpretation.
+
+- **Literate Documents:** Leverage integrated processing engines (like Sweave, 
+Quarto, or interactive workflow environments) to weld your live data results 
+directly inside your descriptive text files.
+-->
+</section>
+<section id="rule-10-providing-public-access-to-your-workflow" class="slide level2">
+<h2>Rule 10: Providing Public Access to Your Workflow</h2>
+<ul>
+<li class="fragment"><p><span class="bold-hilit">The Minimum Material:</span> Submit your core data frames and raw source code scripts as mandatory supplementary online files upon publication.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Review Advantage:</span> Exposing your full workspace infrastructure increases reviewer trust, accelerates editorial turnaround times, and boosts your project’s future citation metrics.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Open Stance:</span> Always remain prepared to openly answer peer requests for deep architectural or parameter pipeline metrics.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="discussion-time" class="title-slide slide level1 center">
+<h1>Discussion Time</h1>
+
+</section>
+<section id="screens-off-minds-on" class="slide level2">
+<h2>Screens Off, Minds On</h2>
+<p><br>
+</p>
+<ul>
+<li><p><span class="bold-hilit">Devices Away:</span> Laptops &amp; tablets closed, phones away.</p></li>
+<li><p><span class="bold-hilit">No One Alone:</span> Pair or team up (no solo seats).</p></li>
+<li><p><span class="bold-hilit">Engage Fully:</span> Be ready to speak, debate, and share ideas.</p></li>
+</ul>
+</section>
+<section id="scenario-1" class="slide level2">
+<h2>Scenario 1</h2>
+<p>Your teammate creates a breathtaking, beautifully styled bar chart for a group presentation. However, when the professor asks to see the 10,000 raw data points that generated the third bar, your teammate sweats and says, <em>“Uh, it’s on my old laptop.”</em></p>
+<div class="fragment">
+<div class="poll">
+<ul>
+<li><p>Can a highly styled chart have any actual academic value?</p></li>
+<li><p>How should losing access to raw files be treated?</p></li>
+<li><p>Should the student be accused of data fabrication?</p></li>
+</ul>
+</div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ad7e8fc7" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_61f51dd6" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
+</div>
+<aside class="notes">
+<p>A pretty chart without raw data trails isn’t science; it’s just creative writing/coding. There is not a lot of academic value in a breathtaking, highly styled chart if the baseline data supporting it cannot be produced on demand.</p>
+<p>“The burden of proof.” In some professional environments, an inability to instantly back up a specific visual claim with its underlying numbers looks less like a mistake and more like data fabrication.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="example" class="slide level2 smaller">
-<h2>Example</h2>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
+<section id="scenario-2" class="slide level2">
+<h2>Scenario 2</h2>
+<p>A student keeps a beautiful, 100-page handwritten leather notebook. She tracks every single mouse click, every copy-paste action, and every manual data-cleaning step she performs in Excel with flawless precision.</p>
+<div class="fragment">
+<div class="poll">
+<ul>
+<li><p>Is the student’s work reproducible?</p></li>
+<li><p>Is there any value in (or place for) hand-written notes?</p></li>
+</ul>
 </div>
-<div class="sourceCode" id="cb3" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>traffic_project/</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>├── README.md                 &lt;- Step-by-step instructions</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>├── data/</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>│   ├── raw/                  &lt;- Read-only original data</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>│   │   └── traffic_2026.csv</span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>│   └── processed/            &lt;- Script-generated clean data</span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>│       └── 01_clean_traffic.rds</span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>├── code/</span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>│   ├── 01_clean_data.R</span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>│   ├── 02_fit_models.R</span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>│   └── 03_generate_figures.R</span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>├── output/</span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>│   └── figures/</span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a>│       └── fig01_density_by_hour.png</span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>└── docs/</span>
-<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a>    └── report.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_3a41fc2d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
+</div>
+</div>
+<aside class="notes">
+<p>A beautifully kept manual record still fails the core requirement of being an “executable description” that a computer can run and scale.</p>
+<p>Manual copy-paste actions and Excel mouse clicks introduce silent, untraceable human errors that version control cannot catch. We should prefer automated scripts that require zero human intervention to repeat.</p>
+<p>There is immense value in handwritten notes and manual approaches, but only as a sandbox for human thought, not as the final pipeline for data execution.</p>
+<p>The “Why” vs.&nbsp;the “How”: Code is excellent at tracking how a calculation is done, but it is terrible at explaining why you chose to do it. A handwritten notebook is a cognitive sandbox. It is where a researcher maps out messy conceptual logic, sketches potential workflows, and processes failures before writing a single line of script.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="scenario-3" class="slide level2">
+<h2>Scenario 3</h2>
+<p>You spend three weeks testing a hypothesis on a dataset. Your code is perfect, your pipeline is automated, but the results prove your hypothesis is completely, totally wrong. Your script yields a massive “dead end.”</p>
+<div class="fragment">
+<div class="poll">
+<ul>
+<li><p>Did your hypothesis fail, or did you?</p></li>
+<li><p>Did you just waste 3 weeks of work?</p></li>
+<li><p>Would you still share your work in a public repo?</p></li>
+</ul>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_ed994d40" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<ol type="1">
+<li><p>Did your hypothesis fail, or did you? It’s important to separate the quality of your code from the behavior of nature.<br>
+Also, an automated “failed” experiment is actually a massive engineering success.</p></li>
+<li><p>Did you just waste 3 weeks of work? The danger of deleting your dead ends: What happens to the scientific community when researchers hide their failures, forcing the next person to waste weeks re-testing the exact same wrong idea.</p></li>
+<li><p>Would you still share your work in a public repo? Submit and store it with the exact same reproducibility standards as a success, because documenting “blind alleys” saves future researchers from wasting time on the same mistake.</p></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="scenario-4" class="slide level2">
+<h2>Scenario 4</h2>
+<p>Your script runs a 4-hour simulation on a large dataset, processing everything live in temporary memory to output a final summary paragraph. When your professor spots an anomaly and asks to see the data right after the initial filtering step, you realize nothing was saved along the way.</p>
+<div class="fragment">
+<div class="poll">
+<ul>
+<li><p>What are some advantages of a single “all-or-nothing” live run?</p></li>
+<li><p>What are some disadvantages of saving intermediate steps?</p></li>
+</ul>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_005b8f77" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Disadvantages of a pipeline that only saves the final answer: impossible to troubleshoot, audit, or verify when a bug or anomaly inevitably appears in the middle.</p>
+<p>Discuss the massive waste of time and computational energy that happens when you treat data analysis as a single “all-or-nothing” live run instead of caching milestones.</p>
+<p>Debate the engineering trade-off between consuming hard drive space to store temporary milestone files versus consuming hours of processing time to re-run scripts.</p>
+<p>Better to transform a 4-hour pipeline into a modular, flexible workflow that can be paused, inspected, and restarted at any point.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section>
+<section id="quiz-poll-time" class="title-slide slide level1 center">
+<h1>Quiz-Poll Time</h1>
+<p>Open your laptops / phones</p>
+</section>
+<section id="google-form" class="slide level2">
+<h2>Google Form</h2>
+<p><br>
+</p>
+
+<img data-src="images/poll-01-qr-code.svg" class="quarto-figure quarto-figure-center r-stretch"><p><br>
+</p>
+<p><a href="https://tinyurl.com/2j88yk2n">tinyurl.com/2j88yk2n</a></p>
+</section>
+<section id="poll" class="slide level2">
+<h2>Poll</h2>
+<p>Be completely honest: When cleaning a dataset or fixing file formatting issues for an assignment, how often do you rely on manual copy-pasting, visual cell edits, or find-and-replace clicks instead of writing a code script?</p>
+<ol type="A">
+<li class="fragment"><p><span class="bold-hilit">100% Code Scripted:</span> I never touch the raw file manually; every transformation is written in a reproducible script lines.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Hybrid Scramble:</span> I try to script, but if a deadline is tight, I secretly open Excel to quickly delete bad rows or copy-paste columns.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Purely Manual:</span> I do almost all data formatting visually using trackpad movements and mouse clicks because it feels faster.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The “I Don’t Track It” Stance:</span> I change cells casually as I work and completely lose track of what I manually edited by the end of the day.</p></li>
+</ol>
+</section>
+<section id="poll-1" class="slide level2">
+<h2>Poll</h2>
+<ul>
+<li class="fragment">You notice a minor discrepancy in plot you generated 3 weeks ago. You need to backtrack to the exact code state that produced that specific figure.</li>
+<li class="fragment">What is the reality of your current local file system?</li>
+</ul>
+<ol type="A">
+<li class="fragment"><p><span class="bold-hilit">Perfect Provenance:</span> Every single script modification is systematically frozen in a timestamped Git commit hash; I can jump back in seconds.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The “Folder Vault” Cluster</span> I have copies named <code>script_v1.R</code>, <code>script_v2_fixed.R</code>, and <code>script_final_REAL.R</code>. It will take hours of manual guessing.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Overwrite Abyss:</span> I continuously modify a single file without saving historical backups. That past code state is permanently gone.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Cloud Illusion:</span> I assume my background Google Drive/Dropbox sync will save me, even though it doesn’t track execution states.</p></li>
+</ol>
+</section>
+<section id="poll-2" class="slide level2">
+<h2>Poll</h2>
+<p>You run a classmate’s random simulation script on your machine using identical data inputs. But they forgot to set a static random seed. Your output values are <em>approximately</em> close (e.g., 84.2% accuracy) but not <em>exactly</em> equal to their published value (84.5%). What is your scientific verdict?</p>
+<ol type="A">
+<li class="fragment"><p><span class="bold-hilit">Acceptable Replication:</span> Close enough is good enough for computational science; minor stochastic fluctuations don’t undermine the core theory.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Unverifiable Black Box:</span> An approximate match is a failure; without an exact mathematical match via a random seed, I cannot verify if the pipeline is truly bug-free.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Indifferent Stance:</span> I assume the difference is caused by our different operating system kernels or processor architectures anyway, so a seed won’t fix it.</p></li>
+</ol>
+</section>
+<section id="poll-3" class="slide level2">
+<h2>Poll</h2>
+<p>Think about how you write lab reports, group notes, or draft research paragraphs. Where do your conceptual interpretations live relative to the raw output data files that support them?</p>
+<ol type="A">
+<li class="fragment"><p><span class="bold-hilit">Fully Welded Documents:</span> I use integrated dynamic document tools (like Quarto or Jupyter Notebooks) so my text and live data logic are locked together natively.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Absolute Path Blind Bind:</span> I manually type hardcoded server folder paths (e.g., <code>/Users/name/Desktop/run_3</code>) inside a separate Microsoft Word document.</p></li>
+<li class="fragment"><p><span class="bold-hilit">The Total Disconnect:</span> My data lives in a folder on a local server, and my interpretations live entirely in casual emails, Slack chats, or scrap paper notes.</p></li>
+</ol>
+</section>
+<section id="poll-4" class="slide level2">
+<h2>Poll</h2>
+<p>You are preparing to submit your finalized computational report. What is your group’s stance on providing full public access to your custom scripts and intermediate datasets?</p>
+<p>In exactly <strong>one word</strong>, submit the single biggest psychological or technical barrier that makes you hesitate to hit “Public Release” on a dataset.*</p>
+</section></section>
+<section>
+<section id="take-aways" class="title-slide slide level1 center">
+<h1>Take Aways</h1>
+
+</section>
+<section id="from-todays-paper" class="slide level2">
+<h2>From today’s paper</h2>
+<p><br>
+</p>
+<div class="line-block">“As a minimal requirement, you should at least<br>
+be able to reproduce the results yourself.<br>
+. . .<br>
+Although it may sound like a very<br>
+weak requirement, even this level of<br>
+reproducibility will often require a certain<br>
+level of care in order to be met.”</div>
 
 
 </section></section>
