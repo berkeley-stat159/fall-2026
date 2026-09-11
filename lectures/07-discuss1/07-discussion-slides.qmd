@@ -1,0 +1,436 @@
+---
+title: "10 Simple Rules for RR"
+subtitle: "An Overview of Ten Simple Rules for Reproducible Research"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Ten Simple Rules for Reproducible Computational Research
+
+## Reading
+
+::: {.nonincremental}
+- Title: **Ten Simple Rules for Reproducible Computational Research**
+- Author(s): Sandve G.K., Nekrutenki A., Taylor J., Hovig E.
+- Year: 2013
+- Journal: PLOS Computational Biology 9(10): e1003285
+- <https://doi.org/10.1371/journal.pcbi.1003285>
+:::
+
+
+## Why are we here?
+
+- [Beyond Morality:]{.bold-hilit} Reproducibility isn't just a moral obligation to your field; 
+a lack of tracking is a direct technical burden on *you*.
+
+- [The Time-Saver:]{.bold-hilit} Meticulous tracking allows your future self to effortlessly 
+apply past methods to new data or reuse code templates across separate projects.
+
+- [The Bare-Minimum Threshold:]{.bold-hilit} At an absolute baseline, you must at least be able 
+to reproduce your *own* results to defend your science against future questioning.
+
+- [The Reality Check:]{.bold-hilit} Because any given analysis contains an exponential 
+combination of parameters and software variables, memory *will* fail you. You must record details while underway.
+
+
+<!--
+## The Core Definition
+
+An *analysis workflow* is the full sequence of:
+
+- pre-processing, 
+- script executions, 
+- and post-processing required 
+- to get from raw data to a final plot.
+-->
+
+
+## 
+
+### Rules 1 & 2: Eliminating Human Drift
+
+- [The Documentation Trap:]{.bold-hilit} Manual logs easily drift out of sync.
+
+- [The Executable Solution:]{.bold-hilit} Write your entire workflow as a directly 
+executable file—such as a shell script or a Makefile.
+
+- [Ban Manual Clicks:]{.bold-hilit} Avoid manual copy-pasting, mouse clicks or graphical format 
+tweaks between documents.
+
+::: {.fragment}
+### Rules 3 & 4: Freezing Your Software State
+
+- [The Version Lock:]{.bold-hilit} Minor changes between software updates can alter data 
+outputs or prevent code from running entirely.
+:::
+
+
+## Rule 5: Exposing the Pipeline's Inner Mechanics
+
+\
+
+::: {.columns}
+::: {.column width="50%"}
+### The Analytical Value
+
+Quickly browsing through step-by-step intermediate output files can reveal 
+silent logical discrepancies, catching bugs that are completely masked in 
+final summary charts.
+:::
+
+::: {.column width="50%" .fragment}
+### The Pipeline Value
+
+If your full project execution is long or resource-heavy, archiving standardized 
+intermediate states allows you to re-run localized parts of the process without 
+starting over from scratch.
+:::
+:::
+
+- [The Audit Baseline:]{.bold-hilit} Storing intermediate files allows external peers 
+to critically examine your complete pipeline logic without needing all 
+your local executables operational.
+
+
+## Rules 6 & 7: Perfect Replications & Data Foundations
+
+::: {.callout-warning}
+### Rule 6: The Random Seed Mandate
+
+Many analyses involve stochastic element randomness. To achieve an *exact* 
+procedural reproduction rather than just an approximation, you must explicitly 
+record and pass your initial random seed.
+:::
+
+- [Isolate Visual Tweaks:]{.bold-hilit} Store the data behind your charts.
+
+- [The Scripted Plot:]{.bold-hilit} Preserve the exact code used to render a graphic.
+
+
+<!--
+## Rule 8: Generating Hierarchical Output
+
+- **The Summary Illusion:** Final publication charts and tables represent heavily 
+compressed, summarized distributions (like a single mean value along a curve).
+
+- **The Inspection Obligation:** Fully validating your findings requires you to 
+inspect and verify the granular, detailed sub-values underlying those summaries 
+at least once.
+
+- **The Hypertext Blueprint:** The authors advocate for structuring output as 
+HTML hypertext. 
+
+- **The Click Connection:** This creates an intuitive data ecosystem where 
+readers can simply click a summarized data point to follow a link directly 
+to its raw, underlying source matrix.
+
+
+## Rule 9: Connecting Textual Claims to Result IDs
+
+- **The Separation Flaw:** Throughout a project, interpretations live in separate 
+text files, emails, or markdown notes, while data results live on a local 
+workstation or cluster server.
+
+- **The Matching Failure:** Tracing which exact version of an analysis supports 
+a specific paragraph or conclusion becomes highly error-prone as the project's 
+data pool scales.
+
+- **The Early Bind:** Force yourself to embed explicit file paths, hash tags, 
+or analysis result IDs directly into your notes the exact moment you draft 
+an interpretation.
+
+- **Literate Documents:** Leverage integrated processing engines (like Sweave, 
+Quarto, or interactive workflow environments) to weld your live data results 
+directly inside your descriptive text files.
+-->
+
+
+## Rule 10: Providing Public Access to Your Workflow
+
+- [The Minimum Material:]{.bold-hilit} Submit your core data frames and raw 
+source code scripts as mandatory supplementary online files upon publication.
+
+- [The Review Advantage:]{.bold-hilit} Exposing your full workspace infrastructure 
+increases reviewer trust, accelerates editorial turnaround times, and boosts your 
+project's future citation metrics.
+
+- [The Open Stance:]{.bold-hilit} Always remain prepared to openly answer peer 
+requests for deep architectural or parameter pipeline metrics.
+
+
+# Discussion Time
+
+## Screens Off, Minds On
+
+\
+
+::: {.nonincremental}
+- [Devices Away:]{.bold-hilit} Laptops & tablets closed, phones away.
+
+- [No One Alone:]{.bold-hilit} Pair or team up (no solo seats).
+
+- [Engage Fully:]{.bold-hilit} Be ready to speak, debate, and share ideas.
+:::
+
+
+## Scenario 1
+
+Your teammate creates a breathtaking, beautifully styled 
+bar chart for a group presentation. However, when the professor asks 
+to see the 10,000 raw data points that generated the third bar, your 
+teammate sweats and says, _"Uh, it's on my old laptop."_
+
+. . .
+
+::: {.poll .nonincremental}
+- Can a highly styled chart have any actual academic value?
+
+- How should losing access to raw files be treated?
+
+- Should the student be accused of data fabrication?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4, bottom = 0)
+```
+
+::: {.notes}
+A pretty chart without raw data trails isn't science; it's just creative writing/coding.
+There is not a lot of academic value in a breathtaking, highly styled chart 
+if the baseline data supporting it cannot be produced on demand.
+
+"The burden of proof." In some professional environments, an inability to instantly 
+back up a specific visual claim with its underlying numbers looks less like a 
+mistake and more like data fabrication.
+:::
+
+
+## Scenario 2
+
+A student keeps a beautiful, 100-page handwritten leather notebook. 
+She tracks every single mouse click, every copy-paste action, and every manual 
+data-cleaning step she performs in Excel with flawless precision. 
+
+. . .
+
+::: {.poll .nonincremental}
+- Is the student's work reproducible?
+
+- Is there any value in (or place for) hand-written notes?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4, bottom = 0)
+```
+
+::: {.notes}
+A beautifully kept manual record still fails the core requirement of being an 
+"executable description" that a computer can run and scale.
+
+Manual copy-paste actions and Excel mouse clicks introduce silent, 
+untraceable human errors that version control cannot catch.
+We should prefer automated scripts that require zero human intervention to repeat.
+
+There is immense value in handwritten notes and manual approaches, but only 
+as a sandbox for human thought, not as the final pipeline for data execution.
+
+The "Why" vs. the "How": Code is excellent at tracking how a calculation is done, 
+but it is terrible at explaining why you chose to do it. 
+A handwritten notebook is a cognitive sandbox. 
+It is where a researcher maps out messy conceptual logic, sketches potential 
+workflows, and processes failures before writing a single line of script.
+:::
+
+
+## Scenario 3
+
+You spend three weeks testing a hypothesis on a dataset. 
+Your code is perfect, your pipeline is automated, but the results prove 
+your hypothesis is completely, totally wrong. Your script yields a massive 
+"dead end." 
+
+. . .
+
+::: {.poll .nonincremental}
+- Did your hypothesis fail, or did you? 
+
+- Did you just waste 3 weeks of work?
+
+- Would you still share your work in a public repo?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4, bottom = 0)
+```
+
+
+::: {.notes}
+1) Did your hypothesis fail, or did you?
+It's important to separate the quality of your code from the behavior of nature.  
+Also, an automated "failed" experiment is actually a massive engineering success.
+
+2) Did you just waste 3 weeks of work?
+The danger of deleting your dead ends: What happens to the scientific community 
+when researchers hide their failures, forcing the next person to waste weeks 
+re-testing the exact same wrong idea.
+
+3) Would you still share your work in a public repo?
+Submit and store it with the exact same reproducibility standards as a success, 
+because documenting "blind alleys" saves future researchers from wasting time 
+on the same mistake.
+:::
+
+
+## Scenario 4
+
+Your script runs a 4-hour simulation on a large dataset, 
+processing everything live in temporary memory to output a final summary paragraph. 
+When your professor spots an anomaly and asks to see the data right after 
+the initial filtering step, you realize nothing was saved along the way.
+
+. . .
+
+::: {.poll .nonincremental}
+- What are some advantages of a single "all-or-nothing" live run?
+
+- What are some disadvantages of saving intermediate steps?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4, bottom = 0)
+```
+
+::: {.notes}
+Disadvantages of a pipeline that only saves the final answer: impossible 
+to troubleshoot, audit, or verify when a bug or anomaly inevitably appears 
+in the middle.
+
+Discuss the massive waste of time and computational energy that happens 
+when you treat data analysis as a single "all-or-nothing" live run 
+instead of caching milestones.
+
+Debate the engineering trade-off between consuming hard drive space 
+to store temporary milestone files versus consuming hours of processing time 
+to re-run scripts.
+
+Better to transform a 4-hour pipeline into a modular, flexible workflow 
+that can be paused, inspected, and restarted at any point.
+:::
+
+
+# Quiz-Poll Time
+
+Open your laptops / phones
+
+## Google Form
+
+\
+
+![](images/poll-01-qr-code.svg){fig-align="center"}
+
+\
+
+[tinyurl.com/2j88yk2n](https://tinyurl.com/2j88yk2n)
+
+
+## Poll
+
+Be completely honest: When cleaning a dataset or fixing file formatting issues 
+for an assignment, how often do you rely on manual copy-pasting, visual cell 
+edits, or find-and-replace clicks instead of writing a code script?
+
+A) [100% Code Scripted:]{.bold-hilit} I never touch the raw file manually; 
+every transformation is written in a reproducible script lines.
+
+B) [The Hybrid Scramble:]{.bold-hilit} I try to script, but if a 
+deadline is tight, I secretly open Excel to quickly delete bad rows or 
+copy-paste columns.
+
+C) [Purely Manual:]{.bold-hilit} I do almost all data formatting visually 
+using trackpad movements and mouse clicks because it feels faster.
+
+D) [The "I Don't Track It" Stance:]{.bold-hilit} I change cells casually as 
+I work and completely lose track of what I manually edited by the end of the day.
+
+
+## Poll
+
+- You notice a minor discrepancy in plot you generated 3 weeks ago. You need to backtrack 
+to the exact code state that produced that specific figure. 
+- What is the reality of your current local file system?
+
+A) [Perfect Provenance:]{.bold-hilit} Every single script modification is systematically frozen in a timestamped Git commit hash; I can jump back in seconds.
+
+B) [The "Folder Vault" Cluster]{.bold-hilit} I have copies named `script_v1.R`, `script_v2_fixed.R`, and `script_final_REAL.R`. It will take hours of manual guessing.
+
+C) [The Overwrite Abyss:]{.bold-hilit} I continuously modify a single file without saving historical backups. That past code state is permanently gone.
+
+D) [The Cloud Illusion:]{.bold-hilit} I assume my background Google Drive/Dropbox sync will save me, even though it doesn't track execution states.
+
+
+## Poll
+
+You run a classmate's random simulation script on your machine 
+using identical data inputs. But they forgot to set a static random seed. 
+Your output values are *approximately* close (e.g., 84.2% accuracy) but not *exactly* 
+equal to their published value (84.5%). What is your scientific verdict?
+
+A) [Acceptable Replication:]{.bold-hilit} Close enough is good enough for 
+computational science; minor stochastic fluctuations don't undermine the core theory.
+
+B) [Unverifiable Black Box:]{.bold-hilit} An approximate match is a failure; 
+without an exact mathematical match via a random seed, I cannot verify if 
+the pipeline is truly bug-free.
+
+C) [Indifferent Stance:]{.bold-hilit} I assume the difference is caused by 
+our different operating system kernels or processor architectures anyway, 
+so a seed won't fix it.
+
+
+## Poll
+
+Think about how you write lab reports, group notes, or draft research paragraphs. 
+Where do your conceptual interpretations live relative to the raw output data 
+files that support them?
+
+A) [Fully Welded Documents:]{.bold-hilit} I use integrated dynamic document 
+tools (like Quarto or Jupyter Notebooks) so my text and live data logic are 
+locked together natively.
+
+B) [The Absolute Path Blind Bind:]{.bold-hilit} I manually type hardcoded 
+server folder paths (e.g., `/Users/name/Desktop/run_3`) inside a separate 
+Microsoft Word document.
+
+C) [The Total Disconnect:]{.bold-hilit} My data lives in a folder on a 
+local server, and my interpretations live entirely in casual emails, 
+Slack chats, or scrap paper notes.
+
+
+## Poll
+
+You are preparing to submit your finalized computational report. What is your 
+group's stance on providing full public access to your custom scripts and 
+intermediate datasets?
+
+In exactly **one word**, submit the single biggest psychological or technical 
+barrier that makes you hesitate to hit "Public Release" on a dataset.*
+
+
+
+# Take Aways
+
+## From today's paper
+
+\
+
+| "As a minimal requirement, you should at least 
+| be able to reproduce the results yourself.
+| . . .
+| Although it may sound like a very
+| weak requirement, even this level of
+| reproducibility will often require a certain
+| level of care in order to be met."

@@ -74,7 +74,7 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 1"
-          href: ""
+          href: "lectures/07-discuss1/07-discussion-slides.html"
 - week: 4
   days:
     - date: "Sep 14"
