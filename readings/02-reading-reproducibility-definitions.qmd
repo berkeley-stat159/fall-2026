@@ -4,11 +4,14 @@ title: 2) Reproducibility Definitions
 
 ## Assigned Reading
 
-- Title: **Guide for Reproducible Research**
+- Title: **Guide for Reproducible Research: Overview**
+    + Definitions
+    + Added ADvantages
+    + Barriers
+    + Resources
 - Author(s): The Turing Way
 - Year: 2024
-- Journal: PLOS Computational Biology 9(10): e1003285
-- <https://book.the-turing-way.org/reproducible-research>
+- <https://book.the-turing-way.org/reproducible-research/overview/>
 
 
 ## Reflections
