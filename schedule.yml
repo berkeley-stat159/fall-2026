@@ -82,7 +82,7 @@
         - type: "Lecture"
           id: ""
           name: "Git Branching"
-          href: ""
+          href: "lectures/08-git3/08-git-branches-slides.html"
     - date: "Sep 15"
       items:
         - type: "Lab"
