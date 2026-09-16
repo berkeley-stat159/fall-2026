@@ -1,0 +1,364 @@
+---
+title: "Case Study: Global Temperature Anomalies"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Rising Global Temperature
+
+## {background-image="images/nyt-2018-fourth-warmest-year.png" background-size="contain"}
+
+## About NYT's article
+
+\
+
+::: {.nonincremental}
+- **It's Official: 2018 Was the Fourth-Warmest Year on Record**
+
+- by John Schwartz and Nadja Popovich
+
+- Published on Feb 6, 2019
+
+- <https://www.nytimes.com/interactive/2019/02/06/climate/fourth-hottest-year.html>
+:::
+
+
+## Authors [^1] [^2]
+
+:::: {.columns}
+::: {.column}
+![](images/nyt-john-schwartz.png)
+
+[^1]: <https://www.nytimes.com/by/john-schwartz>
+:::
+
+::: {.column}
+![](images/nyt-nadja-popovich.png)
+
+[^2]: <https://www.nytimes.com/by/nadja-popovich>
+:::
+::::
+
+
+## Article's claims
+
+- "NASA scientists announced Wednesday that the Earth's average surface 
+temperature in 2018 was the fourth highest in nearly 140 years of 
+record-keeping and a continuation of an unmistakable warming trend."
+
+- "The data means that the five warmest years in recorded history have been 
+the last five, and that 18 of the 19 warmest years have occurred since 2001."
+
+- "The publication of the NASA temperature data came in tandem with a similar 
+announcement from the National Oceanic and Atmospheric Administration."
+
+## Article's claims
+
+![](images/nyt-rising-global-temp-zoom-1.svg){fig-align="center"}
+
+## Article's claims
+
+![](images/nyt-rising-global-temp-zoom-2.svg){fig-align="center"}
+
+## Article's claims
+
+![](images/nyt-rising-global-temp-zoom-3.svg){fig-align="center"}
+
+## Question
+
+![](images/nyt-rising-global-temp-zoom-4.svg){fig-align="center"}
+
+
+## Main Considerations
+
+- Can we find the raw data?
+
+- How much cleaning/wrangling does the raw data need?
+
+- Can we write code to graph a timeline?
+
+- Can we customize the visual appearance of the graphic?
+
+
+# Finding the Data
+
+## NASA's GISTEMP data
+
+\
+
+GISS Surface Temperature Analysis (GISTEMP v4)
+
+<https://data.giss.nasa.gov/gistemp/>
+
+. . .
+
+\
+
+\
+
+\
+
+::: {.small}
+Based on my experience, this step usually takes some time 
+(e.g. searching through dozens of websites and links, inspecting 
+databases, data sets, and files)
+:::
+
+
+## {background-image="images/gistemp-website-screenshot.png" background-size="contain"}
+
+
+## GISTEMP Data
+
+- The GISS Surface Temperature Analysis (GISTEMP v4) is an estimate of 
+[global surface temperature change.]{.bold-hilit}
+
+- GISTEMP is one of the longest established surface temperature analyses 
+with first estimates made in _Hansen et al. (1981)_
+
+- Uses data from:
+    + [Land]{.hilit}: Meteorological stations (NOAA GHCN v4)
+    + [Ocean]{.mdlit}: Ocean areas (ERSST v5)
+
+
+# Understanding GISTEMP Data
+
+## How do we measure weather?
+
+\
+
+:::: {.columns}
+::: {.column width="40%"}
+- Wind speed
+
+- Humidity
+
+- Air pressure
+
+- Rainfall
+
+- [Air Temperature]{.bold-hilit}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%" .fragment}
+Why focus on [Air Temperature]{.bold-hilit}?
+
+- Because temperature drives everything else
+- Scientists are most concern with air temperature at the planet surface (where we live)
+:::
+::::
+
+
+## Challenges
+
+- Earth does not have a one-single temperature
+- Temperature varies throughout the day
+- Temperature varies depending on where you are
+- Temperatures vary between urban areas and country side
+- The earth's climate system is notoriously complex
+- This system undergoes multiyear variations, e.g.,
+    + El Niño southern oscillation
+    + The Quasi-biennial oscillation of the tropical stratosphere
+
+
+## How is temperature data collected?
+
+\
+
+:::: {.columns}
+::: {.column width="45%"}
+[Land Surface Temperature]{.hilit}
+
+On land, thermometers affixed to tens of thousands of weather stations give 
+us precise air temperature readings. 
+
+- Meteorological stations
+- Weather stations
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+[Sea Surface Temperature]{.mdlit}
+
+Ships and buoys floating in the ocean capture temperatures at the sea surface.
+
+- Ship Observations
+- Moored buoys
+- Free-drifting floats
+:::
+::::
+
+## {background-image="images/weather-station.jpeg" background-size="contain"}
+
+## {background-image="images/land-weather-stations-map.png" background-size="contain"}
+
+## {background-image="images/weather-buoy.svg" background-size="contain"}
+
+## {background-image="images/global-drifter-buoys.svg" background-size="contain"}
+
+
+<!--
+## Measuring Temperatures
+
+For nearly 45 years, a team of scientists at NASA’s GISS has been tracking these 
+temperatures and producing records and analyses of the global temperature 
+of Earth. 
+
+- Each month, scientists release a dataset.
+
+- "Surface temperature anomalies" is a combination of: 
+    + Land-Surface Air (LSA) temperature anomalies
+    + Sea-Surface Water (SSW) temperature anomalies
+
+- Also known as _Land-Ocean Temperature Index_ (L-OTI)
+
+- Calculating an average global temperature requires collecting all those datasets.
+
+- <https://science.nasa.gov/earth/measuring_global_temperature/>
+
+-->
+
+
+## {background-image="images/gistemp-locations-of-measurements.png" background-size="contain"}
+
+## 
+
+![](images/gistemp-locations-of-measurements.png){fig-align="center"}
+
+<https://svs.gsfc.nasa.gov/5208/>
+
+
+## Calculating Temperature
+
+- How do you calculate the surface temperature of the whole planet?
+    + Average of temperature measurements of every square mile?
+    + Keep in mind that 70% of surface is ocean
+    + Of the 30% of land, much of it is uninhabited, innaccessible, or desert
+
+- Current estimate of global average temp is about 15 degrees Celsius
+
+
+## Temperature Anomalies
+
+$$
+\text{Temp Anomaly} = \text{Observed Temp} - \text{Baseline Average Temp}
+$$
+
+- A temperature anomaly is a departure or deviation 
+from a long-term average, baseline "normal" temperature.
+
+- Instead of measuring the absolute, raw temperature (e.g., 
+"The temperature in Death Valley today is 45°C"), climate scientists measure 
+how much warmer or colder a specific time and place is compared to its 
+historic reference baseline.
+
+
+## Temperature Anomalies
+
+$$
+\text{Temp Anomaly} = \text{Observed Temp} - \text{Baseline Average Temp}
+$$
+
+What the Numbers Mean:
+
+- Positive Anomaly (+): The observed temperature was warmer than the 
+historic baseline average.
+
+- Negative Anomaly (-): The observed temperature was cooler than the 
+historic baseline average.
+
+- Zero Anomaly (0): The temperature was exactly equal to the long-term 
+historical average.
+
+
+## Why Using Anomalies?
+
+- Why not just average absolute temperatures?
+
+- Absolute temperatures are heavily distorted by local geography.
+
+- e.g. If you have two weather stations---one at the bottom of a mountain 
+and one at the peak---their absolute temperatures will vary wildly due to elevation.
+
+- While absolute temperatures shift from mile to mile, temperature anomalies 
+are highly correlated across vast distances.
+
+- e.g. If a winter is unusually warm in Chicago, it is almost certainly 
+unusually warm in Detroit, Milwaukee, and across the entire Midwest. 
+
+- Because the anomaly signal is uniform across large regions, they accurately
+reflect temperature trends even in data-sparse areas.
+
+
+## 
+
+![](images/gistemp-data-downloads.svg){fig-align="center"}
+
+## {background-image="images/gistemp-data-page-screenshot-1.png" background-size="contain"}
+
+## {background-image="images/gistemp-data-page-screenshot-2.png" background-size="contain"}
+
+
+## txt file [^3] {.nostretch}
+
+![](images/gistemp-data-txt-file.png){width=80% fig-align="center"}
+
+[^3]: https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.txt
+
+## csv file [^4] {.nostretch}
+
+![](images/gistemp-data-csv-file.png){width=80% fig-align="center"}
+
+[^4]: https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv
+
+
+## {background-image="images/gistemp-timeline-screenshot.png" background-size="contain"}
+
+
+# Graphs (timelines)
+
+## {background-image="images/nyt-rising-global-temperature-timeline.png" background-size="contain"}
+
+## {background-image="images/nasa-global-mean-estimates-timeline.png" background-size="contain"}
+
+
+## NYT -vs- NASA
+
+\
+
+:::: {.columns}
+::: {.column}
+NYT
+
+![](images/nyt-rising-global-temperature-timeline.png)
+:::
+
+::: {.column}
+NASA
+
+![](images/nasa-global-mean-estimates-timeline.png)
+:::
+::::
+
+
+## Questions
+
+\
+
+Did the NYT actively manipulate the data to create climate panic?
+
+\
+
+Why did NYT change the baseline? Any thoughts?
+
+
+```{r}
+#| echo: false
+countdown::countdown(3, bottom = 0)
+```
+

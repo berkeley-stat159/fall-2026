@@ -94,7 +94,7 @@
         - type: "Lecture"
           id: ""
           name: "Case Study: Global Temperature"
-          href: ""
+          href: "lectures/09-global-temp/09-global-temp-slides.html"
         - type: "Reading"
           id: ""
           name: "7 Easy Steps to Open Science (due 9/23)"
