@@ -21,4 +21,56 @@ Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
 :::
 
 
-More details TBD
+### 1. Reflecting on Open Access
+
+The paper contrasts Gold Open Access (articles made free by the publisher) with 
+Green Open Access (authors self-archiving their own work). 
+
+Think back to a research assignment you completed over the past semester. 
+
+- Describe a specific time you encountered an academic paywall online. 
+- How did you bypass it? 
+- Based on the text, explain how checking a free, stable subject 
+repository like ArXiv could have changed your research flow.
+
+
+### 2. Reflecting on Open Data
+
+The paper mentions that while traditional rules state data must be shared 
+"upon request," the vast majority of researchers fail to share data publicly. 
+
+Look at a data-driven spreadsheet or lab project you completed for a previous class. 
+
+- If a classmate messaged you right now demanding your raw files to check for errors, 
+what specific formatting chaos, missing labels, or raw file clutter in your folders 
+would make you hesitant to hand it over? 
+
+- What is one step you could take to make it FAIR (findable, accessible, 
+interoperable, and reusable)?
+
+
+### 3. Reflecting on Teaching Open Science
+
+Chopik et al. state that even if students do not become professional scientists, 
+open science training is critical to creating smarter "consumers of research" who 
+view media reports critically. 
+
+Scroll through your social media feed or a news outlet right now until you find a 
+headline making a scientific, psychological, or health-related claim. 
+Based on your reading of this paper, what specific "transparency indicators" 
+(like open code links, data badges, or a preregistration note) are completely 
+missing from the article that should cause you to doubt its rigor?
+
+
+## Rubric
+
+- **Full Credit (3 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the technical definition in The Turing Way. Clearly written by a human.
+
+- **Partial Credit (1-2 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from the webpage.
