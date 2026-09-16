@@ -88,7 +88,7 @@
         - type: "Lab"
           id: ""
           name: "Getting started with Git branches"
-          href: ""
+          href: "labs/lab03.pdf"
     - date: "Sep 16"
       items:
         - type: "Lecture"
