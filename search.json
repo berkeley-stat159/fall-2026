@@ -1020,7 +1020,18 @@
     "href": "readings/03-reading-open-science.html#reflections",
     "title": "3) 7 Steps to Open Science",
     "section": "Reflections",
-    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\nMore details TBD",
+    "text": "Reflections\n\n\n\n\n\n\nbCourses Submission\n\n\n\nSubmit your answers—to the following questions—to the corresponding assignment in bCourses.\nAccepted formats: PDF, HTML, MS Word (.docx), or Google Doc\n\n\n\n1. Reflecting on Open Access\nThe paper contrasts Gold Open Access (articles made free by the publisher) with Green Open Access (authors self-archiving their own work).\nThink back to a research assignment you completed over the past semester.\n\nDescribe a specific time you encountered an academic paywall online.\nHow did you bypass it?\nBased on the text, explain how checking a free, stable subject repository like ArXiv could have changed your research flow.\n\n\n\n2. Reflecting on Open Data\nThe paper mentions that while traditional rules state data must be shared “upon request,” the vast majority of researchers fail to share data publicly.\nLook at a data-driven spreadsheet or lab project you completed for a previous class.\n\nIf a classmate messaged you right now demanding your raw files to check for errors, what specific formatting chaos, missing labels, or raw file clutter in your folders would make you hesitant to hand it over?\nWhat is one step you could take to make it FAIR (findable, accessible, interoperable, and reusable)?\n\n\n\n3. Reflecting on Teaching Open Science\nChopik et al. state that even if students do not become professional scientists, open science training is critical to creating smarter “consumers of research” who view media reports critically.\nScroll through your social media feed or a news outlet right now until you find a headline making a scientific, psychological, or health-related claim. Based on your reading of this paper, what specific “transparency indicators” (like open code links, data badges, or a preregistration note) are completely missing from the article that should cause you to doubt its rigor?",
+    "crumbs": [
+      "Readings",
+      "3) 7 Steps to Open Science"
+    ]
+  },
+  {
+    "objectID": "readings/03-reading-open-science.html#rubric",
+    "href": "readings/03-reading-open-science.html#rubric",
+    "title": "3) 7 Steps to Open Science",
+    "section": "Rubric",
+    "text": "Rubric\n\nFull Credit (3 Points): Response is highly specific, names unique personal or localized constraints, and explicitly connects the personal experience back to the technical definition in The Turing Way. Clearly written by a human.\nPartial Credit (1-2 Points): Response is correct but uses vague or generic examples (e.g., “I lost a file once” instead of naming the script). Sounds like a generic summary an AI could have written.\nNo Credit (0 Points): Response relies entirely on abstract definitions, fails to provide personal context, or uses copy-pasted text from the webpage.",
     "crumbs": [
       "Readings",
       "3) 7 Steps to Open Science"
