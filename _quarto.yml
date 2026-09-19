@@ -45,6 +45,7 @@ website:
         collapse: true
         contents:
           - hws/hw01/hw01.qmd
+          - hws/proj01/proj01.qmd
       - section: "Other"
         contents:
           - href: license.qmd

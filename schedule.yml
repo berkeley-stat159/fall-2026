@@ -104,11 +104,11 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 2"
-          href: ""
+          href: "lectures/10-discuss2/10-discussion-slides.html"
         - type: "Homework"
           id: ""
           name: "Project 1 TBA (due 10/2)"
-          href: ""
+          href: "hws/proj01/proj01.html"
 - week: 5
   days:
     - date: "Sep 21"
