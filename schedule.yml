@@ -116,7 +116,7 @@
         - type: "Lecture"
           id: ""
           name: "Git Remotes"
-          href: ""
+          href: "lectures/11-git4/11-git-remotes-slides.html"
     - date: "Sep 22"
       items:
         - type: "Lab"

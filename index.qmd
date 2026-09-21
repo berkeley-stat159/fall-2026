@@ -16,9 +16,9 @@ listing:
 
 
 ::: {.callout-note title="Announcements 📣"}
-Reading 2 is now available
+Reading 3 is now available
 
-HW1 due Sep-18
+Project 1 due Oct-2
 :::
 
 
