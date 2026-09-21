@@ -1,0 +1,572 @@
+---
+title: "Git Remotes"
+subtitle: "Remote Repositories and Github"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+## Limitations of local repos
+
+- [It only exists on one computer]{.bold-hilit} 
+    + If your hard drive fails, you could lose all your work and history 
+    unless you have backups.
+
+- [Make collaboration difficult]{.bold-hilit}
+    + If you're working with teammates, there's no easy way for them to see 
+    your changes or contribute to your project.
+    + Sharing code from a local repository requires manual file transfers or 
+    email attachments.
+
+- Solution? 
+    + [Remote repositories!]{.bold-hilit}
+
+
+# Remote Repos
+
+## {background-image="images/local-and-remote-repos-cover.svg" background-size="contain"}
+
+## Basic Workflow with a Remote Repository
+
+\
+
+1) You synchronize your local repo with a remote repo.
+
+2) You do your day-to-day work in a local repository.
+
+3) You upload your local changes to the remote repo. 
+
+4) Repeat steps 2-3
+
+
+## {background-image="images/local-remote-typical-workflow-1.svg" background-size="contain"}
+
+## {background-image="images/local-remote-typical-workflow-2.svg" background-size="contain"}
+
+## {background-image="images/local-remote-typical-workflow-3.svg" background-size="contain"}
+
+## {background-image="images/local-remote-typical-workflow-4.svg" background-size="contain"}
+
+::: {.notes}
+In most real-world Git workflows, you use both local and remote repositories 
+together. You do your day-to-day work in a local repository, and you synchronize 
+with a remote repository to share changes and collaborate.
+
+This dual-repository model gives you the best of both worlds: the speed and 
+privacy of local work combined with the backup and collaboration benefits 
+of remote hosting.
+:::
+
+
+## What is a remote repository?
+
+. . .
+
+\
+
+A remote repository is a [copy of your Git project hosted on a server]{.bold-hilit} 
+that is accessible over the internet or a network.
+
+- Your local repo sits on your computer
+
+- The remote repo lives on a centralized infrastructure
+
+::: {.notes}
+Simply put, a remote repo is just another git repository that is stored (hosted)
+in a remote computer (as opposed to local repos stored in your computer).
+:::
+
+
+## What is a remote repo good for?
+
+. . .
+
+\
+
+Two primary purposes:
+
+1) Remote repositories are good for [collaboration]{.bold-hilit}[^1]
+
+2) They are also good as a [backup]{.bold-hilit} (or "solitary reproducibility")
+
+
+[^1]: We'll discuss how to use remote repos for collaboration in a future lecture.
+
+
+## Why Remotes Matter for Solitary Reproducibility?
+
+- [Offsite Backup & Disaster recovery]{.bold-hilit}: Protects research from 
+local hardware failures.
+
+- [Hardware Mobility]{.bold-hilit}: Seamlessly move code between a laptop and 
+a lab's computing cluster.
+
+- [Public Provenance]{.bold-hilit}: Serves as a timestamped, immutable record 
+of scientific development.
+
+- [Public Inspection]{.bold-hilit}: True reproducibility requires third-party 
+verification. Remote repos allow peer-reviewers and the public to audit your work.
+
+
+## Platforms to host remote repositories
+
+- [GitHub]{.bold-hilit}: The industry standard and largest host in the world. It is the default 
+platform for open-source software, academic packages, and community-driven 
+reproducible research.
+
+- [GitLab]{.bold-hilit}: A powerful alternative heavily favored by enterprises and institutional 
+research centers. Many universities host their own self-managed GitLab instances 
+on internal servers to comply with strict data privacy laws.
+
+- [Bitbucket]{.bold-hilit}: Owned by Atlassian, this platform is frequently used in corporate 
+environments that rely heavily on Jira for project management.
+
+. . .
+
+[BTW: We're going to focus on GitHub. You'll get formally introduced to GitHub in lab.]{.mdlit}
+
+
+## About GitHub
+
+- Web-based platform that hosts [Git]{.mdlit} repositories in the cloud.
+
+- Used by developers store, share, and collaborate on software code.
+
+- Created in 2008; Acquired by Microsoft in 2018.
+
+- Provides: 
+
+    + a user-friendly graphical interface, 
+    + project management features, 
+    + automation tools on top of the standard command-line Git environment
+
+- [GitHub]{.hilit} $\neq$ [Git]{.mdlit}
+
+    + [Git]{.mdlit} is the local version control engine,
+    + [GitHub]{.hilit} is the global distribution hub.
+
+
+## Limitations of Remote Repositories
+
+- Working with remote repositories requires internet connectivity.
+
+- Remote repositories introduce an extra step in your workflow. 
+After making local commits, you need to explicitly upload them to the remote repo.
+
+- Hosting service issues:
+    + storage limits, 
+    + privacy concerns, 
+    + costs ($) 
+
+::: {.notes}
+Depending on the hosting service, there may be storage limits, privacy concerns, 
+or costs associated with private repositories, though many platforms offer 
+free tiers for personal and open-source projects.
+:::
+
+
+# Git Push: upload changes to a remote repo
+
+::: {.notes}
+Here's how it typically works: you make changes and commit them locally, 
+then you push those commits to a remote repository. Teammates pull your 
+changes from the remote repository to their local machines, where they can 
+review, modify, and contribute.
+:::
+
+
+## {background-image="images/git-push-flow-1.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-2.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-3.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-4.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-5.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-6.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-7.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-8.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-9.svg" background-size="contain"}
+
+## {background-image="images/git-push-flow-10.svg" background-size="contain"}
+
+
+## What happens during `git push`?
+
+When you run `git push origin main`
+
+- Git checks which commits exist locally but not on the remote.
+
+- Git compresses these commits and sends them to GitHub.
+
+- GitHub receives the commits and updates the remote branch.
+
+- GitHub sends a confirmation message back to your local Git.
+
+- The moment the local Git engine receives that success confirmation from GitHub, 
+it instantly updates the local `origin/main` pointer forward to the last commit.
+
+- Local `main` and local `origin/main` are perfectly aligned, pointing to the
+last commit.
+
+
+## Demistifying `origin`
+
+- Analogy:
+
+    + 📇 Contact Name: `origin`
+    + 📲 Phone Number: `git@github.com:yourusername/your-repo.git`
+
+- `origin` is just a shortcut nickname.
+
+- It is NOT the name of a branch 
+
+- Why use it? Typing long cryptographic SSH URLs every time you save your 
+work is annoying.
+
+- The Mapping: Git maps the short nickname `origin` to your specific, secure URL 
+on GitHub.
+
+- Flexibility: You could technically rename `origin` to `github`, `backup`, or 
+`cloud` (Git doesn't care!)
+
+
+## Demistifying `origin/main`
+
+- this is the remote-tracking branch
+- it is a local branch (lives on your computer, not in the cloud)
+- it is read-only (git manages it automatically)
+- the format is always `server/branch`
+- i.e. the `main` branch that lives on the `origin` server
+- it acts as a cache or a local bookmark
+- it only moves when your computer speaks to github (via `push`, `fetch`, `pull`)
+- `origin/main` is like a contact's "Last Seen" timestamp. It doesn't track what GitHub is doing in real-time; 
+- it only tracks what GitHub was doing the last time you interacted with it
+
+::: {.notes}
+Its sole job is to answer the question: 
+"Where was the GitHub server's main branch the absolute last time this laptop 
+talked to it?
+:::
+
+
+## Local -vs- Remote
+
+:::: {.columns}
+::: {.column .fragment}
+[Local Repo]{.mdlit}
+
+- Located on your hard drive
+- Only you can access it directly
+- Works completly offline
+- Very fast (local disk operations)
+- No automatic backup
+- Difficult to share with others
+- Completely private
+:::
+
+::: {.column .fragment}
+[Remote Repo]{.hilit}
+
+- Located on a server or cloud
+- Multiple users can access it
+- Internet required
+- Slower (network-dependent)
+- Acts as a backup for local work
+- Designed for team collaboration
+- Can be public or private
+:::
+::::
+
+
+# Basic `git push` Syntax
+
+## Basic `git push` syntax
+
+The simplest form of `git push` looks like this:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git push <remote> <branch>
+```
+
+- `<remote>` is the name of your remote repository (usually `origin`)
+
+- `<branch>` is the branch you want to push
+
+. . .
+
+For example, to push your `main` branch to the remote called `origin`:
+
+```{.bash code-line-numbers="false"}
+git push origin main
+```
+
+
+## Pushing Your First Commit to GitHub
+
+Assume that the URL of the remote repository is:
+`git@github.com:yourusername/your-repo.git`
+
+. . .
+
+\
+
+Step 1) Adding a remote is straightforward:
+
+```{.bash code-line-numbers="false"}
+git remote add origin [repository-url]
+```
+
+- `git remote add`: The command to add a new remote connection
+- `origin`: The name you're giving to this remote (convention is to use `"origin"`)
+- `[repository-url]`: The GitHub URL you copied earlier
+
+
+## Pushing Your First Commit to GitHub
+
+Step 2) Once a remote repo has been added, check your remote connection
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git remote -v
+```
+
+. . .
+
+\
+
+You should see output like this:
+
+```{.markdown code-line-numbers="false"}
+origin  git@github.com:yourusername/your-repo.git (fetch)
+origin  git@github.com:yourusername/your-repo.git (push)
+```
+
+This confirms that `origin` points to your GitHub repository.
+
+
+## Pushing Your First Commit to GitHub
+
+Step 3) Make sure you have commits
+
+```{.bash code-line-numbers="false"}
+# View your commits
+git log --oneline
+```
+
+\
+
+If you see commits listed, you're ready to push. 
+If not, make some changes and commit them first.
+
+
+## Pushing Your First Commit to GitHub
+
+Step 4) Now push your commits to GitHub:
+
+```{.bash code-line-numbers="false"}
+# Push main branch to origin
+git push origin main
+```
+
+. . .
+
+\
+
+For your first push, you might see output like this:
+
+```{.markdown code-line-numbers="false"}
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 242 bytes | 242.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:yourusername/your-repo.git
+ * [new branch]      main -> main
+```
+
+
+## Setting Upstream Tracking
+
+- Every time you push, you might get tired of typing `git push origin main`. 
+
+- Git offers a shortcut using [upstream tracking]{.bold-hilit}.
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Push and set upstream tracking
+git push -u origin main
+```
+
+- When you set an upstream branch, Git remembers which remote branch corresponds 
+to your local branch.
+
+- Then you can just type `git push` without specifying the remote and branch.
+
+- Now you can simply use:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Short form (works after setting upstream)
+git push
+```
+
+
+## Pushing Multiple Commits at Once
+
+- You don't need to push after every commit. 
+- Git lets you accumulate multiple commits locally and push them all at once.
+
+. . .
+
+Example: 
+
+- Say you have 3 new commits in your local branch. 
+- You can push all three commits at once:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git push origin main
+```
+
+\
+ 
+Git will send all three commits to GitHub in a single push operation. 
+This is more efficient than pushing after each individual commit.
+
+
+
+## Pushing Different Branches
+
+- You can push any local branch to GitHub, not just `main`. 
+
+- This is useful when working on features or bug fixes.
+
+. . .
+
+Example: Say you created a feature branch called `add-login` 
+(and made some commits):
+
+. . .
+
+To push this branch to GitHub:
+
+```{.bash code-line-numbers="false"}
+git push -u origin add-login
+```
+
+
+## When to push your code
+
+There's no strict rule, but here are some good practices:
+
+- [After completing a logical unit of work]{.bold-hilit}: When you finish a 
+feature, fix a bug, or reach a stable state.
+
+- [Before ending your work session]{.bold-hilit}: Push at the end of the day 
+so your work is backed up.
+
+- [Before switching computers]{.bold-hilit}: Push from one machine so you can 
+pull on another.
+
+- [When collaborating]{.bold-hilit}: Push regularly so teammates can see 
+your progress.
+
+. . .
+
+Avoid pushing broken code or work-in-progress changes to the `main` branch. 
+Use feature branches for incomplete work.
+
+
+# Understanding Push Errors
+
+## Error: Updates Were Rejected
+
+This error happens when the remote branch has commits that you don't have locally:
+
+```{.markdown code-line-numbers="false"}
+! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 
+'git@github.com:yourusername/your-repo.git'
+
+hint: Updates were rejected because the remote contains 
+work that you do not have locally.
+```
+
+. . .
+
+\
+
+This typically means someone else pushed changes to GitHub, or you made 
+commits on GitHub directly (like editing files in the web interface).
+
+[Solution]{.bold-hilit}: You need to `pull` the remote changes first, then push again. 
+We'll cover `git pull` in a future lecture.
+
+```{.bash code-line-numbers="false"}
+git pull origin main
+```
+
+
+## Error: No Upstream Branch
+
+If you try to use git push without setting upstream tracking first, you'll see:
+
+```{.markdown code-line-numbers="false"}
+fatal: The current branch main has no upstream branch.
+```
+
+. . .
+
+\
+
+[Solution]{.bold-hilit}: Set the upstream when you push:
+
+```{.bash code-line-numbers="false"}
+git push -u origin main
+```
+
+
+## Error: Authentication Failed
+
+If your credentials are incorrect or expired, you'll see:
+
+```{.markdown code-line-numbers="false"}
+remote: Invalid username or password.
+fatal: Authentication failed
+```
+
+. . .
+
+\ 
+
+[Solution]{.bold-hilit}: Check GitHub's authentication settings.
+
+
+## Best Practices for Pushing
+
+Follow these guidelines to avoid common problems:
+
+- [Always commit before pushing]{.bold-hilit}: You can't push uncommitted changes.
+
+- [Use meaningful commit messages]{.bold-hilit}: Others will see your commits 
+on GitHub.
+
+- [Pull before pushing]{.bold-hilit}: Especially in team projects, 
+check for remote changes first.
+
+- [Push feature branches separately]{.bold-hilit}: Keep experimental work 
+isolated from main.
+
+- [Don't force push]{.bold-hilit}: Avoid `git push --force` unless you 
+understand the consequences.
+
