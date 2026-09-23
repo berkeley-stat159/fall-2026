@@ -128,11 +128,11 @@
         - type: "Lecture"
           id: ""
           name: "Undoing changes in Git"
-          href: ""
+          href: "lectures/12-git5/12-git-undos-slides.html"
         - type: "Reading"
           id: ""
           name: "Data Science at the Singularity (due 9/30)"
-          href: "readsings/04-reading-ds-singularity.html"
+          href: "readings/04-reading-ds-singularity.html"
     - date: "Sep 25"
       items:
         - type: "Lecture"
