@@ -809,31 +809,42 @@
 <h2 data-id="quarto-animate-title">Reverting Multiple (consecutive) Commits</h2>
 <ul>
 <li class="fragment"><p>You can revert multiple commits at once.</p></li>
-<li class="fragment"><p>For example, say you want to revert the last 3 commits. Here’s how to do it.</p></li>
+<li class="fragment"><p>For example, say you want to revert the last 2 commits. Here’s how to do it.</p></li>
 </ul>
 <div class="fragment">
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb34-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Revert the last 3 commits</span></span>
-<span id="cb34-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># This creates 3 separate revert commits</span></span>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb34-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Revert the last 2 commits</span></span>
+<span id="cb34-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># This creates 2 separate revert commits</span></span>
 <span id="cb34-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> revert HEAD~2..HEAD</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This creates new commits that undo the changes made in the last two commits on your current branch</p>
 </div>
 </section>
 <section id="reverting-multiple-consecutive-commits-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Reverting Multiple (consecutive) Commits</h2>
 <ul>
 <li><p>You can revert multiple commits at once.</p></li>
-<li><p>For example, say you want to revert the last 3 commits. Here’s how to do it.</p></li>
+<li><p>For example, say you want to revert the last 2 commits. Here’s how to do it.</p></li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb35-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Revert the last 3 commits</span></span>
-<span id="cb35-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># This creates 3 separate revert commits</span></span>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb35-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Revert the last 2 commits</span></span>
+<span id="cb35-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># This creates 2 separate revert commits</span></span>
 <span id="cb35-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> revert HEAD~2..HEAD</span>
 <span id="cb35-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Or revert without creating commits immediately</span></span>
 <span id="cb35-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co"># (you'll commit manually after)</span></span>
 <span id="cb35-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> revert <span class="at">--no-commit</span> HEAD~2..HEAD</span>
-<span id="cb35-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Revert last three changes"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Revert last two changes"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>The <code>--no-commit</code> option is useful when you want to revert several commits but create only one revert commit instead of multiple ones.</p>
 </div>
+</section>
+<section id="reverting-multiple-consecutive-commits-2" class="slide level2">
+<h2>Reverting Multiple (consecutive) Commits</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> revert HEAD~2..HEAD</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><code>HEAD</code>: Refers to the tip of your current branch (the latest commit).</li>
+<li class="fragment"><code>HEAD~2</code>: Refers to the commit two steps back from the top of your branch.</li>
+<li class="fragment"><code>..</code>: Specifies a range of commits (from <code>HEAD~2</code> up to <code>HEAD</code>)</li>
+<li class="fragment">In Git range syntax <code>A..B</code>, <code>A</code> is exclusive and <code>B</code> is inclusive.</li>
+</ul>
 </section>
 <section id="when-to-use-git-revert" class="slide level2">
 <h2>When to use <code>git revert</code></h2>
@@ -875,21 +886,21 @@
 <h2>How <code>git reset</code> Works</h2>
 <p>Using the same example from before, suppose you want to completely remove the <code>"Add new feature to tab 1"</code> commit as if it never existed:</p>
 <div class="fragment">
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Move HEAD back one commit (default is --mixed)</span></span>
-<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Move HEAD back one commit (default is --mixed)</span></span>
+<span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Your commit history now looks like:</p>
 <div class="small">
-<div class="sourceCode" id="cb37"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a>commit bcd456 (HEAD -&gt; main)</span>
-<span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a>Date: Yesterday</span>
-<span id="cb37-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">    Split layout into 2 tabs</span></span>
-<span id="cb37-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a aria-hidden="true" tabindex="-1"></a>commit cde789</span>
-<span id="cb37-7"><a aria-hidden="true" tabindex="-1"></a>Date: 2 days ago</span>
-<span id="cb37-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-9"><a aria-hidden="true" tabindex="-1"></a><span class="in">    Initial commit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a>commit bcd456 (HEAD -&gt; main)</span>
+<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a>Date: Yesterday</span>
+<span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">    Split layout into 2 tabs</span></span>
+<span id="cb38-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a aria-hidden="true" tabindex="-1"></a>commit cde789</span>
+<span id="cb38-7"><a aria-hidden="true" tabindex="-1"></a>Date: 2 days ago</span>
+<span id="cb38-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-9"><a aria-hidden="true" tabindex="-1"></a><span class="in">    Initial commit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -934,12 +945,12 @@
 <p>If you’ve already pushed the commit you’re resetting, you’ll create a mess:</p>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># You reset and try to push</span></span>
-<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1</span>
-<span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span>
-<span id="cb38-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Error: Updates were rejected</span></span>
-<span id="cb38-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Your local branch is behind the remote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># You reset and try to push</span></span>
+<span id="cb39-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1</span>
+<span id="cb39-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span>
+<span id="cb39-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Error: Updates were rejected</span></span>
+<span id="cb39-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Your local branch is behind the remote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>Git refuses to push because you’re trying to rewrite history that others might depend on.</p></li>
 <li class="fragment"><p>This is why reset should only be used for commits that haven’t been shared yet.</p></li>

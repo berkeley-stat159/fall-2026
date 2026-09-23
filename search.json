@@ -2067,14 +2067,21 @@
     "href": "lectures/12-git5/12-git-undos-slides.html#reverting-multiple-consecutive-commits",
     "title": "Undoing Changes in Git",
     "section": "Reverting Multiple (consecutive) Commits",
-    "text": "Reverting Multiple (consecutive) Commits\n\nYou can revert multiple commits at once.\nFor example, say you want to revert the last 3 commits. Here’s how to do it.\n\n\n# Revert the last 3 commits\n# This creates 3 separate revert commits\ngit revert HEAD~2..HEAD"
+    "text": "Reverting Multiple (consecutive) Commits\n\nYou can revert multiple commits at once.\nFor example, say you want to revert the last 2 commits. Here’s how to do it.\n\n\n# Revert the last 2 commits\n# This creates 2 separate revert commits\ngit revert HEAD~2..HEAD\nThis creates new commits that undo the changes made in the last two commits on your current branch"
   },
   {
     "objectID": "lectures/12-git5/12-git-undos-slides.html#reverting-multiple-consecutive-commits-1",
     "href": "lectures/12-git5/12-git-undos-slides.html#reverting-multiple-consecutive-commits-1",
     "title": "Undoing Changes in Git",
     "section": "Reverting Multiple (consecutive) Commits",
-    "text": "Reverting Multiple (consecutive) Commits\n\nYou can revert multiple commits at once.\nFor example, say you want to revert the last 3 commits. Here’s how to do it.\n\n# Revert the last 3 commits\n# This creates 3 separate revert commits\ngit revert HEAD~2..HEAD\n\n# Or revert without creating commits immediately\n# (you'll commit manually after)\ngit revert --no-commit HEAD~2..HEAD\ngit commit -m \"Revert last three changes\"\n\nThe --no-commit option is useful when you want to revert several commits but create only one revert commit instead of multiple ones."
+    "text": "Reverting Multiple (consecutive) Commits\n\nYou can revert multiple commits at once.\nFor example, say you want to revert the last 2 commits. Here’s how to do it.\n\n# Revert the last 2 commits\n# This creates 2 separate revert commits\ngit revert HEAD~2..HEAD\n\n# Or revert without creating commits immediately\n# (you'll commit manually after)\ngit revert --no-commit HEAD~2..HEAD\ngit commit -m \"Revert last two changes\"\n\nThe --no-commit option is useful when you want to revert several commits but create only one revert commit instead of multiple ones."
+  },
+  {
+    "objectID": "lectures/12-git5/12-git-undos-slides.html#reverting-multiple-consecutive-commits-2",
+    "href": "lectures/12-git5/12-git-undos-slides.html#reverting-multiple-consecutive-commits-2",
+    "title": "Undoing Changes in Git",
+    "section": "Reverting Multiple (consecutive) Commits",
+    "text": "Reverting Multiple (consecutive) Commits\ngit revert HEAD~2..HEAD\n\nHEAD: Refers to the tip of your current branch (the latest commit).\nHEAD~2: Refers to the commit two steps back from the top of your branch.\n..: Specifies a range of commits (from HEAD~2 up to HEAD)\nIn Git range syntax A..B, A is exclusive and B is inclusive."
   },
   {
     "objectID": "lectures/12-git5/12-git-undos-slides.html#when-to-use-git-revert",
