@@ -21,4 +21,84 @@ assignment in bCourses.
 Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
 :::
 
-More details TBD
+
+## Reflection 1
+
+- Think about your own recent workflow behavior for a class project or literature search.
+
+- Have you ever completely abandoned a high-quality scientific paper or 
+tutorial simply because the link was broken, the data was paywalled, 
+or the code required a clunky manual installation?
+
+- Is your personal "friction threshold" getting lower? Does a lack of an 
+immediate download link make you view a researcher's work as obsolete or untrustworthy?
+
+
+## Reflection 2
+
+- Reflect on a time you were working on a competitive coding problem, 
+a video game, or a graded assignment tracking a metric.
+
+- Did you find yourself frantically tweaking tiny parameters or copy-pasting 
+random "hacks" just to make the final number go up, without actually 
+understanding *why* the changes worked?
+
+- How do you protect your own mindset from falling into 
+"mindless scoreboard chasing" when your future job rewards execution speed over deep theory?
+
+
+## Reflection 3
+
+- Look at the skills you are currently trying to learn in college 
+(e.g., fundamental Python/R syntax, data cleaning commands, formatting charts, 
+machine learning model fitting).
+
+- If an automated system can handle those tactical execution steps robotically, 
+what unique, human value do you bring to a data project?
+
+- How will you deliberately change what you focus on learning this or next 
+semester(s) to ensure you are the "architect" directing the machine, 
+rather than a "tactical data cleaner" replaced by a script?
+
+
+<!--
+
+## Reflection 4: Exposing Your Real Artifacts
+
+- Look at a recent computational lab report, code submission, or group essay you wrote.
+- Did you over-hype your conclusions or use speculative language to mask the fact 
+that your pipeline had bugs or messy exceptions?
+- What would it feel like to strip away all fluff from your next assignment submission, 
+presenting *only* the raw, unpolished script actions "as is"? What is stopping you from doing that?
+
+
+## Reflection 5: The Threat of Forgetting the Past
+
+- If you are forced to choose between reading a brilliant 1980 paper that has no code repository, 
+or a mediocre 2025 paper that includes an instant, one-click install template on 
+GitHub—which one do you honestly choose?
+
+- How does this behavioral bias shape the types of problems you choose to solve in your education?
+
+-->
+
+
+## Rubric
+
+::: {.callout-important}
+Generic responses that do not mention a specific 
+past assignment name or unique piece of code from your own experience will 
+receive a score of zero.
+:::
+
+- **Full Credit (3 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the prompt in each question. Clearly written by a human.
+
+- **Partial Credit (1-2 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from a webpage
+or AI tool.
