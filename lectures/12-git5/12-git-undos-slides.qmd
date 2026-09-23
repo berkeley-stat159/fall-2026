@@ -738,15 +738,18 @@ resolve the conflicts manually.
 
 - You can revert multiple commits at once.
 
-- For example, say you want to revert the last 3 commits. Here's how to do it.
+- For example, say you want to revert the last 2 commits. Here's how to do it.
 
 . . .
 
 ```{.bash code-line-numbers="false"}
-# Revert the last 3 commits
-# This creates 3 separate revert commits
+# Revert the last 2 commits
+# This creates 2 separate revert commits
 git revert HEAD~2..HEAD
 ```
+
+This creates new commits that undo the changes made in the last two commits 
+on your current branch
 
 
 ## Reverting Multiple (consecutive) Commits {auto-animate="true"}
@@ -754,24 +757,36 @@ git revert HEAD~2..HEAD
 ::: {.nonincremental}
 - You can revert multiple commits at once.
 
-- For example, say you want to revert the last 3 commits. Here's how to do it.
+- For example, say you want to revert the last 2 commits. Here's how to do it.
 :::
 
 ```{.bash code-line-numbers="false"}
-# Revert the last 3 commits
-# This creates 3 separate revert commits
+# Revert the last 2 commits
+# This creates 2 separate revert commits
 git revert HEAD~2..HEAD
 
 # Or revert without creating commits immediately
 # (you'll commit manually after)
 git revert --no-commit HEAD~2..HEAD
-git commit -m "Revert last three changes"
+git commit -m "Revert last two changes"
 ```
 
 . . .
 
 The `--no-commit` option is useful when you want to revert several 
 commits but create only one revert commit instead of multiple ones.
+
+
+## Reverting Multiple (consecutive) Commits
+
+```{.bash code-line-numbers="false"}
+git revert HEAD~2..HEAD
+```
+
+- `HEAD`: Refers to the tip of your current branch (the latest commit).
+- `HEAD~2`: Refers to the commit two steps back from the top of your branch.
+- `..`: Specifies a range of commits (from `HEAD~2` up to `HEAD`)
+- In Git range syntax `A..B`, `A` is exclusive and `B` is inclusive.
 
 
 ## When to use `git revert`
