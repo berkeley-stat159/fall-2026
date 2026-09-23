@@ -122,7 +122,7 @@
         - type: "Lab"
           id: ""
           name: "Github and remote repos"
-          href: ""
+          href: "labs/lab04.pdf"
     - date: "Sep 23"
       items:
         - type: "Lecture"
