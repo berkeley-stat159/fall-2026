@@ -1,0 +1,968 @@
+---
+title: "Undoing Changes in Git"
+subtitle: "Undoing changes and fixing history"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+## Undoing Changes
+
+In these slides we'll cover:
+
+1) Undoing changes before committing
+    + `git restore`
+
+2) Amending the most recent commit
+    + `git amend`
+
+3) Undoing commits
+    + `git revert`
+    + `git reset`
+
+
+# Undo Changes Before Commit in Git
+
+## {background-image="images/git-three-states-changes-raw.svg" background-size="contain"}
+
+## When you modify a file ...
+
+- It starts in your working directory as **"modified."** 
+
+\
+
+- When you run `git add`, it moves to the staging area as ["staged."]{.mdlit} 
+
+\
+
+- Finally, when you run `git commit -m "..."`, it gets saved to the repository 
+as ["committed."]{.hilit}
+
+
+# Discarding Changes in Working Directory
+
+## `git restore`
+
+- Sometimes you modify a file and realize you want to throw away 
+those changes completely. 
+
+- Maybe you experimented with code that didn't work, or you accidentally 
+deleted important lines.
+
+- The `git restore` command is the modern way to discard changes in your 
+working directory.
+
+- It reverts the file back to how it looked in the last commit.
+
+
+## Using `git restore`
+
+Let's say you modified a file called `eda.ipynb` but want to 
+[discard all changes]{.bold-hilit}. Here's how you check the status first:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+. . .
+
+You might see output like this:
+
+```{.markdown code-line-numbers="false"}
+On branch main
+Changes not staged for commit:
+  modified:   eda.ipynb
+```
+
+. . .
+
+Now discard the changes:
+
+```{.bash code-line-numbers="false"}
+git restore eda.ipynb
+```
+
+. . .
+
+\
+
+::: {.small}
+This command replaces `eda.ipynb` in your working directory with the version 
+from the last commit. All your modifications disappear permanently, so use this 
+carefully.
+:::
+
+
+## Restoring Multiple Files
+
+You can restore several files at once by listing them:
+
+```{.bash code-line-numbers="false"}
+git restore eda.ipynb styles.css index.html
+```
+
+. . .
+
+\
+
+Or restore all modified files in the current directory:
+
+```{.bash code-line-numbers="false"}
+git restore .
+```
+
+
+# Unstaging Files from Staging Area
+
+## Unstaging Files from Staging Area
+
+- What if you already ran `git add` but now want to unstage a file? 
+
+- You're not trying to discard the changes---you just want to remove the 
+file from the staging area.
+
+- This is like removing items from your shopping cart before checkout. 
+The items (your changes) still exist, but they're no longer queued for 
+the next commit.
+
+
+## Using `git restore --staged`
+
+The `--staged` flag tells Git to unstage a file:
+
+```{.bash code-line-numbers="false"}
+git restore --staged eda.ipynb
+```
+
+- After running this, `eda.ipynb` returns to the ["modified"]{.mdlit} state. 
+
+- Your changes remain intact in the working directory---they're just no 
+longer staged.
+
+. . .
+
+Check the status to confirm:
+
+```{.bash code-line-numbers="false"}
+git status
+```
+
+You'll see:
+
+```{.markdown code-line-numbers="false"}
+Changes not staged for commit:
+  modified:   eda.ipynb
+```
+
+
+## Unstaging All Files
+
+To unstage everything at once:
+
+```{.bash code-line-numbers="false"}
+git restore --staged .
+```
+
+. . .
+
+\
+
+This is helpful when you accidentally staged too many files and want to 
+be more selective about what goes into your next commit.
+
+
+## The Older `git reset` Method
+
+Before Git 2.23, developers used `git reset` to unstage files:
+
+```{.bash code-line-numbers="false"}
+git reset HEAD eda.ipynb
+```
+
+\
+
+- This command still works perfectly, and you'll encounter it in many 
+existing projects. 
+
+- `HEAD` refers to your current commit, and this 
+command says "unstage this file, but keep my changes."
+
+
+## Combining Unstaging and Discarding {auto-animate="true"}
+
+. . .
+
+Sometimes you want to both unstage a file and discard the changes. 
+You can do this in two steps:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Step 1: Unstage the file
+git restore --staged eda.ipynb
+```
+
+## Combining Unstaging and Discarding {auto-animate="true"}
+
+Sometimes you want to both unstage a file and discard the changes. 
+You can do this in two steps:
+
+```{.bash code-line-numbers="false"}
+# Step 1: Unstage the file
+git restore --staged eda.ipynb
+
+# Step 2: Discard the changes
+git restore eda.ipynb
+```
+
+. . .
+
+\
+
+Think of it like taking an item out of your shopping cart and then 
+deciding whether to put it back on the shelf or keep looking at it.
+
+
+## Checking Before You Undo
+
+Before you discard changes, it's smart to review what you're about to lose. 
+Git gives you tools to inspect your modifications.
+
+. . .
+
+\
+
+:::: {.columns}
+::: {.column}
+### Viewing Unstaged Changes
+
+See exactly what changed in your working directory:
+
+```{.bash code-line-numbers="false"}
+git diff
+```
+
+::: {.small}
+This shows line-by-line differences.
+If you see something important, you might decide not to undo it.
+:::
+:::
+
+::: {.column .fragment}
+### Viewing Staged Changes
+
+Check what's currently staged for commit:
+
+```{.bash code-line-numbers="false"}
+git diff --staged
+```
+
+::: {.small}
+This helps you verify what will be included in your next commit before you 
+unstage anything.
+:::
+:::
+
+::::
+
+
+## Safety Tips and Best Practices
+
+Undoing changes is powerful, but it can be destructive. 
+Here are some guidelines to work safely.
+
+- Always run `git status` before undoing anything. This shows you exactly what 
+state your files are in and helps you choose the right command.
+
+- Use `git diff` to review changes before discarding them. Once you run 
+`git restore`, those changes are gone forever---they're not saved anywhere.
+
+- Be extra careful with `git restore .` because it affects all files at once. 
+Consider restoring files one at a time when you're learning.
+
+- If you're unsure, you can always make a quick backup copy of your file outside 
+Git before running any restore commands.
+
+
+## Scenario 1: Modified Wrong File
+
+You edited `slides.qmd` by mistake and want to undo everything:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Check what changed
+git status
+
+# Discard all changes to slides.qmd
+git restore slides.qmd
+```
+
+## Scenario 2: Staged Too Many Files
+
+You ran `git add .` but only wanted to stage `app.R`, not `test.R`:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Unstage test.R only
+git restore --staged test.R
+
+# Now only app.R remains staged
+git status
+```
+
+## Scenario 3: Want Fresh Start
+
+You made many changes across multiple files and want to start over completely:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Unstage everything
+git restore --staged .
+
+# Discard all changes
+git restore .
+
+# Verify clean state
+git status
+```
+
+
+## Scenario 4: Practical Workflow
+
+You modify `index.html`, `styles.css`, and `app.R`. Then you stage everything:
+
+```{.bash code-line-numbers="false"}
+git add .
+```
+
+. . .
+
+After reviewing, you realize a`pp.R` has experimental code that isn't ready. 
+You want to unstage it:
+
+```{.bash code-line-numbers="false"}
+git restore --staged app.R
+```
+
+. . .
+
+Now you look at the changes in `app.R` and decide they're not worth keeping:
+
+```{.bash code-line-numbers="false"}
+git restore app.R
+```
+
+. . .
+
+Finally, you commit only `index.html` and `styles.css`:
+
+```{.bash code-line-numbers="false"}
+git commit -m "Update homepage layout and styling"
+```
+
+
+# Amend the most recent commit
+
+## Amending a commit
+
+- Amending a commit means modifying the most recent commit you made. 
+
+- You can change the commit message, 
+
+- You can add forgotten files,
+
+- You can remove files you didn't mean to include.
+
+. . .
+
+Note that: 
+
+- When you amend, Git doesn't actually edit the existing commit.
+
+- The original commit is discarded and replaced with the amended version. 
+
+- This works perfectly when you're working alone or haven't shared your commits yet.
+
+
+## Changing the Last Commit Message {auto-animate="true"}
+
+Imagine you just committed with a message that says `"Fix bug"` but you want 
+something more descriptive like `"Fix bug in slider widget"`. 
+
+. . .
+
+Here's how you do it.
+
+```{.bash code-line-numbers="false"}
+# First, make your commit (let's say with a typo)
+git commit -m "Fix bug in sdiler wigdet"
+```
+
+
+## Changing the Last Commit Message {auto-animate="true"}
+
+Imagine you just committed with a message that says `"Fix bug"` but you want 
+something more descriptive like `"Fix bug in slider widget"`. 
+
+Here's how you do it.
+
+```{.bash code-line-numbers="false"}
+# First, make your commit (let's say with a typo)
+git commit -m "Fix bug in sdiler wigdet"
+
+# Oops! Notice the typo "sdiler wigdet"
+# Amend it immediately:
+git commit --amend -m "Fix bug in slider widget"
+```
+
+::: {.notes}
+When you run this command, Git replaces your last commit with a new one that 
+has the corrected message. 
+The files and changes remain exactly the same—only the message changes.
+:::
+
+
+
+## Adding Forgotten Files to the Last Commit {auto-animate="true"}
+
+Another common scenario is forgetting to include a file in your commit. 
+Maybe you fixed a bug across two files but only staged one of them.
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# You made a commit but forgot to include functions.py
+git commit -m "Update data cleaning script"
+```
+
+## Adding Forgotten Files to the Last Commit {auto-animate="true"}
+
+Another common scenario is forgetting to include a file in your commit. 
+Maybe you fixed a bug across two files but only staged one of them.
+
+```{.bash code-line-numbers="false"}
+# You made a commit but forgot to include functions.py
+git commit -m "Update data cleaning script"
+
+# Realize you forgot functions.py
+# Stage the forgotten file
+git add functions.py
+
+# Amend the previous commit to include it
+git commit --amend --no-edit
+```
+
+. . .
+
+::: {.small}
+The `--no-edit` flag tells Git to keep the same commit message. 
+This is perfect when you only want to add files without changing the message.
+:::
+
+
+## Example with Message Change {auto-animate="true"}
+
+You can also add files and change the message at the same time. 
+This gives you complete control over fixing your commit.
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Original commit
+git commit -m "Add new feature to dashboard"
+```
+
+
+## Example with Message Change {auto-animate="true"}
+
+You can also add files and change the message at the same time. 
+This gives you complete control over fixing your commit.
+
+```{.bash code-line-numbers="false"}
+# Original commit
+git commit -m "Add new feature to dashboard"
+
+# Stage additional files
+git add logo.png
+git add dashboard.qmd
+
+# Amend with new message
+git commit --amend -m "Add logo to dashboard"
+```
+
+
+## Removing Files from the Last Commit {auto-animate="true"}
+
+Sometimes you accidentally include files that shouldn't be in a commit. 
+Maybe you staged all changes with `git add .` 
+and included an image file or temporary notes.
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# You committed but included screenshot.png by mistake
+git commit -m "Univariate summary statistics"
+```
+
+
+## Removing Files from the Last Commit {auto-animate="true"}
+
+Sometimes you accidentally include files that shouldn't be in a commit. 
+Maybe you staged all changes with `git add .` 
+and included an image file or temporary notes.
+
+```{.bash code-line-numbers="false"}
+# You committed but included screenshot.png by mistake
+git commit -m "Univariate summary statistics"
+
+# Remove screenshot.png from the staging area
+git restore --staged screenshot.png
+
+# Amend the commit without that file
+git commit --amend --no-edit
+```
+
+. . .
+
+::: {.small}
+The file still exists in your working directory---it just won't be part of 
+this commit anymore. You can decide later whether to delete it or add it to 
+your `.gitignore` file.
+:::
+
+
+## ⚠️ Dangers of Amending Pushed Commits
+
+- If you've already pushed your commit to GitHub or another remote repository, 
+amending it creates major problems.
+
+\
+
+- When you amend a pushed commit and try to push again, Git will reject your push. 
+This happens because the histories have diverged---your local version doesn't 
+match the remote version.
+
+\
+
+- Follow this simple rule: [only amend commits that you haven't 
+pushed yet]{.bold-hilit}. Once you push, create a new commit to fix mistakes instead.
+
+::: {.notes}
+You might be tempted to use `git push --force` to override the remote. 
+While this works technically, it causes serious issues for anyone who 
+already pulled your original commit. Their history will conflict with the new one.
+:::
+
+
+## Amend vs New Commit: When to Use Each
+
+\
+
+| [Situation]{.bold-hilit} | [Use Amend]{.bold-hilit} | [Use New Commit]{.bold-hilit} |
+|--------------------------|---------------------|----------------|
+| Typo in commit message   | Yes (if not pushed) | No             |
+| Forgot one file          | Yes (if not pushed) | No             |
+| Found bug after pushing  | No	                 | Yes            |
+| Additional feature work  | No	                 | Yes            |
+| Working on shared branch | No	                 | Yes            |
+
+. . .
+
+\
+
+::: {.small}
+`git commit --amend` only works on the most recent commit. 
+
+To modify older commits, you would need more advanced techniques like 
+interactive rebase, which is beyond basic Git usage.
+:::
+
+
+# Undoing Commits
+
+## Undoing Commits
+
+- Sometimes you accidentally commit the wrong code and need to undo it.
+
+- Git offers two main ways to undo commits: 
+    1) `git revert`
+    2) `git reset`
+
+- They both undo changes, but they work in completely different ways.
+
+    + `git revert` creates a new commit that undoes previous work.
+
+    + `git reset` rewrites your commit history.
+
+- Choosing the wrong command can cause problems, 
+especially when working with others.
+
+
+# Undoing commits with `git revert`
+
+## {background-image="images/git-revert-diagram-1.svg" background-size="contain"}
+
+## {background-image="images/git-revert-diagram-2.svg" background-size="contain"}
+
+## {background-image="images/git-revert-diagram-3.svg" background-size="contain"}
+
+## `git revert`
+
+- `git revert` creates a new commit that undoes the changes from a previous commit. 
+
+- It's the safe option because it doesn't delete or modify existing commits. 
+
+- Instead, it adds a new commit that reverses the changes.
+
+- This approach is perfect when you've already pushed your commits to a 
+remote repository and other people might be using them. 
+
+- You're not rewriting history; you're adding to it.
+
+
+## How `git revert` works
+
+Suppose you have a file called `dashboard.qmd` and you've made several commits. 
+Your commit history looks like this:
+
+. . .
+
+::: {.small}
+```{.markdown code-line-numbers="false"}
+commit abc123 (HEAD -> main)
+Date: Today
+
+    Add new feature to tab 1
+
+commit bcd456
+Date: Yesterday
+
+    Split layout into 2 tabs
+
+commit cde789
+Date: 2 days ago
+
+    Initial commit
+```
+:::
+
+
+## How `git revert` works
+
+- Now you realize the `"Add new feature to tab 1"` commit (abc123) introduced a problem. 
+
+- You want to undo it, but you've already pushed it to GitHub and your 
+teammate has pulled the changes.
+
+- Here's how you use `git revert`:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Revert the most recent commit
+git revert HEAD
+
+# Git will open your editor for a commit message
+# The default message will be something like:
+# "Revert 'Add new feature to tab 1'"
+
+# Save and close the editor
+```
+
+
+## How `git revert` works
+
+After running `git revert HEAD`, Git creates a new commit that undoes the 
+changes from `abc123`. 
+
+. . .
+
+Your history now looks like this:
+
+::: {.small}
+```{.markdown code-line-numbers="false"}
+commit fed987 (HEAD -> main)
+Date: Today
+
+    Revert "Add new feature to tab 1"
+    
+commit abc123
+Date: Today
+
+    Add new feature to tab 1
+
+commit bcd456
+Date: Yesterday
+
+    Split layout into 2 tabs
+```
+:::
+
+. . .
+
+::: {.small}
+Notice that the original commit (`abc123`) is still there. The new commit 
+(`fed987`) simply reverses its changes. This is safe and transparent.
+:::
+
+
+## Reverting Older Commits
+
+. . . 
+
+You can also revert commits that aren't at the top of your history. 
+You just need to specify the commit hash:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Revert a specific commit by its hash
+git revert def456
+
+# This creates a new commit that undoes the changes from def456
+```
+
+. . .
+
+\
+
+If the changes conflict with more recent commits, Git will ask you to 
+resolve the conflicts manually.
+
+
+## Reverting Multiple (consecutive) Commits {auto-animate="true"}
+
+- You can revert multiple commits at once.
+
+- For example, say you want to revert the last 3 commits. Here's how to do it.
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Revert the last 3 commits
+# This creates 3 separate revert commits
+git revert HEAD~2..HEAD
+```
+
+
+## Reverting Multiple (consecutive) Commits {auto-animate="true"}
+
+::: {.nonincremental}
+- You can revert multiple commits at once.
+
+- For example, say you want to revert the last 3 commits. Here's how to do it.
+:::
+
+```{.bash code-line-numbers="false"}
+# Revert the last 3 commits
+# This creates 3 separate revert commits
+git revert HEAD~2..HEAD
+
+# Or revert without creating commits immediately
+# (you'll commit manually after)
+git revert --no-commit HEAD~2..HEAD
+git commit -m "Revert last three changes"
+```
+
+. . .
+
+The `--no-commit` option is useful when you want to revert several 
+commits but create only one revert commit instead of multiple ones.
+
+
+## When to use `git revert`
+
+Use `git revert` in these situations:
+
+- You've already pushed your commits to a remote repository
+- Other people are working on the same branch
+- You want to maintain a clear history of what went wrong and how you fixed it
+- You're working on a public repository where transparency matters
+- You need to undo a commit that's several commits back in history
+
+. . .
+
+::: {.small}
+Revert is the professional choice for team environments. 
+It shows accountability and keeps everyone's work synchronized.
+:::
+
+
+# Undoing Commits with `git reset`
+
+## {background-image="images/git-reset-diagram-1.svg" background-size="contain"}
+
+## {background-image="images/git-reset-diagram-2.svg" background-size="contain"}
+
+## What is `git reset`
+
+- `git reset` moves your branch pointer to a different commit, 
+effectively removing commits from your history.
+
+- Unlike `git revert`, it doesn't create new commits.
+
+- `git reset` simply pretends certain commits never happened.
+
+- This is powerful but dangerous, especially if you've already shared 
+your commits with others.
+
+
+## How `git reset` Works
+
+Using the same example from before, suppose you want to completely remove 
+the `"Add new feature to tab 1"` commit as if it never existed:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# Move HEAD back one commit (default is --mixed)
+git reset HEAD~1
+```
+
+. . .
+
+Your commit history now looks like:
+
+::: {.small}
+```{.markdown code-line-numbers="false"}
+commit bcd456 (HEAD -> main)
+Date: Yesterday
+
+    Split layout into 2 tabs
+
+commit cde789
+Date: 2 days ago
+
+    Initial commit
+```
+:::
+
+. . .
+
+::: {.small}
+The `abc123` commit is gone from your history. This approach rewrites history. 
+The commit no longer exists in your branch's timeline.
+:::
+
+
+## The tricky part about Git Reset: its modes
+
+- `git reset` moves your current branch pointer backward to a previous commit.
+
+- But unlike a simple undo, reset gives you control over what happens to your 
+changes:
+
+    + Do you want to keep them both in working directory and staging area?
+    + Do you want to keep them only in working directory?
+    + Do you want to discard them?
+
+- Git offers three different reset modes:
+
+    + `--soft`
+    + `--mixed`
+    + `--hard`
+
+## {background-image="images/git-reset-modes-1.svg" background-size="contain"}
+
+## {background-image="images/git-reset-modes-2.svg" background-size="contain"}
+
+## {background-image="images/git-reset-modes-3.svg" background-size="contain"}
+
+## {background-image="images/git-reset-modes-4.svg" background-size="contain"}
+
+
+## When Reset Causes Problems
+
+. . .
+
+If you've already pushed the commit you're resetting, you'll create a mess:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+# You reset and try to push
+git reset HEAD~1
+git push origin main
+
+# Error: Updates were rejected
+# Your local branch is behind the remote
+```
+
+- Git refuses to push because you're trying to rewrite history that 
+others might depend on.
+
+- This is why reset should only be used for commits that haven't been shared yet.
+
+
+## When to use `git reset`
+
+Use `git reset` in these situations:
+
+- You made commits locally but haven't pushed them yet
+- You're working on a personal branch that no one else uses
+- You want to combine multiple commits into one (before pushing)
+- You accidentally committed something you want to completely remove
+- You want to restart your work from an earlier point
+
+. . .
+
+::: {.small}
+Reset is perfect for cleaning up your local work before sharing it with others. 
+It's like being able to edit your draft before publishing.
+:::
+
+
+## Revert -vs- Reset
+
+:::: {.columns}
+::: {.column .fragment}
+[`git revert`]{.mdlit}
+
+- Creates a new commit that undoes changes
+- Increases the commit count (adds revert commits)
+- Preserves all commits, adds new ones
+- Safe for shared/public commits
+- Use it after pushing to remote
+- Team-friendly, transparent
+- Can be reverted again if needed
+:::
+
+::: {.column .fragment}
+[`git reset`]{.hilit}
+
+- Moves branch pointer backward, removing commits
+- Decreases the commit count (removes commits)
+- Rewrites history by removing commits
+- Dangerous for shared commits
+- Use it before pushing
+- Can cause conflicts with teammates
+- Requires reflog to recover lost commits
+:::
+::::
+
+
+## Decide which command to use:
+
+::: {.nonincremental}
+1) Have you pushed the commit to a remote repository?
+    + Yes $\rightarrow$ Use `git revert`
+    + No $\rightarrow$ Continue to question 2
+
+2) Is anyone else working on this branch?
+    + Yes $\rightarrow$ Use `git revert`
+    + No $\rightarrow$ Continue to question 3
+
+3) Do you want to keep the commit in history?
+    + Yes $\rightarrow$ Use `git revert`
+    + No $\rightarrow$ Use `git reset`
+:::
+
+::: {.small}
+When in doubt, `git revert` is the safer choice. It might create a longer history, 
+but it won't cause problems for you or your teammates.
+:::
+
