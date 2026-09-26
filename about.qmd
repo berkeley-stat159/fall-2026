@@ -11,6 +11,7 @@ and statistical data analysis, in the context of today's research environment.
 ::: {.callout-note title="Info"}
 __Instructor__: <a href='https://www.gastonsanchez.com' target='_blank'>Gaston Sanchez</a> | OH: Mon 4-5pm in Gateway-LL-1040C 
 
+
 __GSIs__: 
 
 - Sequoia Andrade | OH: Mon 2-4pm in Gateway-LL-1040F
