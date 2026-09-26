@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b7eb3ced35dd28f0c673f192a36525f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.28">
 
-  <title>Guide for Reproducible Research</title>
+  <title>7 Steps to Open Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -140,139 +140,51 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-bg.svg" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Guide for Reproducible Research</h1>
-  <p class="subtitle">What do we mean by reproducible?</p>
+  <h1 class="title">7 Steps to Open Science</h1>
+  <p class="subtitle">Actionable items to modern scientific transparency</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
 <section>
-<section id="guide-for-reproducible-research" class="title-slide slide level1 center">
-<h1>Guide for Reproducible Research</h1>
+<section id="open-science-and-reproducibility" class="title-slide slide level1 center">
+<h1>Open Science and Reproducibility</h1>
 
 </section>
 <section id="reading" class="slide level2">
 <h2>Reading</h2>
 <ul>
-<li>Chapter: <strong>Guide for Reproducible Research</strong></li>
-<li>Book: The Turing Way</li>
-<li>Year: 2024</li>
-<li><a href="https://book.the-turing-way.org/reproducible-research" class="uri">https://book.the-turing-way.org/reproducible-research</a></li>
+<li>Title: <strong>Seven Easy Steps to Open Science (An annotated reading list)</strong></li>
+<li>Authors: Sophia Cruwell et al.</li>
+<li>Journal: Zeitschrift fur Psychologie, 227(4), 237-248</li>
+<li>Year: 2019</li>
+<li><a href="https://doi.org/10.1027/2151-2604/a000387" class="uri">https://doi.org/10.1027/2151-2604/a000387</a></li>
 </ul>
 </section></section>
 <section>
-<section id="reproducibility" class="title-slide slide level1 center">
-<h1>Reproducibility</h1>
+<section id="overview" class="title-slide slide level1 center">
+<h1>Overview</h1>
 
 </section>
-<section id="section" class="slide level2 nostretch">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/reproduction-replica-cartoon.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
-</figure>
-</div>
-</section>
-<section id="what-is-the-right-verb" class="slide level2">
-<h2>What is the right verb?</h2>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/what-is-the-right-verb.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="the-turing-way-2x2-matrix" class="slide level2">
-<h2>The Turing Way 2x2 Matrix</h2>
-<p><br>
-</p>
-<pre><code>                 [ SAME DATA ]          [ DIFFERENT DATA ]
-            ┌───────────────────────┬─────────────────────────┐
-  [ SAME    │                       │                         │
-   ANALYSIS]│                       │                         │
-            ├───────────────────────┼─────────────────────────┤
-  [ DIFF.   │                       │                         │
-   ANALYSIS]│                       │                         │
-            └───────────────────────┴─────────────────────────┘</code></pre>
-</section>
-<section id="the-turing-way-2x2-matrix-1" class="slide level2">
-<h2>The Turing Way 2x2 Matrix</h2>
-<p><br>
-</p>
-<pre><code>                 [ SAME DATA ]          [ DIFFERENT DATA ]
-            ┌───────────────────────┬─────────────────────────┐
-  [ SAME    │     REPRODUCIBLE      │                         │
-   ANALYSIS]│ (Same steps &amp; data)   │                         │
-            ├───────────────────────┼─────────────────────────┤
-  [ DIFF.   │                       │                         │
-   ANALYSIS]│                       │                         │
-            └───────────────────────┴─────────────────────────┘</code></pre>
-</section>
-<section id="the-turing-way-2x2-matrix-2" class="slide level2">
-<h2>The Turing Way 2x2 Matrix</h2>
-<p><br>
-</p>
-<pre><code>                 [ SAME DATA ]          [ DIFFERENT DATA ]
-            ┌───────────────────────┬─────────────────────────┐
-  [ SAME    │     REPRODUCIBLE      │                         │
-   ANALYSIS]│ (Same steps &amp; data)   │                         │
-            ├───────────────────────┼─────────────────────────┤
-  [ DIFF.   │        ROBUST         │                         │
-   ANALYSIS]│ (Language agnostic)   │                         │
-            └───────────────────────┴─────────────────────────┘</code></pre>
-</section>
-<section id="the-turing-way-2x2-matrix-3" class="slide level2">
-<h2>The Turing Way 2x2 Matrix</h2>
-<p><br>
-</p>
-<pre><code>                 [ SAME DATA ]          [ DIFFERENT DATA ]
-            ┌───────────────────────┬─────────────────────────┐
-  [ SAME    │     REPRODUCIBLE      │      REPLICABLE         │
-   ANALYSIS]│ (Same steps &amp; data)   │ (Qualitatively similar) │
-            ├───────────────────────┼─────────────────────────┤
-  [ DIFF.   │        ROBUST         │                         │
-   ANALYSIS]│ (Language agnostic)   │                         │
-            └───────────────────────┴─────────────────────────┘</code></pre>
-</section>
-<section id="the-turing-way-2x2-matrix-4" class="slide level2">
-<h2>The Turing Way 2x2 Matrix</h2>
-<p><br>
-</p>
-<pre><code>                 [ SAME DATA ]          [ DIFFERENT DATA ]
-            ┌───────────────────────┬─────────────────────────┐
-  [ SAME    │     REPRODUCIBLE      │      REPLICABLE         │
-   ANALYSIS]│ (Same steps &amp; data)   │ (Qualitatively similar) │
-            ├───────────────────────┼─────────────────────────┤
-  [ DIFF.   │        ROBUST         │     GENERALISABLE       │
-   ANALYSIS]│ (Language agnostic)   │  (The Holy Grail)       │
-            └───────────────────────┴─────────────────────────┘</code></pre>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Takeaway</strong></p>
-</div>
-<div class="callout-content">
-<p>Computational reproducibility specifically requires obtaining the <strong>same results</strong> using the <strong>same data</strong> and <strong>same code/analysis</strong>.</p>
-</div>
-</div>
-</div>
+<section id="step-1-open-science-core-concepts" class="slide level2">
+<h2>Step 1: Open Science Core Concepts</h2>
+<p>Open Science is an umbrella movement encompassing</p>
+<ul>
+<li>transparency,</li>
+<li>rigor,</li>
+<li>reproducibility, and</li>
+<li>accessibility,</li>
+</ul>
+<p>across the entire research lifecycle.</p>
 <aside class="notes">
+<p>🌐 Step 1: Open Science (Understanding the Concept)</p>
 <ul>
-<li>Point out that terms like “reproducible” and “replicable” are often used interchangeably in lay conversations, but <em>The Turing Way</em> establishes precise definitions along a 2x2 grid.</li>
-<li>Walk through each quadrant:
-<ul>
-<li><strong>Reproducible</strong>: Same data + Same code. This is our baseline standard in computational data science.</li>
-<li><strong>Replicable</strong>: Different data + Same pipeline. Tests if the finding holds up in a new sample or dataset.</li>
-<li><strong>Robust</strong>: Same data + Different pipeline. Tests if the finding is an artifact of a specific software package, model choice, or script.</li>
-<li><strong>Generalisable</strong>: Different data + Different pipeline. The gold standard for scientific claims.</li>
-</ul></li>
-<li>Remind students: In this course, we focus heavily on the top-left quadrant (Reproducibility) as the foundation for all the others.</li>
+<li>The Baseline Definition: It is the explicit process of making both the content and the entire process of producing scientific evidence transparent and accessible to others [INDEX].</li>
+<li>The Reproducibility Standard: You must guarantee that an independent researcher can take your exact data and code, run the same analysis, and obtain identical results [INDEX].</li>
+<li>The Replicability Standard: Your documentation must be clear enough that repeating your exact procedures with new participants yields the same findings [INDEX].</li>
+<li>Targeting Human Bias: It serves as a necessary procedural defense wall against human cognitive biases, such as confirmation bias and post hoc self-deception [INDEX].</li>
+<li>Shifting Career Metrics: Adopting these behaviors helps shift institutional hiring, funding, and promotion models away from shallow journal impact factors toward transparent metrics [INDEX].</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -285,30 +197,42 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
-<section id="reproducible-neq-open-data" class="slide level2">
-<h2>Reproducible <span class="math inline">\(\neq\)</span> Open Data</h2>
+<section id="step-2-open-access-oa" class="slide level2">
+<h2>Step 2: Open Access (OA)</h2>
+<h3 id="the-gold-route">🟡 The Gold Route</h3>
 <ul>
-<li class="fragment"><strong>Open Science</strong> promotes making data, code, and papers freely available to everyone.</li>
-<li class="fragment"><strong>Computational Reproducibility</strong> focuses on code execution logic, pipeline integrity, and environment preservation.</li>
-<li class="fragment">A project with restricted or sensitive data (e.g., medical, commercial) can still be <strong>fully reproducible</strong> through:
+<li class="fragment"><span class="bold-hilit">Free for readers:</span> anyone can read, download, print, and share the final published paper</li>
+<li class="fragment"><span class="bold-hilit">Immediate Access:</span> article is open right away on the day it is published</li>
+<li class="fragment"><span class="bold-hilit">Open Licensing:</span> Articles are usually published under open licenses</li>
+<li class="fragment"><span class="bold-hilit">Author Choice:</span> Authors can publish either in fully open-access journals or in hybrid journals</li>
+<li class="fragment"><span class="bold-hilit">Article Processing Charge (APC):</span> publishers often charge an author fee (APC)
 <ul>
-<li class="fragment">Synthetic test datasets.</li>
-<li class="fragment">Containerized environments (Docker).</li>
-<li class="fragment">Secure, audited execution pipelines.</li>
+<li class="fragment">APCs are typically paid by funds, grants</li>
+<li class="fragment">Some publishers offer fee waivers (e.g.&nbsp;researchers from low-income)</li>
 </ul></li>
 </ul>
-<aside class="notes">
+</section>
+<section id="step-2-open-access-oa-1" class="slide level2">
+<h2>Step 2: Open Access (OA)</h2>
+<h3 id="the-green-route">🟢 The Green Route</h3>
 <ul>
-<li>Address a common student misconception: “My dataset has human subjects / proprietary business data, so I can’t make my project reproducible.”</li>
-<li>Clarify that <em>Open</em> and <em>Reproducible</em> overlap, but are distinct concepts.</li>
-<li>Explain how to make restricted data projects reproducible:
-<ol type="1">
-<li>Provide synthetic or scrambled mock data that mirrors the schema so external users can verify the code runs.</li>
-<li>Write deterministic unit tests and containerize the environment.</li>
-<li>Ensure that an authorized auditor inside a secure enclave could re-run the exact script and get identical results.</li>
-</ol></li>
+<li class="fragment"><span class="bold-hilit">Free for readers:</span> anyone can read, download, print, and share the final published paper</li>
+<li class="fragment"><span class="bold-hilit">Free for Authors:</span> authors do not pay an Article Processing Charge (APC)</li>
+<li class="fragment"><span class="bold-hilit">Self-archive:</span> Authors have to archive/store their work themselves
+<ul>
+<li class="fragment">You usually cannot upload the publisher’s final formatted PDF</li>
+</ul></li>
+<li class="fragment"><span class="bold-hilit">Embargo Periods:</span> Publishers often require a waiting period (e.g.&nbsp;6-24 months) before self-archive copy is made public</li>
+</ul>
+<aside class="notes">
+<p>🔓 Step 2: Open Access (Disseminating Research)</p>
+<ul>
+<li>The Main Objective: Removing all systemic and economic barriers to accessing, distributing, and re-using published scientific findings online [INDEX].</li>
+<li>The Gold Route: Publishing your work in an exclusively open-access or hybrid journal where it is made instantly free to the public by the publisher [INDEX].</li>
+<li>The Green Route: Self-archiving your work for free by uploading your peer-reviewed manuscripts or preprints to public, stable repositories (e.g., PsyArXiv) [INDEX].</li>
+<li>The Citation Advantage: Open-access articles receive a significant boost in professional utility, tracking between a 36% and 600% increase in citations [INDEX].</li>
+<li>Enabling Meta-Research: Exposing plain text openly allows data scientists to use automated text- and data-mining tools to audit field-wide claims [INDEX].</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -322,20 +246,25 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="reproducibility-as-personal-insurance" class="slide level2">
-<h2>Reproducibility as “Personal Insurance”</h2>
-<p>Working reproducibly benefits <strong>you</strong> (and your team) first:</p>
+<section id="step-3-open-data-materials-code" class="slide level2">
+<h2>Step 3: Open Data, Materials, &amp; Code</h2>
+<p><br>
+</p>
+<h3 id="the-f.a.i.r.-ingestion-pipeline">The F.A.I.R. Ingestion Pipeline</h3>
 <ul>
-<li class="fragment"><span class="bold-hilit">Future-proofing:</span> Your primary collaborator six months from now is <em>your future self</em>.</li>
-<li class="fragment"><span class="bold-hilit">Seamless onboarding:</span> New lab members can run existing pipelines without months of reconstruction.</li>
-<li class="fragment"><span class="bold-hilit">Error resilience:</span> Automated pipelines make updating figures or fixing small bugs fast and low-risk.</li>
+<li class="fragment"><span class="bold-hilit">Findable:</span> Permanent DOI assignment (e.g., via OSF)</li>
+<li class="fragment"><span class="bold-hilit">Accessible:</span> Unrestricted cloud repository locations</li>
+<li class="fragment"><span class="bold-hilit">Interoperable:</span> Non-proprietary formats (use .csv, not .xlsx)</li>
+<li class="fragment"><span class="bold-hilit">Reusable:</span> Comprehensive documentation and read-me file tracking</li>
 </ul>
 <aside class="notes">
+<p>📊 Step 3: Open Data, Materials, and Code (Transparency Fundamentals)</p>
 <ul>
-<li>Frame reproducibility not as an altruistic duty for science, but as self-preservation.</li>
-<li>Ask the class: “Have you ever opened a project you worked on 6 months ago and spent 2 hours trying to remember which script to run first?”</li>
-<li>Emphasize “Your future self doesn’t reply to emails.” If you don’t document relative paths, dependencies, and execution order today, your future self will suffer.</li>
-<li>Mention that automated pipelines (like Make or <code>targets</code> in R) allow you to re-render an entire 50-page manuscript or dashboard with one command after updating raw data.</li>
+<li>The Minimal Baseline: Moving away from “trusting” a scientist’s written summary to instead making the raw data files behind the analysis completely public [INDEX].</li>
+<li>Sharing Materials: Providing every document, experimental task, presentation tool, and digital stimulus required to reconstruct the exact study timeline [INDEX].</li>
+<li>The FAIR Data Protocol: Ensuring that your shared assets are structured to be Findable, Accessible, Interoperable, and Reusable over long periods [INDEX].</li>
+<li>The Documentation Imperative: Writing detailed read-me files so that outside users (and your own future self) can understand your columns and file paths [INDEX].</li>
+<li>Anonymization &amp; Exceptions: Safeguarding participant privacy through careful data scrubbing, or explicitly reporting clear ethical boundaries when data cannot be shared [INDEX].</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -349,72 +278,18 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-added-advantage-credit-citation" class="slide level2">
-<h2>The “Added Advantage”: Credit &amp; Citation</h2>
-<p>Publishing reproducible workflows directly boosts academic impact:</p>
-<ul>
-<li class="fragment"><span class="bold-hilit">Higher Citations:</span> Papers with public code and data receive demonstrably higher citation rates.</li>
-<li class="fragment"><span class="bold-hilit">Greater Trust:</span> Independent researchers can audit, verify, and build directly on your work.</li>
-<li class="fragment"><span class="bold-hilit">Secondary Outputs:</span> Reusable R packages, Python libraries, and pipelines earn recognition as first-class scientific contributions.</li>
-</ul>
+<section id="step-4-reproducible-analyses" class="slide level2">
+<h2>Step 4: Reproducible Analyses</h2>
+<p>Structuring workflows so that independent researchers (or the original authors at a later date) can rerun the analysis code on the raw data and produce identical quantitative results.</p>
+<p>Emphasizes computational reproducibility through scripted, programmatic analysis tools (such as R or Python), dynamic document generation (e.g., R Markdown, Quarto, Jupyter Notebooks), version control, and clear software environment specifications.</p>
 <aside class="notes">
+<p>💻 Step 4: Reproducible Analyses (Scientific Computing Skillsets)</p>
 <ul>
-<li>Highlight the selfish incentives for doing open/reproducible work: literature consistently shows a “citation advantage” for papers with publicly available code and data repositories.</li>
-<li>Explain that code repositories (GitHub/Zenodo with DOIs) allow other researchers to cite your <em>tools</em> even if they aren’t citing your specific empirical findings.</li>
-<li>Trust is currency in science: when readers can inspect your raw scripts and computational pipeline, they treat your findings with far higher confidence.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!--
-## Barrier: "Plead the Fifth" & Self-Incrimination
-
-- Current academic culture heavily penalizes public errors and exposed bugs.
-- **The Psychological Trap:** Researchers fear sharing raw code because exposing typos or minor pipeline mistakes might invite harsh criticism or rejection.
-- **The Consequence:** Authors keep code private to avoid potential self-incrimination, prioritizing personal protection over scientific transparency.
-
-::: {.notes}
-- Explain the U.S. constitutional reference for international students: "Pleading the fifth" means refusing to testify to avoid self-incrimination.
-- In research culture, publishing your raw code feels like giving reviewers and competitors a roadmap to find your mistakes.
-- Discuss how current academic culture treats coding errors as moral failures rather than normal aspects of software development.
-- Key point to stress: We need to foster a culture where sharing messy code is praised, and self-correcting bugs is rewarded rather than penalized.
-:::
-
-
-## Barrier: Asymmetric Scrutiny
-
-- Researchers tend to debug code **only when results contradict their expectations or hypotheses**.
-- If a buggy script outputs a $p < 0.05$ result that supports the hypothesis, the code is often accepted without question.
-- **The Solution:** Rigorous code testing (`pytest`/`testthat`), code review, and pre-registered analysis pipelines applied equally to *all* results.
-
-::: {.notes}
-- Define **Asymmetric Scrutiny**: We apply extreme skepticism to results we don't like, but zero skepticism to results that fit our hypothesis.
-- Give an example: You run a script, it throws an error or gives p = 0.40. You immediately dig into the code, find an index offset error, fix it, and re-run. But if it gave p = 0.01 on the first try, you might never check the code for that index error!
-- Emphasize that automated testing (unit tests) and code review from peers help neutralize human confirmation bias.
-:::
--->
-</section>
-<section id="barrier-the-career-tax-incentive-gap" class="slide level2">
-<h2>Barrier: The “Career Tax” &amp; Incentive Gap</h2>
-<ul>
-<li class="fragment"><span class="bold-hilit">Publication Bias:</span> Academic hiring, tenure, and grants overwhelmingly reward <em>novel findings</em> over robust software engineering or replication studies.</li>
-<li class="fragment"><span class="bold-hilit">The Time Sink:</span> Documenting code, setting up continuous integration, and containerizing environments takes significant time.</li>
-<li class="fragment"><span class="bold-hilit">Incentive Gap:</span> Without institutional rewards, researchers view reproducible practices as an unrewarded <strong>“career tax.”</strong></li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Connect this to real-world career incentives (hiring, tenure, grant funding).</li>
-<li>Point out the tension: Building a clean, modular, fully tested pipeline takes 2-3x longer than writing a quick “one-off” messy script.</li>
-<li>If hiring committees only count the <em>number</em> of novel publications on a resume, the researcher who takes shortcuts will publish faster than the researcher who builds reproducible infrastructure.</li>
-<li>Ask the class: “How do we fix this incentive structure in data science and computational fields?”</li>
+<li>Computing as a Core Skill: Treating computing best practices as just as integral to high-quality science as fundamental laboratory techniques [INDEX].</li>
+<li>The Raw Data Sanctuary: Saving your raw, untouched data files completely separate from any cleaned, manipulated, or transformed versions [INDEX].</li>
+<li>Structural Project Folders: Dedicating a single isolated directory to each research project, with clear sub-directories for raw data, processed data, and text [INDEX].</li>
+<li>Recording Processing Steps: Tracking every single step of data cleaning and analysis by coding your pipeline in open-source languages (like R or Python) [INDEX].</li>
+<li>Stable DOI Archiving: Uploading your code scripts and research products to reputable, permanent, DOI-issuing repositories like Figshare, Dryad, or Zenodo [INDEX].</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -428,23 +303,72 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="barrier-resource-infrastructure-deficits" class="slide level2">
-<h2>Barrier: Resource &amp; Infrastructure Deficits</h2>
-<p>Reproducibility requires resources that are often underfunded or unevenly distributed:</p>
+<section id="step-5-preregistration-registered-reports" class="slide level2">
+<h2>Step 5: Preregistration &amp; Registered Reports</h2>
+<p>Distinguishing between exploratory (hypothesis-generating) and confirmatory (hypothesis-testing) research to prevent post-hoc changes to study designs or analysis plans.</p>
 <ul>
-<li class="fragment"><span class="bold-hilit">Skills Gap:</span> Training in software engineering (Git, virtual environments, pipelines) is rarely built into scientific curricula.</li>
-<li class="fragment"><span class="bold-hilit">Computing Costs:</span> Heavy computational pipelines (e.g., multi-GPU training) can be financially prohibitive to re-run or audit.</li>
-<li class="fragment"><span class="bold-hilit">Maintenance:</span> Software dependencies drift over time, requiring continuous maintenance to stay executable.</li>
+<li class="fragment"><span class="bold-hilit">Pre-Data Lock:</span> Committing to hypotheses and statistical plans <em>before</em> gathering or viewing data files.</li>
+<li class="fragment"><span class="bold-hilit">Registered Reports:</span> Submitting your study design to a journal for peer-review <strong>prior to data collection</strong>.</li>
+<li class="fragment"><span class="bold-hilit">In-Principle Acceptance:</span> The journal guarantees publication based on design rigor, completely regardless of the final outcome.</li>
 </ul>
 <aside class="notes">
+<p>⏱️ Step 5: Preregistration and Registered Reports (Constraining Flexibility)</p>
 <ul>
-<li>Summarize the physical and structural resource barriers:
-<ol type="1">
-<li><strong>Knowledge gap</strong>: Most domain scientists were never formally taught Git, Docker, or environment isolation—they are self-taught out of necessity.</li>
-<li><strong>Financial/Compute gap</strong>: Re-running a deep learning model or climate simulation might cost thousands of dollars in cloud computing credits.</li>
-<li><strong>Dependency drift</strong>: R packages and Python libraries update constantly. A script written in 2020 may fail in 2026 if packages aren’t pinned (<code>renv</code>/<code>uv</code>/<code>conda</code>).</li>
-</ol></li>
-<li>Conclude by setting up the transition to the next part of your course: teaching the practical tools (Git, Quarto, environments) that help overcome these exact barriers.</li>
+<li>The Pre-Data Mandate: Committing to your hypotheses, study designs, and statistical analysis plans before you gather data or view the files [INDEX].</li>
+<li>Demarcating Exploration: Forcing a transparent, unalterable boundary between planned confirmatory testing and unplanned, post hoc exploratory data mining [INDEX].</li>
+<li>The Target Failure: Restricting a researcher’s degrees of freedom to eliminate HARKing (Hypothesizing After the Results are Known) and cherry-picking [INDEX].</li>
+<li>The Registered Report Pivot: Submitting your study design to a journal for pre-data peer-review to secure an “in-principle acceptance” before execution [INDEX].</li>
+<li>The Stage 2 Audit: Guaranteeing publication based purely on the rigor of the design and adherence to the plan, completely regardless of whether the final results are positive [INDEX].</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-6-replication-research" class="slide level2">
+<h2>Step 6: Replication Research</h2>
+<p>Conducting and publishing direct or conceptual replications to test the robustness and generalizability of existing empirical findings.</p>
+<p>Replications are essential for building a cumulative, self-correcting science.</p>
+<aside class="notes">
+<p>🔬 Step 6: Replication Research (Verifying Scientific Discoveries)</p>
+<ul>
+<li><span class="bold-hilit">The Benchmark of Truth:</span> Adopting the foundational scientific rule that an effect must be completely repeatable to count as a genuine scientific discovery [INDEX].</li>
+<li><span class="bold-hilit">Direct Replications:</span> Intentionally duplicating every necessary element of an original study to see if the physical result can be reproduced [INDEX].</li>
+<li><span class="bold-hilit">Conceptual Replications:</span> Purposefully changing operational components (like the measure or the sample) to evaluate the generalizability of the theory [INDEX].</li>
+<li><span class="bold-hilit">The “Alternative Test” Label:</span> Re-labeling messy conceptual replications as “alternative tests” to stop them from being conflated with close, direct replications [INDEX].</li>
+<li><span class="bold-hilit">Systemic Stabilization:</span> Embracing replication to fix structural market misalignments where fields reward novelty over long-term theory stability [INDEX].</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-7-teaching-open-science" class="slide level2">
+<h2>Step 7: Teaching Open Science</h2>
+<p>Integrating open, transparent, and reproducible practices into undergraduate and graduate curricula and research training.</p>
+<p>Embedding Open Science principles early—through hands-on replication projects, transparent coding assignments, and discussions of research integrity—normalizes these practices for the next generation of scientists and improves pedagogical outcomes.</p>
+<aside class="notes">
+<p>🎓 Step 7: Teaching Open Science (Sustaining the Movement)</p>
+<ul>
+<li>The Educational Gap: Addressing the reality that a vast majority of students currently graduate from statistics courses having never heard of the replication crisis [INDEX].</li>
+<li>A 1-Hour Practical Footprint: Deploying structured 1-hour introductory modules to completely pivot how incoming researchers view media claims and data transparency [INDEX].</li>
+<li>The Dual Psychological Impact: Training students to trust unverified research less while simultaneously causing them to view their field as closer to the hard natural sciences [INDEX].</li>
+<li>Training Future Consumers: Realizing that open science pedagogy is vital even for students who leave research, creating critical public consumers of data [INDEX].</li>
+<li>Leveraging Existing Infrastructure: Utilizing free, collaborative open platforms like FORRT and the Open Science MOOC to drop pre-built resources straight into existing syllabi [INDEX].</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -473,57 +397,32 @@
 <li><p><span class="bold-hilit">Engage Fully:</span> Be ready to speak, debate, and share ideas.</p></li>
 </ul>
 </section>
-<section id="scenario-a" class="slide level2">
-<h2>Scenario A</h2>
-<p>Two candidates are competing for a single tenure-track position:</p>
-<div class="columns">
-<div class="column fragment" style="width:45%;">
-<p><span class="mdlit">Candidate A publishes 5 papers a year</span>. Their code is undocumented, scattered across local desktop folders, and missing computational environments, but their results are novel and published in high-impact venues.</p>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column fragment" style="width:45%;">
-<p><span class="hilit">Candidate B publishes 2 papers a year</span>. Every project features fully documented Quarto/Jupyter workflows, continuous integration tests, archived Docker containers on Zenodo, and granular version control.</p>
-</div></div>
+<section id="activity-1" class="slide level2">
+<h2>Activity 1</h2>
+<ul>
+<li class="fragment">Pair-up with one other student</li>
+<li class="fragment">Choose your role</li>
+</ul>
 <div class="fragment">
-<p><br>
-</p>
-<p>The hiring committee selects Candidate A, citing their superior <em>“publication volume and research productivity.”</em></p>
+<div class="columns">
+<div class="column">
+<p><span class="hilit">Junior Graduate Student</span></p>
+<p>Grad student wants to pre-register their next analysis pipeline and post the raw data publicly.</p>
+</div><div class="column fragment">
+<p><span class="mdlit">Senior Principal Investigator</span></p>
+<p>PI wants to submit the paper immediately without pre-registration because a rival lab is working on the same topic and might publish first.</p>
+</div></div>
 </div>
-</section>
-<section id="scenario-a-contd" class="slide level2">
-<h2>Scenario A (cont’d)</h2>
-<p><br>
-</p>
+<div class="fragment">
 <div class="poll">
-<p>What changes in hiring/granting committees would level the playing field for <span class="hilit">Candidate B</span>?</p>
+<ul>
+<li><p>The grad student will try to convince the PI to pre-register their work</p></li>
+<li><p>The PI will try to convince the grad student to publish ASAP</p></li>
+</ul>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a8e6eb0c" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="scenario-b" class="slide level2">
-<h2>Scenario B</h2>
-<p>A team of data science undergraduates is building a data pipeline for their capstone project. They have 4 weeks remaining. They can either:</p>
-<div class="columns">
-<div class="column fragment" style="width:46%;">
-<p><span class="mdlit">Option 1:</span> Spend the final 4 weeks expanding their modeling techniques, exploring two new algorithms, and refining their presentation figures.</p>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column fragment" style="width:46%;">
-<p><span class="hilit">Option 2:</span> Spend the final 4 weeks refactoring code into modular packages, writing unit tests, capturing software dependencies, and setting up automated pipelines.</p>
-</div></div>
-<div class="fragment">
-<div class="poll">
-<p>What option would you choose (and why)?</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_e83d7ac1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_9f3203e5" data-update-every="1" tabindex="0" style="top:0;right:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -531,36 +430,99 @@
 </div>
 </div>
 </section>
-<section id="scenario-c" class="slide level2">
-<h2>Scenario C</h2>
-<p>A research group in climate modeling trains a deep learning architecture for 6 days across a cluster of 32 GPUs, costing $15,000 in cloud compute credits.</p>
-<p>A peer reviewer asks the team to re-run the entire pipeline with three alternative random seed initializations to prove statistical stability.</p>
-<p>The group’s grant budget is exhausted, and their compute allocation has expired.</p>
+<section id="activity-1-contd" class="slide level2">
+<h2>Activity 1 (cont’d)</h2>
+<div class="columns">
+<div class="column">
+<p><span class="hilit">Junior Graduate Student</span></p>
+<p>Grad student wants to pre-register their next analysis pipeline and post the raw data publicly.</p>
+</div><div class="column">
+<p><span class="mdlit">Senior Principal Investigator</span></p>
+<p>PI wants to submit the paper immediately without pre-registration because a rival lab is working on the same topic and might publish first.</p>
+</div></div>
+<p><br>
+</p>
+<p><em>Show of hands:</em> How many PIs were convinced to delay submission by 2 weeks for pre-registration?</p>
+</section>
+<section id="activity-2" class="slide level2">
+<h2>Activity 2</h2>
+<ul>
+<li class="fragment">Pair-up with one other student</li>
+<li class="fragment">Choose your role:</li>
+</ul>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<p><span class="hilit">OA Advocate</span> (advocate for Green/Gold Open Access)</p>
+</div><div class="column fragment">
+<p><span class="mdlit">Paywall Advocate</span> (traditional paywall publisher)</p>
+</div></div>
+</div>
 <div class="fragment">
 <div class="poll">
-<p>Describe at least 2 things that the research group can provide to peer reviewers to prove their pipeline is trustworthy.</p>
+<ul>
+<li><p>The OA advocate will try to convince the Paywall advocate to support/fund Open Access.</p></li>
+<li><p>The Paywall advocate will push back against OA.</p></li>
+</ul>
 </div>
-<aside class="notes">
-<ol type="1">
-<li><p>Intermediate State Archiving: Saving and publishing model checkpoints, raw log outputs, and loss curves on repositories like Zenodo/OSF.</p></li>
-<li><p>Dry-Run / Toy Pipelines: Providing a fast, low-compute “mock” version of the pipeline using a small synthetic dataset so others can verify the code logic end-to-end in seconds.</p></li>
-<li><p>Deterministic Sub-sampling: Demonstrating stability on a lightweight, representative subset of the data before scaling up to full GPU clusters.</p></li>
-<li><p>Environment &amp; Seed Logging: Strictly archiving the exact container image (Docker), fixed random seeds, and hardware specs so that even if others can’t run it now, the execution state is perfectly preserved for the future.</p></li>
-</ol>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_cb4320a3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_665c00a6" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="activity-2-contd" class="slide level2">
+<h2>Activity 2 (cont’d)</h2>
+<p><br>
+</p>
+<div class="columns">
+<div class="column">
+<p><span class="hilit">OA Advocate</span> (advocate for Green/Gold Open Access)</p>
+</div><div class="column">
+<p><span class="mdlit">Paywall Advocate</span> (traditional paywall publisher)</p>
+</div></div>
+<p><br>
+</p>
+<p><em>Show of hands:</em> How many OA advocates were convinced by Paywall advocates?</p>
+</section>
+<section id="activity-3" class="slide level2">
+<h2>Activity 3</h2>
+<div class="fragment">
+<ul>
+<li>Practice 1: Pre-registration</li>
+<li>Practice 2: Open Data &amp; Materials</li>
+<li>Practice 3: Open Access Publishing</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="poll">
+<p>A university with a severely limited research budget can only afford to mandate and support ONE of these three practices across all departments.</p>
+<p>Debate and reach a unanimous group consensus on which ONE practice gives the highest return on investment for science, and which one MUST be eliminated first.</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_5a11ea01" data-update-every="1" tabindex="0" style="top:0;right:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="activity-4" class="slide level2">
+<h2>Activity 4</h2>
+<p>You are designing a hypohtetical “Meta-Research Bot” or AI agent that automatically audits 10,000 published papers in some field to evaluate their computational transparency.</p>
+<div class="fragment">
+<div class="poll">
+<p>What indicators would you look for in an OA paper?</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_d078afbf" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -578,69 +540,148 @@
 <p><br>
 </p>
 
-<img data-src="images/poll-02-qr-code.svg" class="quarto-figure quarto-figure-center r-stretch"><p><br>
+<img data-src="images/poll-03-qr-code.svg" class="quarto-figure quarto-figure-center r-stretch"><p><br>
 </p>
-<p><a href="https://tinyurl.com/3b2fmasf">tinyurl.com/3b2fmasf</a></p>
-</section></section>
-<section>
-<section id="bonus-take-aways" class="title-slide slide level1 center">
-<h1>Bonus Take Aways</h1>
-
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<blockquote>
-<p>“A study can be reproducible and still be wrong.”</p>
-<p>Roger Peng, 2014</p>
-</blockquote>
-<div class="fragment">
-<p><br>
-</p>
-<blockquote>
-<p>“Just because a result is reproducible does not make it right, and just because it is not reproducible does not make it wrong.”</p>
-<p>Nature</p>
-</blockquote>
+<p><a href="https://tinyurl.com/86wje827">tinyurl.com/86wje827</a></p>
 <!--
 
-## Scenario 1
+Card 1: The Misinterpretation Fear
 
-A student group writes a flawless Python script. 
+"My data is too complex and contextualized. If I post it publicly, non-experts or bad-faith actors will misinterpret it and spread scientific misinformation."
 
-They fit 50 different machine learning models with slightly 
-tweaked thresholds. 
+Advocate Focus: Metadata standards, read-me files, clear licensing, and the value of public verification vs. proprietary opacity.
 
-Model #47 yields a statistically significant, brilliant correlation (p < 0.01). 
+Card 2: The Equity & Commercialization Conflict
 
-They publish Model #47 along with their exact script, claiming an absolute 
-breakthrough. 
+"If I make my discoveries or open-source software freely available immediately, my spin-off company will lose its patent/IP rights, and my university won't get commercialization revenue."
 
-They never mention models 1 through 46.
+Advocate Focus: Dual-licensing models, delayed open access post-patent filing, and public funding ROI.
 
-. . .
+Card 3: The Career Penalty (Publish or Perish)
 
-::: {.poll}
-Since they provided the exact code and data to reproduce Model #47 perfectly, 
-is this computationally reproducible?
+"Top high-impact journals in my field still charge high Article Processing Charges (APCs) for open access or don't value open practices. I need tenure, so I can't prioritize open science over impact factors."
+
+Advocate Focus: Green Open Access (self-archiving), DORA (Declaration on Research Assessment), and shifting institutional promotion policies.
+
+Card 4: The Privacy & Sensitive Data Wall
+
+"I work with human subjects and sensitive clinical/indigenous data. Anonymization isn't foolproof, so making raw data open is unethical and violates IRB approval."
+
+Advocate Focus: FAIR data principles (as open as possible, as closed as necessary), controlled access repositories, and synthetic datasets.
+
+Card 5: The "Errors Will Destroy My Reputation" Anxiety
+
+"If I share all my raw scripts, raw lab notes, and unedited protocol attempts, people will scrutinize every minor typo or mistake and ruin my professional reputation."
+
+Advocate Focus: Normalizing scientific error, the difference between minor coding bugs and fraud, and building a culture of transparency over perfection.
+
+Card 6: The Free-Rider / Parasite Claim
+
+"My team spent 5 years and millions of dollars collecting this longitudinal dataset. It’s unfair for 'data parasites' to download it in 5 seconds and publish papers off our hard work without contributing."
+
+Advocate Focus: Data citation metrics, co-authorship guidelines, data embargo periods, and maximizing dataset utility.
+
+Card 7: The "Open Access = Low Quality" Stigma
+
+"Open access journals are predatory or pay-to-play dumping grounds with weak peer review. Real, rigorous science belongs in established subscription journals."
+
+Advocate Focus: Quality of diamond/gold OA repositories, transparent peer-review models, and distinguishing predatory publishers from legitimate OA.
+
+Card 8: The Resource Disadvantage
+
+"Open science assumes everyone has high-speed internet, cloud storage, software engineers, and dedicated data managers. For underfunded institutions, these requirements are an unfair burden."
+
+Advocate Focus: Lightweight repository solutions, institutional library support, and advocacy for equitable infrastructure funding.
+
+Card 9: The Null Result Disincentive
+
+"Posting pre-registrations or open protocols for experiments that yield null or negative results is a waste of time—nobody publishes null results, and it just makes my grant track record look bad."
+
+Advocate Focus: Registered Reports format, combating file-drawer effect, and preventing unnecessary scientific duplication.
+
+Card 10: The Maintenance & Long-Term Persistence Problem
+
+"Who keeps my open data, code dependencies, or open software alive 10 years from now when the grant runs out, URLs break, and software dependencies become obsolete?"
+
+Advocate Focus: Digital Object Identifiers (DOIs), persistent repositories (e.g., Zenodo, OSF), and institutional data archiving mandates.
+
+-->
+<!--
+
+## Activity 1
+
+- Form groups of 3-4 students.
+- Pretend your group is given $1,000 in "Academic Grant Money"
+- I will show you a study context.
+
+
+## Study Preregistration
+
+You are going to conduct a study among developers tracking---during a week---their daily
+[coffee consumption]{.mdlit} and [coding speed]{.hilit}.
+
+_A few data rows shown below._
+
+
+::: {.cell}
+::: {.cell-output .cell-output-stdout}
+
+```
+   developer day    coffee    speed
+1          A Mon 1.1826393 31.99986
+2          A Tue 6.1465536 54.36372
+3          A Wed 6.2712994 47.64547
+4          A Thu 1.1083892 35.32438
+5          A Fri 0.1817871 37.58430
+6          B Mon 0.4874006 38.01542
+7          B Tue 1.2047659 30.66631
+8          B Wed 8.3874461 48.73614
+9          B Thu 3.6004177 34.45631
+10         B Fri 1.6314185 37.75445
+```
+
+
+:::
 :::
 
-::: {.notes}
-Yes, it is computationally reproducible. However, it completely violates 
-Statistical Reproducibility. This is a classic case of "p-hacking" or data 
-dredging. They hid the multiple testing problem, meaning the result is likely 
-an accidental statistical fluke rather than a real scientific discovery.
 
-The Fix: Pre-registering the study design and reporting the performance 
-of all 50 tested models, not just the cherry-picked survivor.
+## Study Preregistration
+
+Write down your [Null]{.mdlit} and [Alternative]{.hilit} hypotheses.
+In other words, write down what kind of relationship you would expect to see in 
+your study.
+
+
+::: {.cell}
+::: {.cell-output .cell-output-stdout}
+
+```
+   developer day    coffee    speed
+1          A Mon 1.1826393 31.99986
+2          A Tue 6.1465536 54.36372
+3          A Wed 6.2712994 47.64547
+4          A Thu 1.1083892 35.32438
+5          A Fri 0.1817871 37.58430
+6          B Mon 0.4874006 38.01542
+7          B Tue 1.2047659 30.66631
+8          B Wed 8.3874461 48.73614
+9          B Thu 3.6004177 34.45631
+10         B Fri 1.6314185 37.75445
+```
+
+
 :::
+:::
+
 
 
 ::: {.cell}
 ::: {.cell-output-display}
 
 ```{=html}
-<div class="countdown" id="timer_5771c2a0" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_dd094a5a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 ```
 
@@ -648,85 +689,71 @@ of all 50 tested models, not just the cherry-picked survivor.
 :::
 
 
+## Exploratory Analysis (part I)
 
-## Scenario 2
+## Exploratory Analysis (part I)
 
-A research team writes a beautiful script to analyze air quality fluctuations 
-across a city. 
 
-The code runs without error and perfectly generates a set of maps. 
+::: {.cell}
+::: {.cell-output-display}
+![](13-discussion-slides_files/figure-revealjs/unnamed-chunk-8-1.png){width=960}
+:::
+:::
 
-However, when a peer tries to collect their own air data using identical 
-scripts in a neighboring town, the code crashes because the original team 
-forgot to mention that their physical air sensors require a highly specific 
-temperature calibration step before recording numbers.
+
+::: {.notes}
+Scatter plot showing that coffee consumption actually had zero effect on coding speed.
+:::
+
+
+## Exploratory Analysis (part II)
+
+## Exploratory Analysis (part II)
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](13-discussion-slides_files/figure-revealjs/unnamed-chunk-9-1.png){width=960}
+:::
+:::
+
+
+## Exploratory Analysis (part II)
+
+\
+
+Developers who drank espresso specifically on Tuesdays coded 40% faster.
+
+
+## Auction
+
+- The prestigious [_Journal of Caffeinated Studies_]{.bold-hilit} is accepting submissions.
+- But they __only__ publish statistically significant findings.
+- You must "bid" your grant money to publish.
 
 . . .
 
-::: {.poll}
-Since they provided the exact code and data to reproduce their maps, 
-is this computationally reproducible?
+\
+
+:::: {.columns}
+::: {.column}
+Stick to your original hypotheses
 :::
 
-::: {.notes}
-Yes, it is computationally reproducible. However, it violates Empirical 
-Reproducibility. While the math and code are perfectly shared, the analog 
-connection to the physical world—how the data was physically harvested---is 
-an unrecorded black box.
-
-The Fix: Publishing an exhaustive metadata ledger detailing the exact 
-sensor models, hardware calibration protocols, and physical collection constraints.
+::: {.column}
+Decide to HARK[^1] on the "Tuesday Espresso" anomaly
 :::
+::::
 
 
-## Scenario 3
-
-A paper published in 2021 includes a download link to an R script and a 
-clean CSV data table. 
-
-When a student tries to run the script today, it immediately aborts with 
-12 syntax errors because the modern R libraries installed on their laptop 
-no longer support the deprecated commands used five years ago.
-
-::: {.poll}
-The data is there, and the code text is unchanged. 
-Why is this project currently dead?
-:::
-
-::: {.notes}
-This violates Computational Reproducibility. Merely sharing raw code text 
-is not enough if the software ecosystem surrounding that code changes over time.
-
-The Fix: Archiving the specific software environment using tools like 
-Docker containers, Virtual Environments, or configuration lockfiles to freeze 
-the software versions in time.
-:::
-
-
-# Advantages of Working Reproducibly
-
-## Added Advantages
-
-1) Provenance
-2) Collaboration
-3) Misinformation Avoidance
-4) Efficient Writing
-5) Fair Credit
-6) Continuity
-
-. . .
-
-::: {.poll}
-Which of these six benefits would save you the most physical stress 
-the night before a final project deadline?
-:::
+[^1]: HARK: Hypothesizing After the Results are Known
 
 
 ::: {.cell}
 ::: {.cell-output-display}
 
 ```{=html}
-<div class="countdown" id="timer_de2f10e8" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_3aec40a3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -737,91 +764,22 @@ the night before a final project deadline?
 
 
 
-## The Selfish Scientist Paradigm
+## What if I told you that ...
 
-Florian Markowetz famously wrote an article titled 
-"Five Selfish Reasons to Work Reproducibly"[^1]
+The "Tuesday Espresso" spike is actually just a noise artifact. 
 
-. . .
+If you spent your money to publish it, you just committed a massive, 
+irreproducible false-positive sin 🤭
 
-::: {.poll}
-Based on the text, why is framing reproducibility as a "selfish benefit" 
-actually more effective at changing scientist behaviors than framing it 
-as a community benefit?
-:::
-
-
-::: {.cell}
-::: {.cell-output-display}
-
-```{=html}
-<div class="countdown" id="timer_cf135a12" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-```
-
-:::
-:::
-
-
-::: {.notes}
-Altruism wears off under high-pressure deadlines, but saving your future self time 
-and preventing public embarrassment provides a permanent incentive.
-:::
-
-[^1]: https://scientificbsides.wordpress.com/2015/07/15/five-selfish-reasons-for-working-reproducibly/
-
-
-## Retraction Scenario
-
-You publish a paper using a manual Excel data-cleaning process. 
-
-A year later, a peer points out an anomaly in your chart. 
-
-Because you didn't save the automated tracking provenance, you can't prove 
-it was an accidental typo rather than deliberate fraud. 
-
-Your paper is retracted.
-
-
-## Retraction Scenario (cont'd)
-
-- How do you prove an innocent mistake when there is no paper trail?
-
-- What are some of the costs of a retraction on a researcher's career?
-
-- If you had an automated pipeline, how would this nightmare scenario end differently?
-
-- Is an unrecorded Excel click actually "science"?
-
-
-::: {.notes}
-How do you prove an innocent mistake when there is no paper trail?
-If you have no step-by-step code, why is it practically 
-impossible to convince an ethics board that a data discrepancy was a 2:00 AM 
-copy-paste error rather than intentional data manipulation?
-
-What is the hidden cost of a retraction on a researcher's career?
-Once a paper is retracted due to a lack of reproducibility, 
-what happens to that researcher's future funding, job prospects, 
-and public trust?
-
-If you had an automated pipeline, how would this nightmare scenario end differently?
-If a peer spotted an anomaly in a reproducible, script-based project, 
-how quickly could you trace the issue, publish a correction, and 
-save your reputation?
-
-Is an unrecorded Excel click actually "science"?
-If a critical step of your experiment happens inside your head or through 
-unrecorded mouse clicks that cannot be audited, did you actually conduct
-a verifiable scientific experiment, or did you just generate a lucky graphic?
+::: { .notes}
+Students experience the intense system pressure to choose flashy 
+data-mining over pre-planned truth, instantly contextualizing why 
+Step 5 Preregistration is so vital.
 :::
 
 -->
 
 
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
