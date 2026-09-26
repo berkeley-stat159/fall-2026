@@ -138,7 +138,7 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 3"
-          href: ""
+          href: "lectures/13-discuss3/13-discussion-slides.html"
 - week: 6
   days:
     - date: "Sep 28"
