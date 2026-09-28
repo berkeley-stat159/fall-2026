@@ -1,0 +1,794 @@
+---
+title: "Intro to GNU Make (part 1)"
+subtitle: "Automating your workflow"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Example: Compound Interest
+
+## Motivation
+
+- You deposit $1000 in a savings account 
+- The annual interest rate is 2%
+- Assume interest rate won't change
+- How much money will you have one year from now?
+
+. . . 
+
+The answer to this question is given by the [compound interest]{.bold-hilit} formula:
+
+$$
+\text{deposit} + \text{annual paid interest} = \text{amount in one year}
+$$
+
+. . .
+
+$$
+1000 + 1000 (0.02) = 1000 \times (1 + 0.02) = 1020
+$$
+
+
+## Motivation (cont'd)
+
+How much money will you have 2 years from now?
+
+. . .
+
+$$
+\text{amount year 1} + \text{annual paid interest} = \text{amount in year 2}
+$$
+
+. . .
+
+$$
+1020 + 1020 (0.02) = 1020 \times (1 + 0.02) = 1040.40
+$$
+
+\
+
+. . .
+
+How much money will you have in 3 years?
+
+. . .
+
+$$
+\text{amount year 2} + \text{annual paid interest} = \text{amount in year 3}
+$$
+
+. . .
+
+$$
+1040.40 + 1040.40 (0.02) = 1040.40 \times (1 + 0.02) = 1061.208
+$$
+
+
+## Motivation (cont'd)
+
+In one year you'll have:
+
+$$
+1000 \times (1 + 0.02) = 1020
+$$
+
+\
+
+In two years you'll have:
+
+$$
+1000 \times (1 + 0.02) \times (1 + 0.02) = 1000 \times (1 + 0.02)^2 = 1040.4
+$$
+
+\
+
+In three years you'll have:
+
+$$
+1000 \times (1 + 0.02) \times (1 + 0.02) \times (1 + 0.02) = 1000 \times (1 + 0.02)^3 = 1061.208
+$$
+
+
+## Future Value
+
+In $n$ years you'll have:
+
+$$
+1000 \times (1 + 0.02)^n
+$$
+
+\
+
+::: {.fragment}
+### Future Value formula
+
+$$
+FV = P \times (1 + r)^n
+$$
+
+- $FV$ = Future Value
+- $P$ = Principal (the initial deposit)
+- $r$ = Annual rate of return (interest rate)
+- $n$ = Number of years
+:::
+
+
+## Example A {auto-animate="true"}
+
+```{r}
+#| echo: true
+# Future value (compound interest)
+# amount in year 10
+P = 1000
+r = 0.05
+n = 10
+```
+
+
+## Example A {auto-animate="true"}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Future value (compound interest)
+# amount in year 10
+P = 1000
+r = 0.05
+n = 10
+
+FV = P * (1 + r)^n
+FV
+```
+
+
+
+## Example B {auto-animate="true"}
+
+```{r}
+#| echo: true
+# Future value (compound interest)
+# amount in every year 1-10
+P = 1000
+r = 0.05
+n = 1:10
+```
+
+
+## Example B {auto-animate="true"}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Future value (compound interest)
+# amount in every year 1-10
+P = 1000
+r = 0.05
+n = 1:10
+
+FV = P * (1 + r)^n
+FV
+```
+
+
+
+## Example B {auto-animate="true"}
+
+:::: {.columns}
+::: {.column}
+```{r}
+#| echo: true
+#| output-location: fragment
+# Future value
+# amount in every year 1-10
+P = 1000
+r = 0.05
+n = 1:10
+
+FV = P * (1 + r)^n
+
+future_values = data.frame(
+  year = n, 
+  amount = FV)
+```
+:::
+
+::: {.column .fragment}
+```{r}
+#| echo: true
+future_values
+```
+:::
+::::
+
+## Example B {auto-animate="true"}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+library(ggplot2)
+
+ggplot(data = future_values, aes(x = year, y = amount)) +
+  geom_col() +
+  theme_bw()
+```
+
+
+# Sample Project
+
+## Sample project `future_value`
+
+- Suppose we have a directory `future_value/`
+- This directory contains a quarto file `doc.qmd`
+- The qmd file has code to compute future value (based on our working example)
+
+. . .
+
+Assuming our working directory is `future_value`, we can generate an output
+file `doc.html` by running the following command on the terminal:
+
+```{.bash code-line-numbers="false"}
+# create output file: doc.html
+quarto render doc.qmd
+```
+
+
+##
+
+File structure (at the beginning)
+
+```{.markdown code-line-numbers="false"}
+future_value/
+  doc.qmd
+```
+
+. . .
+
+\
+
+Run command in terminal
+
+```{.bash code-line-numbers="false"}
+# create output file: doc.html
+quarto render doc.qmd
+```
+
+. . .
+
+\
+
+File structure (at the end)
+
+```{.markdown code-line-numbers="false"}
+future_value/
+  doc.qmd
+  doc.html
+```
+
+
+# GNU Make
+
+##
+
+File structure (at the beginning)
+
+```{.markdown code-line-numbers="false"}
+future_value/
+  doc.qmd
+  Makefile
+```
+
+. . .
+
+\
+
+Run command in terminal
+
+```{.bash code-line-numbers="false"}
+# let Make do its magic
+make
+```
+
+. . .
+
+\
+
+File structure (at the end)
+
+```{.markdown code-line-numbers="false"}
+future_value/
+  doc.qmd
+  doc.html
+  Makefile
+```
+
+## About GNU Make
+
+- GNU Make, commonly known as [make]{.bold-hilit}, is a Unix tool that is part of 
+the [GNU Project](https://www.gnu.org/software/).
+
+- To work with Make you write a text file with the name `Makefile`, 
+typically referred to as the _makefile_.
+
+- Notice that `Makefile` has not file extensions!
+
+
+## What's in a Makefile?
+
+A _makefile_ is formed by [rules]{.bold-hilit} that have the following structure:
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule
+target: dependencies
+  commands
+```
+
+\
+
+- A rule tells Make how to execute a series of commands in order to build a 
+target file from source files (i.e. the dependencies). 
+
+- ⚠️ IMPORTANT: the recipe line(s) must be [indented with a TAB]{.bold-hilit} and 
+not with any spaces.
+
+
+## Basic rule syntax
+
+. . .
+
+Under its most basic form, a rule usually has this structure:
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule to generate target
+target: dependency
+  command
+```
+
+\
+
+- `target` is the output file
+- `dependency` is the input file
+- `command` is the program that creates the `target`
+- the `command` line is [indented with a TAB]{.bold-hilit}
+
+
+## Let's go back to our future value example {auto-animate="true"}
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# recipe to generate output file doc.html
+```
+
+## Let's go back to our future value example {auto-animate="true"}
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# recipe to generate output file doc.html
+doc.html: doc.qmd
+```
+
+
+## Let's go back to our future value example {auto-animate="true"}
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# recipe to generate output file doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+```
+
+\
+
+- `doc.html`: [target]{.hilit} or output file
+- `doc.qmd`: [dependency]{.mdlit} or input file
+- `quarto render doc.qmd`: [command]{.bold-hilit} to create [target]{.hilit}
+
+
+## Generate PDF output
+
+What if we wanted to generate an output document in PDF format?
+
+. . . 
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# recipe to generate output file doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+```
+
+. . .
+
+\
+
+::: {.nonincremental}
+- `doc.pdf`: [target]{.hilit} or output file
+- `doc.qmd`: [dependency]{.mdlit} or input file
+- `quarto render doc.qmd --to pdf`: [command]{.bold-hilit} to create [target]{.hilit}
+:::
+
+
+# Various Rules
+
+## More than one rule {auto-animate="true"}
+
+Say we want to create 2 outputs: HTML and PDF docs
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule 1: doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+```
+
+## More than one rule {auto-animate="true"}
+
+Say we want to create 2 outputs: HTML and PDF docs
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule 1: doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+```
+
+## More than one rule 
+
+Say we want to create 2 outputs: HTML and PDF docs
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule 1: doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+```
+
+Running make will generate both outputs
+
+```{.bash code-line-numbers="false"}
+# run make to generate both outputs
+make
+```
+
+## More than one rule 
+
+Say we want to create 2 outputs: HTML and PDF docs
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule 1: doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+```
+
+. . .
+
+But we can generate single outputs, e.g. 
+
+```{.bash code-line-numbers="false"}
+make doc.html
+```
+
+\
+
+. . .
+
+```{.bash code-line-numbers="false"}
+make doc.pdf
+```
+
+
+# Phony Targets
+
+## Phony Targets
+
+- By default, Makefile targets are [file targets]{.bold-hilit}
+
+- This means that targets are used to build files from other files (i.e. the dependencies)
+
+- This implies that Make assumes the target of a rule is a file.
+
+- There are occasions, however, when a given target is not really a file, but 
+simply the name of a recipe
+
+- The most common example is the `all` target
+
+
+## Phony target `all`
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# all outputs
+all: doc.html doc.pdf
+
+# rule 1: doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+```
+
+- The first target `all` is not the name of a file; 
+
+- It is simply a convenient “label” to indicate a series of dependencies. 
+
+- This type of target is known in Make terminology as a [phony]{.bold-hilit} target.
+
+- _Phony_ meaning "not a real file".
+
+
+## Phony target `all` {auto-animate="true"}
+
+The convention is to explicitly declare a phony target by making it a 
+prerequisite of the special target `.PHONY` as follows:
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# declaring phony target
+.PHONY: all
+```
+
+## Phony target `all` {auto-animate="true"}
+
+The convention is to explicitly declare a phony target by making it a 
+prerequisite of the special target `.PHONY` as follows:
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# declaring phony target
+.PHONY: all
+
+# all outputs
+all: doc.html doc.pdf
+```
+
+## Phony target `all` {auto-animate="true"}
+
+The convention is to explicitly declare a phony target by making it a 
+prerequisite of the special target `.PHONY` as follows:
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# declaring phony target
+.PHONY: all
+
+# all outputs
+all: doc.html doc.pdf
+
+# rule 1: doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+```
+
+
+## Declaring phony targets
+
+Why do we declare phony targets?
+
+. . .
+
+\
+
+Declaration of phony targets is important because of two main reasons:
+
+1) to avoid a conflict with a file of the same name, and
+
+2) to improve performance
+
+
+## Phony target `clean` 
+
+- Another common phony target is the so-called `clean` target
+
+- This is used to indicate a recipe for "cleaning" a directory from secondary files 
+typically generated after some compilation process.
+
+- Also, the `clean` target is also commonly used to remove output files.
+
+. . .
+
+::: {.small}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: <targets>
+
+# rule 1
+...
+
+# rule 2
+...
+
+# remove output files
+clean:
+  rm -f <outputs>
+```
+:::
+
+
+## Phony target `clean` {auto-animate="true"}
+
+. . .
+
+Here's what our `Makefile` could look like with phony targets `all` and `clean:`
+
+::: {.small .fragment}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: doc.html doc.pdf
+
+# rule 1: doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+
+clean:
+  rm -f doc.html doc.pdf
+```
+:::
+
+. . .
+
+::: {.small}
+Note that `clean` has no dependencies. Therefore, the target `clean` will be always 
+out-of-date. So whenever you run `make clean`, it will run independent from the 
+state of the file system.
+:::
+
+
+# Various Dependencies
+
+## More than one input
+
+Suppose we have an R script file `functions.R` with the code of the 
+future value formula.
+
+. . . 
+
+```{.markdown filename="functions.R" code-line-numbers="false"}
+# Title: Future Value (compound interest)
+# Inputs:
+# - p: principal
+# - r: annual rate of return
+# - n: number of years
+future_value <- function(p, r, n) {
+  fv = p * (1 + r)^n
+  return(fv)
+}
+```
+
+. . .
+
+And assume that `doc.qmd` "depends" on `functions.R`. In other words,
+there's a code cell in the qmd file that loads the code in `functions.R`
+
+
+## More than one input
+
+The file structure now looks like this:
+
+. . .
+
+```{.markdown code-line-numbers="false"}
+future_value/
+  functions.R
+  doc.qmd
+  Makefile
+```
+
+\
+
+. . .
+
+Technically speaking:
+
+- `doc.html` now depends on both `doc.qmd` and `functions.R`
+- `doc.pdf` also depends on both `doc.qmd` and `functions.R`
+- If either `functions.R` or `doc.qmd` change, then the output files 
+should be updated
+
+
+## More than one input {auto-animate="true"}
+
+. . .
+
+Here's what our `Makefile` could look like:
+
+::: {.small .fragment}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+```
+:::
+
+
+## More than one input {auto-animate="true"}
+
+Here's what our `Makefile` could look like:
+
+::: {.small}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: doc.html doc.pdf
+```
+:::
+
+
+## More than one input {auto-animate="true"}
+
+Here's what our `Makefile` could look like:
+
+::: {.small}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: doc.html doc.pdf
+
+# rule 1: doc.html
+doc.html: doc.qmd functions.R
+  quarto render doc.qmd
+```
+:::
+
+
+## More than one input {auto-animate="true"}
+
+Here's what our `Makefile` could look like:
+
+::: {.small}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: doc.html doc.pdf
+
+# rule 1: doc.html
+doc.html: doc.qmd functions.R
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd functions.R
+  quarto render doc.qmd --to pdf
+```
+:::
+
+## More than one input {auto-animate="true"}
+
+Here's what our `Makefile` could look like:
+
+::: {.small}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: doc.html doc.pdf
+
+# rule 1: doc.html
+doc.html: doc.qmd functions.R
+  quarto render doc.qmd
+
+# rule 2: doc.pdf
+doc.pdf: doc.qmd functions.R
+  quarto render doc.qmd --to pdf
+
+clean:
+  rm -f doc.html doc.pdf
+```
+:::

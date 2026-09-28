@@ -146,7 +146,7 @@
         - type: "Lecture"
           id: ""
           name: "Intro to Make (part 1)"
-          href: ""
+          href: "lectures/14-make1/14-make-intro-slides.html"
     - date: "Sep 29"
       items:
         - type: "Lab"
