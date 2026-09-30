@@ -37,4 +37,70 @@ assignment in bCourses.
 Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
 :::
 
-More details TBD
+
+### Reflection 1: Tracking Silent Failures
+
+The Harvard economists skipped 5 entire countries in their key calculation 
+because they accidentally misaligned a visual row selection box in Excel.
+
+- Reflect on your own history with spreadsheets or scripts.
+
+- Have you ever committed a silent, unrecorded clerical error that altered 
+an assignment or project output?
+
+- Did you catch it through a systematic checking protocol, or was it pure luck?
+
+- What hidden mouse-slip is lurking inside your current active folders right now?
+
+
+### Reflection 2: Unpacking Status Bias
+
+Reinhart and Rogoff were world-respected Harvard economists. Because of their 
+immense prestige, global big-hitters blindly trusted their numbers to pass massive laws.
+
+It took a 28-year-old graduate student checking the actual, raw formula boxes to 
+expose that the emperor had no clothes.
+
+- Think about your own data consumption habits.
+
+- Have you ever accepted a chart as "fact" simply because it came from 
+a famous journal, a top university, or a respected researcher?
+
+- How will you deliberately adjust your skepticism when reading 
+"high-status" science moving forward?
+
+
+### Reflection 3: Structural Safeguards
+
+Borwein and Bailey demand that journal editors and scientists implement stricter 
+standards to stop genuine errors from proliferating.
+
+- Suppose you are the Lead Auditor of your own academic output.
+
+- Draft a personal, non-negotiable **two-rule checklist** that you will enforce 
+on your next data project to ensure a spreadsheet or code mismatch is structurally impossible.
+
+- How will you guarantee your future self sticks to these rules when a deadline 
+is 3 hours away and stress is at its peak?
+
+
+## Rubric
+
+::: {.callout-important}
+Generic, abstract answers that do not explicitly name your specific past assignments
+(course name, semester, assignment) or unique piece of code from your own experience will 
+receive a score of zero.
+:::
+
+- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the technical definition in The Turing Way. Clearly written by a human.
+
+- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script, the associated 
+assignment, as well as the course name and semester). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from the webpage.
+
