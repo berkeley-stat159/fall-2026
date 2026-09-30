@@ -545,8 +545,8 @@ Makefile rule
 ```{.markdown code-line-numbers="false" }
 clean:
   cd data && rm -f data.csv model.RData
-  cd image && rm -f plot.png
-  cd report && rm -f report.html
+  cd images && rm -f plot.png
+  cd doc && rm -f report.html
 ```
 
 - ✅ correct target
