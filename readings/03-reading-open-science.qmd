@@ -64,11 +64,11 @@ missing from the article that should cause you to doubt its rigor?
 
 ## Rubric
 
-- **Full Credit (3 Points)**: Response is highly specific, names unique personal 
+- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
 or localized constraints, and explicitly connects the personal experience 
 back to the technical definition in The Turing Way. Clearly written by a human.
 
-- **Partial Credit (1-2 Points)**: Response is correct but uses vague or generic 
+- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
 examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
 a generic summary an AI could have written.
 
