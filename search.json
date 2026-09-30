@@ -3429,7 +3429,7 @@
     "href": "lectures/15-make2/15-make-intro2-slides.html#section-20",
     "title": "Intro to GNU Make (part 2)",
     "section": "",
-    "text": "Makefile rule\n\n\n\nclean:\n  cd data && rm -f data.csv model.RData\n  cd image && rm -f plot.png\n  cd report && rm -f report.html\n\n✅ correct target\n✅ correct dependencies\n✅ correct command"
+    "text": "Makefile rule\n\n\n\nclean:\n  cd data && rm -f data.csv model.RData\n  cd images && rm -f plot.png\n  cd doc && rm -f report.html\n\n✅ correct target\n✅ correct dependencies\n✅ correct command"
   },
   {
     "objectID": "lectures/15-make2/15-make-intro2-slides.html#demo-repo",
