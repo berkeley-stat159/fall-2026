@@ -46,6 +46,7 @@ website:
         contents:
           - hws/hw01/hw01.qmd
           - hws/proj01/proj01.qmd
+          - hws/hw02/hw02.qmd
       - section: "Other"
         contents:
           - href: license.qmd
