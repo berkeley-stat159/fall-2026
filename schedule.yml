@@ -181,6 +181,10 @@
           id: ""
           name: "Variables in Make"
           href: ""
+        - type: "Homework"
+          id: ""
+          name: "Proj1 Peer Review (due 10/09)"
+          href: "hws/proj01/proj01-peer-review.html"
     - date: "Oct 06"
       items:
         - type: "Lab"
