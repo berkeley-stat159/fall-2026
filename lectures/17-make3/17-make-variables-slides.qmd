@@ -1,0 +1,489 @@
+---
+title: "Variables in Make"
+subtitle: "Saving typing and avoiding repetition"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Motivation
+
+## Future Value minimal example
+
+Let's go back to our future value example
+
+. . .
+
+File structure (before running `make`)
+
+```{.markdown code-line-numbers="false"}
+future_value/
+  doc.qmd
+  Makefile
+```
+
+. . .
+
+\
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# recipe to generate output file doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+```
+
+
+##
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+doc.html: doc.qmd
+  quarto render doc.qmd
+```
+
+- string `doc.qmd` appears twice:
+    + as a dependency 
+    + in the command of the recipe
+
+- To save typing and avoid repetition, Make provides a handful of special Variables
+(i.e. special characters)
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# example of special variable $<
+doc.html: doc.qmd
+  quarto render $<
+```
+
+. . .
+
+`$<` is the automatic variable whose value is the name of the first dependency
+
+
+# Automatic Variables
+
+## Automatic Variables in Make
+
+- Automatic variables are variables that can only be used within the recipe.
+
+- These variables have values computed afresh for each rule.
+
+- Common types of automatic variables[^1]
+
+    + `$@` the file name of the target
+        
+    + `$<` the name of the first dependency
+
+    + `$^` the list of all dependencies
+
+    + `$?` the names of all the dependencies that are newer than the target
+    
+[^1]: You can find a full list of them [here](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html)
+
+
+## Example: First Dependency
+
+:::: {.columns}
+::: {.column}
+Without variables
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate doc.html
+doc.html: doc.qmd
+  quarto render doc.qmd
+
+# generate doc.pdf
+doc.pdf: doc.qmd
+  quarto render doc.qmd --to pdf
+```
+:::
+
+::: {.column .fragment}
+With automatic variable `$<`
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate doc.html
+doc.html: doc.qmd
+  quarto render $<
+
+# generate doc.pdf
+doc.pdf: doc.qmd
+  quarto render $< --to pdf
+```
+:::
+::::
+
+
+## Example: Name of Target
+
+Without variables
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate report.html
+report.html: doc.qmd
+  quarto render doc.qmd --output report.html
+```
+
+. . .
+
+\
+
+With automatic variable `$@`
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate report.html
+report.html: doc.qmd
+  quarto render doc.qmd --output $@
+```
+
+
+## Example: Name of Target and First Dependency
+
+Without variables
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate report.html
+report.html: doc.qmd
+  quarto render doc.qmd --output report.html
+```
+
+. . .
+
+\
+
+With variables `$@` and `$<`
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate report.html
+report.html: doc.qmd
+  quarto render $< --output $@
+```
+
+
+## A more complete Makefile
+
+Here's what our `Makefile` could look like:
+
+::: {.small}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: report.html report.pdf
+
+# generate report.html
+report.html: doc.qmd functions.R
+  quarto render $< --output $@
+
+# generate report.pdf
+report.pdf: doc.qmd functions.R
+  quarto render $< --to pdf --output $@
+
+clean:
+  rm -f report.html report.pdf
+```
+:::
+
+
+# Example with pandoc and markdown files
+
+## {background-image="images/pandoc-website.png" background-size="contain"}
+
+
+## About pandoc
+
+- pandoc is an open-source, command-line utility used to convert files from one 
+markup format into another.
+
+- Created by John McFarlane (Prof. of Philosophy at UC Berkeley) in August 2006.
+
+- Seamlessly translates between Markdown, LaTeX, HTML, PDF, Microsoft Word (`.docx`), 
+and ePUB.
+
+- Serves as the underlying engine inside Quarto, R Markdown, and Jupyter that 
+compiles text into finished papers.
+
+- Widely adopted in open science to separate raw text content from final publisher 
+typesetting and style formatting.
+
+
+## About pandoc
+
+- Website: <https://pandoc.org>
+
+- Installation: <https://pandoc.org/installing.html>
+    + Available for Mac, Windows, Linux
+
+- Usage example
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# generate HTML doc
+pandoc input.md -o output.html
+```
+
+::: {.small}
+More examples at: <https://pandoc.org/demos.html>
+:::
+
+
+## Example: List of dependencies
+
+Instead of a single qmd file, let's now consider a set of Markdown (`.md`) files that are 
+supposed to be merged and converted---via [pandoc]{.bold-hilit}---into a `report.html` file:
+
+. . .
+
+```{.markdown code-line-numbers="false"}
+project/
+  part1.md
+  part2.md
+  part3.md
+  Makefile
+```
+
+. . .
+
+\
+
+Here's the pandoc command to generate a report from the md files:
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# generate report.html
+pandoc part1.md part2.md part3.md -o report.html
+```
+
+
+## {background-image="images/pandoc-md-files-1.svg" background-size="contain"}
+
+## {background-image="images/pandoc-md-files-2.svg" background-size="contain"}
+
+## {background-image="images/pandoc-md-files-3.svg" background-size="contain"}
+
+## Example: List of dependencies `$^`
+
+Without variables
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate report.html
+report.html: part1.md part2.md part3.md
+  pandoc part1.md part2.md part3.md -o report.html
+```
+
+. . .
+
+\
+
+With variables `$@` and `$^`
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# generate report.html
+report.html: part1.md part2.md part3.md
+  pandoc $^ -o $@
+```
+
+
+# User Defined Variables
+
+## User Defined Variables
+
+- In addition to the automatic variables, it is also possible to create our own
+variables in a Makefile.
+
+- We'll review 2 ways to define variables:
+    + `NAME = VALUE`
+    + `NAME := VALUE`
+
+- By convention, variable names are always written in UPPERCASE to distinguish them 
+from file targets and commands. However, you can also write them in lowercase.
+
+- Likewise, variables are defined at the beginning of the Makefile.
+
+- To use a variable inside a target or a recipe, you must wrap its name in parentheses 
+or braces preceded by a dollar sign: `$(NAME)` or `${NAME}`
+
+
+## Example of recursive assignment `=`
+
+Consider again the situation in which various md files will be assembled by pandoc
+into an output `report.html`
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# Define user variables at the top of the file
+MDS = part1.md part2.md part3.md
+
+# generate report.html
+report.html: $(MDS)
+  pandoc $^ -o $@
+```
+
+- In this case we are using `=` to define `MDS`. This is a 
+[recursive assignment]{.bold-hilit}
+
+- The value is evaluated lazily at the exact moment the variable is used in a recipe, 
+not when it is defined.
+
+
+## Example of simple expansion `:=`
+
+Consider again the situation in which various md files will be assembled by pandoc
+into an output `report.html`
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# Define user variables at the top of the file
+MDS := part1.md part2.md part3.md
+
+# generate report.html
+report.html: $(MDS)
+  pandoc $^ -o $@
+```
+
+- In this case we are using `:=` to define `MDS`. This is a 
+[simple expansion]{.bold-hilit}
+
+- The value is evaluated immediately on the spot. This prevents unexpected side 
+effects in long files.
+
+
+# Wildcard Function
+
+## Motivation
+
+Consider again the set of md files from which `report.html` will be generated
+
+```{.markdown code-line-numbers="false"}
+project/
+  part1.md
+  part2.md
+  part3.md
+  Makefile
+```
+
+. . .
+
+\
+
+In the terminal, we can run the following command:
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+pandoc *.md -o report.html
+```
+
+
+## Motivation
+
+Consider again the set of md files from which `report.html` will be generated
+
+```{.markdown code-line-numbers="false"}
+project/
+  part1.md
+  part2.md
+  part3.md
+  Makefile
+```
+
+. . .
+
+\
+
+We just saw how to define a variable `MDS`
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# Define user variables at the top of the file
+MDS = part1.md part2.md part3.md
+
+# generate report.html
+report.html: $(MDS)
+  pandoc $^ -o $@
+```
+
+
+## Motivation
+
+Consider again the set of md files from which `report.html` will be generated
+
+```{.markdown code-line-numbers="false"}
+project/
+  part1.md
+  part2.md
+  part3.md
+  Makefile
+```
+
+. . .
+
+\
+
+⚠️ We may be tempted to write a Makefile like this:
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# Not exactly what we think it means
+MDS = *.md
+
+# generate report.html
+report.html: $(MDS)
+  pandoc $^ -o $@
+```
+
+
+## Issue
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# Not exactly what we think it means
+MDS = *.md
+
+# generate report.html
+report.html: $(MDS)
+  pandoc $^ -o $@
+```
+
+- The rule works because the `pandoc` command accepts wildcards `*`.
+But there's a catch.
+
+- ⚠️ The issue with the above variable `MDS = *.md` is that a Make
+variable represents a string of text.
+
+- This means that `MDS` has the string value `*.md` instead of 
+`part1.md part2.md part3.md`
+
+
+
+## Solution: Wildcard Function
+
+To create a variable `MDS` that actually gathers the names of the md files, 
+you need to use a special function in Make called the [wildcard function]{.bold-hilit}:
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# correct way to "gather" all md files
+MDS = $(wildcard *.md)
+
+# generate report.html
+report.html: $(MDS)
+  pandoc $^ -o $@
+```
+
+
+## A more complete Makefile
+
+Here's what our `Makefile` could look like:
+
+::: {.small}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+MDS = ($wildcard *.md)
+
+.PHONY: clean
+
+# generate report.html
+report.html: $(MDS)
+  pandoc $^ -o $@
+
+clean:
+  rm -f report.html
+```
+:::
+

@@ -180,7 +180,7 @@
         - type: "Lecture"
           id: ""
           name: "Variables in Make"
-          href: ""
+          href: "lectures/17-make-variables-slides.html"
         - type: "Homework"
           id: ""
           name: "Proj1 Peer Review (due 10/09)"
