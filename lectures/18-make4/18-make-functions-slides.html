@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b7eb3ced35dd28f0c673f192a36525f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.28">
 
-  <title>Project Organization</title>
+  <title>Other Functions in Make</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -198,297 +198,424 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-bg.svg" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Project Organization</h1>
-  <p class="subtitle">STAT 159: Collaborative and Reproducible Data Science</p>
+  <h1 class="title">Other Functions in Make</h1>
+  <p class="subtitle">Saving typing and avoiding repetition (part II)</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<h3 id="yesterdays-lab">Yesterday’s Lab</h3>
-<ul>
-<li class="fragment">Met your GSI: Sequoia &amp; Larissa</li>
-<li class="fragment">DataHub: Terminal</li>
-<li class="fragment">Commands to navigate file system: <code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>rmdir</code></li>
-<li class="fragment">Commands to inspect files: <code>head</code>, <code>tail</code>, <code>less</code>, <code>cat</code>, <code>wc</code></li>
-<li class="fragment">Commands to manipulate files: <code>touch</code>, <code>open</code>, <code>cp</code>, <code>mv</code>, <code>rm</code></li>
-</ul>
-<div class="fragment">
-<h3 id="st-reading">1st Reading</h3>
-<ul>
-<li class="fragment">Ten Simple Rules for Reproducible Computational Research</li>
-</ul>
-</div>
-<!--
-## Folder for STAT 159
-
-- You should have in your computer a dedicated directory (i.e. folder) `stat159/`
-
-- You should use this directory for all the work done in this class.
-
-- BTW: Your `Downloads/` folder is not a replacement for a `stat159/` folder.
--->
-</section>
 <section>
-<section id="project-organization" class="title-slide slide level1 center">
-<h1>Project Organization</h1>
+<section id="example-1" class="title-slide slide level1 center">
+<h1>Example 1</h1>
 
 </section>
-<section id="section-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-
-<img data-src="images/project-file-structure-0.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
+<section id="example-1-1" class="slide level2">
+<h2>Example 1</h2>
+<p>Suppose we have the following project with various scripts; each script produces an output file.</p>
+<div class="fragment">
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/project-file-structure-0.svg"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/project-file-structure-1.svg"></p>
+<div class="column">
+<p>File structure (before running <code>make</code>)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  Makefile</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>  plot1.R</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>  plot2.R</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>  plot3.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<p>File structure (after running <code>make</code>)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  Makefile</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>  plot1.R</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>  plot2.R</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>  plot3.R</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>  plot1.png</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>  plot2.png</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>  plot3.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<p>Data science projects involve dealing with multiple files:</p>
-<ul>
-<li class="fragment">some files will be inputs</li>
-<li class="fragment">some files will be outputs</li>
-<li class="fragment">some files will be data files</li>
-<li class="fragment">some files will be image files</li>
-<li class="fragment">some files will be script files (code)</li>
-<li class="fragment">some files will be reports</li>
-<li class="fragment">some files will play auxiliary roles</li>
-</ul>
+</div>
 <div class="fragment">
-<div class="smalladage">
-<p>It’s important to have a good organization of files</p>
-</div>
+<p>Notice that the script files and the PNG files share the same name.</p>
 </div>
 </section>
-<section id="an-analogy" class="slide level2 nostretch">
-<h2>An Analogy</h2>
+<section id="example-1-makefile" class="slide level2">
+<h2>Example 1: Makefile</h2>
+<div class="fragment">
 <div class="columns">
-<div class="column fragment" style="width:50%;">
-<p><img data-src="images/tools.png" style="width:87.0%"></p>
-</div><div class="column fragment" style="width:50%;">
-<p><img data-src="images/tool-cabinet.webp" style="width:93.0%"></p>
-</div></div>
-</section>
-<section id="an-analogy-1" class="slide level2 nostretch">
-<h2>An Analogy</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Messy file system 😢</p>
-<p><img data-src="images/workshop-messy.jpg" style="width:87.0%"></p>
-</div><div class="column fragment" style="width:50%;">
-<p>Neat file system 😍</p>
-<p><img data-src="images/workshop-tidy.jpeg" style="width:93.0%"></p>
-</div></div>
-</section></section>
-<section>
-<section id="file-and-directory-organization" class="title-slide slide level1 center">
-<h1>File and Directory Organization</h1>
-
-</section>
-<section id="project-organization-1" class="slide level2">
-<h2>Project Organization</h2>
-<p>When starting a new project, it is worthwhile to spend some time thinking about how to best organize its content.</p>
-<div class="fragment">
-<p>This means asking questions such as:</p>
-<ul>
-<li class="fragment">What are my project inputs?</li>
-<li class="fragment">What types of outputs do I expect to come out of this project?</li>
-<li class="fragment">How does this project relate to other projects I am working on?</li>
-</ul>
-</div>
-</section>
-<section id="when-you-begin-a-new-project" class="slide level2">
-<h2>When you begin a new project …</h2>
-<ul>
-<li class="fragment"><p>It is generally a good idea to store all of the files relevant to one project under a common root directory.</p></li>
-<li class="fragment"><p>The exception to this rule is source code or scripts that are used in multiple projects. Each such program might have a project directory of its own.</p></li>
-</ul>
-</section>
-<section id="golden-rules" class="slide level2">
-<h2>Golden rules</h2>
-<ol type="1">
-<li class="fragment"><p>Raw data should never be changed. Save it into a <code>data/</code> folder and treat it as immutable.</p></li>
-<li class="fragment"><p>The processed, clean version of your data will go into a dedicated file or directory, e.g., <code>clean_data.json</code> or <code>processed_data/</code>.</p></li>
-<li class="fragment"><p>Anything that can be generated from code goes into its own folder.</p>
-<ul>
-<li class="fragment"><code>output/</code>, <code>results/</code>, <code>images/</code></li>
-</ul></li>
-<li class="fragment"><p>If there are text documents, put them in their own folder:</p>
-<ul>
-<li class="fragment"><code>docs/</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="golden-rules-contd" class="slide level2">
-<h2>Golden rules (cont’d)</h2>
-<ol start="5" type="1">
-<li class="fragment"><p>Code also has its own folder: <code>code/</code>.</p>
-<ul>
-<li class="fragment">If you write a lot of functions, then create a <code>functions/</code> folder</li>
-<li class="fragment">Or also a <code>src/</code> (for <code>source</code>) folder to save processing/analysis code.</li>
-</ul></li>
-<li class="fragment"><p>If processing/analysis scripts are meant to be used in a certain order, you can number them:</p>
-<ul>
-<li class="fragment">e.g., <code>script1-data-prepration.R</code>, <code>script2-exploratory-analysis.R</code>, <code>script3-regression-model.R</code>, etc.</li>
-</ul></li>
-<li class="fragment"><p>Sometimes the pipeline is not linear but branched, so numbering may not always make sense.</p></li>
-<li class="fragment"><p>Modularize your code: split a giant script into short, single-purpose scripts with well-defined inputs and outputs.</p></li>
-</ol>
-</section>
-<section id="golden-rules-contd-1" class="slide level2">
-<h2>Golden rules (cont’d)</h2>
-<ul>
-<li class="fragment"><p>A project directory should be a portable island.</p></li>
-<li class="fragment"><p>It can be zipped up, moved to a different folder, sent to a colleague, or cloned onto a remote server …</p></li>
-<li class="fragment"><p>… and every script still runs without modifying a single line of code.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="documentation" class="title-slide slide level1 center">
-<h1>Documentation</h1>
-
-</section>
-<section id="documentation-readme-files" class="slide level2">
-<h2>Documentation (README files)</h2>
-<ul>
-<li class="fragment"><p>Each of your projects should always be accompanied by a <span class="bold-hilit">README</span> file.</p></li>
-<li class="fragment"><p>The <span class="bold-hilit">README</span> should contain all the information an outsider would need to understand what the project is all about:</p>
-<ul>
-<li class="fragment">what are the inputs</li>
-<li class="fragment">what are the outputs,</li>
-<li class="fragment">where to find files within the project directory, etc.</li>
-</ul></li>
-<li class="fragment"><p>The <span class="bold-hilit">README</span> is simply a text file, there’s nothing special to it.</p>
-<ul>
-<li class="fragment">I like to write it in markdown syntax: <code>README.md</code></li>
-</ul></li>
-<li class="fragment"><p>Writing down everything about a project in a <code>README.md</code> can be tedious, but it pays off.</p></li>
-</ul>
-</section>
-<section id="readme-files" class="slide level2">
-<h2>README file(s)</h2>
-<ul>
-<li class="fragment">Record who the author/s is/are,</li>
-<li class="fragment">the date the project was started,</li>
-<li class="fragment">a description of what the project is for,</li>
-<li class="fragment">describe important details</li>
-<li class="fragment">(a <code>README</code> file is sort of a growing/living document)</li>
-</ul>
-<div class="fragment">
-<p>Get in the habit of starting a project by creating a <code>README</code> file.</p>
-<p>Also, you can include README files inside the project’s directories: e.g.&nbsp;a README for the <code>data/</code> folder, or for the <code>docs/</code> filder.</p>
-</div>
-</section></section>
-<section>
-<section id="demo" class="title-slide slide level1 center">
-<h1>Demo</h1>
-
-</section>
-<section id="some-comments" class="slide level2">
-<h2>Some Comments</h2>
-<ul>
-<li class="fragment"><p>How you define a project is largely up to you.</p></li>
-<li class="fragment"><p>It could be all the work you do on a given dataset,</p></li>
-<li class="fragment"><p>Or all the work you do for a thesis or dissertation,</p></li>
-<li class="fragment"><p>Or each manuscript could be its own project even if it uses the same dataset as a different project.</p></li>
-</ul>
-</section>
-<section id="a-standard-project-template" class="slide level2 smaller">
-<h2>A Standard Project Template</h2>
+<div class="column">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
+<pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode" id="cb1" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>├── README.md             &lt;- High-level summary &amp; instructions</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>├── LICENSE               &lt;- Data/code usage rights</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>├── data/</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>│   ├── raw/              &lt;- IMMUTABLE raw data (read-only)</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>│   └── processed/        &lt;- Cleaned, transformed datasets</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>├── code/</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>│   ├── 01_data-prep.R    &lt;- Step 1: Clean raw data</span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>│   ├── 02_analysis.R     &lt;- Step 2: Fit statistical models</span>
-<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>│   └── 03_figures.R      &lt;- Step 3: Render visual output</span>
-<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a>├── output/</span>
-<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a>│   ├── tables/           &lt;- Exported CSV/LaTeX summary tables</span>
-<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a>│   └── figures/          &lt;- High-res PNG/PDF plots</span>
-<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a>│</span>
-<span id="cb1-18"><a aria-hidden="true" tabindex="-1"></a>└── docs/                 &lt;- Paper drafts, reports, slide decks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>all: plot1.png plot2.png plot3.png</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule 1</span></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>plot1.png: plot1.R</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>  Rscript $&lt;</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule 2</span></span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>plot2.png: plot2.R</span>
+<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>  Rscript $&lt;</span>
+<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule 3</span></span>
+<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a>plot3.png: plot3.R</span>
+<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>  Rscript $&lt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<ul>
+<li class="fragment">All rules have the same <span class="bold-hilit">pattern</span></li>
+<li class="fragment">A PNG target</li>
+<li class="fragment">An R dependency</li>
+<li class="fragment">Same command</li>
+<li class="fragment">We can use the percent symbol <code>%</code> to define a <span class="bold-hilit">pattern rule</span></li>
+</ul>
+</div></div>
 </div>
 </section>
-<section id="example-how-not-to-organize" class="slide level2 smaller">
-<h2>Example: How not to organize</h2>
+<section id="example-1-makefile-1" class="slide level2">
+<h2>Example 1: Makefile</h2>
+<div class="fragment">
+<div class="columns">
+<div class="column">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
+<pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode" id="cb2" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>traffic_project/</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>├── .RData</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>├── 01_clean_data_OLD.R</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>├── Data_traffic_2026_edited_v2.xlsx</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>├── Fig1.png</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>├── Script.R</span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>├── Script2.R</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>├── Traffic Data Clean.csv</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>├── density_plot.png</span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>├── my_script_final.R</span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>├── temp_model.R</span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>├── draft_august.docx</span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>├── draft_final_comments.docx</span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>└── traffic_2026.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>all: plot1.png plot2.png plot3.png</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern rule</span></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>%.png: %.R</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>  Rscript $&lt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<ul>
+<li class="fragment">We only need one <span class="bold-hilit">pattern rule</span></li>
+<li class="fragment">The common pattern in this case is the name of the file</li>
+<li class="fragment"><code>%</code> is a placeholder for <code>plot1</code>, <code>plot2</code>, and <code>plot3</code></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="example-1-makefile-2" class="slide level2 smaller">
+<h2>Example 1: Makefile</h2>
+<p>A more complete Makefile with <code>.PHONY</code> targets <code>all</code> and <code>clean</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all clean</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>all: plot1.png plot2.png plot3.png</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern rule</span></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>%.png: %.R</span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>  Rscript $&lt;</span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>clean: </span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a>  rm -f *.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
-<p>Spot as many sins as you can fig01_density_by_hour</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_42d335f2" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<ul>
+<li class="fragment">We still have some repetition in the names of the targets</li>
+<li class="fragment">Imagine if you had 10, or 50, or a larger number of targets</li>
+</ul>
+</section></section>
+<section>
+<section id="example-2" class="title-slide slide level1 center">
+<h1>Example 2</h1>
+
+</section>
+<section id="example-2-1" class="slide level2">
+<h2>Example 2</h2>
+<p>Let’s consider a simple project with a more realistic file structure</p>
+<div class="columns">
+<div class="column">
+<p>File structure (before running <code>make</code>)</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  Makefile</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>  code/</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>    plot1.R</span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>  images/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<p>File structure (after running <code>make</code>)</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  Makefile</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>  code/</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>    plot1.R</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>  images/</span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    plot1.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="example-2-makefile" class="slide level2">
+<h2>Example 2: Makefile</h2>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<p>Rule with no Make variables</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
 </div>
+<div class="sourceCode" id="cb8" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>images/plot1.png: code/plot1.R</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>  cd code &amp;&amp; Rscript plot1.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment">
+<p>Failed attempt with Make variable 👎</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>images/plot1.png: code/plot1.R</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>  cd code &amp;&amp; Rscript $&lt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+<p><br>
+</p>
+<ul>
+<li class="fragment">Recall that <code>$&lt;</code> is the first dependency</li>
+<li class="fragment">In this case <code>$&lt;</code> has the value of <code>code/plot1.R</code></li>
+<li class="fragment">i.e.&nbsp;<code>Rscript $&lt;</code> corresponds to <code>Rscript code/plot1.R</code> 👎</li>
+<li class="fragment"><code>$(&lt;D)</code> and <code>$(&lt;F)</code> to the rescue ✅</li>
+</ul>
+</div>
+</section>
+<section id="example-2-make-d-and-f" class="slide level2">
+<h2>Example 2: Make <code>$(&lt;D)</code> and <code>$(&lt;F)</code></h2>
+<ul>
+<li class="fragment"><code>$(&lt;D)</code> is the Directory of the first dependency</li>
+<li class="fragment"><code>$(&lt;F)</code> is the File name of the first dependency</li>
+</ul>
+<div class="fragment">
+<p>We can use them to rewrite the rule as follows:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>images/plot1.png: code/plot1.R</span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>  cd $(&lt;D) &amp;&amp; Rscript $(&lt;F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="example-3" class="title-slide slide level1 center">
+<h1>Example 3</h1>
+
+</section>
+<section id="example-3-1" class="slide level2">
+<h2>Example 3</h2>
+<p>Suppose we have the same files of Example 1 but with a more realistic file structure</p>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<p>File structure (before running <code>make</code>)</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  Makefile</span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  code/</span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>    plot1.R</span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>    plot2.R</span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>    plot3.R</span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a>  images/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<p>File structure (after running <code>make</code>)</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>project/</span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>  Makefile</span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>  code/</span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a>    plot1.R</span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>    plot2.R</span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a>    plot3.R</span>
+<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a>  images/</span>
+<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a>    plot1.png</span>
+<span id="cb12-9"><a aria-hidden="true" tabindex="-1"></a>    plot2.png</span>
+<span id="cb12-10"><a aria-hidden="true" tabindex="-1"></a>    plot3.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</div>
+</section>
+<section id="example-3-makefile" class="slide level2 smaller">
+<h2>Example 3: Makefile</h2>
+<div class="fragment">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb13" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>all: images/plot1.png images/plot2.png images/plot3.png</span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule 1</span></span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a>images/plot1.png: code/plot1.R</span>
+<span id="cb13-7"><a aria-hidden="true" tabindex="-1"></a>  cd code &amp;&amp; Rscript plot1.R</span>
+<span id="cb13-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule 2</span></span>
+<span id="cb13-10"><a aria-hidden="true" tabindex="-1"></a>images/plot2.png: code/plot2.R</span>
+<span id="cb13-11"><a aria-hidden="true" tabindex="-1"></a>  cd code &amp;&amp; Rscript plot2.R</span>
+<span id="cb13-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># rule 3</span></span>
+<span id="cb13-14"><a aria-hidden="true" tabindex="-1"></a>images/plot3.png: code/plot3.R</span>
+<span id="cb13-15"><a aria-hidden="true" tabindex="-1"></a>  cd code &amp;&amp; Rscript plot3.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="example" class="slide level2 smaller">
-<h2>Example</h2>
+<section id="example-3-makefile-1" class="slide level2 smaller">
+<h2>Example 3: Makefile</h2>
+<p>Using a <span class="bold-hilit">pattern rule</span> gives us a simpler <code>Makefile</code></p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
+<pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="Example"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>traffic_project/</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>├── README.md                 &lt;- Step-by-step instructions</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>├── data/</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>│   ├── raw/                  &lt;- Read-only original data</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>│   │   └── traffic_2026.csv</span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>│   └── processed/            &lt;- Script-generated clean data</span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>│       └── 01_clean_traffic.rds</span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>├── code/</span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>│   ├── 01_clean_data.R</span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>│   ├── 02_fit_models.R</span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>│   └── 03_generate_figures.R</span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>├── output/</span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>│   └── figures/</span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a>│       └── fig01_density_by_hour.png</span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>└── docs/</span>
-<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a>    └── report.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all clean</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>all: images/plot1.png images/plot2.png images/plot3.png</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern rule</span></span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>images/%.png: code/%.R</span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>  cd $(&lt;D) &amp;&amp; Rscript $(&lt;F)</span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a aria-hidden="true" tabindex="-1"></a>clean:</span>
+<span id="cb14-10"><a aria-hidden="true" tabindex="-1"></a>  cd images &amp;&amp; rm -f *.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="example-4" class="title-slide slide level1 center">
+<h1>Example 4</h1>
+
+</section>
+<section id="example-4-1" class="slide level2">
+<h2>Example 4</h2>
+<p>From Example 3, we have the following Makefile</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb15" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all clean</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>all: images/plot1.png images/plot2.png images/plot3.png</span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern rule</span></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a>images/%.png: code/%.R</span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a>  cd $(&lt;D) &amp;&amp; Rscript $(&lt;F)</span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>clean:</span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a>  cd images &amp;&amp; rm -f *.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We still have some repetition listing the names of the targets</p>
+</section>
+<section id="example-4-2" class="slide level2">
+<h2>Example 4</h2>
+<p>It would be nice to create a variable <code>PNGS</code> for the targets, something like:</p>
+<div class="fragment">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb16" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>PNGS = $(wildcard images/*.png)</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all clean</span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>all: $(PNGS)</span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern rule</span></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a>images/%.png: code/%.R</span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a>  cd $(&lt;D) &amp;&amp; Rscript $(&lt;F)</span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a aria-hidden="true" tabindex="-1"></a>clean:</span>
+<span id="cb16-12"><a aria-hidden="true" tabindex="-1"></a>  cd images &amp;&amp; rm -f *.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>⚠️ The above Makefile has an issue ⚠️</p>
+</div>
+</section>
+<section id="example-4-3" class="slide level2">
+<h2>Example 4</h2>
+<ul>
+<li class="fragment"><p>It would be nice to create a variable <code>PNGS</code> for the targets.</p></li>
+<li class="fragment"><p>The issue is that if the directory <code>images/</code> is empty, then Makefile won’t be able to create the appropriate varibale <code>PNGS</code></p></li>
+<li class="fragment"><p>The solution involves creating a variable for the dependency files, and then use this variable to create a varible for the targets.</p></li>
+<li class="fragment"><p>The Make tool to accomplish this is a so-called <span class="bold-hilit">pattern substitution</span></p></li>
+</ul>
+</section>
+<section id="pattern-substitution" class="slide level2">
+<h2>Pattern substitution</h2>
+<p>There are two ways to create a variable with pattern substitution</p>
+<div class="fragment">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb17" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern substitution (option 1)</span></span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>VAR1 = $(patsubst PATTERN,REPLACEMENT,$(VARIABLE))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb18" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern substitution (option 2)</span></span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>VAR2 = $(VARIABLE:PATTERN=REPLACEMENT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="example-4-pattern-substitution-opt-1" class="slide level2 smaller">
+<h2>Example 4: pattern substitution (opt 1)</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb19" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># dependency files</span></span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>RS = $(wildcard code/*.R)</span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># target files (using pattern substitution)</span></span>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>PNGS = $(patsubst code/%.R,images/%.png,$(RS))</span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all clean</span>
+<span id="cb19-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a aria-hidden="true" tabindex="-1"></a>all: $(PNGS)</span>
+<span id="cb19-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern rule</span></span>
+<span id="cb19-12"><a aria-hidden="true" tabindex="-1"></a>images/%.png: code/%.R</span>
+<span id="cb19-13"><a aria-hidden="true" tabindex="-1"></a>  cd $(&lt;D) &amp;&amp; Rscript $(&lt;F)</span>
+<span id="cb19-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a aria-hidden="true" tabindex="-1"></a>clean:</span>
+<span id="cb19-16"><a aria-hidden="true" tabindex="-1"></a>  rm -f $(PNGS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="example-4-pattern-substitution-opt-2" class="slide level2 smaller">
+<h2>Example 4: pattern substitution (opt 2)</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Makefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb20" data-filename="Makefile"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># dependency files</span></span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>RS = $(wildcard code/*.R)</span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># target files (using pattern substitution)</span></span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a>PNGS = $(RS:code/%.R=images/%.png)</span>
+<span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a aria-hidden="true" tabindex="-1"></a>.PHONY: all clean</span>
+<span id="cb20-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a aria-hidden="true" tabindex="-1"></a>all: $(PNGS)</span>
+<span id="cb20-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># pattern rule</span></span>
+<span id="cb20-12"><a aria-hidden="true" tabindex="-1"></a>images/%.png: code/%.R</span>
+<span id="cb20-13"><a aria-hidden="true" tabindex="-1"></a>  cd $(&lt;D) &amp;&amp; Rscript $(&lt;F)</span>
+<span id="cb20-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a aria-hidden="true" tabindex="-1"></a>clean:</span>
+<span id="cb20-16"><a aria-hidden="true" tabindex="-1"></a>  rm -f $(PNGS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -711,44 +838,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

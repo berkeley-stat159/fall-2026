@@ -265,7 +265,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#supporting-materials" id="toc-supporting-materials" class="nav-link" data-scroll-target="#supporting-materials">Supporting Materials</a></li>
   </ul></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a>
+  <ul class="collapse">
+  <li><a href="#reflection-1" id="toc-reflection-1" class="nav-link" data-scroll-target="#reflection-1">Reflection 1</a></li>
+  <li><a href="#reflection-2" id="toc-reflection-2" class="nav-link" data-scroll-target="#reflection-2">Reflection 2</a></li>
+  <li><a href="#reflection-3" id="toc-reflection-3" class="nav-link" data-scroll-target="#reflection-3">Reflection 3</a></li>
+  </ul></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a></li>
   </ul>
 </nav>
     </div>
@@ -336,7 +342,55 @@ bCourses Submission
 <p>Accepted formats: PDF, HTML, MS Word (<code>.docx</code>), or Google Doc</p>
 </div>
 </div>
-<p>More details TBD</p>
+<section id="reflection-1" class="level3">
+<h3 class="anchored" data-anchor-id="reflection-1">Reflection 1</h3>
+<p>Baggerly discovered simple data layout swaps where “sensitive” and “resistant” cell labels were completely reversed—meaning the code predicted a patient would thrive on a drug that their tumor was actually resistant to.</p>
+<ul>
+<li><p>Evaluate how you double-check your data mapping logic.</p></li>
+<li><p>When you write code to recode or binarize strings (e.g., <code>0</code> vs <code>1</code>, <code>True</code> vs <code>False</code>), how do you systematically prove your labels didn’t get flipped upside down?</p></li>
+<li><p>What script-based test would catch a reversed logic label in your workspace today before it reaches a final chart?</p></li>
+</ul>
+</section>
+<section id="reflection-2" class="level3">
+<h3 class="anchored" data-anchor-id="reflection-2">Reflection 2</h3>
+<p>In 2010, Duke cleared the suspended trials to restart after an internal review. However, the university actively refused to publicly release the data or the report justifying why the trials were safe.</p>
+<p>Because the review was hidden, Duke failed to catch that data samples were heavily scrambled and mislabeled while the probe was underway.</p>
+<ul>
+<li><p>Think about your own project collaborations.</p></li>
+<li><p>Have you ever fixed a broken analysis script in secret, without documenting what broke, and told your team “it’s working now”?</p></li>
+<li><p>Why is hiding a pipeline’s correction process a direct threat to long-term computational trust?</p></li>
+</ul>
+</section>
+<section id="reflection-3" class="level3">
+<h3 class="anchored" data-anchor-id="reflection-3">Reflection 3</h3>
+<p>Keith Baggerly demands five mandatory things for all future computational papers: <em>Data, Provenance, Code, Descriptions of nonscriptable steps, and Planned designs</em>. He freely admits: “This would add extra overhead… but I don’t see any other way.”</p>
+<ul>
+<li><p>Look at your own tight project constraints.</p></li>
+<li><p>Which of Baggerly’s five requirements sounds like the most painful or exhausting “extra overhead” for your current workflow?</p></li>
+<li><p>How can you use automation tools (like Git or automation engines) to reduce that friction so you don’t skip it when a deadline hits?</p></li>
+</ul>
+</section>
+</section>
+<section id="rubric" class="level2">
+<h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Generic responses that do not mention a specific past assignment name or unique piece of code from your own experience will receive a score of zero.</p>
+</div>
+</div>
+<ul>
+<li><p><strong>Full Credit (5 Points)</strong>: Response is highly specific, names unique personal or localized constraints, and explicitly connects the personal experience back to the prompt in each question. Clearly written by a human.</p></li>
+<li><p><strong>Partial Credit (2-3 Points)</strong>: Response is correct but uses vague or generic examples (e.g., “I lost a file once” instead of naming the script). Sounds like a generic summary an AI could have written.</p></li>
+<li><p><strong>No Credit (0 Points)</strong>: Response relies entirely on abstract definitions, fails to provide personal context, or uses copy-pasted text from a webpage or AI tool.</p></li>
+</ul>
 
 
 </section>
