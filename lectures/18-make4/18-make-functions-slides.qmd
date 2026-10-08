@@ -1,0 +1,422 @@
+---
+title: "Other Functions in Make"
+subtitle: "Saving typing and avoiding repetition (part II)"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Example 1
+
+## Example 1
+
+Suppose we have the following project with various scripts; each script produces an output file.
+
+. . .
+
+:::: {.columns}
+::: {.column}
+File structure (before running `make`)
+
+```{.markdown code-line-numbers="false"}
+project/
+  Makefile
+  plot1.R
+  plot2.R
+  plot3.R
+```
+:::
+
+::: {.column .fragment}
+File structure (after running `make`)
+
+```{.markdown code-line-numbers="false"}
+project/
+  Makefile
+  plot1.R
+  plot2.R
+  plot3.R
+  plot1.png
+  plot2.png
+  plot3.png
+```
+:::
+::::
+
+. . .
+
+Notice that the script files and the PNG files share the same name.
+
+
+## Example 1: Makefile
+
+. . .
+
+:::: {.columns}
+::: {.column}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all
+
+all: plot1.png plot2.png plot3.png
+
+# rule 1
+plot1.png: plot1.R
+  Rscript $<
+
+# rule 2
+plot2.png: plot2.R
+  Rscript $<
+
+# rule 3
+plot3.png: plot3.R
+  Rscript $<
+```
+:::
+
+::: {.column}
+- All rules have the same [pattern]{.bold-hilit}
+- A PNG target
+- An R dependency
+- Same command
+- We can use the percent symbol `%` to
+define a [pattern rule]{.bold-hilit}
+:::
+::::
+
+
+## Example 1: Makefile
+
+. . .
+
+:::: {.columns}
+::: {.column}
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all
+
+all: plot1.png plot2.png plot3.png
+
+# pattern rule
+%.png: %.R
+  Rscript $<
+```
+:::
+
+::: {.column}
+- We only need one [pattern rule]{.bold-hilit}
+- The common pattern in this case is the name of the file
+- `%` is a placeholder for `plot1`, `plot2`, and `plot3`
+:::
+::::
+
+
+## Example 1: Makefile {.smaller}
+
+A more complete Makefile with `.PHONY` targets `all` and `clean` 
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: plot1.png plot2.png plot3.png
+
+# pattern rule
+%.png: %.R
+  Rscript $<
+
+clean: 
+  rm -f *.png
+```
+
+\
+
+- We still have some repetition in the names of the targets
+- Imagine if you had 10, or 50, or a larger number of targets
+
+
+# Example 2
+
+## Example 2
+
+Let's consider a simple project with a more realistic file structure
+
+:::: {.columns}
+::: {.column}
+File structure (before running `make`)
+
+```{.markdown code-line-numbers="false"}
+project/
+  Makefile
+  code/
+    plot1.R
+  images/
+```
+:::
+
+::: {.column .fragment}
+File structure (after running `make`)
+
+```{.markdown code-line-numbers="false"}
+project/
+  Makefile
+  code/
+    plot1.R
+  images/
+    plot1.png
+```
+:::
+::::
+
+
+## Example 2: Makefile
+
+. . .
+
+:::: {.columns}
+::: {.column}
+Rule with no Make variables
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule
+images/plot1.png: code/plot1.R
+  cd code && Rscript plot1.R
+```
+:::
+
+::: {.column .fragment}
+Failed attempt with Make variable 👎
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule
+images/plot1.png: code/plot1.R
+  cd code && Rscript $<
+```
+:::
+::::
+
+\
+
+- Recall that `$<` is the first dependency
+- In this case `$<` has the value of `code/plot1.R`
+- i.e. `Rscript $<` corresponds to `Rscript code/plot1.R` 👎
+- `$(<D)` and `$(<F)` to the rescue ✅
+
+
+## Example 2: Make `$(<D)` and `$(<F)`
+
+- `$(<D)` is the Directory of the first dependency
+- `$(<F)` is the File name of the first dependency
+
+. . .
+
+We can use them to rewrite the rule as follows:
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# rule
+images/plot1.png: code/plot1.R
+  cd $(<D) && Rscript $(<F)
+```
+
+
+# Example 3
+
+## Example 3
+
+Suppose we have the same files of Example 1 but with a more realistic file structure
+
+. . .
+
+:::: {.columns}
+::: {.column}
+File structure (before running `make`)
+
+```{.markdown code-line-numbers="false"}
+project/
+  Makefile
+  code/
+    plot1.R
+    plot2.R
+    plot3.R
+  images/
+```
+:::
+
+::: {.column .fragment}
+File structure (after running `make`)
+
+```{.markdown code-line-numbers="false"}
+project/
+  Makefile
+  code/
+    plot1.R
+    plot2.R
+    plot3.R
+  images/
+    plot1.png
+    plot2.png
+    plot3.png
+```
+:::
+::::
+
+
+## Example 3: Makefile {.smaller}
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all
+
+all: images/plot1.png images/plot2.png images/plot3.png
+
+# rule 1
+images/plot1.png: code/plot1.R
+  cd code && Rscript plot1.R
+
+# rule 2
+images/plot2.png: code/plot2.R
+  cd code && Rscript plot2.R
+
+# rule 3
+images/plot3.png: code/plot3.R
+  cd code && Rscript plot3.R
+```
+
+
+## Example 3: Makefile {.smaller}
+
+Using a [pattern rule]{.bold-hilit} gives us a simpler `Makefile`
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: images/plot1.png images/plot2.png images/plot3.png
+
+# pattern rule
+images/%.png: code/%.R
+  cd $(<D) && Rscript $(<F)
+
+clean:
+  cd images && rm -f *.png
+```
+
+
+# Example 4
+
+## Example 4
+
+From Example 3, we have the following Makefile
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+.PHONY: all clean
+
+all: images/plot1.png images/plot2.png images/plot3.png
+
+# pattern rule
+images/%.png: code/%.R
+  cd $(<D) && Rscript $(<F)
+
+clean:
+  cd images && rm -f *.png
+```
+
+We still have some repetition listing the names of the targets
+
+
+## Example 4
+
+It would be nice to create a variable `PNGS` for the targets, something like:
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+PNGS = $(wildcard images/*.png)
+
+.PHONY: all clean
+
+all: $(PNGS)
+
+# pattern rule
+images/%.png: code/%.R
+  cd $(<D) && Rscript $(<F)
+
+clean:
+  cd images && rm -f *.png
+```
+
+⚠️ The above Makefile has an issue ⚠️
+
+
+## Example 4
+
+- It would be nice to create a variable `PNGS` for the targets.
+
+- The issue is that if the directory `images/` is empty, then Makefile won't 
+be able to create the appropriate varibale `PNGS`
+
+- The solution involves creating a variable for the dependency files, and 
+then use this variable to create a varible for the targets.
+
+- The Make tool to accomplish this is a so-called [pattern substitution]{.bold-hilit}
+
+
+## Pattern substitution
+
+There are two ways to create a variable with pattern substitution
+
+. . .
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# pattern substitution (option 1)
+VAR1 = $(patsubst PATTERN,REPLACEMENT,$(VARIABLE))
+```
+
+. . .
+
+\
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# pattern substitution (option 2)
+VAR2 = $(VARIABLE:PATTERN=REPLACEMENT)
+```
+
+
+## Example 4: pattern substitution (opt 1) {.smaller}
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# dependency files
+RS = $(wildcard code/*.R)
+
+# target files (using pattern substitution)
+PNGS = $(patsubst code/%.R,images/%.png,$(RS))
+
+.PHONY: all clean
+
+all: $(PNGS)
+
+# pattern rule
+images/%.png: code/%.R
+  cd $(<D) && Rscript $(<F)
+
+clean:
+  rm -f $(PNGS)
+```
+
+
+## Example 4: pattern substitution (opt 2) {.smaller}
+
+```{.markdown filename="Makefile" code-line-numbers="false"}
+# dependency files
+RS = $(wildcard code/*.R)
+
+# target files (using pattern substitution)
+PNGS = $(RS:code/%.R=images/%.png)
+
+.PHONY: all clean
+
+all: $(PNGS)
+
+# pattern rule
+images/%.png: code/%.R
+  cd $(<D) && Rscript $(<F)
+
+clean:
+  rm -f $(PNGS)
+```
