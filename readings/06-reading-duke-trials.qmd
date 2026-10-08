@@ -37,4 +37,73 @@ assignment in bCourses.
 Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
 :::
 
-More details TBD
+
+### Reflection 1
+
+Baggerly discovered simple data layout swaps where "sensitive" and "resistant" 
+cell labels were completely reversed---meaning the code predicted a patient 
+would thrive on a drug that their tumor was actually resistant to.
+
+- Evaluate how you double-check your data mapping logic.
+
+- When you write code to recode or binarize strings (e.g., `0` vs `1`, `True` vs `False`), 
+how do you systematically prove your labels didn't get flipped upside down?
+
+- What script-based test would catch a reversed logic label in your workspace 
+today before it reaches a final chart?
+
+
+### Reflection 2
+
+In 2010, Duke cleared the suspended trials to restart after an internal review. 
+However, the university actively refused to publicly release the data or the 
+report justifying why the trials were safe.
+
+Because the review was hidden, Duke failed to catch that data samples were 
+heavily scrambled and mislabeled while the probe was underway.
+
+- Think about your own project collaborations.
+
+- Have you ever fixed a broken analysis script in secret, without 
+documenting what broke, and told your team "it's working now"?
+
+- Why is hiding a pipeline's correction process a direct threat to long-term computational trust?
+
+
+### Reflection 3
+
+Keith Baggerly demands five mandatory things for all future computational papers: 
+*Data, Provenance, Code, Descriptions of nonscriptable steps, and Planned designs*. 
+He freely admits: "This would add extra overhead... but I don't see any other way."
+
+- Look at your own tight project constraints.
+
+- Which of Baggerly's five requirements sounds like the most painful or exhausting 
+"extra overhead" for your current workflow?
+
+- How can you use automation tools (like Git or automation engines) to reduce that 
+friction so you don't skip it when a deadline hits?
+
+ 
+
+## Rubric
+
+::: {.callout-important}
+Generic responses that do not mention a specific 
+past assignment name or unique piece of code from your own experience will 
+receive a score of zero.
+:::
+
+- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the prompt in each question. Clearly written by a human.
+
+- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from a webpage
+or AI tool.
+
+
