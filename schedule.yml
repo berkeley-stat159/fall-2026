@@ -196,7 +196,7 @@
         - type: "Lecture"
           id: ""
           name: "More Make (part 2)"
-          href: "lectures/18-make4/18-make4-functions-slides.html"
+          href: "lectures/18-make4/18-make-functions-slides.html"
         - type: "Reading"
           id: ""
           name: "The Duke Trials Retraction (due 10/14)"
