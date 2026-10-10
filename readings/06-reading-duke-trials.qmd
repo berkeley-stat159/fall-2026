@@ -2,16 +2,18 @@
 title: 6) Irreproducibility Tales 2 
 ---
 
-## Assigned Reading
+## Assigned Reading and Video
 
-- Title: **Forensic Bioinformatics: Investigating Reproducibility of Results**
-- Author(s): Teresa Melcher
+📖 Article
+
+- Title: **The Duke University scandal --- what can be done?**
+- Author(s): Darrel Ince
 - Year: 2011
-- Journal: Science Editor
-- <https://www.csescienceeditor.org/article/forensic-bioinformatics-investigating-reproducibility-of-results/>
+- Journal: Significance, 8: 113-115
+- <https://doi.org/10.1111/j.1740-9713.2011.00505.x>
 
 
-### Supporting Materials
+📺 Video
 
 - Title: **Duke Clinical Trials - 60 Minutes**
 - Authors: 60 Minutes
@@ -19,7 +21,8 @@ title: 6) Irreproducibility Tales 2
 - Type: YouTube video
 - <https://www.youtube.com/watch?v=W5sZTNPMQRM&ab_channel=HensonFuerst>
 
-\
+
+### Supporting Materials
 
 - Title: **The Importance of Reproducible Research in High-Throughput Biology**
 - Authors: Keith Baggerly
