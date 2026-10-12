@@ -1,0 +1,774 @@
+---
+title: "Collaboration in GitHub"
+subtitle: "Version Control as a Team Sport"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Forking and Cloning
+
+## Vocabulary
+
+\
+
+. . .
+
+:::: {.columns}
+::: {.column width="45%"}
+[Fork]{.bold-hilit} 
+
+Copying a repository from someone else's GitHub account to your 
+own GitHub account in the cloud. (A fork is essentially GitHub-to-GitHub).
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column  width="45%" .fragment}
+[Clone]{.bold-hilit} (`git clone`)
+
+Downloading a repository from 
+the cloud (GitHub) to your local computer.
+:::
+::::
+
+
+## Two main workflows
+
+\
+
+:::: {.columns}
+::: {.column}
+[The Fork-and-Pull Model]{.mdlit}
+
+Best for: Open-source projects, contributing to software you don't own, 
+or class assignments where students shouldn't have write access to 
+a master template repository.
+:::
+
+::: {.column}
+[The Shared Repository Model]{.hilit}
+
+Best for: Close-knit project teams, software development teams, 
+or small group assignments where all members have collaborator 
+(write) access to the same repository.
+:::
+::::
+
+
+# GitHub Forking
+
+## What Is Forking on GitHub
+
+- A fork is a complete copy of someone else's repository that gets created 
+under your own GitHub account. 
+
+- When you fork a repository, you get all the files, commit history, and 
+branches from the original project.
+
+- The original repository remains untouched. 
+
+- Your fork lives independently on your account, where you have full control 
+to make changes, create branches, and experiment freely.
+
+
+## An Analogy
+
+- Imagine you're at a library and you find a cookbook you love. 
+
+- You can't write in the library's copy.
+
+- But you can photocopy the entire book, take it home, and make all the notes 
+and changes you want. 
+
+- That's exactly what forking does with code repositories.
+
+
+## The Fork-and-Pull Model
+
+Here's a simple flow: 
+
+1) You typically fork first on GitHub
+2) Then clone your fork to your local machine
+3) You make changes in your local repo
+4) Push changes to your fork
+5) Optionally submit changes back to the original
+
+
+## Why Developers Use Forks
+
+- Contributing to Open Source Projects
+    + You fork the project, 
+    + Make your improvements in your fork, 
+    + Then propose your changes back to the original project through a **pull request**
+
+- Experimenting Without Risk
+    + Perhaps you want to add a feature, 
+    + Try a different approach, 
+    + Or learn how it works by modifying it.
+
+
+## Why Developers Use Forks (cont'd)
+
+- Creating Your Own Version
+    + You want to take a project in a different direction than the original maintainer
+    + Maybe you need features they don't want to add, 
+    + Or you want to customize it heavily for your own needs.
+
+. . .
+
+\
+
+You can maintain it independently, adding whatever features you want.
+
+\
+
+This is completely acceptable in open-source development, 
+as long as you respect the project's license.
+
+
+## How to Fork a Repository on GitHub
+
+Say you found a useful project at `github.com/username/awesome-project` 
+that you want to work with.
+
+1) First, navigate to the GitHub repository you want to fork
+
+2) Look for the [Fork button]{.hilit} in the upper-right corner, and click it.
+
+3) GitHub will ask you where you want to fork the repository.
+
+4) For most cases, select your personal account.
+
+5) Click the [Create fork]{.mdlit} button.
+
+6) GitHub will copy the entire repository to your account.
+
+. . .
+
+::: {.small}
+You'll notice the repository name now shows `"YourUsername/awesome-project"` 
+with a note underneath saying `"forked from username/awesome-project"`
+:::
+
+
+## {background-image="images/cloning-a-fork-1.svg" background-size="contain"}
+
+## {background-image="images/cloning-a-fork-2.svg" background-size="contain"}
+
+## {background-image="images/cloning-a-fork-3.svg" background-size="contain"}
+
+## {background-image="images/cloning-a-fork-4.svg" background-size="contain"}
+
+
+## Understanding the Fork Connection
+
+- Your fork maintains a link to the original repository, which GitHub calls the 
+`"upstream"` repository. You can see this relationship on your fork's main page.
+
+- This connection serves several purposes.
+    + It allows you to fetch updates from the original project later 
+    (we'll cover this in detail in an upcoming lesson). 
+    + It also enables you to submit pull requests back to the original project.
+
+- The original repository has no automatic connection to your fork. 
+
+- The original maintainer won't receive notifications when you fork their 
+project (forking is a normal, expected activity on GitHub).
+
+
+## What Happens After You Forked
+
+### Your Fork Is Independent
+
+- Once forked, your repository is yours. 
+- Changes you make don't affect the original. 
+- Changes made to the original don't automatically appear in your fork.
+- You can delete your fork, make it private, or do whatever you want with it.
+
+::: {.fragment}
+### Contributing Back to the Original
+
+- The ultimate purpose of many forks is to contribute improvements back to 
+the original project. 
+- This happens through **_pull requests_**, which we'll cover in lab.
+- However, not every fork leads to a pull request, and that's fine.
+:::
+
+
+# Working with Your Forked Repository
+
+## Working with Your Forked Repository
+
+Remember, forking creates the copy on GitHub, but you still need to 
+clone it to your local machine to make changes.
+
+1) Go to your forked repository on GitHub. 
+
+2) Click the green "Code" button and copy the URL. 
+    + It will look something like: `https://github.com/YourUsername/awesome-project.git`
+
+3) Open your terminal and navigate to where you want to store the project.
+
+4) Use the git clone command:
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git clone git@github.com:YourUsername/awesome-project.git
+```
+
+
+## Making Changes to Your Fork
+
+Working with a fork locally is identical to working with any other Git repository. 
+
+You use the same commands: `git add`, `git commit`, `git push`, and `git pull`.
+
+. . .
+
+\
+
+Let's say you want to fix a typo in the `README` file:
+
+. . .
+
+::: {.small}
+```{.bash code-line-numbers="false"}
+# Make changes to README.md using your text editor
+
+# Stage the changes
+git add README.md
+
+# Commit with a clear message
+git commit -m "Fix typo in installation instructions"
+
+# Push to your fork on GitHub
+git push origin main
+```
+:::
+
+
+## Scenario: Contributing a Bug Fix
+
+- You discover the project at `github.com/hansolo/simple-calculator`. 
+
+- You notice the division function doesn't handle division by zero properly.
+
+- Step 1) Fork the repository on GitHub (i.e. get your own copy)
+
+- Step 2) Clone your fork locally
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git clone https://github.com/YourUsername/simple-calculator.git
+cd simple-calculator
+```
+
+- Step 3) Create a branch for your fix
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git switch -c fix-division-by-zero
+```
+
+## Scenario: Contributing a Bug Fix
+
+- Step 4) Make your changes
+    + Edit `calculator.py` to add zero-check
+    + Test the changes locally
+
+- Step 5) Commit and push
+
+. . .
+
+```{.bash code-line-numbers="false"}
+git add calculator.py
+git commit -m "Add division by zero error handling"
+git push origin fix-division-by-zero
+```
+
+- Now your fork on GitHub has a branch with your bug fix. 
+The original project still doesn't have your changes---that's where pull requests 
+come in, which we'll cover in lab.
+
+
+# Best Practices When Forking
+
+## Keep Your Fork Updated
+
+- The original repository will continue to receive updates after you fork it.
+
+- Your fork doesn't automatically stay in sync.
+
+- Outdated forks can lead to conflicts when you try to contribute changes back.
+
+- Make it a habit to check for updates before starting new work in your fork.
+
+
+## Fork Only When Needed
+
+- There's no limit to how many repositories you can fork on GitHub.
+
+- However, you should only fork repositories you actually plan to work with. 
+
+- Don't fork every interesting repository you find. 
+
+- Forking is meant for repositories you plan to work with actively, 
+not for bookmarking or showing support.
+
+- Use GitHub's ⭐️ Star feature to bookmark repositories you find interesting.
+
+- Too many inactive forks clutter your profile and make it harder 
+to manage your actual work.
+
+
+## Respect the License
+
+- When you fork a repository, you must respect its license. 
+
+- The license tells you what you can and cannot do with the code.
+
+- Some licenses require you to keep the same license if you distribute your fork. 
+
+- Always read the LICENSE file in the repository.
+
+- If there's no license, technically you don't have permission to use the code, 
+even though it's public on GitHub.
+
+
+## Cannot Push to Original Repository
+
+- When you clone your fork, the remote is automatically set correctly,
+and you can push changes to it. Use `git remote -v` to verify.
+
+- If you try to push directly to the original repository URL, 
+you'll get a permission denied error. 
+
+- This is expected: you don't have write access to repositories you don't own.
+
+- If you accidentally cloned the original repository instead of your fork, 
+you'll need to change the remote URL or clone your fork instead.
+
+
+## Key Takeaways
+
+- Forking is a fundamental GitHub feature that enables safe experimentation 
+and collaboration.
+
+- A fork creates a complete copy of a repository under your account, 
+where you have full control.
+
+- You fork on GitHub, then clone your fork locally to work on it. 
+
+- Changes you make stay in your fork until you decide to contribute them 
+back through a pull request.
+
+
+# The Shared Repository Model
+
+## Shared Repository Workflow
+
+[1) Clone (Once):]{.bold-hilit} Every team member clones the same 
+central repository directly:
+
+```{.bash code-line-numbers="false"}
+git clone https://github.com/organization/shared-repo.git
+```
+
+\
+
+. . .
+
+[2) Branch (Every time you code):]{.bold-hilit} Always create a 
+new branch for your specific task. Never code directly on `main`:
+
+```{.bash code-line-numbers="false"}
+git switch -c fix-typos
+```
+
+\
+
+. . .
+
+[3) Push to Central Remote:]{.bold-hilit} Push your branch up 
+to the shared repository:
+
+```{.bash code-line-numbers="false"}
+git push origin fix-typos
+```
+
+
+## Shared Repository Workflow (cont'd)
+
+[4) Open a Pull Request (PR):]{.bold-hilit} Go to the shared GitHub 
+repository. Open a Pull Request from `fix-typos` into `main`.
+
+. . .
+
+\
+
+[5) Code Review & Merge:]{.bold-hilit} Teammates review the PR, 
+discuss changes, and click `Merge` once approved. Other team members 
+then pull the updated `main` branch locally (`git pull origin main`).
+
+
+# Pull Requests
+
+## What is a Pull Request?
+
+- A pull request (often called a PR) is a request to merge changes from 
+one branch into another. 
+
+- It's not a Git feature, it's a GitHub feature that makes collaboration 
+easier and safer.
+
+- When you create a pull request, you're saying: 
+
+. . .
+
+::: {.poll}
+"Here are my changes. Can we discuss them and merge them into the 
+main branch if they look good?"
+:::
+
+## {background-image="images/pull-request-flow-1.svg" background-size="contain"}
+
+## {background-image="images/pull-request-flow-2.svg" background-size="contain"}
+
+## {background-image="images/pull-request-flow-3.svg" background-size="contain"}
+
+## {background-image="images/pull-request-flow-4.svg" background-size="contain"}
+
+## {background-image="images/pull-request-flow-5.svg" background-size="contain"}
+
+## {background-image="images/pull-request-flow-6.svg" background-size="contain"}
+
+
+## Why use pull requests?
+
+- [Code Review and Quality]{.bold-hilit}
+    + Pull requests create a formal code review process. 
+    + Before your changes merge, teammates can review your code, 
+    spot bugs, suggest improvements, and share knowledge.
+
+- [Discussion and Collaboration]{.bold-hilit}
+    + Pull requests provide a dedicated space to discuss changes. 
+    + You can leave comments on specific lines of code, ask questions, 
+    explain your approach, and collaborate on solutions.
+    + This keeps all conversation about a feature or fix in one place.
+
+
+## Why use pull requests? (cont'd)
+
+- [Documentation of Changes]{.bold-hilit}
+    + Each pull request documents what changed, why it changed, 
+    and who approved it. 
+    + This creates a historical record for 
+    understanding project evolution.
+
+- [Testing Before Merging]{.bold-hilit}
+    + Pull requests give you a chance to test changes in isolation 
+    before they affect the main branch. 
+    + Many teams run automated tests when a pull request is created.
+    + If tests fail, you can fix the issues before merging.
+
+
+## The Typical Pull Request Workflow
+
+1) Create a new branch for your feature or fix
+2) Make changes and commit them to your branch
+3) Push your branch to GitHub
+4) Open a pull request on GitHub
+5) Team members review and discuss your changes
+6) Make additional commits if changes are requested
+7) Once approved, merge the pull request
+8) Delete the feature branch
+
+
+## Pull Request vs Direct Merge
+
+- You could technically merge branches directly using `git merge` on your local 
+machine and push to the remote. 
+
+- But pull requests add a layer of review and discussion that direct merges 
+don't provide.
+
+- Pull requests give your team a chance to review code, ask questions, 
+suggest changes, and ensure everything works before merging. 
+
+- This prevents bugs and maintains code quality.
+
+
+## Where Pull Requests Live
+
+- Pull requests exist on GitHub (or similar platforms like GitLab or Bitbucket), 
+not in Git itself. 
+
+- They're a web-based feature that wraps around Git's merge functionality.
+
+- This means you create, review, and manage pull requests through GitHub's 
+website or mobile app, not through Git commands in your terminal.
+
+
+# Anatomy of a Pull Request
+
+## Anatomy of a Pull Request
+
+A pull request page has several tabs and sections, each serving a different purpose.
+
+- Conversation Tab (i.e. Discussion)
+- Commits Tab (i.e. History)
+- Files Changed Tab (i.e. Diff view)
+
+
+## Scenario {auto-animate="true"}
+
+::: {.small}
+```{.bash code-line-numbers="false"}
+# Start from main branch
+git switch main
+git pull origin main
+```
+:::
+
+
+## Scenario {auto-animate="true"}
+
+::: {.small}
+```{.bash code-line-numbers="false"}
+# Start from main branch
+git switch main
+git pull origin main
+
+# Create feature branch
+git switch -c add-contact-page
+```
+:::
+
+
+## Scenario {auto-animate="true"}
+
+::: {.small}
+```{.bash code-line-numbers="false"}
+# Start from main branch
+git switch main
+git pull origin main
+
+# Create feature branch
+git switch -c add-contact-page
+
+# Create the contact page file
+echo "<h1>Contact Us</h1>" > contact.html
+```
+:::
+
+
+## Scenario {auto-animate="true"}
+
+::: {.small}
+```{.bash code-line-numbers="false"}
+# Start from main branch
+git switch main
+git pull origin main
+
+# Create feature branch
+git switch -c add-contact-page
+
+# Create the contact page file
+echo "<h1>Contact Us</h1>" > contact.html
+
+# Stage and commit
+git add contact.html
+git commit -m "Add contact page with basic heading"
+```
+:::
+
+
+## Scenario {auto-animate="true"}
+
+::: {.small}
+```{.bash code-line-numbers="false"}
+# Start from main branch
+git switch main
+git pull origin main
+
+# Create feature branch
+git switch -c add-contact-page
+
+# Create the contact page file
+echo "<h1>Contact Us</h1>" > contact.html
+
+# Stage and commit
+git add contact.html
+git commit -m "Add contact page with basic heading"
+
+# Push to GitHub
+git push origin add-contact-page
+```
+:::
+
+. . .
+
+::: {.small}
+Now your branch is on GitHub, ready for a pull request.
+:::
+
+
+## Creating the PR on GitHub
+
+On GitHub, you click ["Compare & pull request"]{.bold-hilit} and 
+fill out the form:
+
+::: {.poll}
+**Title:** Add contact page
+
+**Description:** "This PR adds a new contact page to the website. 
+The page includes a heading and will be expanded with a form in future work. 
+Ready for review."
+:::
+
+\
+
+You click ["Create pull request"]{.bold-hilit}, and 
+now your teammates can review it.
+
+
+## Review and Feedback
+
+A teammate reviews your PR and comments: 
+
+::: {.poll}
+"Looks good! Can you also add a paragraph explaining how to reach us?"
+:::
+
+. . .
+
+\
+
+You make the change locally:
+
+::: {.small}
+```{.bash code-line-numbers="false"}
+# Still on add-contact-page branch
+echo "<p>Send us an email at hello@example.com</p>" >> contact.html
+
+git add contact.html
+git commit -m "Add contact email paragraph"
+
+git push origin add-contact-page
+```
+:::
+
+. . .
+
+The new commit automatically appears in the pull request. 
+
+
+## Approval
+
+Assuming everything is good, your teammate approves, and 
+you merge the PR through GitHub's interface.
+
+
+# Pull Request Best Practices
+
+## Keep Pull Requests Small
+
+- Small pull requests are easier to review and less likely to have bugs. 
+
+- Try to keep PRs focused on one feature or fix.
+
+- A 50-line change is much easier to review thoroughly than a 500-line change. 
+Reviewers can give better feedback when they're not overwhelmed.
+
+- If your change is large, consider breaking it into multiple smaller pull requests.
+
+
+## Write Clear Descriptions
+
+- Explain what you changed and why. 
+
+- Don't assume reviewers know the full context; 
+give them the information they need.
+
+- Include:
+    + screenshots for visual changes, 
+    + testing steps for new features, 
+    + and explanations for complex logic.
+
+- A good description speeds up review and prevents misunderstandings.
+
+
+## Respond to Feedback
+
+- When reviewers leave comments, respond to them. 
+
+- Either make the suggested changes or explain why you took a different approach.
+
+- Mark conversations as resolved when you've addressed them. 
+This keeps the pull request organized and shows what still needs attention.
+
+- Be open to feedback.
+
+- Code review makes everyone better at their craft.
+
+
+## Test Before Requesting Review
+
+- Make sure your changes work before asking for review. 
+
+- Run the code, test edge cases, and verify nothing broke.
+
+- Reviewers should focus on code quality and design, 
+not catching basic bugs you could have found yourself.
+
+- Respect your teammates' time by submitting quality work.
+
+
+# Common Pull Request Scenarios
+
+## Bug Fix Pull Requests
+
+- Bug fixes are usually small, focused PRs. 
+
+- Create a branch, fix the bug, add a test if possible, and open a PR.
+
+- In your description, explain what the bug was, how to reproduce it, 
+and how your fix solves it.
+
+- Bug fix PRs often get reviewed and merged quickly since they 
+solve immediate problems.
+
+
+## Feature Pull Requests
+
+- New features are typically larger PRs. 
+
+- Break big features into smaller PRs if possible,
+    + perhaps one PR for the database changes 
+    + and another for the user interface.
+
+- Describe the feature's purpose, how it works, and how to test it. 
+
+- Include screenshots or videos for visual features.
+
+- Feature PRs often need more discussion and iteration than bug fixes.
+
+
+## Documentation Pull Requests
+
+- Documentation changes are just as important as code changes. 
+
+- Fixing typos, improving explanations, or adding examples all deserve pull requests.
+
+- Documentation PRs are often quick to review since they're usually straightforward. 
+
+- They're also a great way for beginners to contribute to projects.
+
+- Good documentation makes projects more accessible to everyone.
+
+
+
