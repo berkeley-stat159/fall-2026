@@ -1,0 +1,372 @@
+---
+title: "Handling and Sharing Data"
+subtitle: "Cherish, Document and Publish Your Data"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Intro
+
+## Cherish Your Data
+
+\
+
+Without data, there is no data science
+
+. . .
+
+\
+
+I like to differentiate our roles into 2 categories
+
+:::: {.columns}
+::: {.column .fragment}
+[Consuming data]{.mdlit}
+
+You as the consumer of data created by others
+:::
+
+::: {.column .fragment}
+[Creating Data]{.hilit}
+
+You as the creator/curator of data 
+:::
+::::
+
+
+## What to share
+
+- Raw data
+- Metadata
+- Scripts/code to process data
+- License for data
+
+
+## Raw Data
+
+- Raw data: unprocessed form of the data
+- Raw data is sacred: don't touch it! (leave it as is)
+- Separate raw data from processed/cleaned data
+- Separate data from code
+
+
+# Metadata
+
+## About Metadata
+
+- Data about the data
+- AKA: Codebook
+- AKA: Data Dictionary (not to be confused with a python dictionary)
+. . .
+
+::: {.poll .fragment}
+It is a comprehensive reference document that defines, structures, and explains 
+the contents, layout, and variables of a dataset.
+:::
+
+
+## Metadata
+
+- Preferably in a text file
+- Include details
+    + source, organization
+    + background
+    + citation*
+- Names of variables (features, atttributes)
+    + As they appear in the file (usually abbreviations)
+    + But also, their full name
+- Sometimes you may need to include a full description of each variable
+
+## Metadata (cont'd)
+
+- Recommended data types for each variable
+    + boolean, integer, float, character, other
+- For categorical or ordinal variables, describe their categories
+- Missing values: how are they encoded
+- Provenance
+    + How was data collected?
+    + Who collected it, how was it collected it?
+- If necessary, include further details, comments, notes, for how to 
+make sense of data, or how to treat certain values.
+
+
+## Metadata Example
+
+Data dictionary of SWITRS data
+
+<https://tims.berkeley.edu/help/crashdata/switrs-codebook.php#top>
+
+\
+
+. . .
+
+Data dictionary of IBTrACS
+
+- <https://www.ncei.noaa.gov/products/international-best-track-archive>
+- <https://www.ncei.noaa.gov/sites/default/files/2025-09/IBTrACS_v04r01_column_documentation.pdf>
+
+
+# Data in Spreadsheets
+
+## Data in Spreadsheets
+
+\
+
+See Karl Broman's tutorial: [organizing data in spreadsheets]{.bold-hilit}
+
+<https://kbroman.org/dataorg/>
+
+# Tabular Data
+
+## Data Tables
+
+Tidy Data by Hadley Wickham
+
+<https://vita.had.co.nz/papers/tidy-data.pdf>
+
+
+Three Core Rules
+
+1. [Each variable is a column]{.bold-hilit} (a column contains all values that measure the same attribute).
+2. [Each observation is a row]{.bold-hilit} (a row contains all values measured on a single unit).
+3. [Each value is a cell]{.bold-hilit} (a cell contains a single measurement of an attribute).
+
+
+# FAIR Principles
+
+## FAIR
+
+Data should be
+
+- Findable
+- Accessible
+- Interoperable
+- Reusable
+
+
+## FAIR
+
+- [Findable:]{.bold-hilit} Does it have an immutable digital tracking link (DOI)?
+
+- [Accessible:]{.bold-hilit} Can you download the data in 2 clicks without an institutional 
+login?
+
+- [Interoperable:]{.bold-hilit} Is the data stored in an open-source text format (like .csv), 
+or is it trapped in a proprietary Excel format (.xlsx)?
+
+- [Reusable:]{.bold-hilit} Is there an explicit Creative Commons (CC-BY) license attached, 
+or is it unlicensed and legally untouchable?
+
+- Important: Just uploading files to the internet doesn't make your science open or useful.
+
+
+## Share Your Data Online
+
+- Ideally: Deposit your data online in a well-established repository, 
+with a permanent identifier
+
+- Deposit data in whatever data archive is the "go to" place for your field.
+
+- Better than nothing: Store it in a google drive, dropbox, box, AWS,
+and share a public link to it.
+
+
+## General Data Repositories
+
+- Dataverse (<http://thedata.org>): A repository for research data that takes 
+care of long-term preservation and good archival practices, while researchers 
+can share, keep control of, and get recognition for their data.
+
+- FigShare (<http://figshare.com>): A repository where users can make all of their 
+research outputs available in a citable, shareable, and discoverable manner.
+
+- Zenodo (<http://zenodo.org>): A repository service that enables users to share 
+research results (data and publications) that are not part of existing 
+institutional or subject-based repositories.
+
+- Dryad (<http://datadryad.org>): A repository that aims to make data archiving 
+as simple as possible through a suite of services not necessarily provided by 
+publishers or institutional websites.
+
+
+## What about sharing data in GitHub?
+
+- Don't use github for big data
+- GitHub has a limit on file size: cannot exceed 100MB
+- Many data sets can easily exceed 100MB
+- Also, be careful with binary data 
+(Git tracks text files, not binary files)
+
+
+## What about sharing data through an R package?
+
+- Interesting option for relatively small data sets.
+- Especially good for teaching/learning purposes.
+- Example: `"stat20data"` package
+- Example: `"janeaustinr"` package
+- Example: `"harrypotter"` package
+
+
+## ROpenSci
+
+- The project R Open Science
+- Has tools and packages for accessing lots of data
+
+
+# Licenses
+
+## Licenses for Data
+
+Including an explicit license with your data is the best way to let others
+know exactly what they can and cannot do with the data you shared.
+
+Prefer well established licenses (or waivers) to clearly communicate 
+the rights and responsibilities of both the people providing the data
+and the people using it.
+
+
+## Creative Commons Licenses
+
+- [CC BY:]{.bold-hilit} Credit must be given to you, the creator.
+<br>
+<https://creativecommons.org/licenses/by/4.0/>
+
+\
+
+- [CC BY-SA:]{.bold-hilit} Credit must be given to you, the creator.
+Adaptations must be shared under the same terms.
+<br>
+<https://creativecommons.org/licenses/by-sa/4.0/>
+
+\
+
+- [CC BY-ND:]{.bold-hilit} Credit must be given to you, the creator.
+No derivatives or adaptations of your work are permitted.
+<br>
+<https://creativecommons.org/licenses/by-nd/4.0/>
+
+
+## 
+
+- [CC BY-NC:]{.bold-hilit} Credit must be given to you, the creator.
+Only noncommercial use of your work is permitted.
+<br>
+<https://creativecommons.org/licenses/by-nc/4.0/>
+
+\
+
+- [CC BY-NC-SA:]{.bold-hilit} Credit must be given to you, the creator.
+Only noncommercial use of your work is permitted.
+Adaptations must be shared under the same terms.
+<br>
+<https://creativecommons.org/licenses/by-nc-sa/4.0/>
+
+\
+
+- [CC BY-NC-ND:]{.bold-hilit} Credit must be given to you, the creator.
+Only noncommercial use of your work is permitted.
+No derivatives or adaptations of your work are permitted.
+<br>
+<https://creativecommons.org/licenses/by-nc-nd/4.0/>
+
+
+## Open Data Commons licenses
+
+- [Open Data Commons Open Database License (ODbL)]{.bold-hilit}
+<br>
+"Attribution Share-Alike for data/databases"
+<br>
+<https://opendatacommons.org/licenses/odbl/>
+
+- [Open Data Commons Attribution License]{.bold-hilit}
+<br>
+"Attribution for data/databases"
+<br>
+<https://opendatacommons.org/licenses/by/>
+
+- [Open Data Commons Public Domain Dedication and License (PDDL)]{.bold-hilit}
+<br>
+"Public Domain for data/databases"
+<br>
+<https://opendatacommons.org/licenses/pddl/>
+
+
+## 
+
+:::: {.columns}
+::: {.column width=33% .fragment}
+[Open Data Commons Open Database License (ODbL)]{.bold-hilit}
+
+::: {.nonincremental}
+You are free:
+
+- To share
+- To create
+- To adapt
+
+As long as you:
+
+- Attribute
+- Share-Alike
+- Keep open
+:::
+:::
+
+::: {.column width=33% .fragment}
+[Open Data Commons Attribution License (ODC-By)]{.bold-hilit}
+
+::: {.nonincremental}
+You are free:
+
+- To share
+- To create
+- To adapt
+
+As long as you:
+
+- Attribute
+:::
+:::
+
+::: {.column width=33% .fragment}
+[Open Data Commons Public Domain Dedication and License (PDDL)]{.bold-hilit}
+
+::: {.nonincremental}
+You are free:
+
+- To share
+- To create
+- To adapt
+
+As long as you:
+
+- _Blank_ (no restrictions imposed)
+:::
+:::
+::::
+
+
+##
+
+::: {.small}
+| **License** | **Domain** | **By** | **SA** | **Comments** |
+|---------|--------|----|----|----------|
+| Creative Commons CCZero (CC0-1.0) |	Content, Data	| N | N | Dedicate to the Public Domain (all rights waived) |
+| Open Data Commons Public Domain Dedication and Licence (PDDL-1.0) | Data | N | N | Dedicate to the Public Domain (all rights waived) |
+| Creative Commons Attribution 4.0 (CC-BY-4.0) | Content, Data | Y | N | |
+| Open Data Commons Attribution License (ODC-By-1.0) | Data | Y | N | Attribution for data(bases) |
+| Creative Commons Attribution Share-Alike 4.0 (CC-BY-SA-4.0) | Content, Data | Y | Y | |
+| Open Data Commons Open Database License (ODbL-1.0) | Data | Y | Y | Attribution-ShareAlike for data(bases) |
+:::
+
+
+## Last Words
+
+- Love your data, and help others love it, too
+- Publish your data
+- Encourage others to cherish, document, and publish their data
+- Reward colleagues who share data
+- Praise those following best practices
+- Give credit to those whose data you use
+
+
