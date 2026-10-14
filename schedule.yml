@@ -220,12 +220,16 @@
         - type: "Lab"
           id: ""
           name: "Working in groups in Github"
-          href: ""
+          href: "labs/lab07.pdf"
     - date: "Oct 14"
       items:
         - type: "Lecture"
           id: ""
           name: "Handling and Sharing Data"
+          href: "lectures/21-data/21-data-slides.html"
+        - type: "Reading"
+          id: ""
+          name: "No reading this week"
           href: ""
     - date: "Oct 16"
       items:
