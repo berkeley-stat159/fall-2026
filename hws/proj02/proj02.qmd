@@ -1,0 +1,153 @@
+---
+title: Project 2) Replicating Claims from 2024 BPD Annual Report
+---
+
+For this assignment, we will ask you to work in pairs to conduct a replication 
+analysis of various claims made by the Berkeley Police Department in their 2024 
+Annual Report.
+
+::: {.callout-note}
+## Learning Objectives
+
+We want you to use this project as an opportunity to develop and gain experience
+around the 2 major pillars of this class:
+
+1) Collaboration on Complex Projects: Gain experience coordinating with your teammate 
+to complete tasks with dependencies on each other.
+
+2) Reproducibility: Gain experience describing your work in accessibile formats 
+and making it reproducible.
+:::
+
+
+## 2024 BPD Annual Report
+
+Every year, the Berkeley Police Department (BPD) publishes an Annual Report 
+to document their measurable progress, and to communicate their activities and
+achievements around five major topics:
+
+1) Staffing & Workload
+2) Crime & Investigations
+3) **Road Safety & Collisions** 
+4) **Stop Data**
+5) Use of Force
+
+You can find the 2024 Berkeley Police Department Annual Report in the
+following link:
+
+<https://berkeleyca.gov/sites/default/files/documents/BPD%202024%20Annual%20Report.pdf>
+
+
+### Data Sets for Project 2
+
+Some of the data collected by BPD is shared to the public through their so-called
+*Transparency Hub*: <https://bpd-transparency-initiative-berkeleypd.hub.arcgis.com/>.
+This is an online public data portal maintained by BPD to share near-real-time 
+policing metrics, crime trends, and operational records.
+
+For this assignment, we want you to focus on some of the claims reported in the
+sections **"Road Safety & Collisions"** and **"Stop Data"**. You can find
+the associated CSV data sets in the `Data Portal` tab of the Transparency Hub:
+<https://bpd-transparency-initiative-berkeleypd.hub.arcgis.com/search>
+
+- **Collision Data (2011 to Current)**
+- **Berkeley PD Stop Data (2024 - Current)**
+
+
+### Replication Targets
+
+Here are the claims (e.g. numeric summaries, tables, graphics) from the 2024
+BPD Annual Report that you will attempt to reproduce:
+
+a) Table of "Collision Totals" (page 18)
+b) Table of "Top collision locations" (page 19)
+c) Bar chart of "Primary Collision Factors, 2024" (page 19)
+d) Bar chart of "Most frequent vehicle violations, 2024" (page 21)
+e) Numeric summaries in the first two paragraphs of the "Stop Data Report" section (page 22)
+f) Bar chart of "Discretionary Stop Demographics during Inter-twilight Period, 2024" (page 24)
+
+Note that parts a)-c) involve **Collision Data**, whereas parts d)-f) involve **Stop Data**.
+
+
+## Deliverables
+
+For this assignment, you will have a single GitHub repository for your group.
+Here's a suggested file structure, but feel free to adjust the structure if
+you consider it necessary.
+
+```
+├── .gitignore
+├── README.md
+├── Makefile
+├── environment.yml
+├── data/           # raw data files, and data dictionaries
+├── code/           # R/Python scripts or notebooks
+├── outputs/        # images, tables, numeric summaries
+└── report/         # main report (PDF) with embedded outputs
+```
+
+Your repository should contain the following:
+
+- `data/` folder with raw CSV files, and also with their corresponding data
+dictionaries (_aka_ codebooks). BTW: You will have to create the codebooks.
+
+    + Optional: you can also include derived "clean" versions of the data sets,
+    but we'll leave this decision up to your discretion.
+    
+  ::: {.callout-important title="Note"}
+    We are asking you to store the raw data files since each of them has a 
+    fairly small size of around 4.0MB. However, keep mind that this will not 
+    always be possible with larger files.
+  :::
+
+- `code/` folder with R/Python scripts and/or qmd/ipynb notebooks. The number 
+of files, the kind of files, as well as their purpose is up to you. Make sure to 
+follow consistent naming conventions, and good habits for organizing their content.
+
+- `outputs/` folder with the main reproduced images, tables, and numeric summaries.
+These are to be used in your report.
+
+- A `report/` folder with a corresponding report document (in PDF format, 10 
+pages max) containing your replicated outputs (e.g. numeric summaries, tables, 
+graphics). Indicate which elements you were able to successfully reproduce, and 
+if applicable, which elements you failed to reproduce or struggled to fully 
+reproduce, and the reason(s) for such a failure.
+
+- A `Makefile` that includes at least:
+  - `.PHONY` targets `all` and `clean`
+  - `all` rule to produce report in PDF format, and other targets of your consideration
+  - `clean` rule to remove PDF report, and other targets of your consideration
+
+- A `README.md` describing the aims of the project, the source of the 2024 BPD 
+Annual Report, the sources of raw data files, important details/descriptions
+about the project's structure. Also, include a section of personal reflections
+about the things you learn while working on this assignment.
+
+- Add a Conda `environment.yml`
+
+- An `ai_documentation.txt` file where your group will put the name of the AI tool,
+its model version [e.g. , ChatGPT-4, OpenAI], the prompts, and the obtained output.
+
+
+## Other Considerations
+
+We will grade commit mechanics (how changes are packaged and documented) alongside 
+workflow integrity (how git was used as a tool for reproducible research, rather 
+than a single bulk upload at 11:59 PM).
+
+- Needless to say that you should avoid "dumping" the entire project in 1 or 2 
+massive commits at the deadline.
+
+- Each commit should represent a coherent, single step (e.g., 
+`"Add download data script"` or `"Fix plot axis labels in figure 2"`) rather 
+than bundling unrelated files (data, scripts, and report) into one giant commit.
+
+- Commits should show steady development over the project window.
+
+- Concise, descriptive first lines (50–72 characters) stating what changed and 
+why (e.g., `Add unit test for missing values in survey data`).
+
+- Do not use vague messages like `update`, `fixed code`, `changes`, or `final submission`.
+
+- Use of branches to collaborate.
+
