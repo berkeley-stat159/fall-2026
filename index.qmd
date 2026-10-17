@@ -16,9 +16,9 @@ listing:
 
 
 ::: {.callout-note title="Announcements 📣"}
-Reading 5 is now available
+No reading this week
 
-Project 2 due Oct-16
+Project 2 due Oct-30
 :::
 
 
