@@ -1,0 +1,279 @@
+---
+title: "Data Science at the Singularity"
+subtitle: "The Singularity Agenda"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Share Your Code
+
+## Reading
+
+::: {.nonincremental}
+- Title: **Data Science at the Singularity**
+- Authors: David Donoho
+- Journal: Harvard Data Science Review, 6(1)
+- Year: 2024
+- DOI: https://doi.org/10.1162/99608f92.b91339ef
+- <https://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2>
+:::
+
+
+# Introduction
+
+## Why Are We Here?
+
+- [The Shift:]{.bold-hilit} Computation-based research is transitioning toward 
+**Frictionless Reproducibility (FR)**. 
+
+- [The Triad:]{.bold-hilit} FR driven by maturity of 3 data science principles: 
+    + data sharing
+    + code sharing
+    + competitive challenges
+
+- [The Superpower:]{.bold-hilit} Empirical Machine Learning (EML) uses this triad as an 
+emergent superpower to drive AI progress.
+
+- [The Export:]{.bold-hilit} These practices can be learned and adopted by *any* research 
+field to instantly accelerate its rate of progress.
+
+
+# Overview
+
+## The Old Way vs. The New Way
+
+The Old Way (In-Principle Sharing)
+
+- A scientist publishes a paper with a beautiful chart. 
+- If you want to check it, you have to email them, 
+- Wait weeks for the data, 
+- figure out their messy code, 
+- and fix a dozen errors. 
+
+## The Old Way vs. The New Way
+
+The New Way (Frictionless Reproducibility)
+
+- You read a paper, 
+- click a link, 
+- clone their GitHub repository, 
+- and run their exact analysis on your laptop in 2 minutes. 
+
+. . .
+
+
+The "Singularity" 
+
+When checking other people's data work becomes effortless, 
+scientific progress explodes at breakneck speed.
+
+
+## Cheap and Massive Compute Power
+
+- [The Stalled Engine:]{.bold-hilit} Around 2005, individual computer chips stopped getting 
+significantly faster year-over-year.
+
+- [The Smartphone Boom:]{.bold-hilit} Because billions of people bought smartphones, 
+tech companies built a massive global network of cloud servers to handle all that data.
+
+- [The Result for Data Science:]{.bold-hilit} Today, any undergraduate student with a laptop can rent 
+a supercomputer on the cloud for pennies to run massive datasets. 
+Space and processing power are no longer bottlenecks.
+
+
+## Data Science Matures
+
+The Core Triad:
+
+1. [Open Data:]{.bold-hilit} Exposing the raw numbers, not just summaries.
+2. [Open Code:]{.bold-hilit} Sharing the exact scripts so others can re-run the math.
+3. [Common Challenges:]{.bold-hilit} A shared goal where everyone uses the same dataset to compete for the best accuracy scores on a public leaderboard.
+
+. . .
+
+**Phase Transition:** When all three legs of the triad meet, researchers can reproduce 
+or modify an outside institution's results within minutes or clicks.
+
+
+## What Happens If You Hide One Leg?
+
+:::: {.columns}
+::: {.column width="33%"}
+### 🛑 No Challenges
+
+- You get "Open Science" but no common goal. 
+- Everyone works in isolated bubbles.
+- Impossible to rank which method actually works best.
+:::
+
+::: {.column width="33%"}
+### 🛑 No Code
+
+- You get competitions with secret methods (like the Netflix Prize). 
+- People win, but no one learns *how* they won because the code is locked.
+:::
+
+::: {.column width="33%"}
+### 🛑 No Data
+
+- You get "Bring-Your-Own-Data" science (like private medical trials). 
+- You cannot verify the claims because the underlying data is a black box.
+:::
+::::
+
+
+## Viral Science: Zero Friction
+
+[The Meme Analogy]{.bold-hilit} <br>
+Why do internet memes spread across the globe in a single afternoon? 
+Because there is **zero friction** to share them—you just click "forward." 
+
+- [Viral Code:]{.bold-hilit} When data, code, and leaderboards are completely open, 
+scientific ideas spread through a research community exactly like viral memes.
+
+- [The "URL or I Don't Care" Rule:]{.bold-hilit} Modern data analysts reject paywalls 
+and broken links. If a research method doesn't have an immediate, working link, 
+the community ignores it and moves on.
+
+
+## Automated Science Tracking
+
+- [Code as Gold:]{.bold-hilit} In the future, public code repositories will be treated as raw material. 
+
+- [Automated Tweaking:]{.bold-hilit} Data scientists will write automated scripts designed 
+to crawl through thousands of *past* papers, pull down their code, and automatically 
+swap parameters to find hidden improvements.
+
+- [The Backwater Risk:]{.bold-hilit} Research fields that refuse to share their data and 
+code due to privacy or copyright fears will be left behind and forgotten by the next generation.
+
+
+# Handout
+
+
+## Debate
+
+- Imagine you are a junior researcher. 
+- Your script is unoptimized, un-commented, and full of messy hacks.
+- But it works: it successfully generates your paper's plots. 
+  
+. . .
+
+If you publish this "dirty" code:
+
+:::: {.columns}
+::: {.column width="45%"}
+::: {.poll}
+Do you elevate scientific transparency? 
+:::
+:::
+
+::: {.column width="10%"}
+\
+
+&nbsp;&nbsp; OR
+:::
+
+::: {.column width="45%"}
+::: {.poll}
+Do you pollute the scientific record with amateur software engineering? 
+:::
+:::
+::::
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+::: {.notes}
+If someone emails you for your code 3 years from now, why is that infinitely more 
+painful than just dropping your dirty script onto GitHub today?"
+:::
+
+
+## Debate
+
+. . .
+
+Going back to LeVeque's "Theorems Without Proofs" analogy, publication of theorems without
+proofs is not acceptable. Yet, we accept computational outputs without the code that 
+produce them.
+
+. . .
+
+::: {.poll}
+Why does the scientific community tolerate this double standard?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+::: {.notes}
+Is a computer script fundamentally different from a mathematical proof, 
+or are we just living in a scientifically immature era of computing?
+:::
+
+
+## Debate
+
+<!-- Protect Your Output vs. Public Provenance -->
+
+::: {.columns}
+::: {.column width="50%"}
+### 🛡️ The Pragmatist View
+
+It took me three years to write this algorithmic base. If I open-source it now, my 
+competitors will use my code to publish five papers before I can even finish my next draft.
+:::
+
+::: {.column width="50%"}
+### 🌐 The Open View
+
+Publicly archiving your code with a timestamped DOI is the absolute best way to 
+claim ownership, establish provenance, and legally force competitors to cite you.
+:::
+:::
+
+. . .
+
+::: {.poll}
+If you are a funding agency, how do you balance a scientist's valid right to profit 
+from their multi-year software labor against the public's right to verify the data 
+pipeline immediately?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4, bottom = 0)
+```
+
+
+## Debate
+
+<!-- The Fear of Maintenance -->
+
+Many researchers hide their scripts because they are terrified that once the 
+code is public, their inbox will be flooded with emails from strangers asking 
+for technical troubleshooting, custom modifications, or software installation help.
+
+. . .
+
+::: {.poll}
+How do you draw a boundary between providing necessary scientific transparency 
+and protecting your personal time from being hijacked by outside users demanding 
+free tech support?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(3, bottom = 0)
+```
+
+::: {.notes}
+Barnes and LeVeque emphasize that research code is a static archive of a publication, 
+not a commercial product that comes with customer support. 
+:::
+
