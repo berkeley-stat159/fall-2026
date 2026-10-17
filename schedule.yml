@@ -107,7 +107,7 @@
           href: "lectures/10-discuss2/10-discussion-slides.html"
         - type: "Homework"
           id: ""
-          name: "Project 1 TBA (due 10/2)"
+          name: "Proj1 Replicating temperature graphics (due 10/2)"
           href: "hws/proj01/proj01.html"
 - week: 5
   days:
@@ -239,8 +239,8 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "Project 2 TBA (due 10/30)"
-          href: ""
+          name: "Proj2 2024 BPD Annual Report (due 10/30)"
+          href: "hws/proj02/proj02.html"
 - week: 9
   days:
     - date: "Oct 19"
