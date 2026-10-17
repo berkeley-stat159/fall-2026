@@ -588,116 +588,256 @@
     "text": "Example\n\n\nExample\n\ntraffic_project/\n├── README.md                 &lt;- Step-by-step instructions\n├── data/\n│   ├── raw/                  &lt;- Read-only original data\n│   │   └── traffic_2026.csv\n│   └── processed/            &lt;- Script-generated clean data\n│       └── 01_clean_traffic.rds\n├── code/\n│   ├── 01_clean_data.R\n│   ├── 02_fit_models.R\n│   └── 03_generate_figures.R\n├── output/\n│   └── figures/\n│       └── fig01_density_by_hour.png\n└── docs/\n    └── report.qmd"
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-1",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-1",
-    "title": "Other Functions in Make",
-    "section": "Example 1",
-    "text": "Example 1\nSuppose we have the following project with various scripts; each script produces an output file.\n\n\n\nFile structure (before running make)\nproject/\n  Makefile\n  plot1.R\n  plot2.R\n  plot3.R\n\nFile structure (after running make)\nproject/\n  Makefile\n  plot1.R\n  plot2.R\n  plot3.R\n  plot1.png\n  plot2.png\n  plot3.png\n\n\n\nNotice that the script files and the PNG files share the same name."
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#reading",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#reading",
+    "title": "Data Science at the Singularity",
+    "section": "Reading",
+    "text": "Reading\n\nTitle: Data Science at the Singularity\nAuthors: David Donoho\nJournal: Harvard Data Science Review, 6(1)\nYear: 2024\nDOI: https://doi.org/10.1162/99608f92.b91339ef\nhttps://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2"
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile",
-    "title": "Other Functions in Make",
-    "section": "Example 1: Makefile",
-    "text": "Example 1: Makefile\n\n\n\n\n\nMakefile\n\n.PHONY: all\n\nall: plot1.png plot2.png plot3.png\n\n# rule 1\nplot1.png: plot1.R\n  Rscript $&lt;\n\n# rule 2\nplot2.png: plot2.R\n  Rscript $&lt;\n\n# rule 3\nplot3.png: plot3.R\n  Rscript $&lt;\n\n\n\nAll rules have the same pattern\nA PNG target\nAn R dependency\nSame command\nWe can use the percent symbol % to define a pattern rule"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#why-are-we-here",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#why-are-we-here",
+    "title": "Data Science at the Singularity",
+    "section": "Why Are We Here?",
+    "text": "Why Are We Here?\n\nThe Shift: Computation-based research is transitioning toward Frictionless Reproducibility (FR).\nThe Triad: FR driven by maturity of 3 data science principles:\n\ndata sharing\ncode sharing\ncompetitive challenges\n\nThe Superpower: Empirical Machine Learning (EML) uses this triad as an emergent superpower to drive AI progress.\nThe Export: These practices can be learned and adopted by any research field to instantly accelerate its rate of progress."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-1",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-1",
-    "title": "Other Functions in Make",
-    "section": "Example 1: Makefile",
-    "text": "Example 1: Makefile\n\n\n\n\n\nMakefile\n\n.PHONY: all\n\nall: plot1.png plot2.png plot3.png\n\n# pattern rule\n%.png: %.R\n  Rscript $&lt;\n\n\n\nWe only need one pattern rule\nThe common pattern in this case is the name of the file\n% is a placeholder for plot1, plot2, and plot3"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#the-old-way-vs.-the-new-way",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#the-old-way-vs.-the-new-way",
+    "title": "Data Science at the Singularity",
+    "section": "The Old Way vs. The New Way",
+    "text": "The Old Way vs. The New Way\nThe Old Way (In-Principle Sharing)\n\nA scientist publishes a paper with a beautiful chart.\nIf you want to check it, you have to email them,\nWait weeks for the data,\nfigure out their messy code,\nand fix a dozen errors."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-2",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-2",
-    "title": "Other Functions in Make",
-    "section": "Example 1: Makefile",
-    "text": "Example 1: Makefile\nA more complete Makefile with .PHONY targets all and clean\n\n\nMakefile\n\n.PHONY: all clean\n\nall: plot1.png plot2.png plot3.png\n\n# pattern rule\n%.png: %.R\n  Rscript $&lt;\n\nclean: \n  rm -f *.png\n\n\n\n\nWe still have some repetition in the names of the targets\nImagine if you had 10, or 50, or a larger number of targets"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#the-old-way-vs.-the-new-way-1",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#the-old-way-vs.-the-new-way-1",
+    "title": "Data Science at the Singularity",
+    "section": "The Old Way vs. The New Way",
+    "text": "The Old Way vs. The New Way\nThe New Way (Frictionless Reproducibility)\n\nYou read a paper,\nclick a link,\nclone their GitHub repository,\nand run their exact analysis on your laptop in 2 minutes.\n\n\nThe “Singularity”\nWhen checking other people’s data work becomes effortless, scientific progress explodes at breakneck speed."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-2-1",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-2-1",
-    "title": "Other Functions in Make",
-    "section": "Example 2",
-    "text": "Example 2\nLet’s consider a simple project with a more realistic file structure\n\n\nFile structure (before running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n  images/\n\nFile structure (after running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n  images/\n    plot1.png"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#cheap-and-massive-compute-power",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#cheap-and-massive-compute-power",
+    "title": "Data Science at the Singularity",
+    "section": "Cheap and Massive Compute Power",
+    "text": "Cheap and Massive Compute Power\n\nThe Stalled Engine: Around 2005, individual computer chips stopped getting significantly faster year-over-year.\nThe Smartphone Boom: Because billions of people bought smartphones, tech companies built a massive global network of cloud servers to handle all that data.\nThe Result for Data Science: Today, any undergraduate student with a laptop can rent a supercomputer on the cloud for pennies to run massive datasets. Space and processing power are no longer bottlenecks."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-2-makefile",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-2-makefile",
-    "title": "Other Functions in Make",
-    "section": "Example 2: Makefile",
-    "text": "Example 2: Makefile\n\n\n\nRule with no Make variables\n\n\nMakefile\n\n# rule\nimages/plot1.png: code/plot1.R\n  cd code && Rscript plot1.R\n\n\nFailed attempt with Make variable 👎\n\n\nMakefile\n\n# rule\nimages/plot1.png: code/plot1.R\n  cd code && Rscript $&lt;\n\n\n\n\n\nRecall that $&lt; is the first dependency\nIn this case $&lt; has the value of code/plot1.R\ni.e. Rscript $&lt; corresponds to Rscript code/plot1.R 👎\n$(&lt;D) and $(&lt;F) to the rescue ✅"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#data-science-matures",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#data-science-matures",
+    "title": "Data Science at the Singularity",
+    "section": "Data Science Matures",
+    "text": "Data Science Matures\nThe Core Triad:\n\nOpen Data: Exposing the raw numbers, not just summaries.\nOpen Code: Sharing the exact scripts so others can re-run the math.\nCommon Challenges: A shared goal where everyone uses the same dataset to compete for the best accuracy scores on a public leaderboard.\n\n\nPhase Transition: When all three legs of the triad meet, researchers can reproduce or modify an outside institution’s results within minutes or clicks."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-2-make-d-and-f",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-2-make-d-and-f",
-    "title": "Other Functions in Make",
-    "section": "Example 2: Make $(<D) and $(<F)",
-    "text": "Example 2: Make $(&lt;D) and $(&lt;F)\n\n$(&lt;D) is the Directory of the first dependency\n$(&lt;F) is the File name of the first dependency\n\n\nWe can use them to rewrite the rule as follows:\n\n\nMakefile\n\n# rule\nimages/plot1.png: code/plot1.R\n  cd $(&lt;D) && Rscript $(&lt;F)"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#what-happens-if-you-hide-one-leg",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#what-happens-if-you-hide-one-leg",
+    "title": "Data Science at the Singularity",
+    "section": "What Happens If You Hide One Leg?",
+    "text": "What Happens If You Hide One Leg?\n\n\n🛑 No Challenges\n\nYou get “Open Science” but no common goal.\nEveryone works in isolated bubbles.\nImpossible to rank which method actually works best.\n\n\n🛑 No Code\n\nYou get competitions with secret methods (like the Netflix Prize).\nPeople win, but no one learns how they won because the code is locked.\n\n\n🛑 No Data\n\nYou get “Bring-Your-Own-Data” science (like private medical trials).\nYou cannot verify the claims because the underlying data is a black box."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-3-1",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-3-1",
-    "title": "Other Functions in Make",
-    "section": "Example 3",
-    "text": "Example 3\nSuppose we have the same files of Example 1 but with a more realistic file structure\n\n\n\nFile structure (before running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n    plot2.R\n    plot3.R\n  images/\n\nFile structure (after running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n    plot2.R\n    plot3.R\n  images/\n    plot1.png\n    plot2.png\n    plot3.png"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#viral-science-zero-friction",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#viral-science-zero-friction",
+    "title": "Data Science at the Singularity",
+    "section": "Viral Science: Zero Friction",
+    "text": "Viral Science: Zero Friction\nThe Meme Analogy  Why do internet memes spread across the globe in a single afternoon? Because there is zero friction to share them—you just click “forward.”\n\nViral Code: When data, code, and leaderboards are completely open, scientific ideas spread through a research community exactly like viral memes.\nThe “URL or I Don’t Care” Rule: Modern data analysts reject paywalls and broken links. If a research method doesn’t have an immediate, working link, the community ignores it and moves on."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile",
-    "title": "Other Functions in Make",
-    "section": "Example 3: Makefile",
-    "text": "Example 3: Makefile\n\n\n\nMakefile\n\n.PHONY: all\n\nall: images/plot1.png images/plot2.png images/plot3.png\n\n# rule 1\nimages/plot1.png: code/plot1.R\n  cd code && Rscript plot1.R\n\n# rule 2\nimages/plot2.png: code/plot2.R\n  cd code && Rscript plot2.R\n\n# rule 3\nimages/plot3.png: code/plot3.R\n  cd code && Rscript plot3.R"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#automated-science-tracking",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#automated-science-tracking",
+    "title": "Data Science at the Singularity",
+    "section": "Automated Science Tracking",
+    "text": "Automated Science Tracking\n\nCode as Gold: In the future, public code repositories will be treated as raw material.\nAutomated Tweaking: Data scientists will write automated scripts designed to crawl through thousands of past papers, pull down their code, and automatically swap parameters to find hidden improvements.\nThe Backwater Risk: Research fields that refuse to share their data and code due to privacy or copyright fears will be left behind and forgotten by the next generation."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile-1",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile-1",
-    "title": "Other Functions in Make",
-    "section": "Example 3: Makefile",
-    "text": "Example 3: Makefile\nUsing a pattern rule gives us a simpler Makefile\n\n\nMakefile\n\n.PHONY: all clean\n\nall: images/plot1.png images/plot2.png images/plot3.png\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  cd images && rm -f *.png"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#debate",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#debate",
+    "title": "Data Science at the Singularity",
+    "section": "Debate",
+    "text": "Debate\n\nImagine you are a junior researcher.\nYour script is unoptimized, un-commented, and full of messy hacks.\nBut it works: it successfully generates your paper’s plots.\n\n\nIf you publish this “dirty” code:\n\n\n\nDo you elevate scientific transparency?\n\n\n\n\n   OR\n\n\nDo you pollute the scientific record with amateur software engineering?\n\n\n\n\n\n−+\n02:00\n\n\n\n\nIf someone emails you for your code 3 years from now, why is that infinitely more painful than just dropping your dirty script onto GitHub today?”"
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-1",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-1",
-    "title": "Other Functions in Make",
-    "section": "Example 4",
-    "text": "Example 4\nFrom Example 3, we have the following Makefile\n\n\nMakefile\n\n.PHONY: all clean\n\nall: images/plot1.png images/plot2.png images/plot3.png\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  cd images && rm -f *.png\n\nWe still have some repetition listing the names of the targets"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#debate-1",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#debate-1",
+    "title": "Data Science at the Singularity",
+    "section": "Debate",
+    "text": "Debate\n\nGoing back to LeVeque’s “Theorems Without Proofs” analogy, publication of theorems without proofs is not acceptable. Yet, we accept computational outputs without the code that produce them.\n\n\n\nWhy does the scientific community tolerate this double standard?\n\n\n\n\n−+\n02:00\n\n\n\n\nIs a computer script fundamentally different from a mathematical proof, or are we just living in a scientifically immature era of computing?"
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-2",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-2",
-    "title": "Other Functions in Make",
-    "section": "Example 4",
-    "text": "Example 4\nIt would be nice to create a variable PNGS for the targets, something like:\n\n\n\nMakefile\n\nPNGS = $(wildcard images/*.png)\n\n.PHONY: all clean\n\nall: $(PNGS)\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  cd images && rm -f *.png\n\n⚠️ The above Makefile has an issue ⚠️"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#debate-2",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#debate-2",
+    "title": "Data Science at the Singularity",
+    "section": "Debate",
+    "text": "Debate\n\n\n\n🛡️ The Pragmatist View\nIt took me three years to write this algorithmic base. If I open-source it now, my competitors will use my code to publish five papers before I can even finish my next draft.\n\n🌐 The Open View\nPublicly archiving your code with a timestamped DOI is the absolute best way to claim ownership, establish provenance, and legally force competitors to cite you.\n\n\n\nIf you are a funding agency, how do you balance a scientist’s valid right to profit from their multi-year software labor against the public’s right to verify the data pipeline immediately?\n\n\n\n\n−+\n04:00"
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-3",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-3",
-    "title": "Other Functions in Make",
-    "section": "Example 4",
-    "text": "Example 4\n\nIt would be nice to create a variable PNGS for the targets.\nThe issue is that if the directory images/ is empty, then Makefile won’t be able to create the appropriate varibale PNGS\nThe solution involves creating a variable for the dependency files, and then use this variable to create a varible for the targets.\nThe Make tool to accomplish this is a so-called pattern substitution"
+    "objectID": "lectures/16-discuss4/16-discussion-slides.html#debate-3",
+    "href": "lectures/16-discuss4/16-discussion-slides.html#debate-3",
+    "title": "Data Science at the Singularity",
+    "section": "Debate",
+    "text": "Debate\n\nMany researchers hide their scripts because they are terrified that once the code is public, their inbox will be flooded with emails from strangers asking for technical troubleshooting, custom modifications, or software installation help.\n\n\nHow do you draw a boundary between providing necessary scientific transparency and protecting your personal time from being hijacked by outside users demanding free tech support?\n\n\n\n\n−+\n03:00\n\n\n\n\nBarnes and LeVeque emphasize that research code is a static archive of a publication, not a commercial product that comes with customer support."
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#pattern-substitution",
-    "href": "lectures/18-make4/18-make-functions-slides.html#pattern-substitution",
-    "title": "Other Functions in Make",
-    "section": "Pattern substitution",
-    "text": "Pattern substitution\nThere are two ways to create a variable with pattern substitution\n\n\n\nMakefile\n\n# pattern substitution (option 1)\nVAR1 = $(patsubst PATTERN,REPLACEMENT,$(VARIABLE))\n\n\n\n\n\n\n\nMakefile\n\n# pattern substitution (option 2)\nVAR2 = $(VARIABLE:PATTERN=REPLACEMENT)"
+    "objectID": "lectures/21-data/21-data-slides.html#cherish-your-data",
+    "href": "lectures/21-data/21-data-slides.html#cherish-your-data",
+    "title": "Handling and Sharing Data",
+    "section": "Cherish Your Data",
+    "text": "Cherish Your Data\n\n\nWithout data, there is no data science\n\n\n\nI like to differentiate our roles into 2 categories\n\n\nConsuming data\nYou as the consumer of data created by others\n\nCreating Data\nYou as the creator/curator of data"
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-1",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-1",
-    "title": "Other Functions in Make",
-    "section": "Example 4: pattern substitution (opt 1)",
-    "text": "Example 4: pattern substitution (opt 1)\n\n\nMakefile\n\n# dependency files\nRS = $(wildcard code/*.R)\n\n# target files (using pattern substitution)\nPNGS = $(patsubst code/%.R,images/%.png,$(RS))\n\n.PHONY: all clean\n\nall: $(PNGS)\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  rm -f $(PNGS)"
+    "objectID": "lectures/21-data/21-data-slides.html#what-to-share",
+    "href": "lectures/21-data/21-data-slides.html#what-to-share",
+    "title": "Handling and Sharing Data",
+    "section": "What to share",
+    "text": "What to share\n\nRaw data\nMetadata\nScripts/code to process data\nLicense for data"
   },
   {
-    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-2",
-    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-2",
-    "title": "Other Functions in Make",
-    "section": "Example 4: pattern substitution (opt 2)",
-    "text": "Example 4: pattern substitution (opt 2)\n\n\nMakefile\n\n# dependency files\nRS = $(wildcard code/*.R)\n\n# target files (using pattern substitution)\nPNGS = $(RS:code/%.R=images/%.png)\n\n.PHONY: all clean\n\nall: $(PNGS)\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  rm -f $(PNGS)"
+    "objectID": "lectures/21-data/21-data-slides.html#raw-data",
+    "href": "lectures/21-data/21-data-slides.html#raw-data",
+    "title": "Handling and Sharing Data",
+    "section": "Raw Data",
+    "text": "Raw Data\n\nRaw data: unprocessed form of the data\nRaw data is sacred: don’t touch it! (leave it as is)\nSeparate raw data from processed/cleaned data\nSeparate data from code"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#about-metadata",
+    "href": "lectures/21-data/21-data-slides.html#about-metadata",
+    "title": "Handling and Sharing Data",
+    "section": "About Metadata",
+    "text": "About Metadata\n\nData about the data\nAKA: Codebook\nAKA: Data Dictionary (not to be confused with a python dictionary) . . .\n\n\nIt is a comprehensive reference document that defines, structures, and explains the contents, layout, and variables of a dataset."
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#metadata-1",
+    "href": "lectures/21-data/21-data-slides.html#metadata-1",
+    "title": "Handling and Sharing Data",
+    "section": "Metadata",
+    "text": "Metadata\n\nPreferably in a text file\nInclude details\n\nsource, organization\nbackground\ncitation*\n\nNames of variables (features, atttributes)\n\nAs they appear in the file (usually abbreviations)\nBut also, their full name\n\nSometimes you may need to include a full description of each variable"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#metadata-contd",
+    "href": "lectures/21-data/21-data-slides.html#metadata-contd",
+    "title": "Handling and Sharing Data",
+    "section": "Metadata (cont’d)",
+    "text": "Metadata (cont’d)\n\nRecommended data types for each variable\n\nboolean, integer, float, character, other\n\nFor categorical or ordinal variables, describe their categories\nMissing values: how are they encoded\nProvenance\n\nHow was data collected?\nWho collected it, how was it collected it?\n\nIf necessary, include further details, comments, notes, for how to make sense of data, or how to treat certain values."
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#metadata-example",
+    "href": "lectures/21-data/21-data-slides.html#metadata-example",
+    "title": "Handling and Sharing Data",
+    "section": "Metadata Example",
+    "text": "Metadata Example\nData dictionary of SWITRS data\nhttps://tims.berkeley.edu/help/crashdata/switrs-codebook.php#top\n\n\n\nData dictionary of IBTrACS\n\nhttps://www.ncei.noaa.gov/products/international-best-track-archive\nhttps://www.ncei.noaa.gov/sites/default/files/2025-09/IBTrACS_v04r01_column_documentation.pdf"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#data-in-spreadsheets-1",
+    "href": "lectures/21-data/21-data-slides.html#data-in-spreadsheets-1",
+    "title": "Handling and Sharing Data",
+    "section": "Data in Spreadsheets",
+    "text": "Data in Spreadsheets\n\n\nSee Karl Broman’s tutorial: organizing data in spreadsheets\nhttps://kbroman.org/dataorg/"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#data-tables",
+    "href": "lectures/21-data/21-data-slides.html#data-tables",
+    "title": "Handling and Sharing Data",
+    "section": "Data Tables",
+    "text": "Data Tables\nTidy Data by Hadley Wickham\nhttps://vita.had.co.nz/papers/tidy-data.pdf\nThree Core Rules\n\nEach variable is a column (a column contains all values that measure the same attribute).\nEach observation is a row (a row contains all values measured on a single unit).\nEach value is a cell (a cell contains a single measurement of an attribute)."
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#fair",
+    "href": "lectures/21-data/21-data-slides.html#fair",
+    "title": "Handling and Sharing Data",
+    "section": "FAIR",
+    "text": "FAIR\nData should be\n\nFindable\nAccessible\nInteroperable\nReusable"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#fair-1",
+    "href": "lectures/21-data/21-data-slides.html#fair-1",
+    "title": "Handling and Sharing Data",
+    "section": "FAIR",
+    "text": "FAIR\n\nFindable: Does it have an immutable digital tracking link (DOI)?\nAccessible: Can you download the data in 2 clicks without an institutional login?\nInteroperable: Is the data stored in an open-source text format (like .csv), or is it trapped in a proprietary Excel format (.xlsx)?\nReusable: Is there an explicit Creative Commons (CC-BY) license attached, or is it unlicensed and legally untouchable?\nImportant: Just uploading files to the internet doesn’t make your science open or useful."
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#share-your-data-online",
+    "href": "lectures/21-data/21-data-slides.html#share-your-data-online",
+    "title": "Handling and Sharing Data",
+    "section": "Share Your Data Online",
+    "text": "Share Your Data Online\n\nIdeally: Deposit your data online in a well-established repository, with a permanent identifier\nDeposit data in whatever data archive is the “go to” place for your field.\nBetter than nothing: Store it in a google drive, dropbox, box, AWS, and share a public link to it."
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#general-data-repositories",
+    "href": "lectures/21-data/21-data-slides.html#general-data-repositories",
+    "title": "Handling and Sharing Data",
+    "section": "General Data Repositories",
+    "text": "General Data Repositories\n\nDataverse (http://thedata.org): A repository for research data that takes care of long-term preservation and good archival practices, while researchers can share, keep control of, and get recognition for their data.\nFigShare (http://figshare.com): A repository where users can make all of their research outputs available in a citable, shareable, and discoverable manner.\nZenodo (http://zenodo.org): A repository service that enables users to share research results (data and publications) that are not part of existing institutional or subject-based repositories.\nDryad (http://datadryad.org): A repository that aims to make data archiving as simple as possible through a suite of services not necessarily provided by publishers or institutional websites."
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#what-about-sharing-data-in-github",
+    "href": "lectures/21-data/21-data-slides.html#what-about-sharing-data-in-github",
+    "title": "Handling and Sharing Data",
+    "section": "What about sharing data in GitHub?",
+    "text": "What about sharing data in GitHub?\n\nDon’t use github for big data\nGitHub has a limit on file size: cannot exceed 100MB\nMany data sets can easily exceed 100MB\nAlso, be careful with binary data (Git tracks text files, not binary files)"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#what-about-sharing-data-through-an-r-package",
+    "href": "lectures/21-data/21-data-slides.html#what-about-sharing-data-through-an-r-package",
+    "title": "Handling and Sharing Data",
+    "section": "What about sharing data through an R package?",
+    "text": "What about sharing data through an R package?\n\nInteresting option for relatively small data sets.\nEspecially good for teaching/learning purposes.\nExample: \"stat20data\" package\nExample: \"janeaustinr\" package\nExample: \"harrypotter\" package"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#ropensci",
+    "href": "lectures/21-data/21-data-slides.html#ropensci",
+    "title": "Handling and Sharing Data",
+    "section": "ROpenSci",
+    "text": "ROpenSci\n\nThe project R Open Science\nHas tools and packages for accessing lots of data"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#licenses-for-data",
+    "href": "lectures/21-data/21-data-slides.html#licenses-for-data",
+    "title": "Handling and Sharing Data",
+    "section": "Licenses for Data",
+    "text": "Licenses for Data\nIncluding an explicit license with your data is the best way to let others know exactly what they can and cannot do with the data you shared.\nPrefer well established licenses (or waivers) to clearly communicate the rights and responsibilities of both the people providing the data and the people using it."
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#creative-commons-licenses",
+    "href": "lectures/21-data/21-data-slides.html#creative-commons-licenses",
+    "title": "Handling and Sharing Data",
+    "section": "Creative Commons Licenses",
+    "text": "Creative Commons Licenses\n\nCC BY: Credit must be given to you, the creator.  https://creativecommons.org/licenses/by/4.0/\n\n\n\n\nCC BY-SA: Credit must be given to you, the creator. Adaptations must be shared under the same terms.  https://creativecommons.org/licenses/by-sa/4.0/\n\n\n\n\nCC BY-ND: Credit must be given to you, the creator. No derivatives or adaptations of your work are permitted.  https://creativecommons.org/licenses/by-nd/4.0/"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#section",
+    "href": "lectures/21-data/21-data-slides.html#section",
+    "title": "Handling and Sharing Data",
+    "section": "",
+    "text": "CC BY-NC: Credit must be given to you, the creator. Only noncommercial use of your work is permitted.  https://creativecommons.org/licenses/by-nc/4.0/\n\n\n\n\nCC BY-NC-SA: Credit must be given to you, the creator. Only noncommercial use of your work is permitted. Adaptations must be shared under the same terms.  https://creativecommons.org/licenses/by-nc-sa/4.0/\n\n\n\n\nCC BY-NC-ND: Credit must be given to you, the creator. Only noncommercial use of your work is permitted. No derivatives or adaptations of your work are permitted.  https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#open-data-commons-licenses",
+    "href": "lectures/21-data/21-data-slides.html#open-data-commons-licenses",
+    "title": "Handling and Sharing Data",
+    "section": "Open Data Commons licenses",
+    "text": "Open Data Commons licenses\n\nOpen Data Commons Open Database License (ODbL)  “Attribution Share-Alike for data/databases”  https://opendatacommons.org/licenses/odbl/\nOpen Data Commons Attribution License  “Attribution for data/databases”  https://opendatacommons.org/licenses/by/\nOpen Data Commons Public Domain Dedication and License (PDDL)  “Public Domain for data/databases”  https://opendatacommons.org/licenses/pddl/"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#section-1",
+    "href": "lectures/21-data/21-data-slides.html#section-1",
+    "title": "Handling and Sharing Data",
+    "section": "",
+    "text": "Open Data Commons Open Database License (ODbL)\nYou are free:\n\nTo share\nTo create\nTo adapt\n\nAs long as you:\n\nAttribute\nShare-Alike\nKeep open\n\n\nOpen Data Commons Attribution License (ODC-By)\nYou are free:\n\nTo share\nTo create\nTo adapt\n\nAs long as you:\n\nAttribute\n\n\nOpen Data Commons Public Domain Dedication and License (PDDL)\nYou are free:\n\nTo share\nTo create\nTo adapt\n\nAs long as you:\n\nBlank (no restrictions imposed)"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#section-2",
+    "href": "lectures/21-data/21-data-slides.html#section-2",
+    "title": "Handling and Sharing Data",
+    "section": "",
+    "text": "License\nDomain\nBy\nSA\nComments\n\n\n\n\nCreative Commons CCZero (CC0-1.0)\nContent, Data\nN\nN\nDedicate to the Public Domain (all rights waived)\n\n\nOpen Data Commons Public Domain Dedication and Licence (PDDL-1.0)\nData\nN\nN\nDedicate to the Public Domain (all rights waived)\n\n\nCreative Commons Attribution 4.0 (CC-BY-4.0)\nContent, Data\nY\nN\n\n\n\nOpen Data Commons Attribution License (ODC-By-1.0)\nData\nY\nN\nAttribution for data(bases)\n\n\nCreative Commons Attribution Share-Alike 4.0 (CC-BY-SA-4.0)\nContent, Data\nY\nY\n\n\n\nOpen Data Commons Open Database License (ODbL-1.0)\nData\nY\nY\nAttribution-ShareAlike for data(bases)"
+  },
+  {
+    "objectID": "lectures/21-data/21-data-slides.html#last-words",
+    "href": "lectures/21-data/21-data-slides.html#last-words",
+    "title": "Handling and Sharing Data",
+    "section": "Last Words",
+    "text": "Last Words\n\nLove your data, and help others love it, too\nPublish your data\nEncourage others to cherish, document, and publish their data\nReward colleagues who share data\nPraise those following best practices\nGive credit to those whose data you use"
   },
   {
     "objectID": "lectures/13-discuss3/13-discussion-slides.html#reading",
@@ -3573,165 +3713,158 @@
     "text": "From today’s paper\n\n\n“As a minimal requirement, you should at least\nbe able to reproduce the results yourself.\n. . .\nAlthough it may sound like a very\nweak requirement, even this level of\nreproducibility will often require a certain\nlevel of care in order to be met.”"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#cherish-your-data",
-    "href": "lectures/21-data/21-data-slides.html#cherish-your-data",
-    "title": "Handling and Sharing Data",
-    "section": "Cherish Your Data",
-    "text": "Cherish Your Data\n\n\nWithout data, there is no data science\n\n\n\nI like to differentiate our roles into 2 categories\n\n\nConsuming data\nYou as the consumer of data created by others\n\nCreating Data\nYou as the creator/curator of data"
+    "objectID": "lectures/19-discuss5/19-discussion-slides.html#reading",
+    "href": "lectures/19-discuss5/19-discussion-slides.html#reading",
+    "title": "Irreproducibility Tales (part I)",
+    "section": "Reading",
+    "text": "Reading\n\nTitle: The Reinhart-Rogoff Error - or how not to Excel at economics\nAuthors: Jonathan Borwein and David H. Bailey\nJournal: The Conversation\nYear: 2013\nhttps://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#what-to-share",
-    "href": "lectures/21-data/21-data-slides.html#what-to-share",
-    "title": "Handling and Sharing Data",
-    "section": "What to share",
-    "text": "What to share\n\nRaw data\nMetadata\nScripts/code to process data\nLicense for data"
+    "objectID": "lectures/19-discuss5/19-discussion-slides.html#supporting-materials",
+    "href": "lectures/19-discuss5/19-discussion-slides.html#supporting-materials",
+    "title": "Irreproducibility Tales (part I)",
+    "section": "Supporting Materials",
+    "text": "Supporting Materials\nGrowth in a Time of Debt (C. Reinhart, K. Rogoff, 2010)\nhttps://www.nber.org/papers/w15639\n\n\nDoes high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff (T. Herndon, M. Ash, R. Pollin, 2014)\nhttps://peri.umass.edu/wp-content/uploads/joomla/images/WP322.pdf\ndoi: https://doi.org/10.1093/cje/bet075"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#raw-data",
-    "href": "lectures/21-data/21-data-slides.html#raw-data",
-    "title": "Handling and Sharing Data",
-    "section": "Raw Data",
-    "text": "Raw Data\n\nRaw data: unprocessed form of the data\nRaw data is sacred: don’t touch it! (leave it as is)\nSeparate raw data from processed/cleaned data\nSeparate data from code"
+    "objectID": "lectures/19-discuss5/19-discussion-slides.html#overview",
+    "href": "lectures/19-discuss5/19-discussion-slides.html#overview",
+    "title": "Irreproducibility Tales (part I)",
+    "section": "Overview",
+    "text": "Overview\n\n\n\n\n\nIn 2010, Harvard economists Carmen Reinhart and Kenneth Rogoff (R&R) published an influential paper claiming that countries with public debt over 90% of GDP experience negative economic growth."
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#about-metadata",
-    "href": "lectures/21-data/21-data-slides.html#about-metadata",
-    "title": "Handling and Sharing Data",
-    "section": "About Metadata",
-    "text": "About Metadata\n\nData about the data\nAKA: Codebook\nAKA: Data Dictionary (not to be confused with a python dictionary) . . .\n\n\nIt is a comprehensive reference document that defines, structures, and explains the contents, layout, and variables of a dataset."
+    "objectID": "lectures/19-discuss5/19-discussion-slides.html#overview-1",
+    "href": "lectures/19-discuss5/19-discussion-slides.html#overview-1",
+    "title": "Irreproducibility Tales (part I)",
+    "section": "Overview",
+    "text": "Overview\n\n\n\n\nThis study was widely cited by politicians to justify harsh post-recession austerity cuts."
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#metadata-1",
-    "href": "lectures/21-data/21-data-slides.html#metadata-1",
-    "title": "Handling and Sharing Data",
-    "section": "Metadata",
-    "text": "Metadata\n\nPreferably in a text file\nInclude details\n\nsource, organization\nbackground\ncitation*\n\nNames of variables (features, atttributes)\n\nAs they appear in the file (usually abbreviations)\nBut also, their full name\n\nSometimes you may need to include a full description of each variable"
+    "objectID": "lectures/19-discuss5/19-discussion-slides.html#replication-attempt",
+    "href": "lectures/19-discuss5/19-discussion-slides.html#replication-attempt",
+    "title": "Irreproducibility Tales (part I)",
+    "section": "Replication Attempt",
+    "text": "Replication Attempt\nYears later, graduate student Thomas Herndon tried to replicate the study of Reinhart & Rogoff for a class project and failed.\n\nHe found various problems:\n\nSelective exclusion of available data\nCoding errors\nInappropriate weighting of summary statistics\n\n\n\n\n\nHis conclusion: Over 1946–2009, countries with public debt/GDP ratios above 90% averaged 2.2% real annual GDP growth, not −0.1% as published"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#metadata-contd",
-    "href": "lectures/21-data/21-data-slides.html#metadata-contd",
-    "title": "Handling and Sharing Data",
-    "section": "Metadata (cont’d)",
-    "text": "Metadata (cont’d)\n\nRecommended data types for each variable\n\nboolean, integer, float, character, other\n\nFor categorical or ordinal variables, describe their categories\nMissing values: how are they encoded\nProvenance\n\nHow was data collected?\nWho collected it, how was it collected it?\n\nIf necessary, include further details, comments, notes, for how to make sense of data, or how to treat certain values."
+    "objectID": "lectures/19-discuss5/19-discussion-slides.html#one-of-the-issues",
+    "href": "lectures/19-discuss5/19-discussion-slides.html#one-of-the-issues",
+    "title": "Irreproducibility Tales (part I)",
+    "section": "One of the issues",
+    "text": "One of the issues\nThomas Herndon discovered that R&R had accidentally missed five major countries when dragging down their AVERAGE() formula row.\nCorrecting this basic clerical error completely reversed their main conclusion."
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#metadata-example",
-    "href": "lectures/21-data/21-data-slides.html#metadata-example",
-    "title": "Handling and Sharing Data",
-    "section": "Metadata Example",
-    "text": "Metadata Example\nData dictionary of SWITRS data\nhttps://tims.berkeley.edu/help/crashdata/switrs-codebook.php#top\n\n\n\nData dictionary of IBTrACS\n\nhttps://www.ncei.noaa.gov/products/international-best-track-archive\nhttps://www.ncei.noaa.gov/sites/default/files/2025-09/IBTrACS_v04r01_column_documentation.pdf"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-1",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-1",
+    "title": "Other Functions in Make",
+    "section": "Example 1",
+    "text": "Example 1\nSuppose we have the following project with various scripts; each script produces an output file.\n\n\n\nFile structure (before running make)\nproject/\n  Makefile\n  plot1.R\n  plot2.R\n  plot3.R\n\nFile structure (after running make)\nproject/\n  Makefile\n  plot1.R\n  plot2.R\n  plot3.R\n  plot1.png\n  plot2.png\n  plot3.png\n\n\n\nNotice that the script files and the PNG files share the same name."
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#data-in-spreadsheets-1",
-    "href": "lectures/21-data/21-data-slides.html#data-in-spreadsheets-1",
-    "title": "Handling and Sharing Data",
-    "section": "Data in Spreadsheets",
-    "text": "Data in Spreadsheets\n\n\nSee Karl Broman’s tutorial: organizing data in spreadsheets\nhttps://kbroman.org/dataorg/"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile",
+    "title": "Other Functions in Make",
+    "section": "Example 1: Makefile",
+    "text": "Example 1: Makefile\n\n\n\n\n\nMakefile\n\n.PHONY: all\n\nall: plot1.png plot2.png plot3.png\n\n# rule 1\nplot1.png: plot1.R\n  Rscript $&lt;\n\n# rule 2\nplot2.png: plot2.R\n  Rscript $&lt;\n\n# rule 3\nplot3.png: plot3.R\n  Rscript $&lt;\n\n\n\nAll rules have the same pattern\nA PNG target\nAn R dependency\nSame command\nWe can use the percent symbol % to define a pattern rule"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#data-tables",
-    "href": "lectures/21-data/21-data-slides.html#data-tables",
-    "title": "Handling and Sharing Data",
-    "section": "Data Tables",
-    "text": "Data Tables\nTidy Data by Hadley Wickham\nhttps://vita.had.co.nz/papers/tidy-data.pdf\nThree Core Rules\n\nEach variable is a column (a column contains all values that measure the same attribute).\nEach observation is a row (a row contains all values measured on a single unit).\nEach value is a cell (a cell contains a single measurement of an attribute)."
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-1",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-1",
+    "title": "Other Functions in Make",
+    "section": "Example 1: Makefile",
+    "text": "Example 1: Makefile\n\n\n\n\n\nMakefile\n\n.PHONY: all\n\nall: plot1.png plot2.png plot3.png\n\n# pattern rule\n%.png: %.R\n  Rscript $&lt;\n\n\n\nWe only need one pattern rule\nThe common pattern in this case is the name of the file\n% is a placeholder for plot1, plot2, and plot3"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#fair",
-    "href": "lectures/21-data/21-data-slides.html#fair",
-    "title": "Handling and Sharing Data",
-    "section": "FAIR",
-    "text": "FAIR\nData should be\n\nFindable\nAccessible\nInteroperable\nReusable"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-2",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-1-makefile-2",
+    "title": "Other Functions in Make",
+    "section": "Example 1: Makefile",
+    "text": "Example 1: Makefile\nA more complete Makefile with .PHONY targets all and clean\n\n\nMakefile\n\n.PHONY: all clean\n\nall: plot1.png plot2.png plot3.png\n\n# pattern rule\n%.png: %.R\n  Rscript $&lt;\n\nclean: \n  rm -f *.png\n\n\n\n\nWe still have some repetition in the names of the targets\nImagine if you had 10, or 50, or a larger number of targets"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#fair-1",
-    "href": "lectures/21-data/21-data-slides.html#fair-1",
-    "title": "Handling and Sharing Data",
-    "section": "FAIR",
-    "text": "FAIR\n\nFindable: Does it have an immutable digital tracking link (DOI)?\nAccessible: Can you download the data in 2 clicks without an institutional login?\nInteroperable: Is the data stored in an open-source text format (like .csv), or is it trapped in a proprietary Excel format (.xlsx)?\nReusable: Is there an explicit Creative Commons (CC-BY) license attached, or is it unlicensed and legally untouchable?\nImportant: Just uploading files to the internet doesn’t make your science open or useful."
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-2-1",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-2-1",
+    "title": "Other Functions in Make",
+    "section": "Example 2",
+    "text": "Example 2\nLet’s consider a simple project with a more realistic file structure\n\n\nFile structure (before running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n  images/\n\nFile structure (after running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n  images/\n    plot1.png"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#share-your-data-online",
-    "href": "lectures/21-data/21-data-slides.html#share-your-data-online",
-    "title": "Handling and Sharing Data",
-    "section": "Share Your Data Online",
-    "text": "Share Your Data Online\n\nIdeally: Deposit your data online in a well-established repository, with a permanent identifier\nDeposit data in whatever data archive is the “go to” place for your field.\nBetter than nothing: Store it in a google drive, dropbox, box, AWS, and share a public link to it."
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-2-makefile",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-2-makefile",
+    "title": "Other Functions in Make",
+    "section": "Example 2: Makefile",
+    "text": "Example 2: Makefile\n\n\n\nRule with no Make variables\n\n\nMakefile\n\n# rule\nimages/plot1.png: code/plot1.R\n  cd code && Rscript plot1.R\n\n\nFailed attempt with Make variable 👎\n\n\nMakefile\n\n# rule\nimages/plot1.png: code/plot1.R\n  cd code && Rscript $&lt;\n\n\n\n\n\nRecall that $&lt; is the first dependency\nIn this case $&lt; has the value of code/plot1.R\ni.e. Rscript $&lt; corresponds to Rscript code/plot1.R 👎\n$(&lt;D) and $(&lt;F) to the rescue ✅"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#general-data-repositories",
-    "href": "lectures/21-data/21-data-slides.html#general-data-repositories",
-    "title": "Handling and Sharing Data",
-    "section": "General Data Repositories",
-    "text": "General Data Repositories\n\nDataverse (http://thedata.org): A repository for research data that takes care of long-term preservation and good archival practices, while researchers can share, keep control of, and get recognition for their data.\nFigShare (http://figshare.com): A repository where users can make all of their research outputs available in a citable, shareable, and discoverable manner.\nZenodo (http://zenodo.org): A repository service that enables users to share research results (data and publications) that are not part of existing institutional or subject-based repositories.\nDryad (http://datadryad.org): A repository that aims to make data archiving as simple as possible through a suite of services not necessarily provided by publishers or institutional websites."
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-2-make-d-and-f",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-2-make-d-and-f",
+    "title": "Other Functions in Make",
+    "section": "Example 2: Make $(<D) and $(<F)",
+    "text": "Example 2: Make $(&lt;D) and $(&lt;F)\n\n$(&lt;D) is the Directory of the first dependency\n$(&lt;F) is the File name of the first dependency\n\n\nWe can use them to rewrite the rule as follows:\n\n\nMakefile\n\n# rule\nimages/plot1.png: code/plot1.R\n  cd $(&lt;D) && Rscript $(&lt;F)"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#what-about-sharing-data-in-github",
-    "href": "lectures/21-data/21-data-slides.html#what-about-sharing-data-in-github",
-    "title": "Handling and Sharing Data",
-    "section": "What about sharing data in GitHub?",
-    "text": "What about sharing data in GitHub?\n\nDon’t use github for big data\nGitHub has a limit on file size: cannot exceed 100MB\nMany data sets can easily exceed 100MB\nAlso, be careful with binary data (Git tracks text files, not binary files)"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-3-1",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-3-1",
+    "title": "Other Functions in Make",
+    "section": "Example 3",
+    "text": "Example 3\nSuppose we have the same files of Example 1 but with a more realistic file structure\n\n\n\nFile structure (before running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n    plot2.R\n    plot3.R\n  images/\n\nFile structure (after running make)\nproject/\n  Makefile\n  code/\n    plot1.R\n    plot2.R\n    plot3.R\n  images/\n    plot1.png\n    plot2.png\n    plot3.png"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#what-about-sharing-data-through-an-r-package",
-    "href": "lectures/21-data/21-data-slides.html#what-about-sharing-data-through-an-r-package",
-    "title": "Handling and Sharing Data",
-    "section": "What about sharing data through an R package?",
-    "text": "What about sharing data through an R package?\n\nInteresting option for relatively small data sets.\nEspecially good for teaching/learning purposes.\nExample: \"stat20data\" package\nExample: \"janeaustinr\" package\nExample: \"harrypotter\" package"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile",
+    "title": "Other Functions in Make",
+    "section": "Example 3: Makefile",
+    "text": "Example 3: Makefile\n\n\n\nMakefile\n\n.PHONY: all\n\nall: images/plot1.png images/plot2.png images/plot3.png\n\n# rule 1\nimages/plot1.png: code/plot1.R\n  cd code && Rscript plot1.R\n\n# rule 2\nimages/plot2.png: code/plot2.R\n  cd code && Rscript plot2.R\n\n# rule 3\nimages/plot3.png: code/plot3.R\n  cd code && Rscript plot3.R"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#ropensci",
-    "href": "lectures/21-data/21-data-slides.html#ropensci",
-    "title": "Handling and Sharing Data",
-    "section": "ROpenSci",
-    "text": "ROpenSci\n\nThe project R Open Science\nHas tools and packages for accessing lots of data"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile-1",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-3-makefile-1",
+    "title": "Other Functions in Make",
+    "section": "Example 3: Makefile",
+    "text": "Example 3: Makefile\nUsing a pattern rule gives us a simpler Makefile\n\n\nMakefile\n\n.PHONY: all clean\n\nall: images/plot1.png images/plot2.png images/plot3.png\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  cd images && rm -f *.png"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#licenses-for-data",
-    "href": "lectures/21-data/21-data-slides.html#licenses-for-data",
-    "title": "Handling and Sharing Data",
-    "section": "Licenses for Data",
-    "text": "Licenses for Data\nIncluding an explicit license with your data is the best way to let others know exactly what they can and cannot do with the data you shared.\nPrefer well established licenses (or waivers) to clearly communicate the rights and responsibilities of both the people providing the data and the people using it."
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-1",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-1",
+    "title": "Other Functions in Make",
+    "section": "Example 4",
+    "text": "Example 4\nFrom Example 3, we have the following Makefile\n\n\nMakefile\n\n.PHONY: all clean\n\nall: images/plot1.png images/plot2.png images/plot3.png\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  cd images && rm -f *.png\n\nWe still have some repetition listing the names of the targets"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#creative-commons-licenses",
-    "href": "lectures/21-data/21-data-slides.html#creative-commons-licenses",
-    "title": "Handling and Sharing Data",
-    "section": "Creative Commons Licenses",
-    "text": "Creative Commons Licenses\n\nCC BY: Credit must be given to you, the creator.  https://creativecommons.org/licenses/by/4.0/\n\n\n\n\nCC BY-SA: Credit must be given to you, the creator. Adaptations must be shared under the same terms.  https://creativecommons.org/licenses/by-sa/4.0/\n\n\n\n\nCC BY-ND: Credit must be given to you, the creator. No derivatives or adaptations of your work are permitted.  https://creativecommons.org/licenses/by-nd/4.0/"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-2",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-2",
+    "title": "Other Functions in Make",
+    "section": "Example 4",
+    "text": "Example 4\nIt would be nice to create a variable PNGS for the targets, something like:\n\n\n\nMakefile\n\nPNGS = $(wildcard images/*.png)\n\n.PHONY: all clean\n\nall: $(PNGS)\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  cd images && rm -f *.png\n\n⚠️ The above Makefile has an issue ⚠️"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#section",
-    "href": "lectures/21-data/21-data-slides.html#section",
-    "title": "Handling and Sharing Data",
-    "section": "",
-    "text": "CC BY-NC: Credit must be given to you, the creator. Only noncommercial use of your work is permitted.  https://creativecommons.org/licenses/by-nc/4.0/\n\n\n\n\nCC BY-NC-SA: Credit must be given to you, the creator. Only noncommercial use of your work is permitted. Adaptations must be shared under the same terms.  https://creativecommons.org/licenses/by-nc-sa/4.0/\n\n\n\n\nCC BY-NC-ND: Credit must be given to you, the creator. Only noncommercial use of your work is permitted. No derivatives or adaptations of your work are permitted.  https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-3",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-3",
+    "title": "Other Functions in Make",
+    "section": "Example 4",
+    "text": "Example 4\n\nIt would be nice to create a variable PNGS for the targets.\nThe issue is that if the directory images/ is empty, then Makefile won’t be able to create the appropriate varibale PNGS\nThe solution involves creating a variable for the dependency files, and then use this variable to create a varible for the targets.\nThe Make tool to accomplish this is a so-called pattern substitution"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#open-data-commons-licenses",
-    "href": "lectures/21-data/21-data-slides.html#open-data-commons-licenses",
-    "title": "Handling and Sharing Data",
-    "section": "Open Data Commons licenses",
-    "text": "Open Data Commons licenses\n\nOpen Data Commons Open Database License (ODbL)  “Attribution Share-Alike for data/databases”  https://opendatacommons.org/licenses/odbl/\nOpen Data Commons Attribution License  “Attribution for data/databases”  https://opendatacommons.org/licenses/by/\nOpen Data Commons Public Domain Dedication and License (PDDL)  “Public Domain for data/databases”  https://opendatacommons.org/licenses/pddl/"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#pattern-substitution",
+    "href": "lectures/18-make4/18-make-functions-slides.html#pattern-substitution",
+    "title": "Other Functions in Make",
+    "section": "Pattern substitution",
+    "text": "Pattern substitution\nThere are two ways to create a variable with pattern substitution\n\n\n\nMakefile\n\n# pattern substitution (option 1)\nVAR1 = $(patsubst PATTERN,REPLACEMENT,$(VARIABLE))\n\n\n\n\n\n\n\nMakefile\n\n# pattern substitution (option 2)\nVAR2 = $(VARIABLE:PATTERN=REPLACEMENT)"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#section-1",
-    "href": "lectures/21-data/21-data-slides.html#section-1",
-    "title": "Handling and Sharing Data",
-    "section": "",
-    "text": "Open Data Commons Open Database License (ODbL)\nYou are free:\n\nTo share\nTo create\nTo adapt\n\nAs long as you:\n\nAttribute\nShare-Alike\nKeep open\n\n\nOpen Data Commons Attribution License (ODC-By)\nYou are free:\n\nTo share\nTo create\nTo adapt\n\nAs long as you:\n\nAttribute\n\n\nOpen Data Commons Public Domain Dedication and License (PDDL)\nYou are free:\n\nTo share\nTo create\nTo adapt\n\nAs long as you:\n\nBlank (no restrictions imposed)"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-1",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-1",
+    "title": "Other Functions in Make",
+    "section": "Example 4: pattern substitution (opt 1)",
+    "text": "Example 4: pattern substitution (opt 1)\n\n\nMakefile\n\n# dependency files\nRS = $(wildcard code/*.R)\n\n# target files (using pattern substitution)\nPNGS = $(patsubst code/%.R,images/%.png,$(RS))\n\n.PHONY: all clean\n\nall: $(PNGS)\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  rm -f $(PNGS)"
   },
   {
-    "objectID": "lectures/21-data/21-data-slides.html#section-2",
-    "href": "lectures/21-data/21-data-slides.html#section-2",
-    "title": "Handling and Sharing Data",
-    "section": "",
-    "text": "License\nDomain\nBy\nSA\nComments\n\n\n\n\nCreative Commons CCZero (CC0-1.0)\nContent, Data\nN\nN\nDedicate to the Public Domain (all rights waived)\n\n\nOpen Data Commons Public Domain Dedication and Licence (PDDL-1.0)\nData\nN\nN\nDedicate to the Public Domain (all rights waived)\n\n\nCreative Commons Attribution 4.0 (CC-BY-4.0)\nContent, Data\nY\nN\n\n\n\nOpen Data Commons Attribution License (ODC-By-1.0)\nData\nY\nN\nAttribution for data(bases)\n\n\nCreative Commons Attribution Share-Alike 4.0 (CC-BY-SA-4.0)\nContent, Data\nY\nY\n\n\n\nOpen Data Commons Open Database License (ODbL-1.0)\nData\nY\nY\nAttribution-ShareAlike for data(bases)"
-  },
-  {
-    "objectID": "lectures/21-data/21-data-slides.html#last-words",
-    "href": "lectures/21-data/21-data-slides.html#last-words",
-    "title": "Handling and Sharing Data",
-    "section": "Last Words",
-    "text": "Last Words\n\nLove your data, and help others love it, too\nPublish your data\nEncourage others to cherish, document, and publish their data\nReward colleagues who share data\nPraise those following best practices\nGive credit to those whose data you use"
+    "objectID": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-2",
+    "href": "lectures/18-make4/18-make-functions-slides.html#example-4-pattern-substitution-opt-2",
+    "title": "Other Functions in Make",
+    "section": "Example 4: pattern substitution (opt 2)",
+    "text": "Example 4: pattern substitution (opt 2)\n\n\nMakefile\n\n# dependency files\nRS = $(wildcard code/*.R)\n\n# target files (using pattern substitution)\nPNGS = $(RS:code/%.R=images/%.png)\n\n.PHONY: all clean\n\nall: $(PNGS)\n\n# pattern rule\nimages/%.png: code/%.R\n  cd $(&lt;D) && Rscript $(&lt;F)\n\nclean:\n  rm -f $(PNGS)"
   },
   {
     "objectID": "lectures/05-git1/05-git-intro-slides.html#saving-versions-as-snapshots",
