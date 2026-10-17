@@ -168,7 +168,7 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 4"
-          href: ""
+          href: "lectures/16-discuss4/16-discussion-slides.html"
         - type: "Homework"
           id: ""
           name: "HW2 Serena Williams (due 10/16)"
@@ -206,7 +206,7 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 5"
-          href: ""
+          href: "lectures/19-discuss5/19-discuss5-slides.html"
 - week: 8
   days:
     - date: "Oct 12"
