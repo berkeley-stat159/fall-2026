@@ -248,18 +248,18 @@
         - type: "Lecture"
           id: ""
           name: "Writing Clear Code"
-          href: ""
+          href: "lectures/23-code/23-clear-code-slides.html"
     - date: "Oct 20"
       items:
         - type: "Lab"
           id: ""
-          name: "Hands on sharing and managing data"
+          name: "Getting started with proj2"
           href: ""
     - date: "Oct 21"
       items:
         - type: "Lecture"
           id: ""
-          name: "Packaging Code (I)"
+          name: "Packaging Code: R packages (I)"
           href: ""
         - type: "Reading"
           id: ""
@@ -269,7 +269,7 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Packaging Code (II)"
+          name: "Packaging Code: R packages (II)"
           href: ""
 - week: 10
   days:
@@ -283,7 +283,7 @@
       items:
         - type: "Lab"
           id: ""
-          name: "Documenting your code"
+          name: "Packaging your code"
           href: ""
     - date: "Oct 28"
       items:
