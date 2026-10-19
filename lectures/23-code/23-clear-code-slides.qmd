@@ -1,0 +1,335 @@
+---
+title: "Writing Clear Code"
+subtitle: "Writing code for humans, not just for computers"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Clear Code
+
+## What is Clear Code
+
+- Clear code is more likely to be correct.
+- Clear code is easier to use.
+- Clear code is easier to maintain.
+- Clear code is easier to extend.
+
+
+## Basic Principles
+
+- Code that works
+    + No bugs; efficiency is secondary (or tertiary)
+- Readable
+    + Fixable; extendible
+- Reusable
+    + Modular; reasonably general
+- Reproducible
+    + Re-runnable
+- Think before you code
+    + More thought $\longrightarrow$ fewer bugs/re-writes
+
+
+## 
+
+\
+
+[Write programs for people, not computers]{.bold-hilit}
+
+\
+
+Wilson et al. (2014) PLoS Biol 12:e1001745
+
+\
+
+<https://doi.org/10.1371/journal.pbio.1001745>
+
+::: {.notes}
+Computers don't care about comments, or style, or the naming
+of things. But users and collaborators (and yourself six months from now) will.
+:::
+
+
+## Break Code into small functions
+
+```{r}
+#| echo: true
+average <- function(x) {
+  sum(x) / length(x)
+}
+```
+
+\
+
+. . .
+
+```{r}
+#| echo: true
+average <- function(x, na.rm = FALSE) {
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  sum(x) / length(x)
+}
+```
+
+
+## Clarity over Efficiency
+
+```{r}
+#| echo: true
+fv <- function(p, r, n) {
+  p * (1 + r)^n
+}
+```
+
+. . .
+
+\
+
+```{r}
+#| echo: true
+future_value <- function(principal, rate, years) {
+  principal * (1 + rate)^years
+}
+```
+
+
+## Writing functions
+
+- Break large tasks into small units.
+    + Make each discrete unit a function.
+
+- If you write the same code more than once,
+[make it a function]{.bold-hilit}.
+
+- If a line/block of code is complicated,
+[make it a function]{.bold-hilit}.
+
+- Modularity is really important for readability.
+
+- No long streams of code; rather, a short set of function calls.
+
+
+## Don't Repeat Yourself (or others)
+
+- Avoid having repeated blocks of code.
+- Create functions, and call those functions repeatedly.
+- This is easier to maintain.
+    + If something needs to be fixed/revised, you just have to do
+it the one time.
+- Look at others' libraries/packages.
+    + Don't write what others have already written 
+    (especially if they've done it better that your would have)
+
+
+## Don't make things too specific
+
+- Write code that is a bit more general than your specific data
+    + Don't assume particular data dimensions.
+    + Don't forget about the possibility of missing values
+    (even if your data doesn't have any).
+    + Aim for re-use.
+
+- Use function arguments
+    + Don't assume particular data file names
+    + Don't hard-code tuning parameters
+
+
+## Avoid global variables!
+
+- Don't refer directly to objects in your workspace.
+    + Global variables make code unreadable.
+
+- If a function needs something, pass it as an argument.
+    + Global variables make code difficult to reuse.
+
+- (But what about really big data sets?)
+
+::: {.notes}
+You shouldn’t be afraid to pass really big data sets into and between functions.
+:::
+
+
+## No magic numbers
+
+- Magic number, e.g.: `1000`
+    + You'll later ask yourself "Why 1000?"
+
+- Name numbers and use the names
+    + `max_iter <- 1000`
+    + `tol_convergence <- 0.0001`
+
+- Even better: include them as function arguments
+
+
+## Indent!
+
+- Don't be afraid of indentation
+- Don't underestimate indentation
+- Makes things clear, easier to read and inspect
+
+
+## Blank spaces are your friends
+
+👎 Don't
+
+::: {.small}
+```r
+ggplot(mtcars,aes(x=disp,y=mpg,color=factor(cyl)))+
+geom_point(alpha=0.5,size=2)+
+geom_smooth(method="lm",se=FALSE)+
+labs(title="Engine Displacement and MPG",
+subtitle="The bigger the car the less fuel efficient",
+x="Engine displacement (size of engine)",
+y="Miles-per-Gallon")
+```
+:::
+
+. . .
+
+\
+
+👍 Do
+
+::: {.small}
+```r
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(cyl))) +
+  geom_point(alpha = 0.5, size = 2)+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(title = "Engine Displacement and MPG",
+       subtitle = "The bigger the car the less fuel efficient",
+       x = "Engine displacement (size of engine)",
+       y = "Miles-per-Gallon")
+```
+:::
+
+
+## Don't let lines get too long
+
+Break them into multiple lines
+
+👎 Don't
+
+```r
+ggplot(mtcars,aes(x=disp,y=mpg,color=factor(cyl)))+geom_point(alpha=0.5,size=2)+geom_smooth(method="lm",se=FALSE)+
+```
+
+. . .
+
+\
+
+👍 Do
+
+```r
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(cyl))) +
+  geom_point(alpha = 0.5, size = 2)+
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+
+## Use parentheses to avoid ambiguity
+
+```r
+if ( (years == 1) & (periods == 12) ) {
+
+   ...
+
+}
+
+lower_bound <- which( (end - start) <= 0 )
+```
+
+
+# Names
+
+## Names: menaningful
+
+- Make names descriptive but concise
+- Avoid `tmp1`, `tmp2`, `...`
+- Only use `i`, `j`, `x`, `y` in the simplest situations
+- If a function is named `fv`, what might it do?
+- If an object is called `nms`, what could it be?
+- Functions as verbs; objects as nouns
+
+
+## Names
+
+- Sometimes it's hard to come up with good names. But it's really important.
+- Descriptive names make code self-documenting.
+- If functions are named by what they do, you may not need to explain further.
+- If the object names are meaningful, the code will be readable as it stands. 
+- If the objects are named `g`, `g2`, and `gg`, it'll need a lot of comments.
+- Finding/using good names may take time, but it pays off.
+
+
+## Names: consistent
+
+- `markers` vs `mnames`
+- `camelCase` vs `snake_case` vs `CapitalCase`
+- `nind` vs `n.var`
+- If a function/object has one of these, there shouldn't be an object/function 
+with the other.
+
+
+## Names: avoid confusion
+
+- Don't use both `total` and `totals`
+- Don't use both `n.cluster` and `n.clusters`
+- Don't use both `result` and `results`
+- Don't use both `Mat` and `mat`
+- Don't use both `g` and `gg`
+- Don't use similar but different names, 
+in the same function or across functions.
+- It's confusing, and it's prone to bugs from mistyping.
+
+
+# Comments
+
+## Comments
+
+- Comment the tricky bits and the major sections
+- Don't belabor the obvious
+- Don't comment bad code; rewrite it
+- Document the input/output and purpose, not the mechanics
+- Don't contradict the code
+    + this happens if you revise the code but don't revise the related comments
+- Comment code as you are writing it (or before)
+- Plan to spend 1/4 of your time commenting
+
+
+## Comments
+
+- Some things are tricky and deserve explanation, so that when you
+come back to it, you have a guide.
+
+- But in many cases, code can be rewritten to be clear and
+self-documenting.
+
+- Commenting takes time. And no one ever goes back and adds
+comments later. It's another one of those "invest for the future" type
+of things.
+
+
+# Error & Warning Messages
+
+## Error & Warning Messages
+
+- Explain what's wrong (and where)
+    + `error("nrow(X) != nrow(Y)")`
+- Suggest corrective action
+    + `"You need to first run calc.genoprob()."`
+- Give details
+    + `"nrow(X) (", nrX, ") != nrow(Y) (", nrY, ")"`
+- Don't give error/warning messages that users won't understand.
+    + `X'X is singular`
+- Don't let users do something stupid without warning
+- Include error checking even in personal code
+
+
+## Check data integrity
+
+- Check that the input is as expected, or give warnings/errors.
+- Write these in the first pass (though they're dull).
+    + You may not remember your assumptions later
+- These are useful for documenting the assumptions
+
