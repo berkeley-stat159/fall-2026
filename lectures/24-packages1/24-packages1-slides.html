@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../assets/stat159-favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b7eb3ced35dd28f0c673f192a36525f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.28">
+
+  <title>R Packaging</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-27b1524c90fa041f3653125f15fb25c4.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
+
+  <script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
+  </script>
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-bg.svg" data-background-size="contain" class="quarto-title-block center">
+  <h1 class="title">R Packaging</h1>
+  <p class="subtitle">Packaging and sharing your R code</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="about" class="slide level2">
+<h2>About</h2>
+<p>In this slides I show you how to create a fairly simple R package with common contents such as:</p>
+<div class="{columns}">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<ul>
+<li class="fragment">functions,</li>
+<li class="fragment">documentation,</li>
+<li class="fragment">tests,</li>
+<li class="fragment">data</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<ul>
+<li class="fragment">vignettes,</li>
+<li class="fragment">license,</li>
+<li class="fragment">README</li>
+<li class="fragment"><em>ETC</em></li>
+</ul>
+</div></div>
+<div class="fragment">
+<p>I will also describe the anatomy of an R package, its mandatory ingredients, some optional components, and my opinionated recipe to build packages.</p>
+</div>
+</section>
+<section>
+<section id="example-package-average" class="title-slide slide level1 center">
+<h1>Example: package <code>"average"</code></h1>
+
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li class="fragment">Our package consists of one function: <code>average()</code></li>
+<li class="fragment"><code>average()</code> computes the average (i.e.&nbsp;mean) of a numeric vector</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">average</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">average</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">average</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">5</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="function-average" class="slide level2">
+<h2>Function <code>average()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb7-2"><a></a>  <span class="co"># decide whether to remove missing values</span></span>
+<span id="cb7-3"><a></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb7-4"><a></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb7-5"><a></a>  }</span>
+<span id="cb7-6"><a></a>  <span class="co"># compute average</span></span>
+<span id="cb7-7"><a></a>  avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb7-8"><a></a>  <span class="fu">return</span>(avg)</span>
+<span id="cb7-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>We’ll go through the creation of the package <code>"average"</code> so that you can:</p>
+<div class="fragment">
+<p><strong>1)</strong> (Install and) load it:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(average)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><strong>2)</strong> Use its function:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">average</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><strong>3)</strong> See its documentation</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>?average</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><strong>4)</strong> Share it with others</p>
+</div>
+</section></section>
+<section>
+<section id="minimal-version" class="title-slide slide level1 center">
+<h1>Minimal Version</h1>
+
+</section>
+<section id="section-1" class="slide level2 nostretch">
+<h2></h2>
+<p>Every R package must have at least the following components</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/pkg-structure1-minimal.svg" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
+</figure>
+</div>
+<div class="small">
+<p>Without any of these, you won’t be able to create a valid package.</p>
+</div>
+</section>
+<section id="section-2" class="slide level2 nostretch">
+<h2></h2>
+<div class="{columns}">
+<div class="column" style="width:40%;">
+<p><img data-src="images/pkg-structure1-minimal.svg"></p>
+</div><div class="column" style="width:60%;">
+<ul>
+<li class="fragment"><span class="bold-hilit">DESCRIPTION</span> (text file) <br> Package metadata.</li>
+<li class="fragment"><span class="bold-hilit">NAMESPACE</span> (text file) <br> Which functions are available to users.</li>
+<li class="fragment"><span class="bold-hilit">R/</span> directory with R script files. <br> Files with functions.</li>
+<li class="fragment"><span class="bold-hilit">man/</span> directory with Rd files. <br> Files with documentation of functions.</li>
+</ul>
+</div></div>
+</section>
+<section id="description-file" class="slide level2">
+<h2><code>DESCRIPTION</code> file</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="an">Package:</span><span class="co"> average</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">Type:</span><span class="co"> Package</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">Title:</span><span class="co"> Computes average of numeric vector</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">Version:</span><span class="co"> 0.1.0</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="an">Author:</span><span class="co"> Gaston Sanchez</span></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a><span class="an">Maintainer:</span><span class="co"> Gaston Sanchez &lt;gaston@email.com&gt;</span></span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="an">Description:</span><span class="co"> Toy package used for demo purposes.</span></span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a><span class="an">License:</span><span class="co"> MIT</span></span>
+<span id="cb11-9"><a aria-hidden="true" tabindex="-1"></a><span class="an">Encoding:</span><span class="co"> UTF-8</span></span>
+<span id="cb11-10"><a aria-hidden="true" tabindex="-1"></a><span class="an">LazyData:</span><span class="co"> true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br>
+</p>
+<p><code>DESCRIPTION</code> is a text file—with no file extension—that follows a special type of format known as <span class="hilit">Debian Control File</span>.<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html" class="uri">https://www.debian.org/doc/debian-policy/ch-controlfields.html</a></p></li></ol></aside></section>
+<section id="description-file-1" class="slide level2">
+<h2><code>DESCRIPTION</code> file</h2>
+<p>You need to specify seven mandatory fields:</p>
+<ul>
+<li>Package</li>
+<li>Title</li>
+<li>Description</li>
+<li>Author</li>
+<li>Maintainer</li>
+<li>Version</li>
+<li>License</li>
+</ul>
+<div class="small">
+<p><a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file</a></p>
+</div>
+</section>
+<section id="namespace-file" class="slide level2">
+<h2><code>NAMESPACE</code> file</h2>
+<p>In addition to <code>DESCRIPTION</code>, an R package also requires another mandatory text file called <code>NAMESPACE</code>.</p>
+<ul>
+<li class="fragment">It controls how your package interacts with the rest of the R ecosystem</li>
+<li class="fragment"><span class="bold-hilit">Exports:</span> It explicitly declares which functions, datasets, methods, and classes are public.</li>
+<li class="fragment"><span class="bold-hilit">Imports:</span> It specifies which functions or full packages your code relies on internally</li>
+<li class="fragment">Let <code>devtools::document()</code> take care of <code>NAMESPACE</code> (i.e.&nbsp;don’t edit by hand)</li>
+</ul>
+</section>
+<section id="r-file-average.r" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code></h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb12-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb12-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># decide whether to remove missing values</span></span>
+<span id="cb12-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb12-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb12-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># compute average</span></span>
+<span id="cb12-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb12-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(avg)</span>
+<span id="cb12-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="r-file-average.r-with-roxygen-comments" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code> with Roxygen comments</h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb13" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @title Average</span></span>
+<span id="cb13-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb13-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># decide whether to remove missing values</span></span>
+<span id="cb13-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb13-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb13-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># compute average</span></span>
+<span id="cb13-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb13-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(avg)</span>
+<span id="cb13-10" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="r-file-average.r-with-roxygen-comments-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code> with Roxygen comments</h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb14" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb14-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @title Average</span></span>
+<span id="cb14-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @description Computes the average (i.e. mean)</span></span>
+<span id="cb14-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb14-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># decide whether to remove missing values</span></span>
+<span id="cb14-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb14-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb14-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb14-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># compute average</span></span>
+<span id="cb14-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb14-10" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(avg)</span>
+<span id="cb14-11" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="r-file-average.r-with-roxygen-comments-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code> with Roxygen comments</h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb15" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @title Average</span></span>
+<span id="cb15-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @description Computes the average (i.e. mean)</span></span>
+<span id="cb15-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x input vector</span></span>
+<span id="cb15-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param na.rm whether to remove missing values</span></span>
+<span id="cb15-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb15-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># decide whether to remove missing values</span></span>
+<span id="cb15-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb15-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb15-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb15-10" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># compute average</span></span>
+<span id="cb15-11" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb15-12" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(avg)</span>
+<span id="cb15-13" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="r-file-average.r-with-roxygen-comments-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code> with Roxygen comments</h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb16" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @title Average</span></span>
+<span id="cb16-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @description Computes the average (i.e. mean)</span></span>
+<span id="cb16-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x input vector</span></span>
+<span id="cb16-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param na.rm whether to remove missing values</span></span>
+<span id="cb16-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @return computed mean</span></span>
+<span id="cb16-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb16-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># decide whether to remove missing values</span></span>
+<span id="cb16-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb16-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb16-10" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-11" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># compute average</span></span>
+<span id="cb16-12" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb16-13" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(avg)</span>
+<span id="cb16-14" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="r-file-average.r-with-roxygen-comments-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code> with Roxygen comments</h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb17" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @title Average</span></span>
+<span id="cb17-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @description Computes the average (i.e. mean)</span></span>
+<span id="cb17-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x input vector</span></span>
+<span id="cb17-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param na.rm whether to remove missing values</span></span>
+<span id="cb17-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @return computed mean</span></span>
+<span id="cb17-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @export</span></span>
+<span id="cb17-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb17-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># decide whether to remove missing values</span></span>
+<span id="cb17-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb17-10" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb17-11" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-12" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># compute average</span></span>
+<span id="cb17-13" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb17-14" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(avg)</span>
+<span id="cb17-15" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="r-file-average.r-with-roxygen-comments-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code> with Roxygen comments</h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb18" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @title Average</span></span>
+<span id="cb18-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @description Computes the average (i.e. mean)</span></span>
+<span id="cb18-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x input vector</span></span>
+<span id="cb18-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param na.rm whether to remove missing values</span></span>
+<span id="cb18-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @return computed mean</span></span>
+<span id="cb18-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @export</span></span>
+<span id="cb18-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb18-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' vec &lt;- 1:5</span></span>
+<span id="cb18-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' average(vec)</span></span>
+<span id="cb18-10" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb18-11" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' vec_na &lt;- c(1, 2, NA, 4, 5)</span></span>
+<span id="cb18-12" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' average(vec_na)</span></span>
+<span id="cb18-13" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' average(vec_na, na.rm = TRUE)</span></span>
+<span id="cb18-14" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb18-15" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>  . . .</span>
+<span id="cb18-16" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="small">
+<p><em>Note: code of function <code>average()</code> hidden for clarity purposes</em></p>
+</div>
+</section>
+<section id="r-file-average.r-with-roxygen-comments-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">R file <code>average.R</code> with Roxygen comments</h2>
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb19" data-filename="average.R"><pre class="sourceCode r code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @title Average</span></span>
+<span id="cb19-2" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @description Computes the average (i.e. mean)</span></span>
+<span id="cb19-3" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x input vector</span></span>
+<span id="cb19-4" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @param na.rm whether to remove missing values</span></span>
+<span id="cb19-5" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @return computed mean</span></span>
+<span id="cb19-6" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @export</span></span>
+<span id="cb19-7" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb19-8" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' vec &lt;- 1:5</span></span>
+<span id="cb19-9" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' average(vec)</span></span>
+<span id="cb19-10" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb19-11" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' vec_na &lt;- c(1, 2, NA, 4, 5)</span></span>
+<span id="cb19-12" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' average(vec_na)</span></span>
+<span id="cb19-13" class="hljs-ln-code"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' average(vec_na, na.rm = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>The roxygen comments will be used to create the <code>Rd</code> (R Documentation) files of the <code>man/</code> directory.</p></li>
+<li class="fragment"><p>Let <code>devtools::document()</code> take care of <code>Rd</code> files.</p></li>
+</ul>
+</section>
+<section id="minimal-file-structure" class="slide level2">
+<h2>Minimal file structure</h2>
+<p>You can create the minimal file structure of an R package by hand, e.g.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb20" data-filename="Terminal"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>mkdir average</span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>cd average</span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>touch DESCRIPTION NAMESPACE</span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a>mkdir R man</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>However, we recommend that you use functions from packages <code>"devtools"</code> and <code>"usethis"</code> to create and take care of the files and directories in an R package.</p>
+</div>
+</section></section>
+<section>
+<section id="packaging-with-devtools-and-usethis" class="title-slide slide level1 center">
+<h1>Packaging with <code>"devtools"</code> and <code>"usethis"</code></h1>
+
+</section>
+<section id="about-1" class="slide level2">
+<h2>About</h2>
+<p>I will describe one way to create some of the common elements of an R package, and also a development workflow to iterate through the packaging process.</p>
+<p>Keep in mind that there are various ways to create an R package, and that you are not required to use <code>"devtools"</code> and friends.</p>
+<p>But as you’ll see, these supporting packages are extremely helpful, and will take care of many of the important details, and “pain points” of packaging your code.</p>
+</section>
+<section id="step-1-create_package" class="slide level2">
+<h2>Step 1) <code>create_package()</code></h2>
+<ul>
+<li class="fragment"><p>Instead of creating the file structure of an R package by hand, we’ll use <code>create_package()</code></p></li>
+<li class="fragment"><p>You have to invoke this function on R’s console, by passing the file path (location and name) of the package you want to create</p></li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># use a valid file path to your package</span></span>
+<span id="cb21-2"><a></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">"path/to/average"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">BTW: You only run this function once!</li>
+</ul>
+</div>
+</section>
+<section id="step-1-create_package-1" class="slide level2 nostretch">
+<h2>Step 1) <code>create_package()</code></h2>
+<div class="{columns}">
+<div class="column" style="width:40%;">
+<p><img data-src="images/pkg-structure2-create-package.svg"></p>
+</div><div class="column" style="width:60%;">
+<ul>
+<li class="fragment"><span class="bold-hilit">.gitignore</span> (text file) <br> List which files Git needs to ignore.</li>
+<li class="fragment"><span class="bold-hilit">.Rbuildignore</span> (text file) <br> List which files R needs to ignore.</li>
+<li class="fragment"><span class="bold-hilit">average.Rproj</span> (text file) <br> RStudio project file.</li>
+<li class="fragment"><span class="bold-hilit">DESCRIPTION</span> (text file) <br> Package metadata.</li>
+<li class="fragment"><span class="bold-hilit">NAMESPACE</span> (text file) <br> Which functions are available to users.</li>
+<li class="fragment"><span class="bold-hilit">R/</span> directory for R script files.</li>
+</ul>
+</div></div>
+</section>
+<section id="description-file-2" class="slide level2">
+<h2><code>DESCRIPTION</code> file</h2>
+<p>When running <code>create_package()</code>, this is what <code>DESCRIPTION</code> will look like:</p>
+<div class="small">
+<div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="an">Package:</span><span class="co"> average</span></span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">Title:</span><span class="co"> What the Package Does (One Line, Title Case)</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">Version:</span><span class="co"> 0.0.0.9000</span></span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a>Authors@R: </span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a>    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))</span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a>Description: What the package does (one paragraph).</span>
+<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a>License: <span class="in">`use_mit_license()`</span>, <span class="in">`use_gpl3_license()`</span> or friends to pick a</span>
+<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a>    license</span>
+<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a>Encoding: UTF-8</span>
+<span id="cb22-10"><a aria-hidden="true" tabindex="-1"></a>Roxygen: list(markdown = TRUE)</span>
+<span id="cb22-11"><a aria-hidden="true" tabindex="-1"></a>RoxygenNote: 7.3.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will need to edit the fields:</p>
+<ul>
+<li class="fragment">Title</li>
+<li class="fragment">Authors@R</li>
+<li class="fragment">Description</li>
+<li class="fragment">License (optionally you can run <code>use_xyz_license()</code>)</li>
+</ul>
+</div>
+</section>
+<section id="step-1.1-add-r-file-average.r" class="slide level2 nostretch">
+<h2>Step 1.1) Add R file <code>average.R</code></h2>
+<div class="{columns}">
+<div class="column" style="width:40%;">
+<p><img data-src="images/pkg-structure2-R-file.svg"></p>
+</div><div class="column" style="width:60%;">
+<p><br>
+</p>
+<p>Inside <code>R/</code>, we’ll store the R file <code>average.R</code> contaning the Roxygen comments and the code of our function <code>average()</code></p>
+<p><br>
+</p>
+<div class="fragment">
+<p>Notice that there is no <code>man/</code> directory yet. We’ll let <code>devtools::document()</code> to take care of it and its contents.</p>
+</div>
+</div></div>
+</section>
+<section id="step-1.2-using-functions-from-other-packages" class="slide level2">
+<h2>Step 1.2) Using functions from other packages</h2>
+<p>Sometimes you may need to use functions from other packages in your own package.</p>
+<p>This requires declaring the other packages we need (i.e.&nbsp;our dependencies).</p>
+<p>For example, if your package depends on functions from <code>"dplyr"</code> (or any other package) you need to run the following in R’s console: <code>usethis::use_package("dplyr")</code></p>
+<p><br>
+</p>
+<p>You will see some output like this</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>✔ Adding dplyr to Imports field <span class="cf">in</span> DESCRIPTION.</span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>☐ Refer to functions with <span class="st">`</span><span class="at">dplyr::fun()</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-2-devtoolsdocument" class="slide level2 nostretch">
+<h2>Step 2) <code>devtools::document()</code></h2>
+<ul>
+<li class="fragment">The next step involves generating the <code>Rd</code> (R Documentation) files.</li>
+<li class="fragment">These are the files that go inside the directory <code>man/</code>.</li>
+<li class="fragment">This can be done by calling <code>devtools::document()</code> in the R console.</li>
+</ul>
+<div class="fragment">
+<p><br>
+</p>
+<p>You will see some output like this</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>ℹ Updating average documentation</span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>ℹ Loading average</span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a>Writing NAMESPACE</span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a>Writing average.Rd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-2-devtoolsdocument-1" class="slide level2 nostretch">
+<h2>Step 2) <code>devtools::document()</code></h2>
+<div class="{columns}">
+<div class="column" style="width:38%;">
+<p><img data-src="images/pkg-structure2-document.svg"></p>
+</div><div class="column" style="width:60%;">
+<p><br>
+</p>
+<p>Calling <code>devtools::document()</code>—in the R console—does the following:</p>
+<p><br>
+</p>
+<ol type="1">
+<li class="fragment">This will create the <code>man/</code> directory.</li>
+<li class="fragment">It will create the file <code>average.Rd</code> <br> (from the Roxygen comments).</li>
+<li class="fragment">It will also update <code>NAMESPACE</code></li>
+</ol>
+</div></div>
+</section>
+<section id="step-2.1-run-usethisuse_mit_license" class="slide level2">
+<h2>Step 2.1) Run <code>usethis::use_mit_license()</code></h2>
+<p><span class="bold-hilit">Every R package needs a license.</span></p>
+<p><br>
+</p>
+<p>It’s recommended to choose a license by running—on R’s console—one of the <code>"usethis"</code> functions such as <code>use_mit_license()</code> or friends.</p>
+<p><br>
+</p>
+<p>These functions not only update the content of <code>DESCRIPTION</code> but they also add a <code>LICENSE</code> file with the actual content of the chosen license.</p>
+<p><br>
+</p>
+<p>Likewise, these functions put a copy of the full license in <code>LICENSE.md</code> (mainly for GitHub purposes) and add this file to <code>.Rbuildignore</code></p>
+</section>
+<section id="step-2.2-run-usethisuse_git" class="slide level2">
+<h2>Step 2.2) Run <code>usethis::use_git()</code></h2>
+<p>To make the <code>average/</code> directory a Git repository, you can run the function <code>usethis::use_git()</code>.</p>
+<p>You will see some output like this</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">use_git</span>()</span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>✔ Initialising Git repo.</span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>✔ Adding <span class="st">".Rhistory"</span>, <span class="st">".RData"</span>, <span class="st">".httr-oauth"</span>, <span class="st">".DS_Store"</span>, and</span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">".quarto"</span> to <span class="st">'.gitignore'</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="tests" class="title-slide slide level1 center">
+<h1>Tests</h1>
+
+</section>
+<section id="step-3-add-tests-with-use_testthat" class="slide level2">
+<h2>Step 3) Add <code>tests/</code> with <code>use_testthat()</code></h2>
+<ul>
+<li class="fragment">It’s best practice to include tests for your functions.</li>
+<li class="fragment">In R, tests can be written with functions from the package <code>"testthat"</code></li>
+<li class="fragment">The starting point involves adding a <code>tests/</code> directory by running <code>usethis::use_testthat()</code></li>
+</ul>
+<div class="fragment">
+<p>You will see some output like this</p>
+<div class="small">
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_testthat</span>()</span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>✔ Setting active project to</span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">"/Users/gaston/average"</span>.</span>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a>✔ Adding testthat to Suggests field <span class="cf">in</span> DESCRIPTION.</span>
+<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a>✔ Adding <span class="st">"3"</span> to Config<span class="sc">/</span>testthat<span class="sc">/</span>edition.</span>
+<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a>✔ Creating tests<span class="sc">/</span>testthat<span class="sc">/</span>.</span>
+<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a>✔ Writing tests<span class="sc">/</span>testthat.R.</span>
+<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a>☐ Call usethis<span class="sc">::</span><span class="fu">use_test</span>() to initialize a basic test file and open it <span class="cf">for</span> editing.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Then follow the suggestion and run <code>usethis::use_test("average")</code></p>
+</div>
+</section>
+<section id="step-3.1-unit-tests" class="slide level2">
+<h2>Step 3.1) Unit Tests</h2>
+<p>After running <code>usethis::use_test("average")</code>, you need to edit the corresponding file <code>test-average.R</code> stored inside <code>tests/testthat/</code>.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>test-average.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb27" data-filename="test-average.R"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"average works as expected"</span>, {</span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>  vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>  vec_na <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(<span class="fu">average</span>(vec), <span class="dv">3</span>)</span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(<span class="fu">average</span>(vec_na), <span class="cn">NA_real_</span>)</span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"average removes missing values"</span>, {</span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>  vec_na <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(<span class="fu">average</span>(vec_na, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">3</span>)</span>
+<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"average fails with character vector"</span>, {</span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_error</span>(<span class="fu">average</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]))</span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="file-structure-so-far" class="slide level2 nostretch">
+<h2>File structure so far</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/pkg-structure3-tests.svg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="adding-data-to-a-package" class="title-slide slide level1 center">
+<h1>Adding Data to a Package</h1>
+
+</section>
+<section id="data" class="slide level2">
+<h2>Data</h2>
+<ul>
+<li class="fragment">Sometimes you may want to include data in a package.</li>
+<li class="fragment">Examples:
+<ul>
+<li class="fragment"><code>mpg</code> data in package <code>"ggplot2"</code></li>
+<li class="fragment"><code>storms</code> data in package <code>"dplyr"</code></li>
+<li class="fragment"><code>penguins</code> data in package <code>"stat20data"</code></li>
+</ul></li>
+<li class="fragment">BTW: some packages exist solely for the purpose of distributing data
+<ul>
+<li class="fragment">e.g.&nbsp;<code>"babynames"</code>, <code>"stat20data"</code></li>
+</ul></li>
+<li class="fragment">If you want to store R objects and make them available to the user, put them in a directory <code>data/</code></li>
+<li class="fragment">More info about data at: <a href="https://r-pkgs.org/data.html" class="uri">https://r-pkgs.org/data.html</a></li>
+</ul>
+</section>
+<section id="storing-r-objects-in-data" class="slide level2">
+<h2>Storing R objects in <code>data/</code></h2>
+<ul>
+<li class="fragment">The most common location for package data is <code>data/</code>.</li>
+<li class="fragment">We recommend that each file in this directory be an <code>.rda</code> file created by <code>save()</code> containing a single R object, with the same name as the file.</li>
+<li class="fragment">The easiest way to achieve this is with <code>usethis::use_data()</code>.</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">159</span>)</span>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>sample_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">100</span>)</span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(sample_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>sample_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">20</span>), </span>
+<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb31-4"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(sample_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="storing-r-objects-in-data-1" class="slide level2">
+<h2>Storing R objects in <code>data/</code></h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">159</span>)</span>
+<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a>sample_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">100</span>)</span>
+<span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(sample_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The snippet above creates <code>data/sample_vector.rda</code></li>
+<li class="fragment">It adds <code>LazyData: true</code> in your <code>DESCRIPTION</code> file.</li>
+<li class="fragment">This means that they won’t occupy any memory until you use them.</li>
+<li class="fragment">This makes the object <code>sample_vector</code> available to users<sup>1</sup> as:
+<ul>
+<li class="fragment"><code>average::sample_vector</code></li>
+<li class="fragment"><code>sample_vector</code> after loading package <code>library(average)</code></li>
+</ul></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Assuming the package “average” has been created.</p></li></ol></aside></section>
+<section id="documenting-datasets" class="slide level2">
+<h2>Documenting datasets</h2>
+<ul>
+<li class="fragment">Objects in <code>data/</code> must be documented.</li>
+<li class="fragment">Documenting data is like documenting a function with a few minor differences.</li>
+<li class="fragment">You document the name of the dataset and save it in <code>R/</code>, e.g.</li>
+</ul>
+<div class="fragment">
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>sample_table.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb33" data-filename="sample_table.R"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' Sample Table</span></span>
+<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' A simple data frame with simulated random values</span></span>
+<span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb33-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @format ## `sample_table`</span></span>
+<span id="cb33-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' A data frame with 20 rows and 2 columns:</span></span>
+<span id="cb33-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' \describe{</span></span>
+<span id="cb33-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#'   \item{x}{First column}</span></span>
+<span id="cb33-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#'   \item{y}{Second column}</span></span>
+<span id="cb33-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' }</span></span>
+<span id="cb33-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#' @source &lt;https://source-url-if-applicable&gt;</span></span>
+<span id="cb33-12"><a aria-hidden="true" tabindex="-1"></a><span class="st">"sample_table"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="documenting-datasets-roxygen-comments" class="slide level2">
+<h2>Documenting datasets: roxygen comments</h2>
+<p>There are two roxygen tags that are especially important for documenting datasets:</p>
+<ul>
+<li class="fragment"><p><code>@format</code> gives an overview of the dataset.</p>
+<ul>
+<li class="fragment">For data frames, you should include a definition list that describes each variable.</li>
+<li class="fragment">It’s usually a good idea to describe variables’ units here.</li>
+</ul></li>
+<li class="fragment"><p><code>@source</code> provides details of where you got the data, often a URL.</p></li>
+<li class="fragment"><p>Never <code>@export</code> a data set.</p></li>
+</ul>
+</section>
+<section id="storing-raw-data" class="slide level2">
+<h2>Storing Raw Data</h2>
+<p>In addition to storing “clean” data in <code>data/</code>, you may want to store the script containing the code that generated the data.</p>
+<p>In our example, it would be nice to store the code that generates <code>sample_table</code> and <code>sample_vector</code></p>
+<div class="small">
+<div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>sample_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">20</span>), </span>
+<span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb34-4"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(sample_table)</span>
+<span id="cb34-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">159</span>)</span>
+<span id="cb34-7"><a aria-hidden="true" tabindex="-1"></a>sample_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">100</span>)</span>
+<span id="cb34-8"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(sample_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is possible via <code>usethis::use_data_raw()</code></p>
+</section>
+<section id="storing-raw-data-1" class="slide level2">
+<h2>Storing Raw Data</h2>
+<ul>
+<li class="fragment"><code>usethis::use_data_raw()</code> creates a directory <code>data-raw/</code></li>
+<li class="fragment">This directory should be listed in <code>.Rbuildignore</code></li>
+<li class="fragment">The good news is that <code>usethis::use_data_raw()</code> does this for you.</li>
+<li class="fragment">Running this command will give you an output like this:</li>
+</ul>
+<div class="fragment">
+<div class="small">
+<div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>(<span class="st">"samples"</span>)</span>
+<span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a>✔ Creating data<span class="sc">-</span>raw<span class="sc">/</span>.</span>
+<span id="cb35-3"><a aria-hidden="true" tabindex="-1"></a>✔ Adding <span class="st">"^data-raw$"</span> to .Rbuildignore.</span>
+<span id="cb35-4"><a aria-hidden="true" tabindex="-1"></a>✔ Writing data<span class="sc">-</span>raw<span class="sc">/</span>samples.R.</span>
+<span id="cb35-5"><a aria-hidden="true" tabindex="-1"></a>☐ Modify data<span class="sc">-</span>raw<span class="sc">/</span>samples.R.</span>
+<span id="cb35-6"><a aria-hidden="true" tabindex="-1"></a>☐ Finish writing the data preparation script <span class="cf">in</span> data<span class="sc">-</span>raw<span class="sc">/</span>samples.R.</span>
+<span id="cb35-7"><a aria-hidden="true" tabindex="-1"></a>☐ Use <span class="st">`</span><span class="at">usethis::use_data()</span><span class="st">`</span> to add prepared data to package.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">This will create a <code>samples.R</code> file inside <code>data-raw/</code>.</li>
+<li class="fragment">Here, we can store the commands that generate the sample objects.</li>
+</ul>
+</div>
+</section>
+<section id="storing-raw-data-in-csv-files" class="slide level2">
+<h2>Storing Raw Data in CSV files</h2>
+<ul>
+<li class="fragment"><p>Another common situation for storing data is when you have a dataset, (e.g.&nbsp;data in a CSV file), that you want to include in your package.</p></li>
+<li class="fragment"><p>For instance, say we have some data about basketball players in a CSV file <code>basketball.csv</code>.</p></li>
+<li class="fragment"><p>We need to store <code>basketball.csv</code> inside <code>data-raw/</code>, and then update the code of the R file <code>samples.R</code></p></li>
+</ul>
+</section>
+<section id="storing-raw-data-in-csv-files-1" class="slide level2">
+<h2>Storing Raw Data in CSV files</h2>
+<p>Assuming <code>basketball.csv</code> is stored in <code>data-raw/</code>, we edit <code>samples.R</code> as follows:</p>
+<div class="fragment">
+<div class="small">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>samples.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb36" data-filename="samples.R"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a>sample_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">20</span>), </span>
+<span id="cb36-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb36-4"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(sample_table)</span>
+<span id="cb36-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">159</span>)</span>
+<span id="cb36-7"><a aria-hidden="true" tabindex="-1"></a>sample_vector <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">100</span>)</span>
+<span id="cb36-8"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(sample_vector)</span>
+<span id="cb36-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-10"><a aria-hidden="true" tabindex="-1"></a>basketball <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"basketball.csv"</span>)</span>
+<span id="cb36-11"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(basketball)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><code>usethis::use_data(basketball)</code> will create <code>basketball.rda</code> inside <code>data/</code>, and also the corresponding <code>basketball.R</code> inside <code>R/</code> that needs to be edited (to include its documentation with Roxygen comments).</p>
+</div>
+</section>
+<section id="file-structure-so-far-1" class="slide level2 nostretch">
+<h2>File structure so far</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/pkg-structure4-data.svg" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="readme-file" class="title-slide slide level1 center">
+<h1>README file</h1>
+
+</section>
+<section id="adding-a-readme-file" class="slide level2">
+<h2>Adding a README file</h2>
+<ul>
+<li class="fragment"><p>Since we are interested in sharing our package with others, we usually do this with GitHub.</p></li>
+<li class="fragment"><p>As you know, a common practice is to include a <code>README</code> file.</p></li>
+<li class="fragment"><p>While this can be done by-hand, we recommend that you use <code>usethis::use_readme_rmd()</code></p></li>
+<li class="fragment"><p><code>use_readme_rmd()</code> initializes a basic, executable <code>README.Rmd</code> ready for you to edit:</p></li>
+</ul>
+<div class="fragment">
+<div class="small">
+<div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_readme_rmd</span>()</span>
+<span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing 'README.Rmd'.</span></span>
+<span id="cb37-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding "^README\\.Rmd$" to '.Rbuildignore'.</span></span>
+<span id="cb37-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ☐ Update 'README.Rmd' to include installation instructions.</span></span>
+<span id="cb37-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing '.git/hooks/pre-commit'.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="adding-a-readme-file-1" class="slide level2">
+<h2>Adding a README file</h2>
+<ul>
+<li class="fragment"><p><code>use_readme_rmd()</code> initializes a basic, executable <code>README.Rmd</code> ready for you to edit:</p></li>
+<li class="fragment"><p>It also adds some lines to <code>.Rbuildignore</code>,</p></li>
+<li class="fragment"><p><code>README.Rmd</code> already has sections that prompt you to:</p>
+<ul>
+<li class="fragment">Describe the purpose of the package.</li>
+<li class="fragment">Provide installation instructions.</li>
+<li class="fragment">If a GitHub remote is detected when <code>use_readme_rmd()</code> is called, this section is pre-filled with instructions on how to install from GitHub.</li>
+<li class="fragment">Show a bit of usage.</li>
+</ul></li>
+<li class="fragment"><p>More info at: <a href="https://r-pkgs.org/whole-game.html#use_readme_rmd" class="uri">https://r-pkgs.org/whole-game.html#use_readme_rmd</a></p></li>
+</ul>
+
+
+</section></section>
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-num-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: false,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/berkeley-stat159\.github\.io\/fall-2026\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var logo = document.querySelector('.slide-logo');
+        logo.addEventListener('click', function() {
+          // Get the referrer URL
+          var referrer = document.referrer;
+
+          // Check if the referrer is from the same origin for security purposes
+          if (referrer && new URL(referrer).origin === window.location.origin) {
+          // Redirect to the referrer URL
+          window.location.href = referrer;
+          } else {
+            // Fallback action if there's no referrer or it's from a different origin
+            // For example, redirect to a home page or show a message
+            window.location.href = '/'; // Redirecting to the home page
+          }
+        });
+      });
+      Reveal.addEventListener('slidechanged', (event) => {
+        if (event.indexh === 0) {
+          Reveal.configure({ slideNumber: null });
+        }
+        if (event.indexh === 1) { 
+          Reveal.configure({ slideNumber: 'c' });
+        }
+      });
+    </script>
+    
+
+</body></html>
