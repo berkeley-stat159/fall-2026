@@ -14,7 +14,7 @@ title: 7) Share Your Code
 
 - Title: **Top ten reasons to not share your code (and why you should anyway)**
 - Author(s): Randall LeVeque
-- Year: 2011
+- Year: 2012
 - Journal: Software Sustainability Institute
 - <https://faculty.washington.edu/rjl/pubs/topten/topten.pdf>
 
@@ -30,4 +30,52 @@ Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
 :::
 
 
-Mode details TBD
+## Reflection 1
+
+- Open a script or software pipeline you built just a year ago. 
+
+- If you were forced to post that exact file publicly on GitHub right now, "as is," 
+would you feel absolute panic or deep embarrassment regarding your programming skills?
+
+- What would be the primary reason for your hesitation to share your code?
+
+
+## Reflection 2
+
+- Put yourself in the shoes of a busy researcher managing multiple projects.
+
+- If a stranger downloads your public GitHub repository and emails you a list of 
+things they don't understand, where do you draw the personal boundary?
+
+- How do you separate your duty to provide scientific transparency 
+(the code works for the paper) from your right to protect your personal time 
+from being hijacked by outside users demanding free tech support?
+
+
+## Reflection 3
+
+- Think about a script or software pipeline you built months ago.
+
+- If the software environment inevitably breaks, why does simply allowing an 
+outside reviewer to **read** your raw, un-runnable text logic still hold scientific value?
+
+
+## Rubric
+
+::: {.callout-important}
+Generic responses that do not mention a specific 
+past assignment name or unique piece of code from your own experience will 
+receive a score of zero.
+:::
+
+- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the prompt in each question. Clearly written by a human.
+
+- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from a webpage
+or AI tool.
