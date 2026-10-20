@@ -1,0 +1,928 @@
+---
+title: "R Packaging"
+subtitle: "Packaging and sharing your R code"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+## About
+
+In this slides I show you how to create a fairly simple R package 
+with common contents such as: 
+
+:::: {columns}
+::: {.column width=10%}
+:::
+
+::: {.column width=45%}
+- functions, 
+- documentation, 
+- tests,
+- data
+:::
+
+::: {.column width=45%}
+- vignettes, 
+- license,
+- README
+- _ETC_
+:::
+::::
+
+. . .
+
+I will also describe the anatomy of an R package, its mandatory
+ingredients, some optional components, and my opinionated recipe
+to build packages.
+
+
+# Example: package `"average"`
+
+## Example
+
+```{r average_hidden}
+#| echo: false
+average <- function(x, na.rm = FALSE) {
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+
+- Our package consists of one function: `average()`
+- `average()` computes the average (i.e. mean) of a numeric vector
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+average(1:5)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+average(c(1, 2, NA, 4, 5))
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+average(c(1, 2, NA, 4, 5), na.rm = TRUE)
+```
+
+
+## Function `average()`
+
+```{r average_function}
+#| echo: true
+average <- function(x, na.rm = FALSE) {
+  # decide whether to remove missing values
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  # compute average
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+
+
+## 
+
+We'll go through the creation of the package `"average"` so 
+that you can:
+
+. . .
+
+__1)__ (Install and) load it:
+
+```r
+library(average)
+```
+
+. . .
+
+__2)__ Use its function:
+
+```r
+average(1:10)
+```
+
+. . .
+
+__3)__ See its documentation
+
+```r
+?average
+```
+
+. . .
+
+__4)__ Share it with others
+
+
+# Minimal Version
+
+## {.nostretch}
+
+Every R package must have at least the following components
+
+![](images/pkg-structure1-minimal.svg){fig-align="center" width=30%}
+
+::: {.small}
+Without any of these, you won't be able to create a valid package.
+:::
+
+
+## {.nostretch}
+
+:::: {columns}
+::: {.column width=40%}
+![](images/pkg-structure1-minimal.svg)
+:::
+
+::: {.column width=60%}
+- [DESCRIPTION]{.bold-hilit} (text file)
+<br> Package metadata.
+- [NAMESPACE]{.bold-hilit} (text file)
+<br> Which functions are available to users.
+- [R/]{.bold-hilit} directory with R script files.
+<br> Files with functions.
+- [man/]{.bold-hilit} directory with Rd files.
+<br> Files with documentation of functions.
+:::
+::::
+
+
+## `DESCRIPTION` file
+
+```{.markdown code-line-numbers="false"}
+Package: average
+Type: Package
+Title: Computes average of numeric vector
+Version: 0.1.0
+Author: Gaston Sanchez
+Maintainer: Gaston Sanchez <gaston@email.com>
+Description: Toy package used for demo purposes.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+```
+
+\
+
+`DESCRIPTION` is a text file---with no file extension---that follows 
+a special type of format known as [Debian Control File]{.hilit}.[^1]
+
+[^1]: <https://www.debian.org/doc/debian-policy/ch-controlfields.html>
+
+
+## `DESCRIPTION` file
+
+
+You need to specify seven mandatory fields:
+
+::: {.nonincremental}
+- Package
+- Title
+- Description
+- Author
+- Maintainer
+- Version
+- License
+:::
+
+::: {.small}
+<https://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file>
+:::
+
+
+## `NAMESPACE` file
+
+In addition to `DESCRIPTION`, an R package also requires 
+another mandatory text file called `NAMESPACE`. 
+
+- It controls how your package interacts with the rest of the R ecosystem
+- [Exports:]{.bold-hilit} It explicitly declares which functions, datasets, 
+methods, and classes are public.
+- [Imports:]{.bold-hilit} It specifies which functions or full packages your 
+code relies on internally
+- Let `devtools::document()` take care of `NAMESPACE` 
+(i.e. don't edit by hand)
+
+
+
+## R file `average.R` {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+average <- function(x, na.rm = FALSE) {
+  # decide whether to remove missing values
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  # compute average
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+:::
+
+
+## R file `average.R` with Roxygen comments {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+#' @title Average
+average <- function(x, na.rm = FALSE) {
+  # decide whether to remove missing values
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  # compute average
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+:::
+
+
+## R file `average.R` with Roxygen comments {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+#' @title Average
+#' @description Computes the average (i.e. mean)
+average <- function(x, na.rm = FALSE) {
+  # decide whether to remove missing values
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  # compute average
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+:::
+
+
+## R file `average.R` with Roxygen comments {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+#' @title Average
+#' @description Computes the average (i.e. mean)
+#' @param x input vector
+#' @param na.rm whether to remove missing values
+average <- function(x, na.rm = FALSE) {
+  # decide whether to remove missing values
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  # compute average
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+:::
+
+
+## R file `average.R` with Roxygen comments {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+#' @title Average
+#' @description Computes the average (i.e. mean)
+#' @param x input vector
+#' @param na.rm whether to remove missing values
+#' @return computed mean
+average <- function(x, na.rm = FALSE) {
+  # decide whether to remove missing values
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  # compute average
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+:::
+
+
+## R file `average.R` with Roxygen comments {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+#' @title Average
+#' @description Computes the average (i.e. mean)
+#' @param x input vector
+#' @param na.rm whether to remove missing values
+#' @return computed mean
+#' @export
+average <- function(x, na.rm = FALSE) {
+  # decide whether to remove missing values
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  # compute average
+  avg <- sum(x) / length(x)
+  return(avg)
+}
+```
+:::
+
+
+## R file `average.R` with Roxygen comments {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+#' @title Average
+#' @description Computes the average (i.e. mean)
+#' @param x input vector
+#' @param na.rm whether to remove missing values
+#' @return computed mean
+#' @export
+#' @examples
+#' vec <- 1:5
+#' average(vec)
+#'
+#' vec_na <- c(1, 2, NA, 4, 5)
+#' average(vec_na)
+#' average(vec_na, na.rm = TRUE)
+average <- function(x, na.rm = FALSE) {
+  . . .
+}
+```
+:::
+
+::: {.small}
+_Note: code of function `average()` hidden for clarity purposes_
+:::
+
+
+## R file `average.R` with Roxygen comments {auto-animate="true"}
+
+::: {.small}
+```{.r filename="average.R" code-line-numbers="false"}
+#' @title Average
+#' @description Computes the average (i.e. mean)
+#' @param x input vector
+#' @param na.rm whether to remove missing values
+#' @return computed mean
+#' @export
+#' @examples
+#' vec <- 1:5
+#' average(vec)
+#'
+#' vec_na <- c(1, 2, NA, 4, 5)
+#' average(vec_na)
+#' average(vec_na, na.rm = TRUE)
+```
+:::
+
+- The roxygen comments will be used to create the `Rd` (R Documentation) files
+of the `man/` directory.
+
+- Let `devtools::document()` take care of `Rd` files.
+
+
+## Minimal file structure
+
+You can create the minimal file structure of an R package by hand, e.g.
+
+```{.markdown filename="Terminal" code-line-numbers="false" }
+mkdir average
+cd average
+touch DESCRIPTION NAMESPACE
+mkdir R man
+```
+
+. . .
+
+However, we recommend that you use functions from packages 
+`"devtools"` and `"usethis"` to create and take care of the files
+and directories in an R package. 
+
+
+# Packaging with `"devtools"` and `"usethis"`
+
+## About
+
+I will describe one way to create some of the common elements of an R package,
+and also a development workflow to iterate through the packaging process.
+
+Keep in mind that there are various ways to create an R package, and that
+you are not required to use `"devtools"` and friends.
+
+But as you'll see, these supporting packages are extremely helpful, and
+will take care of many of the important details, and "pain points" of
+packaging your code.
+
+
+## Step 1) `create_package()`
+
+- Instead of creating the file structure of an R package by hand, we'll
+use `create_package()`
+
+- You have to invoke this function on R's console, by passing the 
+file path (location and name) of the package you want to create
+
+. . .
+
+```r
+# use a valid file path to your package
+usethis::create_package("path/to/average")
+```
+
+- BTW: You only run this function once!
+
+
+## Step 1) `create_package()` {.nostretch}
+
+:::: {columns}
+::: {.column width=40%}
+![](images/pkg-structure2-create-package.svg)
+:::
+
+::: {.column width=60%}
+- [.gitignore]{.bold-hilit} (text file)
+<br> List which files Git needs to ignore.
+- [.Rbuildignore]{.bold-hilit} (text file)
+<br> List which files R needs to ignore.
+- [average.Rproj]{.bold-hilit} (text file)
+<br> RStudio project file.
+- [DESCRIPTION]{.bold-hilit} (text file)
+<br> Package metadata.
+- [NAMESPACE]{.bold-hilit} (text file)
+<br> Which functions are available to users.
+- [R/]{.bold-hilit} directory for R script files.
+:::
+::::
+
+
+## `DESCRIPTION` file
+
+When running `create_package()`, this is what `DESCRIPTION` will look like:
+
+::: {.small}
+```{.markdown code-line-numbers="false"}
+Package: average
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+```
+
+You will need to edit the fields:
+
+- Title
+- Authors@R
+- Description
+- License (optionally you can run `use_xyz_license()`)
+:::
+
+
+## Step 1.1) Add R file `average.R` {.nostretch}
+
+:::: {columns}
+::: {.column width=40%}
+![](images/pkg-structure2-R-file.svg)
+:::
+
+::: {.column width=60%}
+\
+
+Inside `R/`, we'll store the R file
+`average.R` contaning the Roxygen comments
+and the code of our function `average()`
+
+\
+
+::: {.fragment}
+Notice that there is no `man/` directory yet.
+We'll let `devtools::document()` to take care
+of it and its contents.
+:::
+:::
+::::
+
+
+## Step 1.2) Using functions from other packages
+
+Sometimes you may need to use functions from other packages in your own package.
+
+This requires declaring the other packages we need (i.e. our dependencies).
+
+For example, if your package depends on functions from `"dplyr"` (or any other 
+package) you need to run the following in R's console: `usethis::use_package("dplyr")`
+
+\
+
+You will see some output like this
+
+```{.r code-line-numbers="false"}
+usethis::use_package("dplyr")
+✔ Adding dplyr to Imports field in DESCRIPTION.
+☐ Refer to functions with `dplyr::fun()`
+```
+
+
+## Step 2) `devtools::document()` {.nostretch}
+
+- The next step involves generating the `Rd` (R Documentation) files.
+- These are the files that go inside the directory `man/`.
+- This can be done by calling `devtools::document()` in the R console.
+
+. . .
+
+\
+
+You will see some output like this
+
+```{.r code-line-numbers="false"}
+devtools::document()
+ℹ Updating average documentation
+ℹ Loading average
+Writing NAMESPACE
+Writing average.Rd
+```
+
+
+## Step 2) `devtools::document()` {.nostretch}
+
+:::: {columns}
+::: {.column width=38%}
+![](images/pkg-structure2-document.svg)
+:::
+
+::: {.column width=60%}
+\
+
+Calling `devtools::document()`---in the R console---does the
+following:
+
+\
+
+1) This will create the `man/` directory.
+2) It will create the file `average.Rd`
+<br> (from the Roxygen comments).
+3) It will also update `NAMESPACE`
+:::
+::::
+
+
+## Step 2.1) Run `usethis::use_mit_license()`
+
+[Every R package needs a license.]{.bold-hilit}
+
+\
+
+It's recommended to choose a license by running---on R's console---one 
+of the `"usethis"` functions such as `use_mit_license()` or friends.
+
+\
+
+These functions not only update the content of `DESCRIPTION`
+but they also add a `LICENSE` file with the 
+actual content of the chosen license.
+
+\
+
+Likewise, these functions put a copy of the full license in 
+`LICENSE.md` (mainly for GitHub purposes) and add this file to `.Rbuildignore`
+
+
+## Step 2.2) Run `usethis::use_git()`
+
+To make the `average/` directory a Git repository, you can run the
+function `usethis::use_git()`.
+
+You will see some output like this
+
+```{.r code-line-numbers="false"}
+use_git()
+✔ Initialising Git repo.
+✔ Adding ".Rhistory", ".RData", ".httr-oauth", ".DS_Store", and
+  ".quarto" to '.gitignore'.
+```
+
+
+# Tests
+
+## Step 3) Add `tests/` with `use_testthat()`
+
+- It's best practice to include tests for your functions.
+- In R, tests can be written with functions from the package `"testthat"`
+- The starting point involves adding a `tests/` directory by running 
+`usethis::use_testthat()`
+
+. . .
+
+You will see some output like this
+
+::: {.small}
+```{.r code-line-numbers="false"}
+usethis::use_testthat()
+✔ Setting active project to
+  "/Users/gaston/average".
+✔ Adding testthat to Suggests field in DESCRIPTION.
+✔ Adding "3" to Config/testthat/edition.
+✔ Creating tests/testthat/.
+✔ Writing tests/testthat.R.
+☐ Call usethis::use_test() to initialize a basic test file and open it for editing.
+```
+:::
+
+. . .
+
+Then follow the suggestion and run `usethis::use_test("average")`
+
+
+## Step 3.1) Unit Tests
+
+After running `usethis::use_test("average")`, you need to edit the 
+corresponding file `test-average.R` stored inside `tests/testthat/`.
+
+```{.r filename="test-average.R" code-line-numbers="false"}
+test_that("average works as expected", {
+  vec <- c(1, 2, 3, 4, 5)
+  vec_na <- c(1, 2, NA, 4, 5)
+  expect_equal(average(vec), 3)
+  expect_equal(average(vec_na), NA_real_)
+})
+```
+
+. . .
+
+```{.r code-line-numbers="false"}
+test_that("average removes missing values", {
+  vec_na <- c(1, 2, NA, 4, 5)
+  expect_equal(average(vec_na, na.rm = TRUE), 3)
+})
+```
+
+. . .
+
+```{.r code-line-numbers="false"}
+test_that("average fails with character vector", {
+  expect_error(average(letters[1:4]))
+})
+```
+
+
+## File structure so far {.nostretch}
+
+![](images/pkg-structure3-tests.svg){fig-align="center" width="80%"}
+
+
+# Adding Data to a Package
+
+## Data
+
+- Sometimes you may want to include data in a package.
+- Examples: 
+    + `mpg` data in package `"ggplot2"`
+    + `storms` data in package `"dplyr"`
+    + `penguins` data in package `"stat20data"`
+- BTW: some packages exist solely for the purpose of distributing data
+    + e.g. `"babynames"`, `"stat20data"`
+- If you want to store R objects and make them available to the user, 
+put them in a directory `data/`
+- More info about data at: <https://r-pkgs.org/data.html>
+
+
+## Storing R objects in `data/`
+
+- The most common location for package data is `data/`.
+- We recommend that each file in this directory be an `.rda` file created by 
+`save()` containing a single R object, with the same name as the file. 
+- The easiest way to achieve this is with `usethis::use_data()`.
+
+. . .
+
+```{.r code-line-numbers="false"}
+set.seed(159)
+sample_vector <- sample(100)
+usethis::use_data(sample_vector)
+```
+
+. . .
+
+\
+
+```{.r code-line-numbers="false"}
+sample_table <- data.frame(
+  x = seq(-5, 5, length.out = 20), 
+  y = 20:1)
+usethis::use_data(sample_table)
+```
+
+
+## Storing R objects in `data/`
+
+```{.r code-line-numbers="false"}
+set.seed(159)
+sample_vector <- sample(100)
+usethis::use_data(sample_vector)
+```
+
+- The snippet above creates `data/sample_vector.rda`
+- It adds `LazyData: true` in your `DESCRIPTION` file.
+- This means that they won't occupy any memory until you use them.
+- This makes the object `sample_vector` available to users[^2] as:
+    + `average::sample_vector`
+    + `sample_vector` after loading package `library(average)`
+
+[^2]: Assuming the package "average" has been created.
+
+
+## Documenting datasets
+
+- Objects in `data/` must be documented.
+- Documenting data is like documenting a function with a few minor differences.
+- You document the name of the dataset and save it in `R/`, e.g.
+
+. . .
+
+::: {.small}
+```{.r filename="sample_table.R" code-line-numbers="false"}
+#' Sample Table
+#'
+#' A simple data frame with simulated random values
+#'
+#' @format ## `sample_table`
+#' A data frame with 20 rows and 2 columns:
+#' \describe{
+#'   \item{x}{First column}
+#'   \item{y}{Second column}
+#' }
+#' @source <https://source-url-if-applicable>
+"sample_table"
+```
+:::
+
+
+## Documenting datasets: roxygen comments
+
+There are two roxygen tags that are especially important for documenting datasets:
+
+- `@format` gives an overview of the dataset. 
+    + For data frames, you should include a definition list that describes 
+    each variable. 
+    + It's usually a good idea to describe variables' units here.
+
+- `@source` provides details of where you got the data, often a URL.
+
+- Never `@export` a data set.
+
+
+## Storing Raw Data
+
+In addition to storing "clean" data in `data/`, you may want to store 
+the script containing the code that generated the data.
+
+In our example, it would be nice to store the code that generates
+`sample_table` and `sample_vector`
+
+::: {.small}
+```{.r code-line-numbers="false"}
+sample_table <- data.frame(
+  x = seq(-5, 5, length.out = 20), 
+  y = 20:1)
+usethis::use_data(sample_table)
+
+set.seed(159)
+sample_vector <- sample(100)
+usethis::use_data(sample_vector)
+```
+:::
+
+This is possible via `usethis::use_data_raw()`
+
+
+## Storing Raw Data
+
+- `usethis::use_data_raw()` creates a directory `data-raw/`
+- This directory should be listed in `.Rbuildignore`
+- The good news is that `usethis::use_data_raw()` does this for you.
+- Running this command will give you an output like this:
+
+. . .
+
+::: {.small}
+```{.r code-line-numbers="false"}
+usethis::use_data_raw("samples")
+✔ Creating data-raw/.
+✔ Adding "^data-raw$" to .Rbuildignore.
+✔ Writing data-raw/samples.R.
+☐ Modify data-raw/samples.R.
+☐ Finish writing the data preparation script in data-raw/samples.R.
+☐ Use `usethis::use_data()` to add prepared data to package.
+```
+:::
+
+- This will create a `samples.R` file inside `data-raw/`.
+- Here, we can store the commands that generate the sample objects.
+
+
+## Storing Raw Data in CSV files
+
+- Another common situation for storing data is when you have a dataset,
+(e.g. data in a CSV file), that you want to include in your package.
+
+- For instance, say we have some data about basketball players in a CSV file
+`basketball.csv`.
+
+- We need to store `basketball.csv` inside `data-raw/`, and then
+update the code of the R file `samples.R`
+
+
+## Storing Raw Data in CSV files
+
+Assuming `basketball.csv` is stored in `data-raw/`, we edit
+`samples.R` as follows:
+
+. . .
+
+::: {.small}
+```{.r filename="samples.R" code-line-numbers="false"}
+sample_table <- data.frame(
+  x = seq(-5, 5, length.out = 20), 
+  y = 20:1)
+usethis::use_data(sample_table)
+
+set.seed(159)
+sample_vector <- sample(100)
+usethis::use_data(sample_vector)
+
+basketball <- read.csv("basketball.csv")
+usethis::use_data(basketball)
+```
+:::
+
+`usethis::use_data(basketball)` will create `basketball.rda` inside
+`data/`, and also the corresponding `basketball.R` inside `R/`
+that needs to be edited (to include its documentation with Roxygen comments).
+
+
+## File structure so far {.nostretch}
+
+![](images/pkg-structure4-data.svg){fig-align="center" width="60%"}
+
+
+# README file
+
+## Adding a README file
+
+- Since we are interested in sharing our package with others, we usually
+do this with GitHub.
+
+- As you know, a common practice is to include a `README` file.
+
+- While this can be done by-hand, we recommend that you use 
+`usethis::use_readme_rmd()`
+
+- `use_readme_rmd()` initializes a basic, executable `README.Rmd` ready for you to edit:
+
+. . .
+
+::: {.small}
+```{.r code-line-numbers="false"}
+usethis::use_readme_rmd()
+#> ✔ Writing 'README.Rmd'.
+#> ✔ Adding "^README\\.Rmd$" to '.Rbuildignore'.
+#> ☐ Update 'README.Rmd' to include installation instructions.
+#> ✔ Writing '.git/hooks/pre-commit'.
+```
+:::
+
+
+## Adding a README file
+
+- `use_readme_rmd()` initializes a basic, executable `README.Rmd` ready for you to edit:
+
+- It also adds some lines to `.Rbuildignore`,
+
+- `README.Rmd` already has sections that prompt you to:
+    + Describe the purpose of the package.
+    + Provide installation instructions. 
+    + If a GitHub remote is detected when `use_readme_rmd()` is called, 
+    this section is pre-filled with instructions on how to install from GitHub.
+    + Show a bit of usage.
+
+- More info at: <https://r-pkgs.org/whole-game.html#use_readme_rmd>
+
