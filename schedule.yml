@@ -254,13 +254,13 @@
         - type: "Lab"
           id: ""
           name: "Getting started with proj2"
-          href: ""
+          href: "labs/lab08.pdf"
     - date: "Oct 21"
       items:
         - type: "Lecture"
           id: ""
           name: "Packaging Code: R packages (I)"
-          href: ""
+          href: "lectures/24-packages1/24-packages1-slides.html"
         - type: "Reading"
           id: ""
           name: "Share Your Code (due 10/28)"
@@ -277,7 +277,7 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Packaging Code (III)"
+          name: "Packaging Code: Python packages"
           href: ""
     - date: "Oct 27"
       items:
