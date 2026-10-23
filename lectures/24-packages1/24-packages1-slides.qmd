@@ -629,8 +629,13 @@ use_git()
 - In R, tests can be written with functions from the package `"testthat"`
 - The starting point involves adding a `tests/` directory by running 
 `usethis::use_testthat()`
+- You can find more details about tests at: <br>
+<https://r-pkgs.org/testing-basics.html>
 
-. . .
+
+## Step 3) Add `tests/` with `use_testthat()`
+
+As previously mentioned, the first step is to run `usethis::use_testthat()`.
 
 You will see some output like this
 
@@ -647,12 +652,31 @@ usethis::use_testthat()
 ```
 :::
 
+\
+
 . . .
 
-Then follow the suggestion and run `usethis::use_test("average")`
+Do not edit `tests/testthat.R`! Let `devtools::check()` take care of it.
 
 
-## Step 3.1) Unit Tests
+## Step 3.1) Creating Unit Tests
+
+- As you define functions in your package---in the files below `R/`---you add the
+corresponding tests to `.R` files in `tests/testthat/`.
+
+- It is recommended that the organization of test files match the organization
+of `R/` files.
+
+- For example, since we have `R/average.R`, there should be a corresponding 
+test file in `tests/testthat/test-average.R`
+
+- The easiest way to setup the test file is by running `usethis::use_test("average")`
+
+- Note that _testthat_ tests must live in files below `tests/testthat/` and these file 
+names must begin with `test` (e.g. `test-average.R`, `test-variance.R`)
+
+
+## Step 3.1) Creating Unit Tests
 
 After running `usethis::use_test("average")`, you need to edit the 
 corresponding file `test-average.R` stored inside `tests/testthat/`.
@@ -688,6 +712,21 @@ test_that("average fails with character vector", {
 
 ![](images/pkg-structure3-tests.svg){fig-align="center" width="80%"}
 
+
+## Running tests
+
+- Depending on where you are in the development cycle, you'll run your tests at various scales.
+
+- When you are rapidly iterating on a function, you might work at the level of individual tests.
+
+- As the code settles down, you’ll run entire test files and eventually the entire test suite.
+
+- **Micro-iteration**: This is the interactive phase where you initiate and refine a function 
+and its tests in tandem.
+
+    + Run `devtools::load_all()` often
+    + Then execute individual expectations or whole tests interactively in the console
+    
 
 # Adding Data to a Package
 
