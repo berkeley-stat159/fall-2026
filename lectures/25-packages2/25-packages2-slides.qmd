@@ -270,7 +270,7 @@ as `devtools-flow.R` (or something like that) with the following content:
 
 ```{.r filename="devtools-flow.R" code-line-numbers="false"}
 # Devtools workflow
-devtools::load()       # load your functions (then try them out)
+devtools::load_all()   # load your functions (then try them out)
 devtools::document()   # generate documentation
 devtools::check_man()  # check documentation
 devtools::test()       # run tests (if any)
