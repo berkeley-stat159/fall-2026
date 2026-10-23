@@ -270,7 +270,7 @@
         - type: "Lecture"
           id: ""
           name: "Packaging Code: R packages (II)"
-          href: ""
+          href: "lectures/25-packages2/25-packages2-slides.html"
 - week: 10
   days:
     - date: "Oct 26"
