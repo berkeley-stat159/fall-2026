@@ -750,8 +750,12 @@
 <li class="fragment">It’s best practice to include tests for your functions.</li>
 <li class="fragment">In R, tests can be written with functions from the package <code>"testthat"</code></li>
 <li class="fragment">The starting point involves adding a <code>tests/</code> directory by running <code>usethis::use_testthat()</code></li>
+<li class="fragment">You can find more details about tests at: <br> <a href="https://r-pkgs.org/testing-basics.html" class="uri">https://r-pkgs.org/testing-basics.html</a></li>
 </ul>
-<div class="fragment">
+</section>
+<section id="step-3-add-tests-with-use_testthat-1" class="slide level2">
+<h2>Step 3) Add <code>tests/</code> with <code>use_testthat()</code></h2>
+<p>As previously mentioned, the first step is to run <code>usethis::use_testthat()</code>.</p>
 <p>You will see some output like this</p>
 <div class="small">
 <div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_testthat</span>()</span>
@@ -763,13 +767,24 @@
 <span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a>✔ Writing tests<span class="sc">/</span>testthat.R.</span>
 <span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a>☐ Call usethis<span class="sc">::</span><span class="fu">use_test</span>() to initialize a basic test file and open it <span class="cf">for</span> editing.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p><br>
+</p>
 <div class="fragment">
-<p>Then follow the suggestion and run <code>usethis::use_test("average")</code></p>
+<p>Do not edit <code>tests/testthat.R</code>! Let <code>devtools::check()</code> take care of it.</p>
 </div>
 </section>
-<section id="step-3.1-unit-tests" class="slide level2">
-<h2>Step 3.1) Unit Tests</h2>
+<section id="step-3.1-creating-unit-tests" class="slide level2">
+<h2>Step 3.1) Creating Unit Tests</h2>
+<ul>
+<li class="fragment"><p>As you define functions in your package—in the files below <code>R/</code>—you add the corresponding tests to <code>.R</code> files in <code>tests/testthat/</code>.</p></li>
+<li class="fragment"><p>It is recommended that the organization of test files match the organization of <code>R/</code> files.</p></li>
+<li class="fragment"><p>For example, since we have <code>R/average.R</code>, there should be a corresponding test file in <code>tests/testthat/test-average.R</code></p></li>
+<li class="fragment"><p>The easiest way to setup the test file is by running <code>usethis::use_test("average")</code></p></li>
+<li class="fragment"><p>Note that <em>testthat</em> tests must live in files below <code>tests/testthat/</code> and these file names must begin with <code>test</code> (e.g.&nbsp;<code>test-average.R</code>, <code>test-variance.R</code>)</p></li>
+</ul>
+</section>
+<section id="step-3.1-creating-unit-tests-1" class="slide level2">
+<h2>Step 3.1) Creating Unit Tests</h2>
 <p>After running <code>usethis::use_test("average")</code>, you need to edit the corresponding file <code>test-average.R</code> stored inside <code>tests/testthat/</code>.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -801,6 +816,19 @@
 <p><img data-src="images/pkg-structure3-tests.svg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
 </figure>
 </div>
+</section>
+<section id="running-tests" class="slide level2">
+<h2>Running tests</h2>
+<ul>
+<li class="fragment"><p>Depending on where you are in the development cycle, you’ll run your tests at various scales.</p></li>
+<li class="fragment"><p>When you are rapidly iterating on a function, you might work at the level of individual tests.</p></li>
+<li class="fragment"><p>As the code settles down, you’ll run entire test files and eventually the entire test suite.</p></li>
+<li class="fragment"><p><strong>Micro-iteration</strong>: This is the interactive phase where you initiate and refine a function and its tests in tandem.</p>
+<ul>
+<li class="fragment">Run <code>devtools::load_all()</code> often</li>
+<li class="fragment">Then execute individual expectations or whole tests interactively in the console</li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="adding-data-to-a-package" class="title-slide slide level1 center">
