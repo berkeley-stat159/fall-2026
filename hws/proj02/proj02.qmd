@@ -149,5 +149,7 @@ why (e.g., `Add unit test for missing values in survey data`).
 
 - Do not use vague messages like `update`, `fixed code`, `changes`, or `final submission`.
 
+- Make sure your `environment.yml` has all the necessary dependencies.
+
 - Use of branches to collaborate.
 
