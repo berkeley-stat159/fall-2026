@@ -16,7 +16,6 @@ listing:
 
 
 ::: {.callout-note title="Announcements 📣"}
-No reading this week
 
 Project 2 due Oct-30
 :::
