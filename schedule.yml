@@ -277,7 +277,7 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Packaging Code: Python packages"
+          name: "Demo: Python package"
           href: ""
     - date: "Oct 27"
       items:
@@ -289,12 +289,12 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Environment Mgmt"
+          name: "Quarto Websites 1"
           href: ""
         - type: "Reading"
           id: ""
-          name: "RR Legal Framework (due 11/04)"
-          href: "readings/08-legal-framework.html"
+          name: "RR Learning from Theranos (due 11/04)"
+          href: "readings/08-theranos.html"
     - date: "Oct 30"
       items:
         - type: "Lecture"
@@ -303,7 +303,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "HW-3 TBA (due 11/13)"
+          name: "HW-3 Package (due 11/13)"
           href: ""
 - week: 11
   days:
@@ -311,13 +311,13 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Environment Management (part 1)"
+          name: "Quarto Websites 2"
           href: ""
     - date: "Nov 03"
       items:
         - type: "Lab"
           id: ""
-          name: "Managing environments"
+          name: "Websites 1"
           href: ""
     - date: "Nov 04"
       items:
@@ -327,8 +327,8 @@
           href: ""
         - type: "Reading"
           id: ""
-          name: "Rules for Better Figures (due 11/11)"
-          href: "readings/09-reading-better-figures.html"
+          name: "RR Legal Framework (due 11/04)"
+          href: "readings/09-legal-framework.html"
     - date: "Nov 06"
       items:
         - type: "Lecture"
@@ -341,7 +341,7 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Images, Figures and Graphics"
+          name: "Revealjs Slides"
           href: ""
     - date: "Nov 10"
       items:
@@ -358,7 +358,7 @@
         - type: "Reading"
           id: ""
           name: "Research Compendium (due 11/18)"
-          href: "readings/09-reading-better-figures.html"
+          href: "readings/10-reading-research-compendium.html"
     - date: "Nov 13"
       items:
         - type: "Lecture"
@@ -375,7 +375,7 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Research Compendium"
+          name: "Data Serialization"
           href: ""
     - date: "Nov 17"
       items:
@@ -389,6 +389,10 @@
           id: ""
           name: "Discussion Reading 10"
           href: ""
+        - type: "Reading"
+          id: ""
+          name: "Rules for Better Figures (due 11/11)"
+          href: "readings/11-reading-better-figures.html"
     - date: "Nov 20"
       items:
         - type: "Lecture"
@@ -405,9 +409,9 @@
           href: ""
     - date: "Nov 24"
       items:
-        - type: "Lab"
+        - type: "No-Lab"
           id: ""
-          name: "Final project status"
+          name: "Thanksgiving break"
           href: ""
     - date: "Nov 25"
       items:
