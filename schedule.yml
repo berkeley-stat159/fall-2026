@@ -293,7 +293,7 @@
           href: ""
         - type: "Reading"
           id: ""
-          name: "RR Learning from Theranos (due 11/04)"
+          name: "RR Lessons from Theranos (due 11/04)"
           href: "readings/08-theranos.html"
     - date: "Oct 30"
       items:
@@ -367,7 +367,7 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "Project 3 TBA (due 12/07)"
+          name: "Project 3 TBA (due 12/11)"
           href: ""
 - week: 13
   days:
@@ -381,13 +381,13 @@
       items:
         - type: "Lab"
           id: ""
-          name: "TBA"
+          name: "Data Misc"
           href: ""
     - date: "Nov 18"
       items:
         - type: "Lecture"
           id: ""
-          name: "Discussion Reading 10"
+          name: "TBA"
           href: ""
         - type: "Reading"
           id: ""
@@ -397,7 +397,7 @@
       items:
         - type: "Lecture"
           id: ""
-          name: "Publishing & Communication I"
+          name: "Discussion Reading 10"
           href: ""
 - week: 14
   days:
@@ -458,10 +458,15 @@
         - type: "Overview"
           id: ""
           name: "RRR Week"
+    - date: "Dec 11"
+      items:
+        - type: "Final"
+          id: ""
+          name: "Final Project due (12/11)"
 - week: 17
   days:
     - date: "Dec 14"
       items:
-        - type: "Final"
+        - type: "Blank"
           id: ""
-          name: "Final Project"
+          name: "Enjoy your Winter break!"
