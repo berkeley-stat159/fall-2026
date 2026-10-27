@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../assets/stat159-favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b7eb3ced35dd28f0c673f192a36525f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.28">
+
+  <title>Review</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-27b1524c90fa041f3653125f15fb25c4.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
+
+  <script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
+  </script>
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-bg.svg" data-background-size="contain" class="quarto-title-block center">
+  <h1 class="title">Review</h1>
+  <p class="subtitle">Remarks on HW submissions</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section>
+<section id="intro" class="title-slide slide level1 center">
+<h1>Intro</h1>
+
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ol type="1">
+<li class="fragment"><p>Distinguish between atomic commits and bulk dumps.</p></li>
+<li class="fragment"><p>Structure a professional <code>README.md</code> that enables one-line project execution.</p></li>
+<li class="fragment"><p>Reviewing <code>environment.yml</code> files.</p></li>
+</ol>
+</section>
+<section id="main-idea" class="slide level2">
+<h2>Main Idea</h2>
+<p><br>
+</p>
+<div class="poll">
+<p>If a collaborator (or grader) clones your repository today, can they reproduce your entire analysis?</p>
+</div>
+</section></section>
+<section>
+<section id="git-history" class="title-slide slide level1 center">
+<h1>Git History</h1>
+
+</section>
+<section id="examples" class="slide level2 smaller">
+<h2>Examples</h2>
+<p>👎</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Poor Commits</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="Poor Commits"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>Merge classroom repository</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>Add Serena Williams plot reproduction</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>Initial Commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<p>👍</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Good Commits</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="Good Commits"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>Document project purpose, setup, data definitions, and report workflow</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>Ignore Python caches and local system files</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>Add standalone HTML report with embedded career plot</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>Add the supplied PDF report</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>Add report narrative matching the supplied PDF</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>Add reproduced Serena Williams career scatterplot</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>Add cleaned Serena match data with ages and outcomes</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>Preserve Tennis Abstract raw career data snapshot</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>Add Make targets to build and clean data, plot, and reports</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>Define Conda environment for data processing and report generation</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>... # etc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="the-bulk-submit-button-commit" class="slide level2">
+<h2>The Bulk “Submit Button” Commit</h2>
+<ul>
+<li class="fragment"><p><span class="bold-hilit">No Rollback Capability:</span> If an analysis script breaks at hour 10, a bulk commit forces you to discard everything rather than rewinding to a functional state.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Opaque Collaboration:</span> In group settings, bulk commits create massive merge conflicts and hide individual provenance.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Data Dumping:</span> Bulk commits often accidentally check in binary outputs, credentials, or multi-gigabyte raw files.</p></li>
+</ul>
+</section>
+<section id="atomic-commits" class="slide level2">
+<h2>Atomic Commits</h2>
+<p>An atomic commit encapsulates one logical unit of work e.g.,</p>
+<ul>
+<li class="fragment"><code>"adding a data preprocessing function"</code></li>
+<li class="fragment"><code>"fixing a plotting script bug"</code></li>
+<li class="fragment"><code>"updating the environment.yml"</code></li>
+</ul>
+</section>
+<section id="advantages-of-atomic-commits" class="slide level2">
+<h2>Advantages of Atomic Commits</h2>
+<p>If you commit:</p>
+<ul>
+<li>a bug fix,</li>
+<li>an environment change,</li>
+<li>and a data-cleaning script</li>
+</ul>
+<p>in three separate commits, you can easily revert just the broken data-cleaning script (<code>git revert &lt;commit-hash&gt;</code>) while keeping your bug fix intact.</p>
+</section>
+<section id="bulk-commits-dont" class="slide level2">
+<h2>Bulk Commits (Don’t ❗️)</h2>
+<p><br>
+</p>
+<p>While taking a “snapshot” of several (e.g.&nbsp;10) modified files at the end of a long work session feels convenient, it breaks the core benefits of version control.</p>
+<div class="fragment">
+<p>Why?</p>
+<p>If all 10 changes live in a single massive commit, reverting the bug means throwing away hours of unrelated, functional work—or manually sifting through hundreds of lines of code to fix it by hand.</p>
+</div>
+</section>
+<section id="bulk-commits-dont-1" class="slide level2">
+<h2>Bulk Commits (Don’t ❗️)</h2>
+<p><br>
+</p>
+<p>With bulk commits a reviewer cannot meaningfully audit a single pull request or commit that reads:</p>
+<pre><code>+12,450 lines / -3,200 lines across 40 files.</code></pre>
+<div class="fragment">
+<p><br>
+</p>
+<p>Smaller, logical commits tell a readable story. A reviewer can follow your thought process step-by-step rather than drowning in a massive wall of code differences (<code>git diff</code>)</p>
+</div>
+</section>
+<section id="bulk-commits-dont-2" class="slide level2">
+<h2>Bulk Commits (Don’t ❗️)</h2>
+<p>When working on collaborative projects or multi-branch workflows:</p>
+<p>Smaller, frequent commits touch fewer lines of code at a time, making automatic merges smooth.</p>
+<p>When you finally push a bulk commit, it frequently conflicts with your collaborators’ work, creating complex merge conflicts that require hours of manual reconstruction.</p>
+</section>
+<section id="risk-of-accidental-file-leaks-repository-bloat" class="slide level2">
+<h2>Risk of Accidental File Leaks &amp; Repository Bloat</h2>
+<p>When developers run <code>git add .</code> and commit everything in bulk without inspecting their staging area, they frequently check in files that should never enter version control:</p>
+<ul>
+<li class="fragment"><p>Large Datasets / Binaries: Large CSVs, SQLite databases, or model weights that permanently bloat the <code>.git</code> folder history.</p></li>
+<li class="fragment"><p>System junk: <code>.DS_Store files</code>, build artifacts, or temporary editor files.</p></li>
+<li class="fragment"><p>Sensitive Information: API keys, passwords, or local file system path configurations.</p></li>
+</ul>
+</section>
+<section id="rule-of-thumb" class="slide level2">
+<h2>Rule of Thumb</h2>
+<p><br>
+</p>
+<p>As a rule of thumb, <span class="bold-hilit">one commit should represent one logical unit of work.</span></p>
+<p><br>
+</p>
+<p><span class="mdlit">A Good Test:</span> If your commit message needs the word <span class="hilit">“AND”</span> to describe what you did (e.g., <code>"Cleaned data matrix AND added plotting script AND updated environment specs"</code>), it should be split into three separate commits.</p>
+</section></section>
+<section>
+<section id="readme-architecture" class="title-slide slide level1 center">
+<h1>README Architecture</h1>
+
+</section>
+<section id="the-readme-as-an-api-principle" class="slide level2">
+<h2>The “README as an API” Principle</h2>
+<p><br>
+</p>
+<p>A <code>README.md</code> is not just a summary cover sheet; it is the instruction manual for your computational pipeline.</p>
+</section>
+<section id="mandatory-sections-in-readme" class="slide level2">
+<h2>5+1 mandatory sections in README</h2>
+<ul>
+<li class="fragment">Title</li>
+<li class="fragment">Overview (about)</li>
+<li class="fragment">Repository structure (file structure)</li>
+<li class="fragment">Environment setup</li>
+<li class="fragment">Reproduction instructions</li>
+<li class="fragment">License*</li>
+</ul>
+</section>
+<section id="filestructure-in-readme" class="slide level2">
+<h2>Filestructure in README</h2>
+<p>Benefits:</p>
+<ol type="1">
+<li class="fragment"><p>Establishes Instant Spatial Orientation (Mental Model)</p></li>
+<li class="fragment"><p>Clarifies Data Provenance &amp; File Roles</p></li>
+<li class="fragment"><p>Discovers Relative Paths &amp; Eliminates Path Confusion</p></li>
+<li class="fragment"><p>Serves as Self-Documenting Infrastructure</p></li>
+<li class="fragment"><p>Exposes Messy Repository Hygiene (The “Messy Room” Test)</p></li>
+</ol>
+</section>
+<section id="establishes-instant-spatial-orientation-mental-model" class="slide level2">
+<h2>Establishes Instant Spatial Orientation (Mental Model)</h2>
+<p>When a collaborator, reviewer, or grader clones your repository, they are looking at a blank slate.</p>
+<ul>
+<li class="fragment"><p>Without a tree, they have to manually click through nested subfolders to figure out where scripts, datasets, and configurations reside.</p></li>
+<li class="fragment"><p>A directory tree provides a 3-second visual map of the entire codebase. It immediately communicates the project’s layout without requiring the reader to explore the file system manually.</p></li>
+</ul>
+</section>
+<section id="clarifies-data-provenance-file-roles" class="slide level2">
+<h2>Clarifies Data Provenance &amp; File Roles</h2>
+<p>Filename extensions (like <code>.csv</code>, <code>.py</code>, <code>.ipynb</code>, or <code>.rds</code>) don’t tell the full story of why a file exists or how it should be treated.</p>
+<ul>
+<li class="fragment"><p><span class="bold-hilit">Separating Raw vs.&nbsp;Processed Data:</span> A directory tree visually enforces the golden rule of reproducible research: raw data must be immutable. Annotating <code>data/raw/</code> in your tree explicitly warns users never to overwrite original files.</p></li>
+<li class="fragment"><p><span class="bold-hilit">Distinguishing Source Code from Notebooks:</span> It clarifies which files are modular, reusable scripts (e.g., <code>scripts/clean_data.py</code>) versus interactive exploratory narratives (e.g., <code>notebooks/exploratory.ipynb</code>).</p></li>
+</ul>
+</section>
+<section id="closing-thoughts" class="slide level2">
+<h2>Closing Thoughts</h2>
+<ul>
+<li class="fragment">Writing clean code is only half the battle in modern data science.</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment">If your work cannot be re-built automatically by an independent researcher using your version-control record and environment specs, the results are incomplete.</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment">Treat your repository as a publication in itself.</li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../site_libs/quarto-contrib/quarto-project/stat159/stat159slides/stat159-hex-num-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: false,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var logo = document.querySelector('.slide-logo');
+        logo.addEventListener('click', function() {
+          // Get the referrer URL
+          var referrer = document.referrer;
+
+          // Check if the referrer is from the same origin for security purposes
+          if (referrer && new URL(referrer).origin === window.location.origin) {
+          // Redirect to the referrer URL
+          window.location.href = referrer;
+          } else {
+            // Fallback action if there's no referrer or it's from a different origin
+            // For example, redirect to a home page or show a message
+            window.location.href = '/'; // Redirecting to the home page
+          }
+        });
+      });
+      Reveal.addEventListener('slidechanged', (event) => {
+        if (event.indexh === 0) {
+          Reveal.configure({ slideNumber: null });
+        }
+        if (event.indexh === 1) { 
+          Reveal.configure({ slideNumber: 'c' });
+        }
+      });
+    </script>
+    
+
+</body></html>
