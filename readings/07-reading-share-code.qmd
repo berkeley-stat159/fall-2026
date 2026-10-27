@@ -8,7 +8,8 @@ title: 7) Share Your Code
 - Author(s): Nick Barnes
 - Year: 2011
 - Journal: Nature 467, 753
-- <doi:10.1038/467753a>
+- <https://doi.org/10.1038/467753a>
+- <https://www.nature.com/articles/467753a>
 
 \
 
