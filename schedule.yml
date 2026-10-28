@@ -278,13 +278,13 @@
         - type: "Lecture"
           id: ""
           name: "Demo: Python package"
-          href: ""
+          href: "lectures/26-packages3/26-python-packages.pdf"
     - date: "Oct 27"
       items:
         - type: "Lab"
           id: ""
           name: "Packaging your code"
-          href: ""
+          href: "labs/lab09.pdf"
     - date: "Oct 28"
       items:
         - type: "Lecture"
@@ -294,7 +294,7 @@
         - type: "Reading"
           id: ""
           name: "RR Lessons from Theranos (due 11/04)"
-          href: "readings/08-theranos.html"
+          href: "readings/08-reading-theranos.qmd"
     - date: "Oct 30"
       items:
         - type: "Lecture"
@@ -403,9 +403,9 @@
   days:
     - date: "Nov 23"
       items:
-        - type: "Lecture"
+        - type: "No-Class"
           id: ""
-          name: "Publishing & Communication II"
+          name: "Thanksgiving break"
           href: ""
     - date: "Nov 24"
       items:
