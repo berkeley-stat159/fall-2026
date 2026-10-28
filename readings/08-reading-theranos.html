@@ -280,7 +280,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#assigned-reading" id="toc-assigned-reading" class="nav-link active" data-scroll-target="#assigned-reading">Assigned Reading</a></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a>
+  <ul class="collapse">
+  <li><a href="#reflection-1" id="toc-reflection-1" class="nav-link" data-scroll-target="#reflection-1">Reflection 1</a></li>
+  <li><a href="#reflection-2" id="toc-reflection-2" class="nav-link" data-scroll-target="#reflection-2">Reflection 2</a></li>
+  <li><a href="#reflection-3" id="toc-reflection-3" class="nav-link" data-scroll-target="#reflection-3">Reflection 3</a></li>
+  </ul></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a></li>
   </ul>
 </nav>
     </div>
@@ -334,89 +340,54 @@ bCourses Submission
 <p>Accepted formats: PDF, HTML, MS Word (<code>.docx</code>), or Google Doc</p>
 </div>
 </div>
-<p>TBA</p>
-<!--
-
-### Reflection 1
-
-In data science and academic research, an analyst might encounter a messy script, 
-a broken model, or a failed experimental run right before a submission deadline, 
-and quietly swap in pre-cleaned data or a tweaked output to make things work.
-
-- In your own computational work, where is the boundary between a legitimate 
-"data cleaning decision" (e.g., dropping an uncalibrated baseline) and a 
-"quick patch" that hides an underlying pipeline failure? 
-
-- How can using transparent, scripted pipelines (e.g., in R or Python) 
-prevent a researcher from crossing that line implicitly?
-
-
-## Reflection 2
-
-- Imagine you are handed a dataset where the upstream processing steps were 
-executed by a different team behind closed doors. 
-
-- Why is a lack of end-to-end data provenance (knowing exactly how data was 
-transformed at every step) a direct threat to data integrity? 
-
-- What are some of the tools & concepts---you've learned in STAT 159---that can
-be used as an antidote to institutional siloing?
-
-
-## Reflection 3
-
-If you discover a fundamental data alignment error or a hidden "quick patch" 
-in a collaborator's code right before submitting a paper or pushing to production, 
-what ethical obligations do you have as a data analyst? 
-
-What internal version-control evidence would you rely on to demonstrate 
-the issue objectively?
-
-
-## Reflection 4
-
-Theranos fiercely guarded the inner workings of the "Edison" blood-testing device, 
-citing the absolute necessity of protecting corporate trade secrets from medical rivals.
-
-By locking down their hardware and software behind strict non-disclosure agreements, 
-they created a black box that neither internal scientists, external regulators, 
-nor independent peers could audit.
-
-Where should the legal and ethical line be drawn between a private company's 
-right to protect its proprietary code/algorithms and the public's right to 
-independent verification---especially when lives, health, or public policy 
-depend on those computational claims?
-
-
-## Reflection 5
-
-Design a transparent laboratory management protocol using open-science tools.
-How would an open-science architecture make it structurally impossible for a 
-lab director to secretly silo workers or hide a broken data pipeline?
-
-
-
-## Rubric
-
-::: {.callout-important}
-Generic responses that do not mention a specific 
-past assignment name or unique piece of code from your own experience will 
-receive a score of zero.
-:::
-
-- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
-or localized constraints, and explicitly connects the personal experience 
-back to the prompt in each question. Clearly written by a human.
-
-- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
-examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
-a generic summary an AI could have written.
-
-- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
-fails to provide personal context, or uses copy-pasted text from a webpage
-or AI tool.
-
--->
+<section id="reflection-1" class="level3">
+<h3 class="anchored" data-anchor-id="reflection-1">Reflection 1</h3>
+<p>In data science and academic research, an analyst might encounter a messy script, a broken model, or a failed experimental run right before a submission deadline, and quietly swap in pre-cleaned data or a tweaked output to make things work.</p>
+<p>Suppose you discover a fundamental data alignment error or a hidden “quick patch” in a collaborator’s code right before submitting a paper or pushing to production.</p>
+<ul>
+<li><p>Where is the boundary between a legitimate “data cleaning decision” (e.g., dropping an uncalibrated baseline) and a “quick patch” that hides an underlying pipeline failure?</p></li>
+<li><p>What internal version-control evidence would you rely on to demonstrate the issue objectively?</p></li>
+<li><p>What ethical obligations do you have as a data analyst?</p></li>
+</ul>
+</section>
+<section id="reflection-2" class="level3">
+<h3 class="anchored" data-anchor-id="reflection-2">Reflection 2</h3>
+<p>Imagine you are handed a dataset where the upstream processing steps were executed by a different team behind closed doors.</p>
+<ul>
+<li><p>Why is a lack of end-to-end data provenance (knowing exactly how data was transformed at every step) a direct threat to data integrity?</p></li>
+<li><p>What are some of the tools &amp; concepts—you’ve learned in STAT 159—that can be used as an antidote to institutional siloing?</p></li>
+<li><p>How would an open-science architecture make it structurally impossible for a lab director to secretly silo workers or hide a broken data pipeline?</p></li>
+</ul>
+</section>
+<section id="reflection-3" class="level3">
+<h3 class="anchored" data-anchor-id="reflection-3">Reflection 3</h3>
+<p>Theranos guarded the inner workings of the “Edison” blood-testing device, citing the absolute necessity of protecting corporate trade secrets from medical rivals.</p>
+<p>By locking down their hardware and software behind strict non-disclosure agreements, they created a black box that neither internal scientists, external regulators, nor independent peers could audit.</p>
+<ul>
+<li>Where should the legal and ethical line be drawn between a private company’s right to protect its proprietary code/algorithms and the public’s right to independent verification—especially when lives, health, or public policy depend on those computational claims?</li>
+</ul>
+</section>
+</section>
+<section id="rubric" class="level2">
+<h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Generic responses that do not mention a specific past assignment name or unique piece of code from your own experience will receive a score of zero.</p>
+</div>
+</div>
+<ul>
+<li><p><strong>Full Credit (5 Points)</strong>: Response is highly specific, names unique personal or localized constraints, and explicitly connects the personal experience back to the prompt in each question. Clearly written by a human.</p></li>
+<li><p><strong>Partial Credit (2-3 Points)</strong>: Response is correct but uses vague or generic examples (e.g., “I lost a file once” instead of naming the script). Sounds like a generic summary an AI could have written.</p></li>
+<li><p><strong>No Credit (0 Points)</strong>: Response relies entirely on abstract definitions, fails to provide personal context, or uses copy-pasted text from a webpage or AI tool.</p></li>
+</ul>
 
 
 </section>
