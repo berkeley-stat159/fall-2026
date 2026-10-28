@@ -1,0 +1,97 @@
+---
+title: 8) Lessons from Theranos 
+---
+
+## Assigned Reading
+
+📖 Article
+
+- Title: **Startup Ethics: Ethically Responsible Conduct of Scientists and Engineers at Theranos**
+- Author(s): Robert E. McGinn
+- Year: 2022
+- Journal: Science and Engineering Ethics 28, 39 (2022)
+- <https://pmc.ncbi.nlm.nih.gov/articles/PMC9425795/>
+- <https://doi.org/10.1007/s11948-022-00393-2>
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following reflections---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+
+
+### Reflection 1
+
+In data science and academic research, an analyst might encounter a messy script, 
+a broken model, or a failed experimental run right before a submission deadline, 
+and quietly swap in pre-cleaned data or a tweaked output to make things work.
+
+Suppose you discover a fundamental data alignment error or a hidden "quick patch" 
+in a collaborator's code right before submitting a paper or pushing to production.
+
+- Where is the boundary between a legitimate 
+"data cleaning decision" (e.g., dropping an uncalibrated baseline) and a 
+"quick patch" that hides an underlying pipeline failure? 
+
+- What internal version-control evidence would you rely on to demonstrate 
+the issue objectively?
+
+- What ethical obligations do you have as a data analyst? 
+
+
+### Reflection 2
+
+Imagine you are handed a dataset where the upstream processing steps were 
+executed by a different team behind closed doors. 
+
+- Why is a lack of end-to-end data provenance (knowing exactly how data was 
+transformed at every step) a direct threat to data integrity? 
+
+- What are some of the tools & concepts---you've learned in STAT 159---that can
+be used as an antidote to institutional siloing?
+
+- How would an open-science architecture make it structurally impossible for a 
+lab director to secretly silo workers or hide a broken data pipeline?
+
+
+### Reflection 3
+
+Theranos guarded the inner workings of the "Edison" blood-testing device, 
+citing the absolute necessity of protecting corporate trade secrets from medical rivals.
+
+By locking down their hardware and software behind strict non-disclosure agreements, 
+they created a black box that neither internal scientists, external regulators, 
+nor independent peers could audit.
+
+- Where should the legal and ethical line be drawn between a private company's 
+right to protect its proprietary code/algorithms and the public's right to 
+independent verification---especially when lives, health, or public policy 
+depend on those computational claims?
+
+
+
+## Rubric
+
+::: {.callout-important}
+Generic responses that do not mention a specific 
+past assignment name or unique piece of code from your own experience will 
+receive a score of zero.
+:::
+
+- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the prompt in each question. Clearly written by a human.
+
+- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from a webpage
+or AI tool.
+
