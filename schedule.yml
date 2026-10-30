@@ -290,7 +290,7 @@
         - type: "Lecture"
           id: ""
           name: "Quarto Websites 1"
-          href: ""
+          href: "lectures/27-quarto-websites1/27-quarto-websites1-slides.html"
         - type: "Reading"
           id: ""
           name: "RR Lessons from Theranos (due 11/04)"
