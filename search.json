@@ -2279,7 +2279,7 @@
     "href": "lectures/28-discuss7/28-discussion-slides.html#reading-2",
     "title": "Dare to Share",
     "section": "Reading 2",
-    "text": "Reading 2\n\nTitle: Publish your computer code: it is good enough\nAuthors: Nick Barnes.\nJournal: Nature 467 (7317): 753\nYear: Oct 2010\ndoi: 10.1038/467753a\nhttps://www.software.ac.uk/blog/top-ten-reasons-not-share-your-code-and-why-you-should-anyway"
+    "text": "Reading 2\n\nTitle: Publish your computer code: it is good enough\nAuthors: Nick Barnes.\nJournal: Nature 467 (7317): 753\nYear: Oct 2010\ndoi: 10.1038/467753a\nhttps://doi.org/10.1038/467753a"
   },
   {
     "objectID": "lectures/28-discuss7/28-discussion-slides.html#screens-off-minds-on",
@@ -2300,35 +2300,35 @@
     "href": "lectures/28-discuss7/28-discussion-slides.html#the-demand-support-excuse",
     "title": "Dare to Share",
     "section": "The “Demand Support” Excuse",
-    "text": "The “Demand Support” Excuse\nCommon excuse to not share code:  “People will pick holes and demand support.”\n\n\n\nSuppose you’ve written an R/Python package that you want to share via GitHub.\nYou are worried that users will demand technical support.\n\n\n\nSilently think (and write) about one boundary that you would set to limit how much support you are willing to give.\n\n\n\n\n−+\n03:00"
+    "text": "The “Demand Support” Excuse\nCommon excuse to not share code:  “People will pick holes and demand support.”\n\n\n\nSuppose you’ve written an R/Python package that you want to share via GitHub.\nYou are worried that users will demand technical support.\n\n\n\nSilently think (and write) about two boundaries that you would set to limit how much support you are willing to give.\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "lectures/28-discuss7/28-discussion-slides.html#drafting-a-support.md-file",
     "href": "lectures/28-discuss7/28-discussion-slides.html#drafting-a-support.md-file",
     "title": "Dare to Share",
     "section": "Drafting a SUPPORT.md file",
-    "text": "Drafting a SUPPORT.md file\nCommon excuse to not share code:  “People will pick holes and demand support.”\n\n\n\n\n\nIn trios, draft a 3-sentence SUPPORT.md disclaimer for a GitHub repo.\nState your commitment to open science while setting firm boundaries against personal tech support requests.\n\n\n\n\n\n−+\n05:00"
+    "text": "Drafting a SUPPORT.md file\nCommon excuse to not share code:  “People will pick holes and demand support.”\n\n\n\n\n\nIn trios, draft a SUPPORT.md disclaimer for a GitHub repo.\nState your commitment to open science while setting firm boundaries against personal tech support requests.\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "lectures/28-discuss7/28-discussion-slides.html#discussion-part-1",
     "href": "lectures/28-discuss7/28-discussion-slides.html#discussion-part-1",
     "title": "Dare to Share",
     "section": "Discussion (part 1)",
-    "text": "Discussion (part 1)\n\n\nTeam A: The Proprietary Tech Firm\n\nYour team has built a simulation code that calculates the structural stress limits for public bridges.\nYour team refuses to share the code claiming it’s a corporate secret.\n\n\n\n\nIssues\n\nA bridge design built using the firm’s secret code has just shown minor structural cracks.\nThe firm claims it’s an isolated steel issue, not a software issue.\n\n\n\n\nHuddle with your immediate neighbors to formulate 3 compelling arguments to defend Team A position.\n\n\n\n\n−+\n03:00"
+    "text": "Discussion (part 1)\n\n\nTeam A: The Proprietary Tech Firm\n\nYour team has built a simulation code that calculates the structural stress limits for public bridges.\nYour team refuses to share the code claiming it’s a corporate secret.\n\n\n\n\nIssues\n\nA bridge design built using the firm’s secret code has just shown minor structural cracks.\nThe firm claims it’s an isolated steel issue, not a software issue.\n\n\n\n\nHuddle with your immediate neighbors to formulate 3 compelling arguments to defend Team A position.\n\n\n\n\n−+\n04:30"
   },
   {
     "objectID": "lectures/28-discuss7/28-discussion-slides.html#discussion-part-2",
     "href": "lectures/28-discuss7/28-discussion-slides.html#discussion-part-2",
     "title": "Dare to Share",
     "section": "Discussion (part 2)",
-    "text": "Discussion (part 2)\n\n\nIssues\n\nA bridge design built using the firm’s secret code has just shown minor structural cracks.\nThe firm claims it’s an isolated steel issue, not a software issue.\n\n\n\n\nTeam B: The Public Safety Board\n\nYou refuse to approve Team A’s projects because you cannot verify their black-box simulation.\n\n\n\n\nHuddle with your immediate neighbors to formulate 3 compelling arguments to defend Team B position.\n\n\n\n\n−+\n03:00"
+    "text": "Discussion (part 2)\n\n\nIssues\n\nA bridge design built using the firm’s secret code has just shown minor structural cracks.\nThe firm claims it’s an isolated steel issue, not a software issue.\n\n\n\n\nTeam B: The Public Safety Board\n\nYou refuse to approve Team A’s projects because you cannot verify their black-box simulation.\n\n\n\n\nHuddle with your immediate neighbors to formulate 3 compelling arguments to defend Team B position.\n\n\n\n\n−+\n04:30"
   },
   {
     "objectID": "lectures/28-discuss7/28-discussion-slides.html#discussion-part-3",
     "href": "lectures/28-discuss7/28-discussion-slides.html#discussion-part-3",
     "title": "Dare to Share",
     "section": "Discussion (part 3)",
-    "text": "Discussion (part 3)\nThe tech firm (Team A) refuses to open-source its proprietary stress-testing code due to commercial secrets.\nBut the public safety board (Team B) refuses to trust a black box.\n\n\n\n\nHow can Team A prove its code works without leaking its competitive edge to global rivals?\n\n\n\n\n−+\n04:00"
+    "text": "Discussion (part 3)\nThe tech firm (Team A) refuses to open-source its proprietary stress-testing code due to commercial secrets.\nBut the public safety board (Team B) refuses to trust a black box.\n\n\n\n\nHow can Team A prove its code works without leaking its competitive edge to global rivals?\n\n\n\n\n−+\n04:30"
   },
   {
     "objectID": "lectures/28-discuss7/28-discussion-slides.html#discussion-part-4",
@@ -2623,7 +2623,7 @@
     "href": "readings/07-reading-share-code.html",
     "title": "7) Share Your Code",
     "section": "",
-    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2011\nJournal: Nature 467, 753\nhttps://doi.org/10.1038/467753a\nhttps://www.nature.com/articles/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2012\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
+    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2010\nJournal: Nature 467, 753\nhttps://doi.org/10.1038/467753a\nhttps://www.nature.com/articles/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2012\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
     "crumbs": [
       "Readings",
       "7) Share Your Code"
@@ -2634,7 +2634,7 @@
     "href": "readings/07-reading-share-code.html#assigned-readings",
     "title": "7) Share Your Code",
     "section": "",
-    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2011\nJournal: Nature 467, 753\nhttps://doi.org/10.1038/467753a\nhttps://www.nature.com/articles/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2012\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
+    "text": "Title: Publish your computer code, it is good enough\nAuthor(s): Nick Barnes\nYear: 2010\nJournal: Nature 467, 753\nhttps://doi.org/10.1038/467753a\nhttps://www.nature.com/articles/467753a\n\n\n\n\nTitle: Top ten reasons to not share your code (and why you should anyway)\nAuthor(s): Randall LeVeque\nYear: 2012\nJournal: Software Sustainability Institute\nhttps://faculty.washington.edu/rjl/pubs/topten/topten.pdf",
     "crumbs": [
       "Readings",
       "7) Share Your Code"
@@ -5314,7 +5314,7 @@
     "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto",
     "title": "Quarto Websites (part 1)",
     "section": "Quarto",
-    "text": "Quarto\nQuarto is an open-source scientific and technical publishing system\nhttps://quarto.org/"
+    "text": "Quarto\nOpen-source scientific and technical publishing system\nhttps://quarto.org/"
   },
   {
     "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-publications",
@@ -5324,25 +5324,165 @@
     "text": "Quarto Publications\n\nArticles\nPresentations\nDashboards\nWebsites\nBlogs\nBooks\nKnowledge Repos"
   },
   {
-    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-1",
-    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-1",
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#about-quarto",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#about-quarto",
     "title": "Quarto Websites (part 1)",
-    "section": "Quarto",
-    "text": "Quarto\n\nAuthor using Markdown (.qmd, .Rmd) files or Jupyter notebooks.\nCreate dynamic content with Python, R, Julia, and Observable.\nWrite using Pandoc markdown, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more."
+    "section": "About Quarto",
+    "text": "About Quarto\n\nQuarto is developed by Posit, PBC (Public Benefit Corporation)\nIt was launched in 2022.\nPosit’s team rebuilt the concept of R Markdown from the ground up as a language-agnostic, standalone Command Line Interface (CLI) tool.\nIt is named after a classic publishing term referring to a book or pamphlet produced from full sheets of paper folded twice to form four leaves (eight pages)."
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#about-quarto-1",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#about-quarto-1",
+    "title": "Quarto Websites (part 1)",
+    "section": "About Quarto",
+    "text": "About Quarto\n\n\nDesigned to work seamlessly anywhere:\n\nVisual Studio Code\nJupyterLab\nPositron\nRStudio\nNeovim\nStandard command terminals\n\n\nWrite content once in plain text Markdown (.qmd, .ipynb, .Rmd) and publish it into any target format:\n\nHTML pages\nPDF documents\nMicrosoft Word files\nPowerPoint presentations\nReveal.js slides\nInteractive books\nEntire websites"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-core-idea",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-core-idea",
+    "title": "Quarto Websites (part 1)",
+    "section": "Quarto core idea",
+    "text": "Quarto core idea\n\n\nAuthor using Markdown (.qmd, .Rmd) files or Jupyter notebooks.\nCreate dynamic content with Python, R, Julia, Observable JS, and more.\nWrite using Pandoc markdown, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more."
   },
   {
     "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-websites-1",
     "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-websites-1",
     "title": "Quarto Websites (part 1)",
     "section": "Quarto Websites",
-    "text": "Quarto Websites\nhttps://quarto.org/docs/websites/\n\nCreating a Website\n\nUsing the Terminal\nUsing RStudio\nUsing VS Code\nUsing Positron"
+    "text": "Quarto Websites\nhttps://quarto.org/docs/websites/\n\nYou can create a Website using:\n\nthe Terminal\nRStudio\nVS Code\nPositron\nJupyterLab"
   },
   {
-    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#website-workflow",
-    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#website-workflow",
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#create-a-quarto-website-via-the-terminal",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#create-a-quarto-website-via-the-terminal",
     "title": "Quarto Websites (part 1)",
-    "section": "Website Workflow",
-    "text": "Website Workflow\n\nConfig file _quarto.yml\nWebsite Preview: quarto preview\nWebsite Render: quarto render\n\nRenders website into the _site/ directory by default\n\nWebsite Theme  https://quarto.org/docs/output-formats/html-themes.html"
+    "section": "Create a Quarto Website (via the Terminal)",
+    "text": "Create a Quarto Website (via the Terminal)\nThe quarto command to create a website is:\n\nquarto create project website &lt;website-name&gt;\n\n\n\n\n# example\nquarto create project website demo-website\n\n\nThis command will create a demo-website/ folder with the following files:\ndemo-website/\n├── _quarto.yml    # The \"brain\" and main config file of the site\n├── index.qmd      # The homepage (rendered to index.html)\n├── about.qmd      # An about page (rendered to about.html)\n├── styles.css     # Optional custom CSS overrides"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-config-file",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-config-file",
+    "title": "Quarto Websites (part 1)",
+    "section": "_quarto.yml config file",
+    "text": "_quarto.yml config file\n\n\n\n\n\n\n_config.yml\n\nproject:\n  type: website\n\nwebsite:\n  title: \"My Awesome Site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n\n\n\n\n\n_quarto.yml is the most important configuration file.\nIt dictates the project type (type: website),\nnavigation bars,\nsite title, footer,\nglobal themes,\nand shared YAML options for all pages."
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#things-to-keep-in-mind",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#things-to-keep-in-mind",
+    "title": "Quarto Websites (part 1)",
+    "section": "Things to keep in mind",
+    "text": "Things to keep in mind\n\nA website should only have one _quarto.yml file (root level)\nDo not change the name of index.qmd (otherwise you risk breaking your deployment.)"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#previewing-a-website",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#previewing-a-website",
+    "title": "Quarto Websites (part 1)",
+    "section": "Previewing a website",
+    "text": "Previewing a website\nThe quarto command to preview a website is:\n\nquarto preview\n\n\n\nquarto preview spins up a live-reload local development server\nthe _site/ folder is generated (don’t edit its contents)\nwhile previewing a website, every time you save a .qmd file, it re-renders the page in real time"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#rendering-a-website",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#rendering-a-website",
+    "title": "Quarto Websites (part 1)",
+    "section": "Rendering a website",
+    "text": "Rendering a website\nThe quarto command to render a website is:\n\nquarto render\n\nquarto render compiles your source files into final outputs\n\nit loops through all connected files,\nbuilds the navigation,\noutputs the complete website in _site/"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#rendering-a-website-contd",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#rendering-a-website-contd",
+    "title": "Quarto Websites (part 1)",
+    "section": "Rendering a website (cont’d)",
+    "text": "Rendering a website (cont’d)\nIf you delete a .qmd file or rename it, the old HTML file inside _site/ might stick around until you perform a clean render or manually clear the output directory.\n\nYou can run:\n# force a full clean re-render (ignoring cached results)\nquarto render --no-cache"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-website-via-rstudio-1",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-website-via-rstudio-1",
+    "title": "Quarto Websites (part 1)",
+    "section": "Quarto Website (via RStudio)",
+    "text": "Quarto Website (via RStudio)\nAnother way to create a Quarto website is using RStudio.\n\n\nBecause RStudio is part of this semester’s STAT 159 datahub we want to show you how to create a Quarto website with this tool."
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#create-a-quarto-website-via-rstudio",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#create-a-quarto-website-via-rstudio",
+    "title": "Quarto Websites (part 1)",
+    "section": "Create a Quarto Website (via RStudio)",
+    "text": "Create a Quarto Website (via RStudio)\n\nGo to the File tab in the top menu bar\nClick on New Project\nWhen prompted with the Create Project choose New Directory\nWhen prompted with the Project Type choose Quarto Website\nThen select a directory and a name for your project\nClick on Create Project"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#create-a-quarto-website-via-rstudio-1",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#create-a-quarto-website-via-rstudio-1",
+    "title": "Quarto Websites (part 1)",
+    "section": "Create a Quarto Website (via RStudio)",
+    "text": "Create a Quarto Website (via RStudio)\nThe default file structure of the quarto website is:\ndemo-web/\n├── _quarto.yml      # The \"brain\" and main config file of the site\n├── index.qmd        # The homepage (rendered to index.html)\n├── about.qmd        # An about page (rendered to about.html)\n├── styles.css       # Optional custom CSS overrides\n├── demo-web.Rproj   # RStudio project\n\n\nThe main difference between creating a website via RStudio -vs- the Terminal is that in RStudio you have the additional .Rproj file"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-website-via-rstudio-2",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto-website-via-rstudio-2",
+    "title": "Quarto Websites (part 1)",
+    "section": "Quarto Website (via RStudio)",
+    "text": "Quarto Website (via RStudio)\nTo render and preview the website, you click on the Render button"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#workflow",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#workflow",
+    "title": "Quarto Websites (part 1)",
+    "section": "Workflow",
+    "text": "Workflow\n\nAdd additional pages to your website (e.g., by adding .qmd files)\nEdit config file _quarto.yml to include added pages\nWebsite Preview: quarto preview\nWebsite Render: quarto render\n\nRenders website into the _site/ directory by default\n\nOr click render button in RStudio\nRinse and repeat"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#additional-elements",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#additional-elements",
+    "title": "Quarto Websites (part 1)",
+    "section": "Additional Elements",
+    "text": "Additional Elements\n\nWebsite Navigation  https://quarto.org/docs/websites/website-navigation.html\nWebsite Theme  https://quarto.org/docs/output-formats/html-themes.html\nWebsite Drafts  https://quarto.org/docs/websites/website-drafts.html\nHeaders and Footers  https://quarto.org/docs/websites/website-drafts.html"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#architecture-for-data-projects",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#architecture-for-data-projects",
+    "title": "Quarto Websites (part 1)",
+    "section": "Architecture for Data Projects",
+    "text": "Architecture for Data Projects\n\n\nWhen structuring a data project as a Quarto site, you typically choose between two main layouts:\n\n\nA) Modular Analysis Pipeline\nBreak a large analysis down into logical sequence steps. Each step becomes a separate page, accessible via the top navigation bar or a sidebar\n\nB) The Listing / Portfolio Site\nUse Quarto’s built-in Listing Pages (the engine used for blogs) to host multiple data projects or sub-analyses on one site\n\n\n\nBTW: We’ll cover approach A"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#example",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#example",
+    "title": "Quarto Websites (part 1)",
+    "section": "Example",
+    "text": "Example\nAssume your project has the following pipeline:\n\n\n\nData Preparation:\n\n01_data_prep.qmd\ndata_dictionary.qmd\n\n\n\n\n\nExploratory Analysis:\n\n02_exploration.qmd\n\n\n\n\nModeling:\n\n03_modeling.qmd\n\n\n\n\n\nConclusions:\n\n04_conclusions.qmd"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#deciding-website-navigation",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#deciding-website-navigation",
+    "title": "Quarto Websites (part 1)",
+    "section": "Deciding Website Navigation",
+    "text": "Deciding Website Navigation\n\n\nNavigation bar (i.e. menu bar, left-aligned tabs)\n\n\n_config.yml\n\n# left-aligned tabs in navbar\nwebsite:\n  title: \"My Project\"\n  navbar:\n    left:\n      - ...\n\n\nNavigation bar (i.e. menu bar, right-aligned tabs)\n\n\n_config.yml\n\n# right-aligned tabs in navbar\nwebsite:\n  title: \"My Project\"\n  navbar:\n    right:\n      - ...\n\n\n\nSidebar\n\n\n_config.yml\n\n# sidebar (on right-hand side)\nwebsite:\n  title: \"My Project\"\n  sidebar:\n    - ...\n\n\nHybrid: Navbar and Sidebar\n\n\n_config.yml\n\n# sidebar and navbar\nwebsite:\n  title: \"My Project\"\n  navbar:\n    left:\n      - ...\n  sidebar:\n    - ..."
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-navigation-bar",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-navigation-bar",
+    "title": "Quarto Websites (part 1)",
+    "section": "_quarto.yml Navigation bar",
+    "text": "_quarto.yml Navigation bar\n\n\n\n\n\n\n_config.yml\n\nproject:\n  type: website\n\nwebsite:\n  # content displayed on right-column ---&gt;\n  # for sake of clarity               ---&gt;\n\nexecute:\n  echo: true       # Show code by default\n  warning: false   # Hide warning messahes\n  freeze: auto     # freeze execution\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\n    toc-depth: 3\n    css: styles.css\n\n\n\n\n\n\n_config.yml\n\nwebsite:\n  title: \"My Project\"\n  navbar:\n    search: true\n    contents:\n      - text: \"Overview\"\n        href: index.qmd\n      - section: \"Analysis\"\n        contents:\n          - href: 01_data_prep.qmd\n          - href: 02_exploration.qmd\n          - href: 03_modeling.qmd\n          - href: 04_conclusions.qmd\n      - text: \"Codebook\"\n        href: data_dictionary.qmd"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-sidebar-bar",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-sidebar-bar",
+    "title": "Quarto Websites (part 1)",
+    "section": "_quarto.yml Sidebar bar",
+    "text": "_quarto.yml Sidebar bar\n\n\n\n\n\n\n_config.yml\n\nproject:\n  type: website\n\nwebsite:\n  # content displayed on right-column ---&gt;\n  # for sake of clarity               ---&gt;\n\nexecute:\n  echo: true       # Show code by default\n  warning: false   # Hide warning messahes\n  freeze: auto     # freeze execution\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\n    toc-depth: 3\n    css: styles.css\n\n\n\n\n\n\n_config.yml\n\nwebsite:\n  title: \"My Project\"\n  sidebar:\n    style: \"docked\"\n    search: true\n    contents:\n      - text: \"Overview\"\n        href: index.qmd\n      - section: \"Analysis\"\n        contents:\n          - href: 01_data_prep.qmd\n          - href: 02_exploration.qmd\n          - href: 03_modeling.qmd\n          - href: 04_conclusions.qmd\n      - text: \"Codebook\"\n        href: data_dictionary.qmd"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-hybrid-navbar-sidebar",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#quarto.yml-hybrid-navbar-sidebar",
+    "title": "Quarto Websites (part 1)",
+    "section": "_quarto.yml Hybrid (Navbar & Sidebar)",
+    "text": "_quarto.yml Hybrid (Navbar & Sidebar)\n\n\n\n\n\n\n_config.yml\n\nproject:\n  type: website\n\nwebsite:\n  # content displayed on right-column ---&gt;\n  # for sake of clarity               ---&gt;\n\nexecute:\n  echo: true       # Show code by default\n  warning: false   # Hide warning messahes\n  freeze: auto     # freeze execution\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\n    toc-depth: 3\n    css: styles.css\n\n\n\n\n\n\n_config.yml\n\nwebsite:\n  title: \"My Project\"\n  navbar:\n    left: \n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Analysis\n        href: analysis.qmd\n      - text: \"Codebook\"\n        href: data_dictionary.qmd\n  sidebar:\n    - title: \"Analysis\"\n      style: \"docked\"\n      contents:\n        - href: 01_data_prep.qmd\n        - href: 02_exploration.qmd\n        - href: 03_modeling.qmd\n        - href: 04_conclusions.qmd"
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#freeze-execution-execute-freeze-auto",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#freeze-execution-execute-freeze-auto",
+    "title": "Quarto Websites (part 1)",
+    "section": "Freeze execution (execute: freeze: auto)",
+    "text": "Freeze execution (execute: freeze: auto)\nExecuting complex models or massive data pipelines every single time you render a site will severely slow you down.\n\nSetting freeze: auto tells Quarto to save computational results in a _freeze/ folder.\nCode chunks will only re-run when the source .qmd file actually changes.\nCommit the _freeze/ folder to Git! This allows Continuous Integration platforms (like GitHub Actions) to publish your site without needing access to your raw databases or computing environment."
   },
   {
     "objectID": "lectures/06-git2/06-git-workflow-slides.html#yesterdays-lab",
