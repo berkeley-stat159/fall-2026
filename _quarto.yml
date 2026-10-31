@@ -39,8 +39,10 @@ website:
           - readings/05-reading-reinhart-rogoff.qmd
           - readings/06-reading-duke-trials.qmd
           - readings/07-reading-share-code.qmd
-          - readings/08-reading-legal-framework.qmd
-          - readings/09-reading-better-figures.qmd
+          - readings/08-reading-theranos.qmd
+          - readings/09-reading-legal-framework.qmd
+          - readings/10-reading-research-compendium.qmd
+          - readings/11-reading-better-figures.qmd
       - section: "HW"
         collapse: true
         contents:
@@ -48,6 +50,7 @@ website:
           - hws/proj01/proj01.qmd
           - hws/hw02/hw02.qmd
           - hws/proj02/proj02.qmd
+          - hws/hw03/hw03.qmd
       - section: "Other"
         contents:
           - href: license.qmd
