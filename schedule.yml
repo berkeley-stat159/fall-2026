@@ -300,11 +300,11 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 7"
-          href: ""
+          href: "lectures/28-discuss7/28-discussion-slides.html"
         - type: "Homework"
           id: ""
           name: "HW-3 Package (due 11/13)"
-          href: ""
+          href: "hws/hw03/hw03.qmd"
 - week: 11
   days:
     - date: "Nov 02"
