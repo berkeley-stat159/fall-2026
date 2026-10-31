@@ -1,0 +1,241 @@
+---
+title: "Dare to Share"
+subtitle: "The Code-Sharing Paradox"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Share Your Code
+
+## Reading 1
+
+::: {.nonincremental}
+- Title: **Top ten reasons to not share your code (and why you should anyway)**
+- Authors: Randall J. LeVeque.
+- Journal: Software Sustainability Institute
+- Year: 2012
+- <https://www.software.ac.uk/blog/top-ten-reasons-not-share-your-code-and-why-you-should-anyway>
+:::
+
+
+## Reading 2
+
+::: {.nonincremental}
+- Title: **Publish your computer code: it is good enough**
+- Authors: Nick Barnes.
+- Journal: Nature 467 (7317): 753 
+- Year: Oct 2010
+- doi: 10.1038/467753a
+- <https://doi.org/10.1038/467753a>
+:::
+
+
+# Discussion Time
+
+## Screens Off, Minds On
+
+\
+
+::: {.nonincremental}
+- [Devices Away:]{.bold-hilit} Laptops & tablets closed, phones away.
+
+- [No One Alone:]{.bold-hilit} Pair or team up (no solo seats).
+
+- [Engage Fully:]{.bold-hilit} Be ready to speak, debate, and share ideas.
+:::
+
+
+## Poll
+
+\
+
+::: {.poll}
+Have you ever read a paper, wanted the code and/or the data, 
+emailed the authors asking for it "upon request," and received nothing back?
+:::
+
+. . .
+
+\
+
+Write your answer on the scrath paper handed out to you.
+
+
+## The "Demand Support" Excuse
+
+Common excuse to not share code: <br>
+["People will pick holes and demand support."]{.bold-hilit}
+
+\
+
+- Suppose you've written an R/Python package that you want to share via GitHub.
+- You are worried that users will demand technical support.
+
+. . .
+
+::: {.poll}
+Silently think (and write) about two boundaries that you would set to limit how much support 
+you are willing to give.
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(3, bottom = 0)
+```
+
+
+## Drafting a `SUPPORT.md` file
+
+Common excuse to not share code: <br>
+["People will pick holes and demand support."]{.bold-hilit}
+
+\
+
+. . .
+
+::: {.poll .nonincremental}
+- In trios, draft a `SUPPORT.md` disclaimer for a GitHub repo. 
+
+- State your commitment to open science while setting firm boundaries 
+against personal tech support requests.
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(5, bottom = 0)
+```
+
+
+## Discussion (part 1)
+
+:::: {.columns}
+::: {.column width="50%"}
+[Team A: The Proprietary Tech Firm]{.hilit}
+
+- Your team has built a simulation code that calculates the structural stress limits 
+for public bridges. 
+- Your team refuses to share the code claiming it's a corporate secret.
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%" .fragment}
+[Issues]{.bold-hilit}
+
+- A bridge design built using the firm's secret code has just shown minor structural cracks. 
+- The firm claims it's an isolated steel issue, not a software issue.
+:::
+::::
+
+. . .
+
+::: {.poll}
+Huddle with your immediate neighbors to formulate 3 compelling arguments to defend 
+Team A position.
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4.5, bottom = 0)
+```
+
+<!--
+The Proprietary Tech Firm
+
+1. **[Argument 1: Intellectual Property]**
+2. **[Argument 2: Support Overload]**
+3. **[Argument 3: Code Modification Risks]**
+
+- Commercial Survival: How do you protect your multi-year financial investment from 
+being copied by global corporate rivals]?
+- The User Support Trap: If the code goes public, how do you prevent your engineering 
+team from being hijacked by strangers demanding free tech support]?
+- The Liability Shield: If you open-source the code and someone modifies a parameter, 
+causing a crash, who legally owns that failure?
+-->
+
+
+## Discussion (part 2)
+
+:::: {.columns}
+::: {.column width="45%" .nonincremental}
+[Issues]{.bold-hilit}
+
+- A bridge design built using the firm's secret code has just shown minor structural cracks. 
+- The firm claims it's an isolated steel issue, not a software issue.
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%" .fragment}
+[Team B: The Public Safety Board]{.mdlit}
+
+- You refuse to approve Team A's projects because you cannot verify their
+black-box simulation.
+:::
+::::
+
+. . .
+
+::: {.poll}
+Huddle with your immediate neighbors to formulate 3 compelling arguments to defend 
+Team B position.
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4.5, bottom = 0)
+```
+
+<!--
+The Public Safety Board:
+
+1. **[Argument 1: Public Accountability]**
+2. **[Argument 2: Forensic Transparency]**
+3. **[Argument 3: Unverifiable Black Boxes]**
+
+- The Black Box Danger: Why is an un-auditable computational simulation a fundamental 
+violation of the scientific method?
+- The Life-or-Death Reality: As LeVeque warns, when math moves "outside the ivory tower," 
+what happens when code bugs carry real-world body counts?
+- The Peer Review Minimum: Why is staring at a final PDF chart or commercial certificate 
+completely empty without line-by-line inspection?
+-->
+
+
+## Discussion (part 3)
+
+The tech firm ([Team A]{.hilit}) refuses to open-source its proprietary stress-testing code 
+due to commercial secrets.
+
+But the public safety board ([Team B]{.mdlit}) refuses to trust a black box.
+
+\
+
+. . .
+
+::: {.poll}
+How can Team A prove its code works without leaking its competitive edge to global rivals?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(4.5, bottom = 0)
+```
+
+
+## Discussion (part 4)
+
+::: {.poll}
+Where should the legal and ethical line be drawn between a private company's right 
+to protect its proprietary code/algorithms and the public's right to independent 
+verification---especially when lives, or public policy depend on those computational claims?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(3.5, bottom = 0)
+```
+
