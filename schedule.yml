@@ -236,7 +236,7 @@
         - type: "Lecture"
           id: ""
           name: "Discussion Reading 6"
-          href: ""
+          href: "lectures/22-discuss6/22-discussion-slides.html"
         - type: "Homework"
           id: ""
           name: "Proj2 2024 BPD Annual Report (due 10/30)"
@@ -327,8 +327,8 @@
           href: ""
         - type: "Reading"
           id: ""
-          name: "RR Legal Framework (due 11/04)"
-          href: "readings/09-legal-framework.html"
+          name: "RR Legal Framework (due 11/11)"
+          href: "readings/09-reading-legal-framework.html"
     - date: "Nov 06"
       items:
         - type: "Lecture"
@@ -347,7 +347,7 @@
       items:
         - type: "Lab"
           id: ""
-          name: "Handling images and figures"
+          name: "Revealjs Slides"
           href: ""
     - date: "Nov 11"
       items:
@@ -391,7 +391,7 @@
           href: ""
         - type: "Reading"
           id: ""
-          name: "Rules for Better Figures (due 11/11)"
+          name: "Rules for Better Figures (due 12/01)"
           href: "readings/11-reading-better-figures.html"
     - date: "Nov 20"
       items:
