@@ -29,6 +29,12 @@ Your package should have two primary functions:
 2) Function to make the scatter plot---like the plot you graphed in HW2
 (without annotations)
 
+    + Input: data frame obtained from the function in part (1)
+
+    + Output: scatter plot like the NYT dataviz (x-axis: player's age, 
+    y-axis: difference between player's age and opponent's age,
+    points color-coded by win-lose status)
+
 For example, suppose the functions of my package are `data_function()` and 
 `plot_function()`. BTW: give better names to your functions. Under this 
 assumption, a user should be able to call my functions like so:
