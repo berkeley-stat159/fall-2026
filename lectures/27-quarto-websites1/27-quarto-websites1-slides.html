@@ -766,6 +766,17 @@
 <span id="cb18-18"><a aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>href: 04_conclusions.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
+</section></section>
+<section>
+<section id="integrating-data-pipelines" class="title-slide slide level1 center">
+<h1>Integrating Data Pipelines</h1>
+
+</section>
+<section id="data-pipelines" class="slide level2">
+<h2>Data Pipelines</h2>
+<p>It’s not uncommon to work on a project that involves several data files, cleaning those files, deriving subsets from them, and then performing computations on them.</p>
+<p>Likewise, it’s not uncommon to run simulations or modeling steps that may take some time and/or depend on external computational resources (e.g.&nbsp;remote servers, clusters, etc).</p>
+<p>You don’t want to unnecessarily be running those computations everytime you render/preview your website.</p>
 </section>
 <section id="freeze-execution-execute-freeze-auto" class="slide level2">
 <h2>Freeze execution (<code>execute: freeze: auto</code>)</h2>
@@ -775,6 +786,33 @@
 <li class="fragment"><p>Code chunks will only re-run when the source <code>.qmd</code> file actually changes.</p></li>
 <li class="fragment"><p>Commit the <code>_freeze/</code> folder to Git! This allows Continuous Integration platforms (like GitHub Actions) to publish your site without needing access to your raw databases or computing environment.</p></li>
 </ul>
+</section>
+<section id="script-files" class="slide level2">
+<h2>Script files</h2>
+<p>In addition to freezing execution, you can also include script files (e.g., <code>.R</code>, <code>.py</code> files) that take care of certain computational steps without being part of the <code>.qmd</code> files of your website.</p>
+<p>In these situations you can manage everything with a <code>Makefile</code>, having separate rules for elements other than the website, and a special rule just for rendering the website.</p>
+</section>
+<section id="example-1" class="slide level2 smaller">
+<h2>Example</h2>
+<pre><code>demo-web/
+├── README.md           # Main readme file
+├── _quarto.yml         # The "brain" and main config file of the site
+├── index.qmd           # The homepage (rendered to index.html)
+├── 01_data_prep.qmd
+├── 02_exploration.qmd
+├── 03_modeling.qmd
+├── 04_conclusions.qmd 
+├── styles.css          # Optional custom CSS overrides
+├── data/               # data folder (raw, clean data sets, codebook)
+├── scripts/            # folder for R/Py scripts
+├── outputs/            # folder for derived outputs (might be used in qmd files)</code></pre>
+<p><br>
+</p>
+<p>Other files that could be necessary/worth including:</p>
+<pre><code>├── LICENSE             # License(s) for your project (code &amp; media)
+├── Makefile            # Rules for multiple tasks
+├── environment.yml     # Conda environment
+├── demo-web.Rproj      # (optional if using RStudio)</code></pre>
 
 
 </section></section>

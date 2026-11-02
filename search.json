@@ -2653,7 +2653,7 @@
     "href": "hws/hw03/hw03.html#main-functions",
     "title": "HW3) R/Python Package",
     "section": "Main Functions",
-    "text": "Main Functions\nYour package should have two primary functions:\n\nFunction to get the career’s data of a given player\n\nInput: name of player, e.g. \"serena williams\", or \"Serena Williams\" or \"SerenaWilliams\"\nOutput: data frame to be used for graphing purposes (like the serena data frame of HW2)\nIf the user provides an invalid name of a player (\"Gaston Sanchez\"), then it should return a meaningful error message.\n\nFunction to make the scatter plot—like the plot you graphed in HW2 (without annotations)\n\nFor example, suppose the functions of my package are data_function() and plot_function(). BTW: give better names to your functions. Under this assumption, a user should be able to call my functions like so:\n# Serena Williams data and plot\nserena = data_function(\"serena williams\")\nplot_function(serena)\n\n# Rafael Nadal data and plot\nrafa = data_function(\"Rafael Nadal\")\nplot_function(rafa)\n\n# returns a meaningful error message\nunknown_player = data_function(\"GastonSanchez\")",
+    "text": "Main Functions\nYour package should have two primary functions:\n\nFunction to get the career’s data of a given player\n\nInput: name of player, e.g. \"serena williams\", or \"Serena Williams\" or \"SerenaWilliams\"\nOutput: data frame to be used for graphing purposes (like the serena data frame of HW2)\nIf the user provides an invalid name of a player (\"Gaston Sanchez\"), then it should return a meaningful error message.\n\nFunction to make the scatter plot—like the plot you graphed in HW2 (without annotations)\n\nInput: data frame obtained from the function in part (1)\nOutput: scatter plot like the NYT dataviz (x-axis: player’s age, y-axis: difference between player’s age and opponent’s age, points color-coded by win-lose status)\n\n\nFor example, suppose the functions of my package are data_function() and plot_function(). BTW: give better names to your functions. Under this assumption, a user should be able to call my functions like so:\n# Serena Williams data and plot\nserena = data_function(\"serena williams\")\nplot_function(serena)\n\n# Rafael Nadal data and plot\nrafa = data_function(\"Rafael Nadal\")\nplot_function(rafa)\n\n# returns a meaningful error message\nunknown_player = data_function(\"GastonSanchez\")",
     "crumbs": [
       "HW",
       "HW3) R/Python Package"
@@ -5638,11 +5638,32 @@
     "text": "_quarto.yml Hybrid (Navbar & Sidebar)\n\n\n\n\n\n\n_config.yml\n\nproject:\n  type: website\n\nwebsite:\n  # content displayed on right-column ---&gt;\n  # for sake of clarity               ---&gt;\n\nexecute:\n  echo: true       # Show code by default\n  warning: false   # Hide warning messahes\n  freeze: auto     # freeze execution\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\n    toc-depth: 3\n    css: styles.css\n\n\n\n\n\n\n_config.yml\n\nwebsite:\n  title: \"My Project\"\n  navbar:\n    left: \n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Analysis\n        href: analysis.qmd\n      - text: \"Codebook\"\n        href: data_dictionary.qmd\n  sidebar:\n    - title: \"Analysis\"\n      style: \"docked\"\n      contents:\n        - href: 01_data_prep.qmd\n        - href: 02_exploration.qmd\n        - href: 03_modeling.qmd\n        - href: 04_conclusions.qmd"
   },
   {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#data-pipelines",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#data-pipelines",
+    "title": "Quarto Websites (part 1)",
+    "section": "Data Pipelines",
+    "text": "Data Pipelines\nIt’s not uncommon to work on a project that involves several data files, cleaning those files, deriving subsets from them, and then performing computations on them.\nLikewise, it’s not uncommon to run simulations or modeling steps that may take some time and/or depend on external computational resources (e.g. remote servers, clusters, etc).\nYou don’t want to unnecessarily be running those computations everytime you render/preview your website."
+  },
+  {
     "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#freeze-execution-execute-freeze-auto",
     "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#freeze-execution-execute-freeze-auto",
     "title": "Quarto Websites (part 1)",
     "section": "Freeze execution (execute: freeze: auto)",
     "text": "Freeze execution (execute: freeze: auto)\nExecuting complex models or massive data pipelines every single time you render a site will severely slow you down.\n\nSetting freeze: auto tells Quarto to save computational results in a _freeze/ folder.\nCode chunks will only re-run when the source .qmd file actually changes.\nCommit the _freeze/ folder to Git! This allows Continuous Integration platforms (like GitHub Actions) to publish your site without needing access to your raw databases or computing environment."
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#script-files",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#script-files",
+    "title": "Quarto Websites (part 1)",
+    "section": "Script files",
+    "text": "Script files\nIn addition to freezing execution, you can also include script files (e.g., .R, .py files) that take care of certain computational steps without being part of the .qmd files of your website.\nIn these situations you can manage everything with a Makefile, having separate rules for elements other than the website, and a special rule just for rendering the website."
+  },
+  {
+    "objectID": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#example-1",
+    "href": "lectures/27-quarto-websites1/27-quarto-websites1-slides.html#example-1",
+    "title": "Quarto Websites (part 1)",
+    "section": "Example",
+    "text": "Example\ndemo-web/\n├── README.md           # Main readme file\n├── _quarto.yml         # The \"brain\" and main config file of the site\n├── index.qmd           # The homepage (rendered to index.html)\n├── 01_data_prep.qmd\n├── 02_exploration.qmd\n├── 03_modeling.qmd\n├── 04_conclusions.qmd \n├── styles.css          # Optional custom CSS overrides\n├── data/               # data folder (raw, clean data sets, codebook)\n├── scripts/            # folder for R/Py scripts\n├── outputs/            # folder for derived outputs (might be used in qmd files)\n\n\nOther files that could be necessary/worth including:\n├── LICENSE             # License(s) for your project (code & media)\n├── Makefile            # Rules for multiple tasks\n├── environment.yml     # Conda environment\n├── demo-web.Rproj      # (optional if using RStudio)"
   },
   {
     "objectID": "lectures/06-git2/06-git-workflow-slides.html#yesterdays-lab",
