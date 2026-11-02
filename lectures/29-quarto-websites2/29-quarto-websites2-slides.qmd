@@ -94,7 +94,7 @@ How to organize and present these in a website?
 ::: {.column}
 Navigation bar (i.e. menu bar, [left-aligned]{.hilit} tabs)
 
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 # left-aligned tabs in navbar
 website:
   title: "My Project"
@@ -106,7 +106,7 @@ website:
 ::: {.fragment}
 Navigation bar (i.e. menu bar, [right-aligned]{.mdlit} tabs)
 
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 # right-aligned tabs in navbar
 website:
   title: "My Project"
@@ -121,7 +121,7 @@ website:
 ::: {.column .fragment}
 Sidebar
 
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 # sidebar (on right-hand side)
 website:
   title: "My Project"
@@ -132,7 +132,7 @@ website:
 ::: {.fragment}
 Hybrid: Navbar and Sidebar
 
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 # sidebar and navbar
 website:
   title: "My Project"
@@ -153,7 +153,7 @@ website:
 
 :::: {.columns}
 ::: {.column width="45%"}
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 project:
   type: website
 
@@ -179,20 +179,23 @@ format:
 :::
 
 ::: {.column width="50%"}
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 website:
   title: "My Project"
   navbar:
-    search: true
-    contents:
+    left:
       - text: "Overview"
         href: index.qmd
-      - section: "Analysis"
-        contents:
-          - href: 01_data_prep.qmd
-          - href: 02_exploration.qmd
-          - href: 03_modeling.qmd
-          - href: 04_conclusions.qmd
+      - text: "Analysis"
+        menu: 
+          - text: Intro
+            href: 01_data_prep.qmd
+          - text: EDA
+            href: 02_exploration.qmd
+          - text: Modeling
+            href: 03_modeling.qmd
+          - text: Conclusions
+            href: 04_conclusions.qmd
       - text: "Codebook"
         href: data_dictionary.qmd
 ```
@@ -206,7 +209,7 @@ website:
 
 :::: {.columns}
 ::: {.column width="45%"}
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 project:
   type: website
 
@@ -232,7 +235,7 @@ format:
 :::
 
 ::: {.column width="50%"}
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 website:
   title: "My Project"
   sidebar:
@@ -260,7 +263,7 @@ website:
 
 :::: {.columns}
 ::: {.column width="45%"}
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 project:
   type: website
 
@@ -286,7 +289,7 @@ format:
 :::
 
 ::: {.column width="50%"}
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 website:
   title: "My Project"
   navbar:
@@ -331,7 +334,7 @@ render/preview your website.
 Executing complex models or massive data pipelines every single time 
 you render a site will severely slow you down.
 
-```{.markdown filename="_config.yml" code-line-numbers="false"}
+```{.markdown filename="_quarto.yml" code-line-numbers="false"}
 project:
   type: website
 
