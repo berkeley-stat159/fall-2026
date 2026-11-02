@@ -312,7 +312,7 @@
         - type: "Lecture"
           id: ""
           name: "Quarto Websites 2"
-          href: ""
+          href: "lectures/29-quarto-websites2/29-quarto-websites2-slides.html"
     - date: "Nov 03"
       items:
         - type: "Lab"
