@@ -162,6 +162,12 @@ pip install git+https://github.com/username/yourpackage.git
 ```
 
 
+### Reflections in `README.md`
+
+Like in Project-2, in your `README.md` file please include a section of personal 
+reflections about the things you learn while working on this assignment.
+
+
 ### Commits
 
 As usual, we will grade commit mechanics (how changes are packaged and documented) 
@@ -178,4 +184,3 @@ vague messages.
 
 Because this HW involves developing and submitting a package,
 there is no need to include `Makefile` and `environment.yml` files.
- 
