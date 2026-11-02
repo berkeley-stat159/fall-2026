@@ -17,7 +17,7 @@ listing:
 
 ::: {.callout-note title="Announcements 📣"}
 
-Project 2 due Oct-30
+HW-3 due Nov-13
 :::
 
 
