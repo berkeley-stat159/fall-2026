@@ -8,8 +8,8 @@ title: 9) RR Legal Framework
 - Author(s): Victoria Stodden
 - Year: 2009
 - Journal: Computing in Science & Engineering
-- <doi:10.1038/467753a>
-
+- <https://www.stodden.net/papers/LFRSR12012008.pdf>
+- <https://doi.org/10.1109/MCSE.2009.19>
 
 
 ## Reflections
@@ -21,4 +21,67 @@ assignment in bCourses.
 Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
 :::
 
-More details TBD
+
+## Reflection 1: Forced Openness or Maximize Reuse?
+
+Imagine you wrote a brilliant data-cleaning script---hosted in a public
+repo in your github account---that could help many analysts 
+and users in your field. But the repo has no software license.
+
+- Do you realize that by *doing nothing*, your code is closed-source 
+(because of default copyright law)? This means that other users have no 
+legal permission to copy, modify, distribute, or use your code in their own projects.
+
+- Would you use a "Share Alike" (copyleft) license to legally force others to be open, 
+or would you use a permissive attribution license (like modified BSD) to maximize reuse, 
+even if a corporate user keeps their upgrades secret?
+
+
+## Reflection 2: Who Owns Your Data Cleaning Labor?
+
+Reflect on the most exhausting, messy dataset you have ever had to 
+manually sort, clean, or format for an analysis.
+
+- Knowing that anyone can legally copy your final raw numbers without 
+your permission, but they *cannot* steal your data-cleaning pipeline 
+code without giving you credit, how does this shape your motivation? 
+
+- Does it make you want to share your script logic openly to claim 
+your authorship footprint?
+
+
+## Reflection 3: Copy-Paste Dilemma
+
+Think about a time you were stuck on a coding assignment or class project, 
+found a working solution in a public repository written by a stranger, 
+and copy-pasted a few lines to fix your script.
+
+- Did you check to see if that repository carried a modified BSD, MIT, or 
+open license before taking their code?
+
+- If computational research fields operate on blind trust instead of 
+explicit licensing, are we building our academic workflows on a legally 
+radioactive foundation?
+
+
+
+## Rubric
+
+::: {.callout-important}
+Generic responses that do not mention a specific 
+past assignment name or unique piece of code from your own experience will 
+receive a score of zero.
+:::
+
+- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the prompt in each question. Clearly written by a human.
+
+- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from a webpage
+or AI tool.
+
