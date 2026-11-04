@@ -1,0 +1,542 @@
+---
+title: "Licensing"
+subtitle: "TBD"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Motivation
+
+## Questions
+
+Suppose you wrote some code:
+
+- a script that parses and cleans some data set
+- an analysis script
+- a new algorithm
+- a package
+
+::: {.poll .fragment}
+Who owns the code? <br>
+What can you or others do with it?
+:::
+
+
+## Questions
+
+In addition to code, suppose you also:
+
+- collected data,
+- generated derived information (tables, summaries)
+- created various plots,
+- wrote a report,
+
+::: {.poll .fragment}
+Who owns all of these? <br>
+What can you or others do with them?
+:::
+
+
+# Introduction
+
+## Did you know?
+
+. . .
+
+\
+
+Any software you write (and save)
+
+- is [copyright on creation]{.bold-hilit}
+- you don't have to do any special to claim copyright
+
+
+## What is Copyright?
+
+. . .
+
+It's a legal process that grants the creator of an original work
+[exclusive rights to its use and distribution]{.bold-hilit}
+
+- Under international law, copyright applies automatically the moment an 
+original work is "fixed in a tangible medium."
+
+- The second someone types code into a text file and saves it (or pushes it to GitHub), 
+they own the copyright to that exact expression of code.
+
+-  A creator does not need to include the © symbol, write "All Rights Reserved," 
+or register with a government office to be protected.
+
+
+## Owner of Copyright
+
+::: {.poll}
+Who is the owner of the copyright?
+:::
+
+\
+
+. . .
+
+The copyright owner may be [you, or your employer]{.bold-hilit}
+
+. . .
+
+\
+
+[Exception:]{.bold-hilit} works created by the US government cannot be copyrighted
+(they are considered to be in the _public domain_)
+
+
+## Copyright and Software
+
+\
+
+Regarding software, we care about rights of:
+
+- Reproduction
+- Distribution
+- Modification
+- Derivative works
+
+. . .
+
+Similar considerations can apply to creative-data and media (e.g. reports, 
+graphics, summaries, audio, video)
+
+
+## Four Main Rights
+
+Copyright (_All Rights Reserved_) means a stranger cannot legally do any of the 
+following without explicit, written permission from the owner:
+
+- [Reproduce:]{.bold-hilit} They cannot download, copy, or duplicate the file 
+onto their local machine.
+
+- [Distribute:]{.bold-hilit} They cannot host the file on their own server 
+or share it with others.
+
+- [Modify:]{.bold-hilit} They cannot change a single line of the code to fix 
+a bug or tweak an algorithm.
+
+- [Derive:]{.bold-hilit} They cannot build a new software package that imports 
+or relies on that copyrighted code.
+
+
+## Data-Code-Media under Copyright Law
+
+\
+
+Copyright is a critical nuance for computational reproducibility
+
+\
+
+### Why?
+
+Because reproducibility involves code, data, and derived outputs 
+(tables, graphics, summaries, etc). 
+
+
+## The Paradox of Public Repositories
+
+This creates a massive legal trap on platforms like GitHub.
+
+- [Public to View -vs- Public to Use:]{.bold-hilit} Making a repository 
+"Public" on GitHub means people have a license to view and fork the code 
+on GitHub's infrastructure (per GitHub's Terms of Service).
+
+- [Invisible Wall:]{.bold-hilit} It does not grant viewers the right to 
+download it, run it on their university cluster, 
+or use it in their research paper.
+
+- [Without a license file, a public repository is looking glass science.]{.bold-hilit} 
+Strangers can look at it, but if they touch it, they are technically committing copyright infringement.
+
+- [The Reproducibility Failure:]{.bold-hilit} If a peer cannot legally run 
+your code, your computational science is not reproducible.
+
+
+## Code vs. Data under Copyright Law
+
+To further complicate things, copyright treats code, data, and media
+completely differently:
+
+- [Code is protected:]{.bold-hilit} Copyright treats software code exactly 
+like literary work (like a novel or a poem).
+
+- [Media is also protected:]{.bold-hilit} Reports, graphics, audio, video 
+are creative work.
+
+- [Facts and Data are NOT protected:]{.bold-hilit} Copyright does not protect 
+facts, ideas, mathematical formulas, or raw data. For example, a table listing 
+the boiling points of elements cannot be copyrighted because those are facts.
+
+- [Creativity in Data:]{.bold-hilit} Only the creative arrangement or 
+original selection of a dataset can be copyrighted (e.g., a carefully 
+curated and cleaned database structure).
+
+
+## Example: Data of Coffee Shops in the Bay Area
+
+. . .
+
+:::: {.columns}
+::: {.column}
+[Facts]{.mdlit}
+
+- names
+- street addresses
+- phone numbers
+- operating hours 
+
+::: {.fragment}
+Anyone is legally free to scrape 
+that public data and publish it.
+:::
+:::
+
+::: {.column .fragment}
+[Copyrighted data]{.hilit}
+
+::: {.fragment}
+A selective, expert-curated guidebook or specialized database, 
+such as _The 50 Best Independent Coffee Shops in the Bay Area_.
+:::
+
+- Original Selection
+- Creative arrangement
+:::
+::::
+
+
+## Example: Data of Coffee Shops in the Bay Area
+
+::: {.poll}
+_The 50 Best Independent Coffee Shops in the Bay Area_
+:::
+
+- No one can legally prevent you from reusing the individual facts 
+(e.g., that a specific café is located at 123 Main Street)
+
+- However, the specific selection, arrangement, and editorial presentation 
+created by the author are protected by copyright. 
+
+- Copying the entire curated list or 
+database layout as your own would constitute copyright infringement.
+
+
+# Software Licenses
+
+## Software Licensing Spectrum
+
+1) [All Rights Reserved]{.hilit}
+2) Proprietary licenses (closed)
+3) Permissive Licenses (the "Do Whatever" Category)
+4) Copyleft / Viral Licenses (the "Keep It Free" Category)
+5) [Public Domain]{.mdlit}
+
+. . .
+
+Resources: 
+
+::: {.nonincremental}
+- Free Software Foundation: <https://www.fsf.org/>
+- Open Source Initiative: <https://opensource.org/>
+:::
+
+
+## Questions
+
+\
+
+::: {.poll}
+What do you understand by "Free Software"?
+:::
+
+::: {.poll .fragment}
+What do you understand by "Open Source"?
+:::
+
+
+## Public Domain
+
+There is no official "public domain license" because a work in the 
+public domain belongs to everyone rather than being owned or 
+restricted by a license.
+
+\
+
+However, tools and public-domain-equivalent instruments exist to 
+legally dedicate or waive copyright, e.g.
+
+[0BSD (Zero-Clause BSD):]{.bold-hilit} A license that grants unconditional 
+permission to use, copy, modify, and distribute a work without any attribution requirement.
+
+
+## Permissive Licenses 
+
+The ["Do Whatever"]{.mdlit} Category
+
+- [MIT License:]{.bold-hilit} Short, simple, allows commercial use, requires keeping the copyright notice.
+
+- [BSD License:]{.bold-hilit} Like MIT but with multiple variants depending on the number of clauses.
+
+- [Apache 2.0:]{.bold-hilit} Similar to MIT but includes explicit patent rights protection from contributors.
+
+- [Best For:]{.bold-hilit} Maximizing adoption, industry collaboration, and academic software packages.
+
+
+## Permissive Licenses (cont'd)
+
+They allow you to freely use, modify, and distribute software for commercial 
+or private use without requiring you to open-source your derivative code.
+
+- [Permissive Freedom:]{.bold-hilit} Allow free use, copying, modification, 
+and integration into proprietary (closed-source) software.
+
+- [No Copyleft:]{.bold-hilit} They are not ["viral"]{.hilit} like the GPL; you are not 
+forced to release your modified source code under the same license.
+
+- [Attribution & Disclaimers:]{.bold-hilit} They require you to keep the 
+original copyright notice, license text, and liability disclaimers intact.
+
+
+## Permissive Licenses (cont'd) {.smaller}
+
+\
+
+| Feature                        | MIT | BSD (2-Clause) | BSD (3-Clause) | Apache |
+|--------------------------------|-----|----------------|----------------|--------|
+| Document Length                | Short |	Short	    | Short          | Long |
+| Commercial Use Allowed         | Yes |	Yes	        | Yes            | Yes |
+| Modification & Distribution    | Yes |	Yes	        | Yes            | Yes |
+| Requires Copyright Attribution | Yes |	Yes	        | Yes            | Yes |
+| Non-Endorsement Clause         | No  |	No	        | Yes            | Yes |
+| Explicit Patent Grant          | No  |	No	        | No             | Yes |
+| Explicit Trademark Protection  | No  |	No	        | Yes            | Yes |
+| Requires Stating Changes       | No  |	No	        | No             | Yes |
+
+
+## Copyleft / Viral Licenses 
+
+\
+
+The ["Keep It Free"]{.hilit} Category[^1]
+
+- [GNU GPL v3:]{.bold-hilit} Anyone who modifies and redistributes the code must 
+also open-source their changes under GPL.
+
+. . .
+
+Keep in mind that this type of licenses can deter commercial partners or integration 
+into proprietary institutional tools.
+
+[^1]: Free as in freedom, not as in cost or price.
+
+
+## Limitation of Software Licenses
+
+Software licenses do not fit:
+
+- text
+- figures
+- trained weights
+- tabular data
+- (media in general)
+
+. . .
+
+Instead of software licenses you need to use Creative Commons (CC) Framework
+
+
+## Functional vs. Static Expression
+
+:::: {.columns}
+::: {.column}
+[Software Licenses]{.bold-hilit}
+
+These assume the work will be compiled, executed, linked, or 
+imported into other programs. 
+
+They regulate things like running the code, modifying the source logic, 
+or embedding the code into a larger application.
+:::
+
+::: {.column .fragment}
+[Media Licenses]{.bold-hilit}
+
+These assume the work will be read, viewed, listened to, or displayed. 
+
+They regulate things like printing a text, showing an image in a presentation, 
+or remixing an audio track into a video.
+:::
+::::
+
+
+## Limitation of Software Licenses
+
+- If you apply a software license to a research paper 
+or an image, it is legally muddy. 
+
+- Concepts like "compiling" or "linking" do not map onto a JPEG or 
+a PDF or MP3 or MP4 files.
+
+- Software licenses generally assume the asset is a functional tool, 
+not an artistic expression.
+
+
+## The Threat of "Non-Commercial" (NC) Clauses in Science
+
+Students often instinctively gravitate toward 
+[Creative Commons Non-Commercial (CC BY-NC)]{.bold-hilit} for their 
+research papers, figures, and slide decks because they want to protect 
+their work from being sold by corporations.
+
+However, NC clauses are dangerous for open science. 
+
+
+## NC clauses (cont'd)
+
+NC clauses are dangerous for open science, because:
+
+- "Commercial use" is poorly defined in court. 
+
+- [Academic Trap:]{.bold-hilit} If a researcher at a private university or a commercial 
+medical center downloads a dataset under a CC BY-NC license to reproduce 
+a study, they might be violating the license because their institution 
+charges tuition or holds patents.
+
+- [Funding Compliance:]{.bold-hilit} Many public grants (like NIH or Horizon Europe) 
+strictly mandate that research outputs be published under CC BY 
+(Attribution Only) or CC0 (Public Domain) to maximize public good. 
+An NC clause will often violate funding terms.
+
+
+# Recommendations
+
+
+## Best Practices Checklist for a Project Repository
+
+Every repository needs a root-level `LICENSE` file. You can split your repository 
+assets using the correct legal tool for each job:
+
+- 💻 The Code (Python/R script files, Notebooks): 
+Use MIT, BSD, Apache 2.0, or GPL v3.
+
+- 📊 The Data (CSV files, SQL databases, JSON logs): 
+Use CC0 (Public Domain Dedication) to avoid legal bottlenecks when combining datasets.
+
+- 📝 The Narrative (Research papers, README text, documentation pages): 
+Use CC BY 4.0.
+
+- 🎨 The Visuals (Plots, diagrams, summary charts, introductory videos): 
+Use CC BY 4.0.
+
+
+## Option 1) The Multi-License README file
+
+Using a `LICENSE` file, and a `README.md` file
+
+- Keep one primary `LICENSE` file in the root directory
+    + File Name: `LICENSE` (No extension)
+    + Contents: Full text of the primary software license (e.g., the MIT License).
+- At the very bottom of the `README.md`, students add a "License & Citation" section that explicitly draws boundaries around the assets.
+
+
+## Option 1) The Multi-License README file
+
+At the very bottom of the `README.md` include some text like the following:
+
+::: {.small}
+```{.markdown filename="README.md" code-line-numbers="false"}
+## Licensing
+
+The assets in this repository are split under different licenses 
+to ensure maximum reproducibility:
+
+- **Code:** All source code (`.py`, `.sh`, `.ipynb`) is licensed under 
+the [MIT License](LICENSE).
+
+- **Data:** All datasets in the `/data` directory are dedicated to the 
+public domain under [CC0 1.0 Universal](https://creativecommons.org).
+
+- **Narrative & Visuals:** All documentation, text, and figures 
+(`/plots`, `/docs`) are licensed under a 
+[Creative Commons Attribution 4.0 International License](https://creativecommons.org).
+```
+:::
+
+
+## Option 2) The REUSE Standard
+
+The REUSE standard explicitly tags every single asset using a dedicated 
+directory and small text headers.
+
+Instead of putting licenses in the root directory, you create a folder named 
+`LICENSES/` and place the text of every license they use inside it, 
+named exactly after their SPDX identifier:
+
+- `LICENSES/MIT.txt`
+- `LICENSES/CC0-1.0.txt`
+- `LICENSES/CC-BY-4.0.txt`
+
+
+## Option 2) The REUSE Standard
+
+Add a tiny, commented header to the top of your files to state who 
+owns it and how it is licensed.
+
+```{.markdown filename="script.py" code-line-numbers="false"}
+# SPDX-FileCopyrightText: 2026 Your Name <your.email@university.edu>
+# SPDX-License-Identifier: MIT
+```
+
+\
+
+```{.markdown filename="paper.qmd" code-line-numbers="false"}
+<!--
+SPDX-FileCopyrightText: 2026 Your Name <your.email@university.edu>
+SPDX-License-Identifier: CC-BY-4.0
+-->
+```
+
+
+# Citation
+
+## About Citation
+
+In addition to a top-level README file, as well as LICENSE files 
+(for code and non-code) it's a good idea to have a CITATION file.
+
+- Citation File Format (CITATION.cff)
+
+- This YAML file lets platforms like GitHub automatically generate 
+APA/BibTeX citations for repositories.
+
+- Also, you can mint a Digital Object Identifier (DOI) by linking 
+a GitHub release to Zenodo.
+
+
+## Citation example {.smaller}
+
+```{.markdown filename="CITATION.cff" code-line-numbers="false"}
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Smith"
+    given-names: "Jane"
+    orcid: "https://orcid.org"
+  - family-names: "Doe"
+    given-names: "John"
+title: "My Awesome Data Science Tool"
+version: "1.4.2"
+doi: "10.5281/zenodo.1234567"
+date-released: "2026-10-15"
+url: "https://project-webpage.com"
+repository-code: "https://github.com/project-repo"
+keywords:
+  - "data-science"
+  - "programming"
+license: "MIT"
+```
+
