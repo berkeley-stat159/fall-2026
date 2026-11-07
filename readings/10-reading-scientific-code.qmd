@@ -1,0 +1,105 @@
+---
+title: 10) Rules for Scientific Software
+---
+
+## Assigned Readings
+
+📖 Article
+
+- Title: **Ten Simple Rules for the Open Development of Scientific Software**
+- Author(s): Andreas Prlić, and James B. Procter
+- Year: 2012
+- Journal: PLOS Computational Biology
+- <https://doi.org/10.1371/journal.pcbi.1002802>
+
+
+📖 Article
+
+- Title: **Ten simple rules for documenting scientific software**
+- Author(s): Benjamin D. Lee
+- Year: 2018
+- Journal: PLOS Computational Biology
+- <https://doi.org/10.1371/journal.pcbi.1006561>
+
+
+
+## Reflections
+
+::: {.callout-note title="bCourses Submission"}
+Submit your answers---to the following questions---to the corresponding 
+assignment in bCourses.
+
+Accepted formats: PDF, HTML, MS Word (`.docx`), or Google Doc
+:::
+
+
+## Reflection 1
+
+Locate a function or script you wrote earlier this semester that 
+contains line-by-line inline comments.
+
+- Quote a comment you wrote that simply restated what the syntax was doing 
+(e.g., `# filter out NA values`), and rewrite it to document why that 
+step was scientifically or logically necessary for your analysis pipeline.
+
+- Lee emphasizes documenting high-level architecture over inline commentary.
+How does looking at your code architecture at a macro level reveal redundancies 
+that inline comments masked?
+
+
+## Reflection 2
+
+Open a code script or computational notebook you wrote more than 3 
+months ago (from a prior class or early project). Without running any 
+code cells, read through it from top to bottom.
+
+- Record the exact minute mark where you lost context or could no longer 
+immediately explain why a specific data transformation, magic number, or 
+parameter choice was made.
+
+- Based on Lee's rules for scientific documentation and Prlić & Procter's 
+rules for software licensing/open design, list the top three concrete 
+modifications you would need to make to this repository today so that 
+a completely independent researcher could reproduce your exact analytical 
+output without emailing you.
+
+
+## Reflection 3
+
+Find a script you wrote in the past where you originally wrote zero comments 
+because you thought it was "self-explanatory" or simply because you didn't
+know about the importance of good comments.
+
+Read that script as if you were a new collaborator joining the project. 
+Write formal comments or docstring or file-header for that script detailing: 
+
+a) Explicit input data file or data types and required data structures,
+
+b) Expected output types and missing-value handling, and 
+
+c) Any hidden side effects (e.g., writing files to disk, 
+altering global state, or mutating input dataframes). 
+
+d) What critical operational details did the code alone fail to convey?
+
+
+## Rubric
+
+::: {.callout-important}
+Generic responses that do not mention a specific 
+past assignment name or unique piece of code from your own experience will 
+receive a score of zero.
+:::
+
+- **Full Credit (5 Points)**: Response is highly specific, names unique personal 
+or localized constraints, and explicitly connects the personal experience 
+back to the prompt in each question. Clearly written by a human.
+
+- **Partial Credit (2-3 Points)**: Response is correct but uses vague or generic 
+examples (e.g., "I lost a file once" instead of naming the script). Sounds like 
+a generic summary an AI could have written.
+
+- **No Credit (0 Points)**: Response relies entirely on abstract definitions, 
+fails to provide personal context, or uses copy-pasted text from a webpage
+or AI tool.
+
