@@ -41,8 +41,8 @@ website:
           - readings/07-reading-share-code.qmd
           - readings/08-reading-theranos.qmd
           - readings/09-reading-legal-framework.qmd
-          - readings/10-reading-research-compendium.qmd
-          - readings/11-reading-better-figures.qmd
+          - readings/10-reading-scientific-code.qmd
+          - readings/11-reading-research-compendium.qmd
       - section: "HW"
         collapse: true
         contents:
