@@ -342,7 +342,7 @@
         - type: "Lecture"
           id: ""
           name: "Revealjs Slides"
-          href: ""
+          href: "lectures/32-revealjs/32-revealjs-slides.html"
     - date: "Nov 10"
       items:
         - type: "Lab"
