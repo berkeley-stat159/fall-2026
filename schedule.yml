@@ -348,7 +348,7 @@
         - type: "Lab"
           id: ""
           name: "Revealjs Slides"
-          href: ""
+          href: "labs/lab11.pdf"
     - date: "Nov 11"
       items:
         - type: "No-Class"
