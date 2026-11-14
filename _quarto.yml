@@ -51,6 +51,7 @@ website:
           - hws/hw02/hw02.qmd
           - hws/proj02/proj02.qmd
           - hws/hw03/hw03.qmd
+          - hws/proj03/proj03.qmd
       - section: "Other"
         contents:
           - href: license.qmd
