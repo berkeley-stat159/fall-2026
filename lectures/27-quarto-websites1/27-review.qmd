@@ -1,0 +1,242 @@
+---
+title: "Review"
+subtitle: "Common submission issues"
+format: stat159slides-revealjs
+chalkboard: true
+---
+
+# Intro
+
+## Outline
+
+1) Distinguish between atomic commits and bulk dumps.
+
+2) Structure a professional `README.md` that enables one-line project execution.
+
+3) Reviewing `environment.yml` files.
+
+
+## Main Idea
+
+\
+
+::: {.poll}
+If a collaborator (or grader) clones your repository today, can they reproduce your entire analysis?
+:::
+
+
+# Git History
+
+## Examples {.smaller}
+
+👎 
+
+```{.markdown filename="Poor Commits" code-line-numbers="false"}
+Merge classroom repository
+Add Serena Williams plot reproduction
+Initial Commit
+```
+
+. . .
+
+\
+
+👍
+
+```{.markdown filename="Good Commits" code-line-numbers="false"}
+Document project purpose, setup, data definitions, and report workflow
+Ignore Python caches and local system files
+Add standalone HTML report with embedded career plot
+Add the supplied PDF report
+Add report narrative matching the supplied PDF
+Add reproduced Serena Williams career scatterplot
+Add cleaned Serena match data with ages and outcomes
+Preserve Tennis Abstract raw career data snapshot
+Add Make targets to build and clean data, plot, and reports
+Define Conda environment for data processing and report generation
+... # etc
+```
+
+
+## The Bulk "Submit Button" Commit
+
+- [No Rollback Capability:]{.bold-hilit} If an analysis script breaks at hour 10, 
+a bulk commit forces you to discard everything rather than rewinding to a functional state.
+
+- [Opaque Collaboration:]{.bold-hilit} In group settings, bulk commits create 
+massive merge conflicts and hide individual provenance.
+
+- [Data Dumping:]{.bold-hilit} Bulk commits often accidentally check in binary outputs, 
+credentials, or multi-gigabyte raw files.
+
+
+## Atomic Commits
+
+An atomic commit encapsulates one logical unit of work e.g., 
+
++ `"adding a data preprocessing function"`
++ `"fixing a plotting script bug"`
++ `"updating the environment.yml"`
+
+
+## Advantages of Atomic Commits
+
+If you commit:
+
+::: {.nonincremental}
+- a bug fix,
+- an environment change, 
+- and a data-cleaning script 
+:::
+
+in three separate commits, you can easily revert just the broken 
+data-cleaning script (`git revert <commit-hash>`) while keeping your bug fix intact.
+
+
+## Bulk Commits (Don't ❗️)
+
+\
+
+While taking a "snapshot" of several (e.g. 10) modified files at the end of a long work 
+session feels convenient, it breaks the core benefits of version control. 
+
+. . .
+
+Why?
+
+If all 10 changes live in a single massive commit, reverting the bug means 
+throwing away hours of unrelated, functional work---or manually sifting through 
+hundreds of lines of code to fix it by hand.
+
+
+## Bulk Commits (Don't ❗️)
+
+\
+
+With bulk commits a reviewer cannot meaningfully audit a single pull request or commit that reads:
+
+```
++12,450 lines / -3,200 lines across 40 files.
+```
+
+. . .
+
+\
+
+Smaller, logical commits tell a readable story. A reviewer can follow your 
+thought process step-by-step rather than drowning in a massive wall of code differences
+(`git diff`)
+
+
+## Bulk Commits (Don't ❗️)
+
+When working on collaborative projects or multi-branch workflows:
+
+Smaller, frequent commits touch fewer lines of code at a time, 
+making automatic merges smooth.
+
+When you finally push a bulk commit, it frequently conflicts with your collaborators' work, 
+creating complex merge conflicts that require hours of manual reconstruction.
+
+
+## Risk of Accidental File Leaks & Repository Bloat
+
+When developers run `git add .` and commit everything in bulk without inspecting 
+their staging area, they frequently check in files that should never enter version control:
+
+- Large Datasets / Binaries: Large CSVs, SQLite databases, or model weights that 
+permanently bloat the `.git` folder history.
+
+- System junk: `.DS_Store files`, build artifacts, or temporary editor files.
+
+- Sensitive Information: API keys, passwords, or local file system path configurations.
+
+
+## Rule of Thumb
+
+\
+
+As a rule of thumb, [one commit should represent one logical unit of work.]{.bold-hilit}
+
+\
+
+[A Good Test:]{.mdlit} If your commit message needs the word ["AND"]{.hilit} 
+to describe what you did (e.g., 
+`"Cleaned data matrix AND added plotting script AND updated environment specs"`), 
+it should be split into three separate commits.
+
+
+# README Architecture
+
+## The "README as an API" Principle
+
+\
+
+A `README.md` is not just a summary cover sheet; it is the instruction manual 
+for your computational pipeline.
+
+
+## 5+1 mandatory sections in README
+
+- Title
+- Overview (about)
+- Repository structure (file structure)
+- Environment setup 
+- Reproduction instructions
+- License*
+
+
+## Filestructure in README
+
+Benefits:
+
+1) Establishes Instant Spatial Orientation (Mental Model)
+
+2) Clarifies Data Provenance & File Roles
+
+3) Discovers Relative Paths & Eliminates Path Confusion
+
+4) Serves as Self-Documenting Infrastructure
+
+5) Exposes Messy Repository Hygiene (The "Messy Room" Test)
+
+
+## Establishes Instant Spatial Orientation (Mental Model)
+
+When a collaborator, reviewer, or grader clones your repository, they are 
+looking at a blank slate.
+
+- Without a tree, they have to manually click through nested subfolders to 
+figure out where scripts, datasets, and configurations reside.
+
+- A directory tree provides a 3-second visual map of the entire codebase. 
+It immediately communicates the project’s layout without requiring the reader 
+to explore the file system manually.
+
+
+## Clarifies Data Provenance & File Roles
+
+Filename extensions (like `.csv`, `.py`, `.ipynb`, or `.rds`) don't tell the full 
+story of why a file exists or how it should be treated.
+
+- [Separating Raw vs. Processed Data:]{.bold-hilit} A directory tree visually enforces the 
+golden rule of reproducible research: raw data must be immutable. 
+Annotating `data/raw/` in your tree explicitly warns users never to overwrite original files.
+
+- [Distinguishing Source Code from Notebooks:]{.bold-hilit} It clarifies which files 
+are modular, reusable scripts (e.g., `scripts/clean_data.py`) versus interactive 
+exploratory narratives (e.g., `notebooks/exploratory.ipynb`).
+
+
+## Closing Thoughts
+
+- Writing clean code is only half the battle in modern data science. 
+
+\
+
+- If your work cannot be re-built automatically by an independent researcher 
+using your version-control record and environment specs, the results are incomplete. 
+
+\
+
+- Treat your repository as a publication in itself.
