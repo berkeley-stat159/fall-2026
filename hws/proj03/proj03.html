@@ -302,10 +302,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.1</span> Data</a></li>
   <li><a href="#functional-structure-of-your-code-and-testing" id="toc-functional-structure-of-your-code-and-testing" class="nav-link" data-scroll-target="#functional-structure-of-your-code-and-testing"><span class="header-section-number">2.2</span> Functional structure of your code and testing</a></li>
   <li><a href="#analysis-notebooks-and-supporting-code" id="toc-analysis-notebooks-and-supporting-code" class="nav-link" data-scroll-target="#analysis-notebooks-and-supporting-code"><span class="header-section-number">2.3</span> Analysis notebooks and supporting code</a></li>
-  <li><a href="#author-contributions-and-reflections" id="toc-author-contributions-and-reflections" class="nav-link" data-scroll-target="#author-contributions-and-reflections"><span class="header-section-number">2.4</span> Author Contributions and Reflections</a></li>
-  <li><a href="#reproducibility-support" id="toc-reproducibility-support" class="nav-link" data-scroll-target="#reproducibility-support"><span class="header-section-number">2.5</span> Reproducibility Support</a></li>
-  <li><a href="#good-repository-practices" id="toc-good-repository-practices" class="nav-link" data-scroll-target="#good-repository-practices"><span class="header-section-number">2.6</span> Good Repository Practices</a></li>
-  <li><a href="#website" id="toc-website" class="nav-link" data-scroll-target="#website"><span class="header-section-number">2.7</span> Website</a></li>
+  <li><a href="#main-narrative" id="toc-main-narrative" class="nav-link" data-scroll-target="#main-narrative"><span class="header-section-number">2.4</span> Main Narrative</a></li>
+  <li><a href="#author-contributions-and-reflections" id="toc-author-contributions-and-reflections" class="nav-link" data-scroll-target="#author-contributions-and-reflections"><span class="header-section-number">2.5</span> Author Contributions and Reflections</a></li>
+  <li><a href="#reproducibility-support" id="toc-reproducibility-support" class="nav-link" data-scroll-target="#reproducibility-support"><span class="header-section-number">2.6</span> Reproducibility Support</a></li>
+  <li><a href="#good-repository-practices" id="toc-good-repository-practices" class="nav-link" data-scroll-target="#good-repository-practices"><span class="header-section-number">2.7</span> Good Repository Practices</a></li>
+  <li><a href="#website" id="toc-website" class="nav-link" data-scroll-target="#website"><span class="header-section-number">2.8</span> Website</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -433,22 +434,27 @@ Important
 <p>This essay by Stephen Wolfram, the creator of Mathematica (part of the inspiration for the Jupyter Notebook), has some good thoughts on what makes a well written computational narrative.</p>
 <p>Consider how to “chain” your analyses with intermediate results being stored so they don’t need to be recomputed from scratch each time. Also, be mindful of saving key figures you may want to reuse in your report to disk, so the main narrative notebook can reuse them for display and discussion.</p>
 </section>
-<section id="author-contributions-and-reflections" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="author-contributions-and-reflections"><span class="header-section-number">2.4</span> Author Contributions and Reflections</h3>
+<section id="main-narrative" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="main-narrative"><span class="header-section-number">2.4</span> Main Narrative</h3>
+<p>In addition to your analysis notebooks, please include a <strong>main</strong> notebook that summarizes and discusses your results. It can contain figures referenced from disk or simple summary information (for example if you want to display part of a dataframe) from variables read from disk, but no significant computations at all. Think of this as your “paper” or “main report”.</p>
+<p>Discuss the assumptions you can make about the data to justify your analysis. If you propose any statistical hypothesis/model in your analysis, discuss your justifications, considering how the data was acquired.</p>
+</section>
+<section id="author-contributions-and-reflections" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="author-contributions-and-reflections"><span class="header-section-number">2.5</span> Author Contributions and Reflections</h3>
 <p>Include a notebook to describe, for each team member, what they did in the project (something like an <em>About</em> page). It doesn’t have to be a long, detailed story, a few sentences per person should suffice. All team members must agree to the language in this section. (By the way, this is standard practice in many scientific journals).</p>
 <p>Likewise, in the same notebook include another section to describe personal reflections of each team member: the things you learned while working in this project, what were some the frustrating and/or confusing parts, which things you would do different, etc.</p>
 <p>While in principle the project grade is the same for all team members, we reserve the right to lower the grade of anyone who doesn’t contribute to the team effort.</p>
 </section>
-<section id="reproducibility-support" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="reproducibility-support"><span class="header-section-number">2.5</span> Reproducibility Support</h3>
+<section id="reproducibility-support" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="reproducibility-support"><span class="header-section-number">2.6</span> Reproducibility Support</h3>
 <ul>
 <li><p><strong>Environment:</strong> like in previous assignments, provide an <code>environment.yml</code> file that creates an environment with all necessary dependencies to run your analysis. We recommend you to create a new virtual environment with this project that you can update as you include new libraries.</p></li>
 <li><p><strong>Makefile:</strong> you will also create a <code>Makefile</code> with <code>env</code> and <code>all</code> targets. The <code>env</code> target should make the environment with all necessary libraries, and update it with the relevant packages in <code>environment.yml</code> if it is already installed, and all should run all notebooks.</p></li>
 <li><p>Don’t forget to set random seeds for anything that has a stochastic component.</p></li>
 </ul>
 </section>
-<section id="good-repository-practices" class="level3" data-number="2.6">
-<h3 data-number="2.6" class="anchored" data-anchor-id="good-repository-practices"><span class="header-section-number">2.6</span> Good Repository Practices</h3>
+<section id="good-repository-practices" class="level3" data-number="2.7">
+<h3 data-number="2.7" class="anchored" data-anchor-id="good-repository-practices"><span class="header-section-number">2.7</span> Good Repository Practices</h3>
 <ul>
 <li><p><strong>Work as a team.</strong> Work collaboratively with your team members by adding commit messages and working in different branches, merging them into the main branch as your group sees fit. Also, consider taking advantage of issues as you review each other’s work asynchronously, and even consider opening issues and opening Pull Request (PRs) that close them.</p></li>
 <li><p><code>README.md</code>: Write a short self-contained description of the project, including the motivation behind your project and the analysis you conducted. Include all relevant information about how to run the analysis, including installation steps (for any packages, environments, etc.), testing, and automation. A good <code>README.d</code> should provide all the useful information to help the user to start running the analysis.</p></li>
@@ -458,8 +464,8 @@ Important
 <li><p><code>ai-documentation.txt</code>: As usual, please include a document describing how your group used any AI companions in the completion of the project. While the presence of this document shouldn’t be strictly considered a “good repository practice” in real-world workflows, we will lump the presence of this document in with the grade for this component.</p></li>
 </ul>
 </section>
-<section id="website" class="level3" data-number="2.7">
-<h3 data-number="2.7" class="anchored" data-anchor-id="website"><span class="header-section-number">2.7</span> Website</h3>
+<section id="website" class="level3" data-number="2.8">
+<h3 data-number="2.8" class="anchored" data-anchor-id="website"><span class="header-section-number">2.8</span> Website</h3>
 <p>Finally, we ask that you deploy your analyses to a Quarto/MyST-generated website, hosted on GitHub Pages. Please take the time to consider how to best organize your websites to communicate the overall narrative of your project, from the main narrative document, to the individual analysis notebooks. Please also include the Binder badge somewhere in the website.</p>
 <p>To get some inspiration about how to organize and structure your projects, feel free to take a look at the following projects from previous semesters.</p>
 <ol type="1">
