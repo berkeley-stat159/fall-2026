@@ -358,7 +358,7 @@
         - type: "Reading"
           id: ""
           name: "Research Compendium (due 11/18)"
-          href: "readings/10-reading-research-compendium.html"
+          href: "readings/10-reading-scientific-code.html"
     - date: "Nov 13"
       items:
         - type: "Lecture"
@@ -385,9 +385,9 @@
           href: ""
     - date: "Nov 18"
       items:
-        - type: "Lecture"
+        - type: "No-Class"
           id: ""
-          name: "TBA"
+          name: "Canceled Lecture"
           href: ""
         - type: "Reading"
           id: ""
