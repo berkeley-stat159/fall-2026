@@ -138,6 +138,19 @@ Also, be mindful of saving key figures you may want to reuse in your report
 to disk, so the main narrative notebook can reuse them for display and discussion.
 
 
+### Main Narrative
+
+In addition to your analysis notebooks, please include a **main** notebook
+that summarizes and discusses your results. It can contain figures referenced 
+from disk or simple summary information (for example if you want to display 
+part of a dataframe) from variables read from disk, but no significant 
+computations at all. Think of this as your "paper" or "main report".
+
+Discuss the assumptions you can make about the data to justify your analysis.
+If you propose any statistical hypothesis/model in your analysis, discuss your 
+justifications, considering how the data was acquired. 
+
+
 ### Author Contributions and Reflections
 
 Include a notebook to describe, for each team member, what 
