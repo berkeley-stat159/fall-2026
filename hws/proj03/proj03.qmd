@@ -5,9 +5,9 @@ number-sections: true
 
 The final project involves using a website to present a free-form report-style 
 analysis where you will investigate some questions of interest on datasets
-from the **Berkeley Police Transparency Hub**.
-
-<https://bpd-transparency-initiative-berkeleypd.hub.arcgis.com/search>
+from the [**Berkeley Police Transparency Hub**](https://bpd-transparency-initiative-berkeleypd.hub.arcgis.com/search).
+To be clear, this project is NOT a replication assignment. Instead, you 
+will come up with your own research questions.
 
 As you know, BPD shares the following datasets:
 
@@ -31,31 +31,38 @@ Most importantly, your project should exemplify the workflows and practices
 that we have been developing throughout the semester.
 :::
 
+\
 
-## Proposal Guidelines
+## Proposal Guidelines (_quasi pre-registration_)
 
-The proposal process for the project is relatively informal: we just want 
+The proposal process for the project is relatively simple: we just want 
 to make sure your group is on the same page and has a reasonably fleshed 
-out idea before start working on the project. Please discuss with your group 
-and be able to answer the following questions. Ideally, this should be done 
-by November 20 so we can review/give feedback as soon as possible.
+out idea before start working on the project. 
 
-We will be dedicating some time during lab on November 21 as a space for 
-you to meet with your groups and hash out these details. You are welcome 
-to discuss your group's proposal either in-person with your lab GSI during 
-this session (preferred so we can give live feedback), or via Ed/office hours. 
+
+### Google Form (to be answered in lab, 11/17)
+
+We will be dedicating some time during lab on November 17 as a space 
+for you to form groups and hash out some of the project's details.
+You will be filling out a google form to:
+
+- List the team members
+- Specify which data sets you will use
+- Describe at least 2 research questions per member
+
 After your lab GSI OK's your proposal, your group can start the project.
 
 
 ### Questions and Answers
 
-What questions do you intend to explore/ask with your dataset? 
+What data sets do you plan to use, and what questions do you intend to 
+explore/ask with your datasets? 
 Roughly speaking, what strategies do you anticipate using to answer 
 these questions (any statistical models, plotting, etc.)?
 
 ::: {.callout-warning title="Be Original"}
 To avoid redundant work with Project-2, you should 
-**come up with questions unrelated with the 2024 BPD Annual Report**.
+**come up with questions unrelated with the 2024 BPD Annual Report**. 
 :::
 
 You can get some guidance or inspiration from the Snapshots and Dashboards
@@ -79,7 +86,7 @@ data storage, etc.)? What plans do you have in-place to manage these
 challenges as they arise?
 
 
------
+\
 
 
 ## Project Deliverables
@@ -87,7 +94,7 @@ challenges as they arise?
 ### Data
 
 As mentioned above, you have to use at least three of the datasets 
-From BPD for your project.
+from BPD for your project.
 Also, you should aim to store your data in your GitHub repository.
 If the data cannot be included in the repository, your code should 
 access it remotely and store more manageable subsets of it relevant 
@@ -134,15 +141,15 @@ to disk, so the main narrative notebook can reuse them for display and discussio
 ### Author Contributions and Reflections
 
 Include a notebook to describe, for each team member, what 
-they did in the project. It doesn't have to be a long, detailed story, 
-a few sentences per person should suffice. All team members must agree 
-to the language in this section. (By the way, this is standard practice 
-in many scientific journals). 
+they did in the project (something like an _About_ page). 
+It doesn't have to be a long, detailed story, a few sentences per person 
+should suffice. All team members must agree to the language in this section. 
+(By the way, this is standard practice in many scientific journals). 
 
 Likewise, in the same notebook include another section to describe
 personal reflections of each team member: the things you learned
 while working in this project, what were some the frustrating and/or 
-confusing parts, which things would you do different, etc.
+confusing parts, which things you would do different, etc.
 
 While in principle the project grade is the same for all team members, 
 we reserve the right to lower the grade of anyone who doesn't contribute 
@@ -209,4 +216,18 @@ to best organize your websites to communicate the overall narrative of
 your project, from the main narrative document, to the individual analysis 
 notebooks. Please also include the Binder badge somewhere in the website.
 
+To get some inspiration about how to organize and structure your projects, 
+feel free to take a look at the following projects from previous semesters.
 
+
+1) **Comparing the South Rimo Glacier in the Karakoram with two other "Surge Type" glaciers**
+    + GitHub repo: <https://github.com/UCB-stat159-f26/final-group06>
+    + Website: <https://ucb-stat-159-f26.github.io/final-group06/>
+
+2) **Food Inflation Analysis Project**
+    + GitHub repo: <https://github.com/UCB-stat159-f26/final-group01>
+    + Website: <https://ucb-stat-159-f26.github.io/final-group01>
+
+3) **An Analysis on Animal Shelter Data from Sonoma County, CA**
+    + GitHub repo: <https://github.com/UCB-stat-159-s23/project-Group12>
+    + Website: <https://ucb-stat-159-s23.github.io/project-Group12/README.html>
