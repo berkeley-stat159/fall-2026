@@ -367,8 +367,8 @@
           href: ""
         - type: "Homework"
           id: ""
-          name: "Project 3 TBA (due 12/11)"
-          href: ""
+          name: "Project 3 (due 12/11)"
+          href: "hws/proj03/proj03.html"
 - week: 13
   days:
     - date: "Nov 16"
